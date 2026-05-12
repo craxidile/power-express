@@ -20,7 +20,7 @@ const ActivityBox = (props: PropsWithChildren<ActivityBoxProps>) => {
            style={{background: `url(${image}) no-repeat center/cover`}}/>
       <div className="mt-6 flex flex-row justify-start items-stretch">
         <div className={`py-1 px-3 ${tag === 'News' ? 'bg-green-tag' : 'bg-cta-primary'}`}>
-          <span className="block text-white text-base uppercase">{tag}</span>
+          <span className="block text-white text-sm uppercase">{tag}</span>
         </div>
       </div>
       <div className="mt-5 gap-x-3 flex flex-row justify-start items-center text-base uppercase">

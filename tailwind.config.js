@@ -24,6 +24,7 @@ module.exports = {
         'sep-green': '#2D5016',
         'sep-green-light': '#519723',
         'title-pale': '#99A1AF',
+        'title-light': '#6A7282',
         'pale': '#F9FAFB',
         'date-light': '#99A1AF',
         'activity-type': '#2D5016',
