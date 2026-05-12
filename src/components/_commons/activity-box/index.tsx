@@ -29,7 +29,7 @@ const ActivityBox = (props: PropsWithChildren<ActivityBoxProps>) => {
         <span className={`block ${type === 'Awards' ? 'text-activity-type' : 'text-cta-primary'}`}>{type}</span>
       </div>
       <h2 className="block mt-6 text-3hxl font-medium leading-[1.2]">{title}</h2>
-      <span className="mt-3 text-base text-excerpt line-clamp-3">{excerpt}</span>
+      <span className="mt-3 text-base text-gray-excerpt line-clamp-3">{excerpt}</span>
       <div className="mt-5 gap-x-2 flex flex-row justify-start items-center">
         <Link to="/"><span className="text-base underline">Read more</span></Link>
         <Link to="/"><img alt="Icon" src={p('mock/front/section-activities/ic-more.svg')} /></Link>

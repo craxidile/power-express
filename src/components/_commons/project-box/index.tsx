@@ -18,7 +18,7 @@ const ProjectBox = (props: PropsWithChildren<ProjectBoxProps>) => {
       <div className="aspect-[0.8291] bg-gray-300"
            style={{ background: `url(${image}) no-repeat center/cover` }} />
       <h2 className="block mt-6 text-3hxl font-medium leading-[1.2]">{title}</h2>
-      <span className="mt-3 text-base text-excerpt line-clamp-3">{excerpt}</span>
+      <span className="mt-3 text-base text-gray-excerpt line-clamp-3">{excerpt}</span>
       <div className="my-4 h-px bg-sep-pale" />
       <ul className="gap-4 grid grid-cols-2">
         <li><ProjectDetailRow title="ลูกค้า" text={client} /></li>
