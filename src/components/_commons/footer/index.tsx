@@ -42,12 +42,12 @@ const Footer = () => {
               <div className="gap-x-4 flex flex-row justify-start items-stretch">
                 <Link to="/">
                   <div className="rounded-full bg-white-a10 w-10 h-10 flex flex-col justify-center items-center">
-                    <img className="h-5 w-auto" alt="Facebook" src={p('mock/_commons/footer/ic-fb.svg')}/>
+                    <img className="h-5 w-auto" alt="Facebook" src={p('mock/commons/footer/ic-fb.svg')}/>
                   </div>
                 </Link>
                 <Link to="/">
                   <div className="rounded-full bg-white-a10 w-10 h-10 flex flex-col justify-center items-center">
-                    <img className="h-5 w-auto" alt="Facebook" src={p('mock/_commons/footer/ic-linked-in.svg')}/>
+                    <img className="h-5 w-auto" alt="Facebook" src={p('mock/commons/footer/ic-linked-in.svg')}/>
                   </div>
                 </Link>
               </div>
