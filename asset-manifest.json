@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/power-express/static/css/main.6b40666f.css",
-    "main.js": "/power-express/static/js/main.b9c9a035.js",
+    "main.css": "/power-express/static/css/main.ad2186da.css",
+    "main.js": "/power-express/static/js/main.7a40f9bb.js",
     "static/js/453.ede2cfe3.chunk.js": "/power-express/static/js/453.ede2cfe3.chunk.js",
     "index.html": "/power-express/index.html",
-    "main.6b40666f.css.map": "/power-express/static/css/main.6b40666f.css.map",
-    "main.b9c9a035.js.map": "/power-express/static/js/main.b9c9a035.js.map",
+    "main.ad2186da.css.map": "/power-express/static/css/main.ad2186da.css.map",
+    "main.7a40f9bb.js.map": "/power-express/static/js/main.7a40f9bb.js.map",
     "453.ede2cfe3.chunk.js.map": "/power-express/static/js/453.ede2cfe3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b40666f.css",
-    "static/js/main.b9c9a035.js"
+    "static/css/main.ad2186da.css",
+    "static/js/main.7a40f9bb.js"
   ]
 }
