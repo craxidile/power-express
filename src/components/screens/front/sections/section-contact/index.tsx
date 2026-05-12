@@ -10,19 +10,17 @@ const SectionContact = () => {
         <div className="flex flex-row justify-start items-stretch">
           <div className="box-border p-20 w-full max-w-[718px] bg-white rounded-2xl">
             <h2 className="text-2xl uppercase text-secondary font-medium">
-              Contact us &
-              <br/>
-              Start Saving Today
+              ติดต่อเรา เพื่อเริ่มประหยัดค่าพลังงานได้ตั้งแต่วันนี้
             </h2>
             <p className="mt-12 text-black-a70 text-xl">
-              Empowering businesses with
+              ขับเคลื่อนธุรกิจของคุณ
               <br/>
-              sustainable renewable energy solutions
+              ด้วยโซลูชันพลังงานหมุนเวียนที่ยั่งยืน
             </p>
             <ul className="mt-8 gap-y-4 flex flex-col justify-start items-start">
               <li>
                 <ContactRow icon={p('mock/front/section-contact/ic-pin.svg')}
-                            text="157/9 Soi Aree Sumphan 2 Phahonyothin Road Phayathai Bangkok 10400"/>
+                            text="157/9 ซอยอารีย์สัมพันธ์ 2 ถนนพหลโยธิน แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400"/>
               </li>
               <li>
                 <ContactRow isPhone icon={p('mock/front/section-contact/ic-tel.svg')} text="082-096-6595"/>
