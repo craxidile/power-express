@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'white-a50': 'rgba(255, 255, 255, .5)',
         'white-a70': 'rgba(255, 255, 255, .7)',
         'black-a30': 'rgba(0, 0, 0, .3)',
         'green-a10': 'rgba(123, 206, 67, .1)',
@@ -18,6 +19,8 @@ module.exports = {
       },
       fontSize: {
         '2hxl': '1.75rem',
+        '3hxl': '2rem',
+        '4hxl': '2.5rem',
       }
     },
   },
