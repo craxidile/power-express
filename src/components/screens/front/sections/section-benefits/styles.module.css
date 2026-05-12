@@ -1,0 +1,12 @@
+.container li + li {
+  @apply ml-12;
+}
+
+.container li {
+  @apply relative;
+}
+
+.container li + li::before {
+  @apply absolute bg-sep-light h-full w-px -left-6 translate-x-1/2;
+  content: "";
+}

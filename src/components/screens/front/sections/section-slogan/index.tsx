@@ -3,7 +3,7 @@ import Nav from "../../../../_commons/nav";
 
 const SectionSlogan = () => {
   return (
-    <div className="relative h-[1020px] bg-gray-100 flex flex-col justify-start items-stretch"
+    <section className="relative h-[1020px] bg-gray-100 flex flex-col justify-start items-stretch"
          style={{background: `url(${p('mock/front/section-slogan/bg.jpg')}) no-repeat center/cover`}}>
       <div className="absolute left-0 top-0 w-full h-full bg-black-a30 backdrop-blur-xs" />
       <Nav />
@@ -21,7 +21,7 @@ const SectionSlogan = () => {
           <img className="w-6" src={p('mock/front/section-slogan/arrow-down.svg')} alt="More" />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
