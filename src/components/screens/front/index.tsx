@@ -4,6 +4,7 @@ import SectionSlogan from "./sections/section-slogan";
 import SectionBenefits from "./sections/section-benefits";
 import SectionBusiness from "./sections/section-business";
 import SectionContact from "./sections/section-contact";
+import SectionProjects from "./sections/section-projects";
 
 const FrontScreen = (props: PropsWithChildren): ReactElement => {
   return (
@@ -11,6 +12,7 @@ const FrontScreen = (props: PropsWithChildren): ReactElement => {
       <SectionSlogan />
       <SectionBenefits />
       <SectionBusiness />
+      <SectionProjects />
       <SectionContact />
     </div>
   );

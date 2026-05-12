@@ -10,11 +10,11 @@ export interface ContactRowProps {
 const ContactRow = (props: PropsWithChildren<ContactRowProps>) => {
   const {icon, text, isEmail, isPhone} = props;
   return (
-    <div className="gap-x-5 flex flex-row justify-start items-start">
+    <div className="gap-x-5 flex flex-row justify-start items-start text-base text-black-a70">
       <img className="block w-5 h-auto" alt="Icon" src={icon}/>
-      {isEmail && <a href={`mailto:${text}`} className="block text-base text-black-a70 underline">{text}</a>}
-      {isPhone && <a href={`tel:${text}`} className="block text-base text-black-a70">{text}</a>}
-      {!isEmail && !isPhone && <span className="block text-base text-black-a70">{text}</span>}
+      {isEmail && <a href={`mailto:${text}`} className="block underline">{text}</a>}
+      {isPhone && <a href={`tel:${text}`} className="block">{text}</a>}
+      {!isEmail && !isPhone && <span className="block">{text}</span>}
     </div>
   );
 };
