@@ -8,7 +8,7 @@ const SectionProjects = () => {
     <section className="py-10 lg:py-20 flex flex-col justify-start items-stretch">
       <SafeArea>
         <div className="gap-y-6 lg:gap-y-20 flex flex-col justify-start items-stretch">
-          <h2 className="uppercase text-secondary text-center text-2xl font-medium">โครงการของเรา</h2>
+          <h2 className="uppercase text-secondary text-center text-sm lg:text-2xl font-medium">โครงการของเรา</h2>
           <ul className="gap-x-0 lg:gap-x-12 gap-y-20 grid grid-cols-1 lg:grid-cols-3">
             <li>
               <ProjectBox image={p('mock/front/section-projects/mock-project-01.jpg')} title="โครงการโซลาร์ PPA โรงงานเหล็ก"

@@ -7,7 +7,7 @@ const SectionImpact = () => {
         <div className="gap-y-16 lg:gap-y-0 flex flex-col lg:flex-row justify-start items-stretch">
           <div className="lg:flex-1 lg:flex-shrink-0 flex flex-col justify-start items-stretch">
             <div className="gap-y-6 lg:gap-y-10 flex flex-col justify-start items-stretch">
-              <h6 className="text-title-light text-xl lg:text-2xl font-medium">ผลลัพธ์ของเรา</h6>
+              <h6 className="text-title-light text-sm lg:text-2xl font-medium">ผลลัพธ์ของเรา</h6>
               <h2 className="text-4xl lg:text-5xl font-medium leading-[1.2]">
                 ขับเคลื่อนการเติบโต
                 <br/>
