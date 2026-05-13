@@ -18,15 +18,15 @@ const SectionImpact = () => {
                 นี่เป็นเพียงจุดเริ่มต้นของเราเท่านั้น เพราะทุกโครงการคือก้าวสำคัญ
                 ที่นำเราไปสู่อนาคตแห่งพลังงานหมุนเวียน"
               </p>
-              <div className="mt-14 lg:mt-0 gap-x-11 lg:gap-x-0 lg:max-w-[528px] flex flex-row justify-start items-stretch">
-                <div className="gap-y-4 gap-y-6 flex-1 flex flex-col justify-start items-start">
+              <div className="mt-14 lg:mt-0 gap-x-11 lg:gap-x-0 lg:max-w-[528px] flex flex-row justify-start items-start">
+                <div className="gap-y-2 lg:gap-y-6 flex-1 flex flex-col justify-start items-start">
                   <div className="w-12 h-1 bg-green-tag" />
-                  <span className="block text-6xl lg:text-8xl font-medium">14</span>
+                  <span className="mt-2 lg:mt-0 block text-6xl lg:text-8xl font-medium">14</span>
                   <span className="block text-sm lg:text-base text-secondary">โครงการที่เปิดดำเนินการ</span>
                 </div>
-                <div className="gap-y-4 lg:gap-y-6 flex-1 flex flex-col justify-start items-start">
+                <div className="gap-y-2 lg:gap-y-6 flex-1 flex flex-col justify-start items-start">
                   <div className="w-12 h-1 bg-cta-primary" />
-                  <span className="block text-6xl lg:text-8xl font-medium">5.96</span>
+                  <span className="mt-2 lg:mt-0 block text-6xl lg:text-8xl font-medium">5.96</span>
                   <span className="block text-sm lg:text-base text-secondary">5.96 เมกะวัตต์</span>
                 </div>
               </div>
