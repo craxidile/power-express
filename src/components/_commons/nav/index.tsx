@@ -8,9 +8,9 @@ const Nav = () => {
     <div className="z-[10] absolute top-0 left-1/2 -translate-x-1/2 w-full h-[112px] flex flex-col justify-stretch items-stretch">
       <SafeArea>
         <div className="w-full h-full flex flex-row justify-start items-center">
-          <img className="h-16" alt="logo" src={p('logo-light.png')} />
+          <img className="h-12 lg:h-16" alt="logo" src={p('logo-light.png')} />
           <div className="flex-1" />
-          <ul className="flex flex-row gap-x-6 text-white">
+          <ul className="hidden lg:flex flex-row gap-x-6 text-white">
             <li>
               <Link to="/">เกี่ยวกับเรา</Link>
             </li>

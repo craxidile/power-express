@@ -4,15 +4,15 @@ import ContactRow from "../../../../_commons/contact-row";
 
 const SectionContact = () => {
   return (
-    <div className="py-[80px] flex flex-col justify-start items-stretch"
+    <div className="h-screen lg:h-auto py-10 lg:py-[80px] flex flex-col justify-start items-stretch"
          style={{background: `url(${p('mock/front/section-contact/bg.png')}) no-repeat center/cover`}}>
       <SafeArea>
-        <div className="flex flex-row justify-start items-stretch">
-          <div className="box-border p-20 w-full max-w-[718px] bg-white rounded-2xl">
-            <h2 className="text-2xl uppercase text-secondary font-medium">
+        <div className="px-2 lg:px-0 flex flex-col lg:flex-row justify-start items-stretch">
+          <div className="box-border px-6 py-8 lg:p-20 w-full max-w-[718px] bg-white rounded-2xl">
+            <h2 className="text-sm lg:text-2xl uppercase text-secondary font-medium">
               ติดต่อเรา เพื่อเริ่มประหยัดค่าพลังงานได้ตั้งแต่วันนี้
             </h2>
-            <p className="mt-12 text-black-a70 text-xl">
+            <p className="mt-4 lg:mt-12 text-black-a70 text-xl">
               ขับเคลื่อนธุรกิจของคุณ
               <br/>
               ด้วยโซลูชันพลังงานหมุนเวียนที่ยั่งยืน
@@ -30,9 +30,12 @@ const SectionContact = () => {
                             text="admin@powerexpress1980.com"/>
               </li>
             </ul>
-            <img className="h-7 mt-20 block" alt="Google Maps"
+            <img className="hidden lg:block h-7 mt-20" alt="Google Maps"
                  src={p('mock/front/section-contact/google-maps.svg')}/>
           </div>
+        </div>
+        <div className="absolute bottom-0 left-8 right-8 lg:hidden box-border p-4 bg-white rounded-2xl flex flex-col justify-center items-center">
+          <img className="block h-6 " alt="Google Maps" src={p('mock/front/section-contact/google-maps.svg')}/>
         </div>
       </SafeArea>
     </div>

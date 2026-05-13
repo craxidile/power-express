@@ -4,11 +4,11 @@ import {p} from "../../../../../utils/path-utils";
 
 const SectionActivities = () => {
   return (
-    <div className="py-20 bg-pale flex flex-col justify-start items-stretch">
+    <div className="py-10 lg:py-20 bg-pale flex flex-col justify-start items-stretch">
       <SafeArea>
         <div className="gap-y-20 flex flex-col justify-start items-stretch">
-          <h2 className="uppercase text-secondary text-center text-2xl font-medium">ข่าวสารและกิจกรรมล่าสุด</h2>
-          <ul className="gap-x-12 gap-y-20 grid grid-cols-3">
+          <h2 className="uppercase text-secondary text-center text-sm lg:text-2xl font-medium">ข่าวสารและกิจกรรมล่าสุด</h2>
+          <ul className="lg:gap-x-12 gap-y-16 lg:gap-y-20 grid frid-cols-1 lg:grid-cols-3">
             <li>
               <ActivityBox image={p('mock/front/section-activities/mock-activity-01.jpg')}
                            tag="News" type="CSR" publishedAt={new Date()}

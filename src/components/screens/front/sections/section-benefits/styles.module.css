@@ -1,5 +1,5 @@
 .container li + li {
-  @apply ml-12;
+  @apply lg:ml-12;
 }
 
 .container li {
@@ -7,6 +7,6 @@
 }
 
 .container li + li::before {
-  @apply absolute bg-sep-light h-full w-px -left-6 translate-x-1/2;
+  @apply hidden lg:block absolute bg-sep-light h-full w-px -left-6 translate-x-1/2;
   content: "";
 }

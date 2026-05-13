@@ -26,6 +26,7 @@ const ProjectBox = (props: PropsWithChildren<ProjectBoxProps>) => {
         <li><ProjectDetailRow isCta title="กำลังการผลิต" text={`${capacity} kW`} /></li>
         <li><ProjectDetailRow title="ปีที่แล้วเสร็จ" text={`${completion}`} /></li>
       </ul>
+      <div className="mt-5 h-px bg-sep-pale" />
     </div>
   );
 };

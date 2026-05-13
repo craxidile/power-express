@@ -4,17 +4,17 @@ import {Link} from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-footer pt-16 flex flex-col justify-start items-stretch">
+    <footer className="bg-gray-footer pt-16 lg:pb-0 flex flex-col justify-start items-stretch">
       <SafeArea>
         <div className="gap-y-6 flex flex-col justify-start items-stretch">
-          <div className="gap-x-10 flex flex-row justify-start items-stretch">
-            <img className="block h-[106px]" alt="Logo" src={p('logo-footer.png')}/>
+          <div className="pb-10 lg:pb-0 gap-y-6 lg:gap-y-0 lg:gap-x-10 flex flex-col lg:flex-row justify-start items-stretch">
+            <img className="block mx-auto lg:mx-0 w-full max-w-80 lg:w-auto lg:max-w-none lg:h-[106px]" alt="Logo" src={p('logo-footer.png')}/>
             <div className="relative flex-1 flex flex-col justify-center items-center">
-              <div className="gap-y-3 w-full max-w-[800px] pt-4 pb-9 flex flex-col justify-start items-stretch">
+              <div className="gap-y-3 w-full lg:max-w-[800px] lg:pt-4 lg:pb-9 flex flex-col justify-start items-center lg:items-stretch">
                 <span className="block text-lime text-base font-medium">
                   Menu
                 </span>
-                <ul className="gap-3 flex flex-row justify-start items-start flex-wrap">
+                <ul className="gap-y-4 lg:gap-3 flex flex-col lg:flex-row justify-start items-center lg:items-start flex-wrap">
                   <li className="flex-1 flex-shrink-0">
                     <Link to="/"><span className="text-sm text-white whitespace-nowrap">หน้าแรก</span></Link>
                   </li>
@@ -35,7 +35,8 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="gap-y-4 w-[164px] flex flex-col justify-start items-stretch">
+            <div className="h-px bg-white-a10 lg:hidden" />
+            <div className="gap-y-4 lg:w-[164px] flex flex-col justify-start items-center lg:items-stretch">
               <span className="text-lime text-base font-medium">
                 Follow us
               </span>
