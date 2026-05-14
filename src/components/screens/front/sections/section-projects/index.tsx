@@ -47,9 +47,9 @@ const SectionProjects = () => {
           </ul>
           <div className="flex flex-row justify-center items-center">
           <Link to="/">
-            <div className="gap-x-4 py-3 lg:py-4 px-6 flex flex-row justify-center items-center border border-gray-medium">
+            <div className="gap-x-2 lg:gap-x-4 py-3 lg:py-4 px-6 flex flex-row justify-center items-center border border-gray-medium">
               <span className="text-base lg:text-xl font-medium">ดูโครงการทั้งหมด (14)</span>
-              <img alt="More" src={p('mock/front/section-projects/ic-more.svg')} />
+              <img className="w-8 lg:w-auto h-auto" alt="More" src={p('mock/front/section-projects/ic-more.svg')} />
             </div>
           </Link>
           </div>

@@ -10,6 +10,11 @@ const Nav = () => {
         <div className="w-full h-full flex flex-row justify-start items-center">
           <img className="h-12 lg:h-16" alt="logo" src={p('logo-light.png')} />
           <div className="flex-1" />
+          <div className="lg:hidden flex flex-row justify-center items-center">
+            <Link to="/">
+              <img className="w-6 h-auto" alt="Menu" src={p('mock/commons/nav/ic-menu.svg')} />
+            </Link>
+          </div>
           <ul className="hidden lg:flex flex-row gap-x-6 text-white">
             <li>
               <Link to="/">เกี่ยวกับเรา</Link>
