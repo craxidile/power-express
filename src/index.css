@@ -11,5 +11,6 @@ html, body {
 }
 
 * {
+  @apply text-gray-dark;
   font-family: Inter, NotoSansThai, Arial, sans-serif;
 }
