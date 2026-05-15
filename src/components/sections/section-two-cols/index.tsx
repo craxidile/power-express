@@ -9,7 +9,7 @@ export interface SectionTwoColsProps {
 const SectionTwoCols = (props: PropsWithChildren<SectionTwoColsProps>) => {
   const {title, children, colEnd} = props;
   return (
-    <section className="py-20 flex flex-col justify-start items-stretch">
+    <section className="flex flex-col justify-start items-stretch">
       <SafeArea>
         <div className="lg:gap-y-0 lg:gap-x-16 flex flex-col-reverse lg:flex-row justify-start items-start">
           <div className="gap-y-16 flex-1 flex flex-col justify-start items-stretch">

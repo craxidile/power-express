@@ -27,8 +27,9 @@ const SectionDetails = () => {
         </ul>
         <div className="gap-y-4 flex flex-col justify-start items-stretch">
           <div className="p-10 gap-x-6 flex flex-row justify-center items-center rounded-3xl bg-pale">
-            <div className="w-12 h-12 lg:w-[100px] lg:h-[100px] flex flex-col justify-center items-center bg-white rounded-full">
-              <img className="w-6 lg:w-10 h-auto" alt="Energy" src={p('mock/project/section-details/ic-energy.svg')} />
+            <div
+              className="w-12 h-12 lg:w-[100px] lg:h-[100px] flex flex-col justify-center items-center bg-white rounded-full">
+              <img className="w-6 lg:w-10 h-auto" alt="Energy" src={p('mock/project/section-details/ic-energy.svg')}/>
             </div>
             <div className="gap-y-2 lg:gap-y-4 lg:min-w-60 flex flex-col justify-start items-start">
               <span className="text-title-pale text-sm lg:text-base">
@@ -47,7 +48,7 @@ const SectionDetails = () => {
               Trees Planted
             </p>
             <span className="text-center text-4xl lg:text-5xl font-medium leading-none">363</span>
-            <img alt="Environment" src={p('mock/project/section-details/environment.png')} />
+            <img alt="Environment" src={p('mock/project/section-details/environment.png')}/>
           </div>
         </div>
       </div>
@@ -55,31 +56,25 @@ const SectionDetails = () => {
   }, []);
 
   return (
-    <SectionTwoCols title={title} colEnd={colEnd}>
-      <div className="gap-y-16 flex flex-col flex-start items-stretch">
-        <p className="text-gray-content text-base lg:text-lg">
-          การติดตั้งโซลาร์รูฟท็อปขนาดกลางบนโรงงานผลิตของเล่นส่งออกต่างประเทศ
-          เพื่อตอบโจทย์การใช้พลังงานสะอาดในกระบวนการผลิตเพื่อลดค่าใช้จ่ายในส่วนของค่าไฟฟ้า ลดผลกระทบโลกร้อน
-          และในขณะเดียวกันช่วยเรื่องบรรเทาภาษีคาร์บอนที่คาดว่าจะเริ่มดำเนินการในต่างประเทศ
-          โดยใช้แผ่นโซลาร์ที่มีประสิทธิภาพสูงสุด (Tier 1) และใช้อินเวอร์เตอร์ยี่ห้อหัวเว่ย
-        </p>
-        <PhotoGallery photos={[
-          p('mock/project/section-details/mock-photo-01.jpg'),
-          p('mock/project/section-details/mock-photo-02.jpg'),
-          p('mock/project/section-details/mock-photo-03.jpg'),
-          p('mock/project/section-details/mock-photo-04.jpg'),
-          p('mock/project/section-details/mock-photo-04.jpg'),
-        ]} />
-        <div className="mt-8 gap-x-4 pt-16 flex flex-row justify-start items-center border-t border-t-sep-smoke">
-          <Link to="/">
-            <span className="text-title-pale text-base">โปรเจกต์ถัดไป</span>
-          </Link>
-          <Link to="/">
-            <img className="h-6 w-auto" alt="Next" src={p('mock/project/section-details/ic-next.svg')} />
-          </Link>
+    <div className="pt-20 pb-16 flex flex-col justify-start items-stretch">
+      <SectionTwoCols title={title} colEnd={colEnd}>
+        <div className="gap-y-16 flex flex-col flex-start items-stretch">
+          <p className="text-gray-content text-base lg:text-lg">
+            การติดตั้งโซลาร์รูฟท็อปขนาดกลางบนโรงงานผลิตของเล่นส่งออกต่างประเทศ
+            เพื่อตอบโจทย์การใช้พลังงานสะอาดในกระบวนการผลิตเพื่อลดค่าใช้จ่ายในส่วนของค่าไฟฟ้า ลดผลกระทบโลกร้อน
+            และในขณะเดียวกันช่วยเรื่องบรรเทาภาษีคาร์บอนที่คาดว่าจะเริ่มดำเนินการในต่างประเทศ
+            โดยใช้แผ่นโซลาร์ที่มีประสิทธิภาพสูงสุด (Tier 1) และใช้อินเวอร์เตอร์ยี่ห้อหัวเว่ย
+          </p>
+          <PhotoGallery photos={[
+            p('mock/project/section-details/mock-photo-01.jpg'),
+            p('mock/project/section-details/mock-photo-02.jpg'),
+            p('mock/project/section-details/mock-photo-03.jpg'),
+            p('mock/project/section-details/mock-photo-04.jpg'),
+            p('mock/project/section-details/mock-photo-04.jpg'),
+          ]}/>
         </div>
-      </div>
-    </SectionTwoCols>
+      </SectionTwoCols>
+    </div>
   );
 };
 

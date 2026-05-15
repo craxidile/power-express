@@ -7,10 +7,10 @@ html {
 }
 
 html, body {
+  @apply text-gray-dark;
   @apply flex flex-col justify-start items-stretch m-0 p-0;
 }
 
 * {
-  @apply text-gray-dark;
   font-family: Inter, NotoSansThai, Arial, sans-serif;
 }
