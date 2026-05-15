@@ -3,7 +3,7 @@ import {PropsWithChildren} from 'react';
 const SafeArea = (props: PropsWithChildren) => {
   const { children } = props;
   return (
-    <div className="relative mx-auto w-full max-w-[1648px] px-6 flex-1">
+    <div className="relative mx-auto w-full max-w-[1648px] px-6 flex-1 flex flex-col justify-start items-stretch">
       {children}
     </div>
   );

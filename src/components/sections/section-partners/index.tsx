@@ -1,5 +1,5 @@
-import SafeArea from "../../../../_commons/safe-area";
-import {p} from "../../../../../utils/path-utils";
+import SafeArea from "../../_commons/safe-area";
+import {p} from "../../../utils/path-utils";
 
 const SectionPartners = () => {
   return (

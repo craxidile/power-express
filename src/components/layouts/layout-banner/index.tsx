@@ -4,13 +4,14 @@ import Footer from "../../_commons/footer";
 
 export interface LayoutBannerProps {
   banner?: ReactElement;
+  isFilled?: boolean;
 }
 
 const LayoutBanner = (props: PropsWithChildren<LayoutBannerProps>) => {
-  const { banner, children } = props;
+  const { banner, isFilled, children } = props;
   return (
     <div className="min-h-screen flex flex-col justify-start items-stretch">
-      <div className="h-screen lg:min-h-[900px] flex flex-col justify-stretch items-stretch">
+      <div className={`relative h-screen lg:max-h-none lg:min-h-[900px] flex flex-col justify-stretch items-stretch ${!isFilled ? '' : 'max-h-[640px]'}`}>
         <Nav theme={NavTheme.light} />
         {banner}
       </div>
