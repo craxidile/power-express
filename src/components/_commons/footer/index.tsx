@@ -28,7 +28,7 @@ const Footer = () => {
                     <Link to="/"><span className="text-sm text-white whitespace-nowrap">โครงการของเรา</span></Link>
                   </li>
                   <li className="flex-1 flex-shrink-0">
-                    <Link to="/"><span className="text-sm text-white whitespace-nowrap">กิจกรรมของเรา</span></Link>
+                    <Link to="/activities"><span className="text-sm text-white whitespace-nowrap">กิจกรรมของเรา</span></Link>
                   </li>
                   <li className="flex-1 flex-shrink-0">
                     <Link to="/"><span className="text-sm text-white whitespace-nowrap">ติดต่อเรา</span></Link></li>

@@ -3,7 +3,7 @@ import s from './styles.module.css';
 
 const SectionBusiness = () => {
   return (
-    <section className="relative h-screen lg:h-[1020px] bg-gray-100 flex flex-col justify-start items-stretch"
+    <section className="relative h-screen lg:min-h-[900px] bg-gray-100 flex flex-col justify-start items-stretch"
              style={{background: `url(${p('mock/front/section-business/bg.jpg')}) no-repeat center/cover`}}>
       <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-black" />
       <div className="z-[1] relative mx-auto h-full w-full max-w-[932px] px-6 py-10 lg:pt-[160px] lg:pb-[80px] flex flex-col justify-start items-stretch">
