@@ -17,7 +17,7 @@ const ScreenProjectList = () => {
         <div
           className="bg-black-a40 absolute left-0 top-0 w-full h-full flex flex-col justify-center items-center">
           <div className="-translate-y-[10%] gap-y-16 lg:gap-y-12 flex flex-col justify-center items-center">
-            <h1 className="text-center text-white text-8xl lg:text-9xl font-medium">โครงการของเรา</h1>
+            <h1 className="text-center text-white text-7xl lg:text-9xl font-medium">โครงการของเรา</h1>
             <div className="gap-y-12 lg:gap-y-0 lg:gap-x-16 flex flex-col lg:flex-row justify-center items-center">
               <ProjectBannerRow title="จำนวนโครงการ" value="14"/>
               <div className="hidden lg:block w-px h-full max-h-16 bg-white-a30"/>
