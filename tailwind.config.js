@@ -6,16 +6,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'black-a70': 'rgba(0, 0, 0, .7)',
+        'black-a50': 'rgba(0, 0, 0, .5)',
+        'black-a40': 'rgba(0, 0, 0, .4)',
+        'black-a30': 'rgba(0, 0, 0, .3)',
+        'green-a10': 'rgba(123, 206, 67, .1)',
         'white-a10': 'rgba(255, 255, 255, .1)',
         'white-a20': 'rgba(255, 255, 255, .2)',
         'white-a30': 'rgba(255, 255, 255, .3)',
         'white-a50': 'rgba(255, 255, 255, .5)',
         'white-a70': 'rgba(255, 255, 255, .7)',
-        'black-a30': 'rgba(0, 0, 0, .3)',
-        'black-a40': 'rgba(0, 0, 0, .4)',
-        'black-a50': 'rgba(0, 0, 0, .5)',
-        'black-a70': 'rgba(0, 0, 0, .7)',
-        'green-a10': 'rgba(123, 206, 67, .1)',
         'secondary': '#6A7282',
         'gray-excerpt': '#4A5565',
         'green-tag': '#2D5A3D',

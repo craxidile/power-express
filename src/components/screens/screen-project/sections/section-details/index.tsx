@@ -1,10 +1,10 @@
 import {useMemo} from "react";
+
 import SectionTwoCols from "../../../../sections/section-two-cols";
 import ContentTitle from "../../../../_commons/content-title";
 import ContentItem from "../../../../_commons/content-item";
-import {p} from "../../../../../utils/path-utils";
 import PhotoGallery from "../../../../_commons/photo-gallery";
-import {Link} from "react-router-dom";
+import {p} from "../../../../../utils/path-utils";
 
 const SectionDetails = () => {
   const title = useMemo(() => {
