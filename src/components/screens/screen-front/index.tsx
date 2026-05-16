@@ -1,5 +1,6 @@
-import React, {PropsWithChildren, ReactElement} from 'react';
+import React, {PropsWithChildren, ReactElement, useEffect} from 'react';
 
+import {IVmScreen, useVmScreen} from "../../../stores/vm-screen";
 import SectionSlogan from "./sections/section-slogan";
 import SectionBenefits from "./sections/section-benefits";
 import SectionBusiness from "./sections/section-business";
@@ -11,6 +12,14 @@ import SectionImpact from "./sections/section-impact";
 import Footer from "../../_commons/footer";
 
 const ScreenFront = (props: PropsWithChildren): ReactElement => {
+
+  const vmScreen: IVmScreen = useVmScreen();
+
+  useEffect(() => {
+    if (!vmScreen.bind) return;
+    vmScreen.bind();
+  }, [vmScreen]);
+
   return (
     <div className="flex flex-col justify-start items-stretch">
       <SectionSlogan />

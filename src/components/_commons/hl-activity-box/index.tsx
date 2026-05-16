@@ -1,8 +1,10 @@
 import {PropsWithChildren} from "react";
 import ActivityBox from "../activity-box";
 import ActivityBoxDetails from "../activity-box-details";
+import {Link} from "react-router-dom";
 
 export interface ProjectBoxProps {
+  id?: string;
   image: string;
   title: string;
   excerpt: string;
@@ -12,20 +14,22 @@ export interface ProjectBoxProps {
 }
 
 const HlActivityBox = (props: PropsWithChildren<ProjectBoxProps>) => {
-  const {image, title, excerpt, tag, type, publishedAt} = props;
+  const {id, image, title, excerpt, tag, type, publishedAt} = props;
   return (
-    <div className="flex flex-col justify-start items-stretch">
-      <div className="gap-x-10 hidden lg:flex flex-row justify-start items-stretch">
-        <div className="max-w-[722px] h-[406px] flex-1"
-             style={{ background: `url(${image}) no-repeat center/cover`}} />
-        <div className="pt-2 flex-1 flex flex-col justify-start items-start">
-          <ActivityBoxDetails title={title} excerpt={excerpt} tag={tag} type={type} publishedAt={publishedAt}/>
+    <Link to={`/activity/${id ?? 'test'}`}>
+      <div className="flex flex-col justify-start items-stretch">
+        <div className="gap-x-10 hidden lg:flex flex-row justify-start items-stretch">
+          <div className="max-w-[722px] h-[406px] flex-1"
+               style={{background: `url(${image}) no-repeat center/cover`}}/>
+          <div className="pt-2 flex-1 flex flex-col justify-start items-start">
+            <ActivityBoxDetails title={title} excerpt={excerpt} tag={tag} type={type} publishedAt={publishedAt}/>
+          </div>
+        </div>
+        <div className="lg:hidden flex flex-col justify-start items-stretch">
+          <ActivityBox image={image} title={title} excerpt={excerpt} tag={tag} type={type} publishedAt={publishedAt}/>
         </div>
       </div>
-      <div className="lg:hidden flex flex-col justify-start items-stretch">
-        <ActivityBox image={image} title={title} excerpt={excerpt} tag={tag} type={type} publishedAt={publishedAt}/>
-      </div>
-    </div>
+    </Link>
   );
 };
 

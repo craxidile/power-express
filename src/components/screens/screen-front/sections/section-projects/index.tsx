@@ -12,7 +12,7 @@ const SectionProjects = () => {
           <h2 className="uppercase text-secondary text-center text-sm lg:text-2xl font-medium">โครงการของเรา</h2>
           <ProjectGrid />
           <div className="flex flex-row justify-center items-center">
-          <Link to="/">
+          <Link to="/project">
             <div className="gap-x-2 lg:gap-x-4 py-3 lg:py-4 px-6 flex flex-row justify-center items-center border border-gray-medium">
               <span className="text-base lg:text-xl font-medium">ดูโครงการทั้งหมด (14)</span>
               <img className="w-8 lg:w-auto h-auto" alt="More" src={p('mock/front/section-projects/ic-more.svg')} />

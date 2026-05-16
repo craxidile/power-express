@@ -18,6 +18,7 @@ function App() {
         <Route path="/project" element={<ScreenProjectList />} />
         <Route path="/project/:id" element={<ScreenProject />} />
         <Route path="/about" element={<ScreenAbout />} />
+        <Route path="/contact" element={<ScreenAbout />} />
       </Routes>
     </HashRouter>
   );
