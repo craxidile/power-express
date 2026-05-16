@@ -2,9 +2,10 @@ import {useMemo} from 'react';
 
 import LayoutBanner from "../../layouts/layout-banner";
 import SafeArea from "../../_commons/safe-area";
-import SectionPartners from "../../sections/section-partners";
-import {p} from "../../../utils/path-utils";
+import SectionPartners, {SectionPartnersTheme} from "../../sections/section-partners";
 import SectionDetails from "./sections/section-details";
+import SectionGrowth from "./sections/section-growth";
+import {p} from "../../../utils/path-utils";
 
 const ScreenAbout = () => {
 
@@ -29,7 +30,8 @@ const ScreenAbout = () => {
     <LayoutBanner isFilled banner={banner}>
       <div className="flex flex-col justify-start items-stretch">
         <SectionDetails />
-        <SectionPartners />
+        <SectionGrowth />
+        <SectionPartners theme={SectionPartnersTheme.light} />
       </div>
     </LayoutBanner>
   );

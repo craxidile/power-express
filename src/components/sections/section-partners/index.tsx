@@ -1,9 +1,31 @@
 import SafeArea from "../../_commons/safe-area";
 import {p} from "../../../utils/path-utils";
+import {PropsWithChildren, useMemo} from "react";
 
-const SectionPartners = () => {
+export enum SectionPartnersTheme {
+  normal = 'normal',
+  light = 'light'
+}
+
+export interface SectionPartnersProps {
+  theme?: SectionPartnersTheme;
+}
+
+const SectionPartners = (props: PropsWithChildren<SectionPartnersProps>) => {
+  const { theme } = props;
+
+  const bgColor = useMemo(() => {
+    switch (theme) {
+      case SectionPartnersTheme.light:
+        return 'bg-transparent';
+      default:
+      case SectionPartnersTheme.normal:
+        return 'bg-pale';
+    }
+  }, [theme]);
+
   return (
-    <section className="bg-pale py-10 lg:py-20 flex flex-col justify-start items-stretch">
+    <section className={`${bgColor} py-10 lg:py-20 flex flex-col justify-start items-stretch`}>
       <SafeArea>
         <div className="gap-y-12 lg:gap-y-20 flex flex-col justify-start items-stretch">
           <div className="gap-y-7 lg:gap-y-5 flex flex-col justify-start items-stretch">
