@@ -50,10 +50,10 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
   const logoHeight = useMemo(() => {
     switch (theme) {
       case NavTheme.light:
-        return 'lg:h-16';
+        return 'h-12 lg:h-16';
       case NavTheme.dark:
       default:
-        return 'lg-h-12';
+        return 'h-9 lg-h-12';
     }
   }, [theme]);
 
@@ -73,7 +73,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
       <SafeArea>
         <div className="w-full h-full flex flex-row justify-start items-center">
           <Link to="/">
-            <img className={`h-12 ${logoHeight}`} alt="logo" src={p(logoImage)}/>
+            <img className={`${logoHeight}`} alt="logo" src={p(logoImage)}/>
           </Link>
           <div className="flex-1"/>
           <div className="lg:hidden flex flex-row justify-center items-center">
