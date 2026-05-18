@@ -16,17 +16,17 @@ const LayoutPopup = (props: PropsWithChildren<LayoutPopupProps>) => {
     const { current: target } = targetRef;
     if (!target) return () => clearAllBodyScrollLocks();
 
-    const elem = target as HTMLElement;
+    // const elem = target as HTMLElement;
     if (visible) {
-      disableBodyScroll(elem);
+      disableBodyScroll(null);
     } else {
-      enableBodyScroll(elem);
+      enableBodyScroll(null);
     }
     return () => clearAllBodyScrollLocks();
   }, [visible]);
 
   const pointerEvents = useMemo(() => {
-    return !visible ? 'pointer-events-none translate-x-[100vw] delay-300 ease-out' : 'translate-x-0 delay-200 ease-in';
+    return !visible ? 'pointer-events-none translate-x-[100vw] delay-300 ease-out overflow-y-hidden' : 'translate-x-0 delay-200 ease-in';
   }, [visible]);
 
   return (
