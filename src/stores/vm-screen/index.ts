@@ -35,6 +35,8 @@ export const useVmScreen = (): IVmScreen => {
   const [popupVisible, setPopupVisible] = useAtom(popupVisibleState);
 
   useEffect(() => {
+    if (!localeParam || localeParam === locale) return;
+    console.log('>>locale_param<<', localeParam);
     switch (localeParam) {
       case 'en':
         setLocale('en');
@@ -44,7 +46,7 @@ export const useVmScreen = (): IVmScreen => {
         setLocale('th');
         break;
     }
-  }, [localeParam, setLocale]);
+  }, [localeParam, locale, setLocale]);
 
   const bind = useCallback(() => {
     (async () => {
