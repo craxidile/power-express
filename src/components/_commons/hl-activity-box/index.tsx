@@ -2,9 +2,10 @@ import {PropsWithChildren} from "react";
 import ActivityBox from "../activity-box";
 import ActivityBoxDetails from "../activity-box-details";
 import {Link} from "react-router-dom";
+import {LocaleKey} from "../../../models/_commons/localized";
 
 export interface ProjectBoxProps {
-  locale?: string;
+  locale?: LocaleKey;
   id?: string;
   image: string;
   title: string;

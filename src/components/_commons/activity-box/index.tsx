@@ -1,9 +1,10 @@
 import {PropsWithChildren} from "react";
 import {Link} from "react-router-dom";
 import ActivityBoxDetails from "../activity-box-details";
+import {LocaleKey} from "../../../models/_commons/localized";
 
 export interface ActivityBoxProps {
-  locale?: string;
+  locale?: LocaleKey;
   id?: string;
   image: string;
   title: string;

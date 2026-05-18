@@ -1,9 +1,10 @@
 import ActivityBox from "../activity-box";
 import {p} from "../../../utils/path-utils";
 import {PropsWithChildren} from "react";
+import {LocaleKey} from "../../../models/_commons/localized";
 
 export interface ActivityGridProps {
-  locale?: string;
+  locale?: LocaleKey;
 }
 
 const ActivityGrid = (props: PropsWithChildren<ActivityGridProps>) => {

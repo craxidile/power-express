@@ -1,3 +1,4 @@
+export type LocaleKey = 'th' | 'en';
 export type LocalizedText = {
-  [key in 'th' | 'en']: string;
+  [key in LocaleKey]: string;
 };

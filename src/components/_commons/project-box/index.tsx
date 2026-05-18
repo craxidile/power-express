@@ -2,9 +2,10 @@ import {PropsWithChildren} from "react";
 import {Link} from "react-router-dom";
 
 import ProjectDetailRow from "../project-detail-row";
+import {LocaleKey} from "../../../models/_commons/localized";
 
 export interface ProjectBoxProps {
-  locale?: string;
+  locale?: LocaleKey;
   id?: string;
   image: string;
   title: string;

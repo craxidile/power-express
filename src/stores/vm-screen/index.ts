@@ -1,8 +1,9 @@
 import { atom, useAtom } from 'jotai';
 
 import { Menu } from '../../models/menu';
-import {useCallback} from "react";
+import {useCallback, useEffect} from "react";
 import {findMenu} from "../../apis/menu";
+import {useParams} from "react-router-dom";
 
 const localeState = atom<'th' | 'en'>('th');
 const navMenuState = atom<Menu | null>(null);
@@ -25,11 +26,25 @@ export interface IVmScreen {
 const store: IVmScreen = {};
 
 export const useVmScreen = (): IVmScreen => {
+  const { locale: localeParam } = useParams();
+
   const [locale, setLocale] = useAtom(localeState);
   const [navMenu, setNavMenu] = useAtom(navMenuState);
   const [footerMenu, setFooterMenu] = useAtom(footerMenuState);
   const [socialMenu, setSocialMenu] = useAtom(socialMenuState);
   const [popupVisible, setPopupVisible] = useAtom(popupVisibleState);
+
+  useEffect(() => {
+    switch (localeParam) {
+      case 'en':
+        setLocale('en');
+        break;
+      case 'th':
+      default:
+        setLocale('th');
+        break;
+    }
+  }, [localeParam, setLocale]);
 
   const bind = useCallback(() => {
     (async () => {

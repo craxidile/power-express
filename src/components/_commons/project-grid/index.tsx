@@ -1,9 +1,10 @@
 import ProjectBox from "../project-box";
 import {p} from "../../../utils/path-utils";
 import {PropsWithChildren} from "react";
+import {LocaleKey} from "../../../models/_commons/localized";
 
 export interface ProjectGridProps {
-  locale?: string;
+  locale?: LocaleKey;
 }
 
 const ProjectGrid = (props: PropsWithChildren<ProjectGridProps>) => {

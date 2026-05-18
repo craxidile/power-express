@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import dayjs from "dayjs";
 
 import ActivityTag, {ActivityTagSize} from "../activity-tag";
+import {LocaleKey} from "../../../models/_commons/localized";
 
 export interface MiniActivityBoxProps {
-  locale?: string;
+  locale?: LocaleKey;
   id?: string;
   image: string;
   tag: string;
