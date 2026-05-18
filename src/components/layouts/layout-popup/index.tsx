@@ -34,7 +34,7 @@ const LayoutPopup = (props: PropsWithChildren<LayoutPopupProps>) => {
   }, [visible]);
 
   return (
-    <div ref={targetRef} className={`z-[20] lg:hidden transition-all fixed left-0 top-0 w-screen h-screen ${pointerEvents} bg-black-a50`}>
+    <div ref={targetRef} className={`z-[20] lg:hidden transition-all fixed left-0 top-0 w-screen h-svh ${pointerEvents} bg-black-a50`}>
       {children}
     </div>
   );
