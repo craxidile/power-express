@@ -45,10 +45,8 @@ const ActivityBoxDetails = (props: PropsWithChildren<ActivityBoxDetailsProps>) =
       )}
       {mode !== ActivityBoxDetailsMode.full ? null : (
         <div className="mt-5 gap-x-2 flex flex-row justify-start items-center">
-          <Link to="/"><span className="text-sm lg:text-base underline">Read more</span></Link>
-          <Link to="/">
-            <img className="h-3 lg:h-auto" alt="Icon" src={p('mock/front/section-activities/ic-more.svg')}/>
-          </Link>
+          <span className="text-sm lg:text-base underline">Read more</span>
+          <img className="h-3 lg:h-auto" alt="Icon" src={p('mock/front/section-activities/ic-more.svg')}/>
         </div>
       )}
     </div>
