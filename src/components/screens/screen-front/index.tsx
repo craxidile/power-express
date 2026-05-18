@@ -1,4 +1,4 @@
-import React, {PropsWithChildren, ReactElement, useEffect} from 'react';
+import React, {ReactElement, useEffect} from 'react';
 
 import SectionSlogan from "./sections/section-slogan";
 import SectionBenefits from "./sections/section-benefits";

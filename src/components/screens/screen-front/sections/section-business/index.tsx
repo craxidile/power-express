@@ -1,3 +1,4 @@
+import {useEffect, useState} from "react";
 import useEmblaCarousel from 'embla-carousel-react'
 
 import {HeroBanner} from "../../../../../models/hero-banner";
@@ -8,7 +9,19 @@ const SectionBusiness = () => {
   const vmScreenFront = useVmScreenFront();
   const {heroBanners = []} = vmScreenFront;
 
-  const [emblaRef] = useEmblaCarousel();
+  const [emblaRef, emblaApi] = useEmblaCarousel();
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => {
+      setCurrentIndex(emblaApi?.selectedScrollSnap());
+    };
+    emblaApi.on('select', onSelect);
+    return () => {
+      emblaApi.off('select', onSelect);
+    };
+  }, [emblaApi]);
 
   if (!heroBanners?.length) return null;
   return (
@@ -26,6 +39,18 @@ const SectionBusiness = () => {
             })}
           </div>
         </div>
+        <ul className="absolute left-0 bottom-10 lg:bottom-20 w-full gap-x-3 flex flex-row justify-center items-center">
+          {heroBanners.map((heroBanner: HeroBanner, index: number) => {
+            const {id} = heroBanner;
+            return (
+              <li key={id} className="relative w-2 h-2">
+                <button
+                  className={`w-full h-full  rounded-full ${currentIndex !== index ? 'bg-white-a20' : 'bg-white'}`}
+                  onClick={() => emblaApi?.scrollTo(index)}/>
+              </li>
+            )
+          })}
+        </ul>
       </div>
     </section>
   );

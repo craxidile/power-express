@@ -3,6 +3,7 @@ import {PropsWithChildren} from "react";
 import {HeroBanner} from "../../../models/hero-banner";
 
 import s from './styles.module.css';
+import TextLines from "../text-lines";
 
 export interface BusinessBannerProps {
   heroBanner: HeroBanner;
@@ -10,7 +11,7 @@ export interface BusinessBannerProps {
 
 const BusinessBanner = (props: PropsWithChildren<BusinessBannerProps>) => {
   const { heroBanner } = props;
-  const { banner, title, subtitle, icon } = heroBanner;
+  const { banner, title, subtitle, icon, excerpt } = heroBanner;
 
   return(
     <div className="embla__slide relative w-screen h-full flex flex-col justify-start items-stretch"
@@ -26,8 +27,7 @@ const BusinessBanner = (props: PropsWithChildren<BusinessBannerProps>) => {
           </div>
           <h3 className="m-0 p-0 leading-none text-white font-medium text-3xl lg:text-4hxl text-center">{title}</h3>
           <span className="text-sm lg:text-base font-medium text-cta-primary text-center">{subtitle}</span>
-          <p className="text-base text-white text-center">
-          </p>
+          <p className="text-base text-white text-center"><TextLines text={excerpt} /></p>
         </div>
       </div>
     </div>
