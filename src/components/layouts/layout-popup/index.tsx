@@ -12,18 +12,18 @@ const LayoutPopup = (props: PropsWithChildren<LayoutPopupProps>) => {
 
   const targetRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const { current: target } = targetRef;
-    if (!target) return () => clearAllBodyScrollLocks();
-
-    // const elem = target as HTMLElement;
-    if (visible) {
-      disableBodyScroll(null);
-    } else {
-      enableBodyScroll(null);
-    }
-    return () => clearAllBodyScrollLocks();
-  }, [visible]);
+  // useEffect(() => {
+  //   const { current: target } = targetRef;
+  //   if (!target) return () => clearAllBodyScrollLocks();
+  //
+  //   // const elem = target as HTMLElement;
+  //   if (visible) {
+  //     disableBodyScroll(elem);
+  //   } else {
+  //     enableBodyScroll(elem);
+  //   }
+  //   return () => clearAllBodyScrollLocks();
+  // }, [visible]);
 
   const pointerEvents = useMemo(() => {
     return !visible ? 'pointer-events-none translate-x-[100vw] delay-300 ease-out overflow-y-hidden' : 'translate-x-0 delay-200 ease-in';
