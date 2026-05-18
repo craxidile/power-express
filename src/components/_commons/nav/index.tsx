@@ -1,5 +1,5 @@
 import {PropsWithChildren, useCallback, useEffect, useMemo} from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
 import SafeArea from '../safe-area';
 import {p} from '../../../utils/path-utils';
@@ -78,6 +78,11 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
     setPopupVisible(!popupVisible);
   }, [setPopupVisible, popupVisible])
 
+  const isSamePath = useCallback((url: string): boolean => {
+    return pathname.replace(/\/$/, '') ===
+      `/${locale}${url}`.replace(/\/+/, '/').replace(/\/$/, '');
+  }, [pathname, locale]);
+
   return (
     <>
       <div
@@ -100,7 +105,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
                 return (
                   <li key={id} className={!isCta ? '' : 'font-semibold text-cta-primary'}>
                     <Link to={`/${locale}/${url}`}>
-                      <span className={pathname !== url ? '' : 'underline'}>{localizedTitle}</span>
+                      <span className={!isSamePath(url) ? '' : 'underline'}>{localizedTitle}</span>
                     </Link>
                   </li>
                 );
@@ -110,11 +115,12 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
         </SafeArea>
       </div>
       <LayoutPopup visible={popupVisible ?? false}>
-        <div className="px-8 pb-8 absolute left-0 top-0 w-full h-full bg-white flex flex-col justify-stretch items-stretch">
+        <div
+          className="px-8 pb-8 absolute left-0 top-0 w-full h-full bg-white flex flex-col justify-stretch items-stretch">
           <div className="py-8 h-24 lg:h-[112px] flex flex-row justify-between items-center">
-            <img className="w-6 h-auto" alt="Icon" src={p('mock/commons/nav/ic-menu-dark.svg')} />
+            <img className="w-6 h-auto" alt="Icon" src={p('mock/commons/nav/ic-menu-dark.svg')}/>
             <button className="translate-x-3" onClick={onClickMenu}>
-              <img className="w-8 h-auto" alt="Menu" src={p('mock/commons/nav/ic-close.svg')} />
+              <img className="w-8 h-auto" alt="Menu" src={p('mock/commons/nav/ic-close.svg')}/>
             </button>
           </div>
           <ul className="flex flex-col justify-start items-stretch">
@@ -124,7 +130,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
               return (
                 <li key={id} className={`py-4 ${!isCta ? '' : 'font-semibold text-cta-primary'}`}>
                   <Link to={`/${locale}/${url}`}>
-                    <span className={`text-2xl ${pathname !== url ? '' : 'font-semibold'}`}>
+                    <span className={`text-2xl ${!isSamePath(url) ? '' : 'font-semibold'}`}>
                       {localizedTitle}
                     </span>
                   </Link>
