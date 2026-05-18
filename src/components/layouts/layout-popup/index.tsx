@@ -30,11 +30,11 @@ const LayoutPopup = (props: PropsWithChildren<LayoutPopupProps>) => {
   }, [visible]);
 
   const pointerEvents = useMemo(() => {
-    return !visible ? 'opacity-0 pointer-events-none translate-x-[100vw] delay-300 ease-in' : 'opacity-100 translate-x-0 delay-[600] ease-out';
+    return !visible ? 'opacity-0 pointer-events-none' : 'opacity-100';
   }, [visible]);
 
   return (
-    <div ref={targetRef} className={`z-[20] lg:hidden transition-all fixed left-0 top-0 w-screen h-svh ${pointerEvents} bg-black-a50`}>
+    <div ref={targetRef} className={`z-[20] lg:hidden transition-all delay-[600] ease-out fixed left-0 top-0 w-screen h-svh ${pointerEvents} bg-black-a50`}>
       {children}
     </div>
   );
