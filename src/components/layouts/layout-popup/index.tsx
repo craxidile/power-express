@@ -25,8 +25,12 @@ const LayoutPopup = (props: PropsWithChildren<LayoutPopupProps>) => {
   //   return () => clearAllBodyScrollLocks();
   // }, [visible]);
 
+  useEffect(() => {
+    document.documentElement.style.overflowY = !visible ? 'auto' : 'hidden';
+  }, [visible]);
+
   const pointerEvents = useMemo(() => {
-    return !visible ? 'pointer-events-none translate-x-[100vw] delay-300 ease-out' : 'translate-x-0 delay-200 ease-in overflow-y-hidden';
+    return !visible ? 'pointer-events-none translate-x-[100vw] delay-300 ease-out' : 'translate-x-0 delay-200 ease-in';
   }, [visible]);
 
   return (
