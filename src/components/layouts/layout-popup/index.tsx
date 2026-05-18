@@ -30,7 +30,7 @@ const LayoutPopup = (props: PropsWithChildren<LayoutPopupProps>) => {
   }, [visible]);
 
   const pointerEvents = useMemo(() => {
-    return !visible ? 'pointer-events-none translate-x-[100vw] delay-300 ease-out' : 'translate-x-0 delay-200 ease-in';
+    return !visible ? 'pointer-events-none translate-x-[100vw] delay-300 ease-in' : 'translate-x-0 delay-200 ease-out';
   }, [visible]);
 
   return (
