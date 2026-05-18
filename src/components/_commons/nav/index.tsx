@@ -113,7 +113,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
         <div className="px-8 pb-8 absolute left-0 top-0 w-full h-full bg-white flex flex-col justify-stretch items-stretch">
           <div className="py-8 h-24 lg:h-[112px] flex flex-row justify-between items-center">
             <img className="w-6 h-auto" alt="Icon" src={p('mock/commons/nav/ic-menu-dark.svg')} />
-            <button onClick={onClickMenu}>
+            <button className="translate-x-3" onClick={onClickMenu}>
               <img className="w-8 h-auto" alt="Menu" src={p('mock/commons/nav/ic-close.svg')} />
             </button>
           </div>
