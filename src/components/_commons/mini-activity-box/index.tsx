@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 import ActivityTag, {ActivityTagSize} from "../activity-tag";
 
 export interface MiniActivityBoxProps {
+  locale?: string;
   id?: string;
   image: string;
   tag: string;
@@ -13,9 +14,9 @@ export interface MiniActivityBoxProps {
 }
 
 const MiniActivityBox = (props: PropsWithChildren<MiniActivityBoxProps>) => {
-  const { id, image, tag, title, publishedAt } = props;
+  const { locale = 'th', id, image, tag, title, publishedAt } = props;
   return (
-    <Link to={`/activity/${id ?? 'test'}`}>
+    <Link to={`/${locale}/activity/${id ?? 'test'}`}>
       <div className="gap-x-3 flex flex-row justify-start items-stretch">
         <div className="flex-1 max-w-[154px] aspect-[154/105]"
              style={{ background: `url(${image}) no-repeat center/cover` }} />

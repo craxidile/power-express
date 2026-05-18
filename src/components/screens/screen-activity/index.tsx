@@ -4,8 +4,11 @@ import LayoutStandard from "../../layouts/layout-standard";
 import MiniActivityBox from "../../_commons/mini-activity-box";
 import SectionNext from "../../sections/section-next";
 import {p} from "../../../utils/path-utils";
+import {useVmScreen} from "../../../stores/vm-screen";
 
 const ScreenActivity = () => {
+  const { locale } = useVmScreen();
+
   return (
     <LayoutStandard>
       <section className="pt-10 pb-16 lg:py-20 tb-16 flex flex-col justify-start items-stretch">
@@ -40,17 +43,17 @@ const ScreenActivity = () => {
                 <h3 className="text-title-pale text-base lg:text-2xl uppercase">กิจกรรมอื่นๆ</h3>
                 <ul className="gap-y-6 flex flex-col justify-start items-stretch">
                   <li>
-                    <MiniActivityBox image={p('mock/front/section-activities/mock-activity-01.jpg')}
+                    <MiniActivityBox locale={locale} image={p('mock/front/section-activities/mock-activity-01.jpg')}
                                  tag="News" publishedAt={new Date()}
                                  title="PEX Expands Solar Capacity in Central Thailand" />
                   </li>
                   <li>
-                    <MiniActivityBox image={p('mock/front/section-activities/mock-activity-02.jpg')}
+                    <MiniActivityBox locale={locale} image={p('mock/front/section-activities/mock-activity-02.jpg')}
                                  tag="Sustainability" publishedAt={new Date()}
                                  title="Annual CSR: Green Energy for Schools" />
                   </li>
                   <li>
-                    <MiniActivityBox image={p('mock/front/section-activities/mock-activity-03.jpg')}
+                    <MiniActivityBox locale={locale} image={p('mock/front/section-activities/mock-activity-03.jpg')}
                                  tag="Event" publishedAt={new Date()}
                                  title="Thailand Green Excellence Award 2025" />
                   </li>

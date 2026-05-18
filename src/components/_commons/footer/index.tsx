@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="gap-y-6 flex flex-col justify-start items-stretch">
           <div
             className="pb-10 lg:pb-0 gap-y-6 lg:gap-y-0 lg:gap-x-10 flex flex-col lg:flex-row justify-start items-stretch">
-            <Link to="/">
+            <Link to={`/${locale}`}>
               <img className="block mx-auto lg:mx-0 w-full max-w-80 lg:w-auto lg:max-w-none lg:h-[106px]" alt="Logo"
                    src={p('logo-footer.png')}/>
             </Link>
@@ -37,7 +37,7 @@ const Footer = () => {
                     const localizedTitle = title[locale];
                     return (
                       <li key={id} className="flex-1 flex-shrink-0">
-                        <Link to={url}>
+                        <Link to={`/${locale}/${url}`}>
                           <span className="text-sm text-white whitespace-nowrap">{localizedTitle}</span>
                         </Link>
                       </li>

@@ -1,5 +1,5 @@
 import React, {PropsWithChildren, useEffect} from 'react';
-import {HashRouter, Route, Routes, useLocation} from 'react-router-dom';
+import {HashRouter, Route, Navigate, Routes, useLocation} from 'react-router-dom';
 
 import ScreenFront from './components/screens/screen-front';
 import ScreenActivityList from './components/screens/screen-activity-list';
@@ -38,13 +38,14 @@ function App() {
       <AppScreen>
         <ScrollToTopWrapper>
           <Routes>
-            <Route path="/" element={<ScreenFront/>}/>
-            <Route path="/activity" element={<ScreenActivityList/>}/>
-            <Route path="/activity/:id" element={<ScreenActivity/>}/>
-            <Route path="/project" element={<ScreenProjectList/>}/>
-            <Route path="/project/:id" element={<ScreenProject/>}/>
-            <Route path="/about" element={<ScreenAbout/>}/>
-            <Route path="/contact" element={<ScreenAbout/>}/>
+            <Route path="/:locale/" element={<ScreenFront/>}/>
+            <Route path="/:locale/activity" element={<ScreenActivityList/>}/>
+            <Route path="/:locale/activity/:id" element={<ScreenActivity/>}/>
+            <Route path="/:locale/project" element={<ScreenProjectList/>}/>
+            <Route path="/:locale/project/:id" element={<ScreenProject/>}/>
+            <Route path="/:locale/about" element={<ScreenAbout/>}/>
+            <Route path="/:locale/contact" element={<ScreenAbout/>}/>
+            <Route path="/" element={<Navigate to="/th" replace />} />
           </Routes>
         </ScrollToTopWrapper>
       </AppScreen>

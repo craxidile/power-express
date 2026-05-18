@@ -14,3 +14,16 @@ html, body {
 * {
   font-family: Inter, NotoSansThai, Arial, sans-serif;
 }
+
+.embla {
+  @apply overflow-hidden;
+}
+
+.embla__container {
+  @apply flex h-full;
+}
+
+.embla__slide {
+  @apply min-w-0;
+  flex: 0 0 100%;
+}

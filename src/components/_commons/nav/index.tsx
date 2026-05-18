@@ -84,7 +84,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
         className="z-[10] absolute top-0 left-1/2 -translate-x-1/2 w-full h-24 lg:h-[112px] flex flex-col justify-stretch items-stretch">
         <SafeArea>
           <div className="w-full h-full flex flex-row justify-start items-center">
-            <Link to="/">
+            <Link to={`/${locale}`}>
               <img className={`${logoHeight}`} alt="logo" src={p(logoImage)}/>
             </Link>
             <div className="flex-1"/>
@@ -99,7 +99,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
                 const localizedTitle = title[locale] as string;
                 return (
                   <li key={id} className={!isCta ? '' : 'font-semibold text-cta-primary'}>
-                    <Link to={url}>
+                    <Link to={`/${locale}/${url}`}>
                       <span className={pathname !== url ? '' : 'underline'}>{localizedTitle}</span>
                     </Link>
                   </li>
@@ -123,7 +123,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
               const localizedTitle = title[locale] as string;
               return (
                 <li key={id} className={`py-4 ${!isCta ? '' : 'font-semibold text-cta-primary'}`}>
-                  <Link to={url}>
+                  <Link to={`/${locale}/${url}`}>
                     <span className={`text-2xl ${pathname !== url ? '' : 'font-semibold'}`}>
                       {localizedTitle}
                     </span>

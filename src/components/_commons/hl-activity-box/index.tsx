@@ -4,6 +4,7 @@ import ActivityBoxDetails from "../activity-box-details";
 import {Link} from "react-router-dom";
 
 export interface ProjectBoxProps {
+  locale?: string;
   id?: string;
   image: string;
   title: string;
@@ -14,9 +15,9 @@ export interface ProjectBoxProps {
 }
 
 const HlActivityBox = (props: PropsWithChildren<ProjectBoxProps>) => {
-  const {id, image, title, excerpt, tag, type, publishedAt} = props;
+  const {locale = 'th', id, image, title, excerpt, tag, type, publishedAt} = props;
   return (
-    <Link to={`/activity/${id ?? 'test'}`}>
+    <Link to={`/${locale}/activity/${id ?? 'test'}`}>
       <div className="flex flex-col justify-start items-stretch">
         <div className="gap-x-10 hidden lg:flex flex-row justify-start items-stretch">
           <div className="max-w-[722px] h-[406px] flex-1"

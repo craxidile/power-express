@@ -7,8 +7,10 @@ import ProjectGrid from "../../_commons/project-grid";
 import {p} from "../../../utils/path-utils";
 import ScrollStrip from "../../_commons/scroll-strip";
 import ProjectYearBox from "../../_commons/project-year-box";
+import {useVmScreen} from "../../../stores/vm-screen";
 
 const ScreenProjectList = () => {
+  const { locale } = useVmScreen();
 
   const banner = useMemo(() => {
     return (
@@ -46,7 +48,7 @@ const ScreenProjectList = () => {
               <ProjectYearBox from={2024} to={2025} />
               <ProjectYearBox from={2025} isActive />
             </div>
-            <ProjectGrid/>
+            <ProjectGrid locale={locale} />
           </div>
         </SafeArea>
       </div>

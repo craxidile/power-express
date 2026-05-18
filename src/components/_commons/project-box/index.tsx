@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import ProjectDetailRow from "../project-detail-row";
 
 export interface ProjectBoxProps {
+  locale?: string;
   id?: string;
   image: string;
   title: string;
@@ -15,9 +16,9 @@ export interface ProjectBoxProps {
 }
 
 const ProjectBox = (props: PropsWithChildren<ProjectBoxProps>) => {
-  const {id, image, title, excerpt, client, location, capacity, completion} = props;
+  const {locale = 'th', id, image, title, excerpt, client, location, capacity, completion} = props;
   return (
-    <Link to={`/project/${id ?? 'test'}`}>
+    <Link to={`/${locale}/project/${id ?? 'test'}`}>
       <div className="flex flex-col justify-start items-stretch">
         <div className="aspect-[0.8291] bg-gray-300"
              style={{background: `url(${image}) no-repeat center/cover`}}/>
