@@ -27,7 +27,10 @@ const BusinessBanner = (props: PropsWithChildren<BusinessBannerProps>) => {
           </div>
           <h3 className="m-0 p-0 leading-none text-white font-medium text-3xl lg:text-4hxl text-center">{title}</h3>
           <span className="text-sm lg:text-base font-medium text-cta-primary text-center">{subtitle}</span>
-          <p className="text-base text-white text-center"><TextLines text={excerpt} /></p>
+          <div className="flex flex-col justify-start items-stretch">
+            <p className="lg:hidden text-base text-white text-center">{excerpt}</p>
+            <p className="hidden lg:inline text-base text-white text-center"><TextLines text={excerpt} /></p>
+          </div>
         </div>
       </div>
     </div>
