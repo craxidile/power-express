@@ -8,13 +8,18 @@ const localeState = atom<'th' | 'en'>('th');
 const navMenuState = atom<Menu | null>(null);
 const footerMenuState = atom<Menu | null>(null);
 const socialMenuState = atom<Menu | null>(null);
+const popupVisibleState = atom<boolean>(false);
 
 export interface IVmScreen {
+  // Observables
   locale?: ('th' | 'en');
   navMenu?: Menu | null;
   footerMenu?: Menu | null;
   socialMenu?: Menu | null;
+  popupVisible?: boolean;
+  // Actions
   bind?: () => void;
+  setPopupVisible?: (visible: boolean) => void;
 }
 
 const store: IVmScreen = {};
@@ -24,6 +29,7 @@ export const useVmScreen = (): IVmScreen => {
   const [navMenu, setNavMenu] = useAtom(navMenuState);
   const [footerMenu, setFooterMenu] = useAtom(footerMenuState);
   const [socialMenu, setSocialMenu] = useAtom(socialMenuState);
+  const [popupVisible, setPopupVisible] = useAtom(popupVisibleState);
 
   const bind = useCallback(() => {
     (async () => {
@@ -50,7 +56,7 @@ export const useVmScreen = (): IVmScreen => {
         }),
       ]);
     })();
-  }, [setNavMenu]);
+  }, [setFooterMenu, setNavMenu]);
 
 
   // Observables
@@ -58,9 +64,11 @@ export const useVmScreen = (): IVmScreen => {
   store.navMenu = navMenu;
   store.footerMenu = footerMenu;
   store.socialMenu = socialMenu;
+  store.popupVisible = popupVisible;
 
   // Actions
   store.bind = bind;
+  store.setPopupVisible = setPopupVisible;
 
   return store;
 };

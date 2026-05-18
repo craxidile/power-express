@@ -11,15 +11,7 @@ import SectionPartners from "../../sections/section-partners";
 import SectionImpact from "./sections/section-impact";
 import Footer from "../../_commons/footer";
 
-const ScreenFront = (props: PropsWithChildren): ReactElement => {
-
-  const vmScreen: IVmScreen = useVmScreen();
-
-  useEffect(() => {
-    if (!vmScreen.bind) return;
-    vmScreen.bind();
-  }, [vmScreen]);
-
+const ScreenFront = (): ReactElement => {
   return (
     <div className="flex flex-col justify-start items-stretch">
       <SectionSlogan />
