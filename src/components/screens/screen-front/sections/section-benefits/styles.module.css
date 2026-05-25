@@ -8,5 +8,5 @@
 
 .container li + li::before {
   @apply hidden lg:block absolute bg-sep-light h-full w-px -left-6 translate-x-1/2;
-  content: "";
+  content: '';
 }

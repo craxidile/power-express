@@ -1,4 +1,4 @@
-import {PropsWithChildren} from 'react';
+import { PropsWithChildren } from 'react';
 
 const SafeArea = (props: PropsWithChildren) => {
   const { children } = props;

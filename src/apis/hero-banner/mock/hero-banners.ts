@@ -1,5 +1,5 @@
-import {HeroBanner} from "../../../models/hero-banner";
-import {p} from "../../../utils/path-utils";
+import { HeroBanner } from '../../../models/hero-banner';
+import { p } from '../../../utils/path-utils';
 
 const heroBanners: HeroBanner[] = [
   {
@@ -8,7 +8,8 @@ const heroBanners: HeroBanner[] = [
     title: 'พลังงานแสงอาทิตย์',
     subtitle: 'สำหรับภาคธุรกิจและอุตสาหกรรม',
     icon: p('mock/front/section-business/ic-sun.svg'),
-    excerpt: 'บริการติดตั้งโซลาร์เซลล์เต็มรูปแบบสำหรับภาคธุรกิจและอุตสาหกรรม\nมุ่งเน้นการเพิ่มประสิทธิภาพพลังงานและความคุ้มค่าในการลงทุน',
+    excerpt:
+      'บริการติดตั้งโซลาร์เซลล์เต็มรูปแบบสำหรับภาคธุรกิจและอุตสาหกรรม\nมุ่งเน้นการเพิ่มประสิทธิภาพพลังงานและความคุ้มค่าในการลงทุน',
   },
   {
     id: 2,
@@ -16,7 +17,8 @@ const heroBanners: HeroBanner[] = [
     title: 'พลังงานแสงอาทิตย์',
     subtitle: 'สำหรับภาคธุรกิจและอุตสาหกรรม',
     icon: p('mock/front/section-business/ic-sun.svg'),
-    excerpt: 'บริการติดตั้งโซลาร์เซลล์เต็มรูปแบบสำหรับภาคธุรกิจและอุตสาหกรรม\nมุ่งเน้นการเพิ่มประสิทธิภาพพลังงานและความคุ้มค่าในการลงทุน',
+    excerpt:
+      'บริการติดตั้งโซลาร์เซลล์เต็มรูปแบบสำหรับภาคธุรกิจและอุตสาหกรรม\nมุ่งเน้นการเพิ่มประสิทธิภาพพลังงานและความคุ้มค่าในการลงทุน',
   },
 ];
 

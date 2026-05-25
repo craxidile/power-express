@@ -1,9 +1,9 @@
 import { atom, useAtom } from 'jotai';
 
 import { Menu } from '../../models/menu';
-import {useCallback, useEffect} from "react";
-import {findMenu} from "../../apis/menu";
-import {useParams} from "react-router-dom";
+import { useCallback, useEffect } from 'react';
+import { findMenu } from '../../apis/menu';
+import { useParams } from 'react-router-dom';
 
 const localeState = atom<'th' | 'en'>('th');
 const navMenuState = atom<Menu | null>(null);
@@ -13,7 +13,7 @@ const popupVisibleState = atom<boolean>(false);
 
 export interface IVmScreen {
   // Observables
-  locale?: ('th' | 'en');
+  locale?: 'th' | 'en';
   navMenu?: Menu | null;
   footerMenu?: Menu | null;
   socialMenu?: Menu | null;
@@ -75,7 +75,6 @@ export const useVmScreen = (): IVmScreen => {
     })();
   }, [setFooterMenu, setNavMenu]);
 
-
   // Observables
   store.locale = locale;
   store.navMenu = navMenu;
@@ -89,4 +88,3 @@ export const useVmScreen = (): IVmScreen => {
 
   return store;
 };
-

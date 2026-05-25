@@ -1,8 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -16,7 +14,7 @@ module.exports = {
         'white-a30': 'rgba(255, 255, 255, .3)',
         'white-a50': 'rgba(255, 255, 255, .5)',
         'white-a70': 'rgba(255, 255, 255, .7)',
-        'secondary': '#6A7282',
+        secondary: '#6A7282',
         'gray-excerpt': '#4A5565',
         'green-tag': '#2D5A3D',
         'green-bullet': '#2C8E31',
@@ -35,18 +33,18 @@ module.exports = {
         'title-pale': '#99A1AF',
         'title-light': '#6A7282',
         'title-dark': '#0A0A0A',
-        'pale': '#F9FAFB',
+        pale: '#F9FAFB',
         'date-light': '#99A1AF',
         'activity-type': '#2D5016',
-        'lime': '#C8FF00',
+        lime: '#C8FF00',
       },
       fontSize: {
         '2hxl': '1.75rem',
         '3hxl': '2rem',
         '4hxl': '2.5rem',
         '6hxl': '4rem',
-      }
+      },
     },
   },
   plugins: [],
-}
+};

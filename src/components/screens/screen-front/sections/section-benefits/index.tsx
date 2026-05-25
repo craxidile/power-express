@@ -1,8 +1,8 @@
 import SafeArea from '../../../../_commons/safe-area';
-import BenefitBox from "../../../../_commons/benefit-box";
-import {useVmScreenFront} from "../../../../../stores/vm-screen-front";
-import {useVmScreen} from "../../../../../stores/vm-screen";
-import {p} from "../../../../../utils/path-utils";
+import BenefitBox from '../../../../_commons/benefit-box';
+import { useVmScreenFront } from '../../../../../stores/vm-screen-front';
+import { useVmScreen } from '../../../../../stores/vm-screen';
+import { p } from '../../../../../utils/path-utils';
 
 import s from './styles.module.css';
 
@@ -11,10 +11,16 @@ const SectionBenefits = () => {
   const { benefits = [] } = useVmScreenFront();
 
   return (
-    <section className={`py-10 lg:py-[60px] flex flex-col justify-start items-stretch ${s.container}`}>
+    <section
+      className={`py-10 lg:py-[60px] flex flex-col justify-start items-stretch ${s.container}`}
+    >
       <SafeArea>
         <div className="flex flex-col justify-start items-stretch">
-          <img className="block h-12 lg:h-16 self-center" alt="Logo" src={p('logo-dark.png')} />
+          <img
+            className="block h-12 lg:h-16 self-center"
+            alt="Logo"
+            src={p('logo-dark.png')}
+          />
           <h2 className="block self-center py-4 lg:px-0 lg:pt-6 pb-4 text-sm lg-text-3hxl font-medium">
             5 เหตุผลที่ธุรกิจชั้นนำเลือก Power Express
           </h2>
@@ -22,7 +28,11 @@ const SectionBenefits = () => {
           <ul className="flex flex-col lg:flex-row justify-start items-center lg:items-start lg-items-start">
             {benefits.map((benefit) => {
               const { id } = benefit;
-              return <li><BenefitBox key={id} locale={locale} benefit={benefit} /></li>;
+              return (
+                <li>
+                  <BenefitBox key={id} locale={locale} benefit={benefit} />
+                </li>
+              );
             })}
           </ul>
         </div>

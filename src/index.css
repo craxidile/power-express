@@ -6,7 +6,8 @@ html {
   @apply w-full max-w-full min-h-screen overflow-x-hidden;
 }
 
-html, body {
+html,
+body {
   @apply text-gray-dark;
   @apply flex flex-col justify-start items-stretch m-0 p-0;
 }

@@ -1,4 +1,4 @@
-import {LocalizedText} from "../_commons/localized";
+import { LocalizedText } from '../_commons/localized';
 
 export interface MenuItem {
   id: number;

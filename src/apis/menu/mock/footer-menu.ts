@@ -1,4 +1,4 @@
-import {Menu} from "../../../models/menu";
+import { Menu } from '../../../models/menu';
 
 const footerMenu: Menu = {
   id: 1,
@@ -45,6 +45,6 @@ const footerMenu: Menu = {
       url: '/contact',
     },
   ],
-}
+};
 
 export default footerMenu;

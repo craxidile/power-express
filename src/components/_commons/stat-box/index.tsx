@@ -1,4 +1,4 @@
-import {PropsWithChildren, useMemo} from "react";
+import { PropsWithChildren, useMemo } from 'react';
 
 export enum StatBoxTheme {
   normal = 'normal',
@@ -31,8 +31,14 @@ const StatBox = (props: PropsWithChildren<StatBoxProps>) => {
   return (
     <div className="gap-y-6 min-w-[264px] flex flex-col justify-start items-center">
       <img className="block w-16 h-auto" alt="Icon" src={icon} />
-      <span className={`block ${textColor} text-center text-8xl lg:text-9xl font-medium leading-none`}>{value}</span>
-      <span className="block text-base text-title-light text-center">{title}</span>
+      <span
+        className={`block ${textColor} text-center text-8xl lg:text-9xl font-medium leading-none`}
+      >
+        {value}
+      </span>
+      <span className="block text-base text-title-light text-center">
+        {title}
+      </span>
     </div>
   );
 };

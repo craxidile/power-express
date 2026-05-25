@@ -1,11 +1,11 @@
-import {PropsWithChildren, useCallback, useEffect, useMemo} from 'react';
-import {Link, useLocation} from 'react-router-dom';
+import { PropsWithChildren, useCallback, useEffect, useMemo } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 import SafeArea from '../safe-area';
-import {p} from '../../../utils/path-utils';
-import {useVmScreen} from "../../../stores/vm-screen";
-import {MenuItem} from "../../../models/menu";
-import LayoutPopup from "../../layouts/layout-popup";
+import { p } from '../../../utils/path-utils';
+import { useVmScreen } from '../../../stores/vm-screen';
+import { MenuItem } from '../../../models/menu';
+import LayoutPopup from '../../layouts/layout-popup';
 
 export enum NavTheme {
   light = 'light',
@@ -17,14 +17,19 @@ export interface NavProps {
 }
 
 const Nav = (props: PropsWithChildren<NavProps>) => {
-  const {theme = NavTheme.light} = props;
+  const { theme = NavTheme.light } = props;
 
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
-  const {locale = 'th', navMenu, popupVisible, setPopupVisible} = useVmScreen();
+  const {
+    locale = 'th',
+    navMenu,
+    popupVisible,
+    setPopupVisible,
+  } = useVmScreen();
   const menuItems = useMemo((): MenuItem[] => {
     if (!navMenu) return [];
-    const {items} = navMenu;
+    const { items } = navMenu;
     return items ?? [];
   }, [navMenu]);
 
@@ -76,36 +81,49 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
   const onClickMenu = useCallback(() => {
     if (!setPopupVisible) return;
     setPopupVisible(!popupVisible);
-  }, [setPopupVisible, popupVisible])
+  }, [setPopupVisible, popupVisible]);
 
-  const isSamePath = useCallback((url: string): boolean => {
-    return pathname.replace(/\/$/, '') ===
-      `/${locale}${url}`.replace(/\/+/, '/').replace(/\/$/, '');
-  }, [pathname, locale]);
+  const isSamePath = useCallback(
+    (url: string): boolean => {
+      return (
+        pathname.replace(/\/$/, '') ===
+        `/${locale}${url}`.replace(/\/+/, '/').replace(/\/$/, '')
+      );
+    },
+    [pathname, locale]
+  );
 
   return (
     <>
-      <div
-        className="z-[10] absolute top-0 left-1/2 -translate-x-1/2 w-full h-24 lg:h-[112px] flex flex-col justify-stretch items-stretch">
+      <div className="z-[10] absolute top-0 left-1/2 -translate-x-1/2 w-full h-24 lg:h-[112px] flex flex-col justify-stretch items-stretch">
         <SafeArea>
           <div className="w-full h-full flex flex-row justify-start items-center">
             <Link to={`/${locale}`}>
-              <img className={`${logoHeight}`} alt="logo" src={p(logoImage)}/>
+              <img className={`${logoHeight}`} alt="logo" src={p(logoImage)} />
             </Link>
-            <div className="flex-1"/>
+            <div className="flex-1" />
             <div className="lg:hidden flex flex-row justify-center items-center">
               <button onClick={onClickMenu}>
-                <img className="w-6 h-auto" alt="Menu" src={p(`mock/commons/nav/${menuImage}`)}/>
+                <img
+                  className="w-6 h-auto"
+                  alt="Menu"
+                  src={p(`mock/commons/nav/${menuImage}`)}
+                />
               </button>
             </div>
             <ul className={`hidden lg:flex flex-row gap-x-6 ${textColor}`}>
               {menuItems.map((menuItem) => {
-                const {id, title, url, isCta} = menuItem;
+                const { id, title, url, isCta } = menuItem;
                 const localizedTitle = title[locale] as string;
                 return (
-                  <li key={id} className={!isCta ? '' : 'font-semibold text-cta-primary'}>
+                  <li
+                    key={id}
+                    className={!isCta ? '' : 'font-semibold text-cta-primary'}
+                  >
                     <Link to={`/${locale}/${url}`}>
-                      <span className={!isSamePath(url) ? '' : 'underline'}>{localizedTitle}</span>
+                      <span className={!isSamePath(url) ? '' : 'underline'}>
+                        {localizedTitle}
+                      </span>
                     </Link>
                   </li>
                 );
@@ -115,22 +133,34 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
         </SafeArea>
       </div>
       <LayoutPopup visible={popupVisible ?? false}>
-        <div
-          className="px-8 pb-8 absolute left-0 top-0 w-full h-full bg-white flex flex-col justify-stretch items-stretch">
+        <div className="px-8 pb-8 absolute left-0 top-0 w-full h-full bg-white flex flex-col justify-stretch items-stretch">
           <div className="py-8 h-24 lg:h-[112px] flex flex-row justify-between items-center">
-            <img className="w-6 h-auto" alt="Icon" src={p('mock/commons/nav/ic-menu-dark.svg')}/>
+            <img
+              className="w-6 h-auto"
+              alt="Icon"
+              src={p('mock/commons/nav/ic-menu-dark.svg')}
+            />
             <button className="translate-x-3" onClick={onClickMenu}>
-              <img className="w-8 h-auto" alt="Menu" src={p('mock/commons/nav/ic-close.svg')}/>
+              <img
+                className="w-8 h-auto"
+                alt="Menu"
+                src={p('mock/commons/nav/ic-close.svg')}
+              />
             </button>
           </div>
           <ul className="flex flex-col justify-start items-stretch">
             {menuItems.map((menuItem) => {
-              const {id, title, url, isCta} = menuItem;
+              const { id, title, url, isCta } = menuItem;
               const localizedTitle = title[locale] as string;
               return (
-                <li key={id} className={`py-4 ${!isCta ? '' : 'font-semibold text-cta-primary'}`}>
+                <li
+                  key={id}
+                  className={`py-4 ${!isCta ? '' : 'font-semibold text-cta-primary'}`}
+                >
                   <Link to={`/${locale}/${url}`}>
-                    <span className={`text-2xl ${!isSamePath(url) ? '' : 'font-semibold'}`}>
+                    <span
+                      className={`text-2xl ${!isSamePath(url) ? '' : 'font-semibold'}`}
+                    >
                       {localizedTitle}
                     </span>
                   </Link>

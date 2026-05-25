@@ -1,4 +1,4 @@
-import {PropsWithChildren, useMemo} from "react";
+import { PropsWithChildren, useMemo } from 'react';
 
 export enum ActivityTagSize {
   normal = 'normal',
@@ -18,12 +18,14 @@ const ActivityTag = (props: PropsWithChildren<ActivityTagProps>) => {
         return 'text-xs';
       case ActivityTagSize.normal:
       default:
-        return 'text-xs lg:text-sm'
+        return 'text-xs lg:text-sm';
     }
   }, [size]);
 
   return (
-    <div className={`py-1 px-3 ${tag === 'News' ? 'bg-green-tag' : 'bg-cta-primary'}`}>
+    <div
+      className={`py-1 px-3 ${tag === 'News' ? 'bg-green-tag' : 'bg-cta-primary'}`}
+    >
       <span className={`block text-white uppercase ${fontSize}`}>{tag}</span>
     </div>
   );

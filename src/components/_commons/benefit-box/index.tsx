@@ -1,7 +1,7 @@
-import {PropsWithChildren, useMemo} from "react";
-import {Benefit} from "../../../models/benefit";
-import {LocaleKey} from "../../../models/_commons/localized";
-import TextLines from "../text-lines";
+import { PropsWithChildren, useMemo } from 'react';
+import { Benefit } from '../../../models/benefit';
+import { LocaleKey } from '../../../models/_commons/localized';
+import TextLines from '../text-lines';
 
 export interface BenefitBoxProps {
   locale?: LocaleKey;
@@ -23,13 +23,15 @@ const BenefitBox = (props: PropsWithChildren<BenefitBoxProps>) => {
           <span className="text-white text-base font-medium">{seq}</span>
         </div>
       </div>
-      <span className="text-xl lg:text-2hxl font-medium text-center">{localizedTitle}</span>
+      <span className="text-xl lg:text-2hxl font-medium text-center">
+        {localizedTitle}
+      </span>
       <div className="self-center my-4 h-1 w-12 bg-sep-green" />
       <p className="block mx-auto w-full max-w-[260px] lg:max-w-[280px] text-sm lg:text-xl text-center">
         <TextLines text={localizedExcerpt} />
       </p>
     </div>
   );
-}
+};
 
 export default BenefitBox;

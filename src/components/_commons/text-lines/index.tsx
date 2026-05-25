@@ -1,15 +1,20 @@
-import {PropsWithChildren} from "react";
+import { PropsWithChildren } from 'react';
 
 export interface TextLinesProps {
   text: string;
 }
 
 const TextLines = (props: PropsWithChildren<TextLinesProps>) => {
-  const {text} = props;
+  const { text } = props;
   return (
     <>
       {text.split('\n').map((line, index, lines) => {
-        return <>{line}{index !== lines.length - 1 && <br/>}</>;
+        return (
+          <>
+            {line}
+            {index !== lines.length - 1 && <br />}
+          </>
+        );
       })}
     </>
   );

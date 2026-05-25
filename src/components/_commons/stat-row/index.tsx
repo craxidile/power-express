@@ -1,4 +1,4 @@
-import {PropsWithChildren, useMemo} from "react";
+import { PropsWithChildren, useMemo } from 'react';
 
 export enum StatRowTheme {
   normal = 'normal',
@@ -15,7 +15,7 @@ export interface StatRowProps {
 }
 
 const StatRow = (props: PropsWithChildren<StatRowProps>) => {
-  const {icon, value, title, excerpt, theme = StatRowTheme.normal} = props;
+  const { icon, value, title, excerpt, theme = StatRowTheme.normal } = props;
 
   const textColor = useMemo(() => {
     switch (theme) {
@@ -32,11 +32,15 @@ const StatRow = (props: PropsWithChildren<StatRowProps>) => {
   return (
     <div className="gap-x-4 flex flex-row justify-start items-start">
       <div className="w-[100px] h-[100px] flex flex-col items-center justify-center ">
-        <img className="block w-10 h-auto" alt="Icon" src={icon}/>
+        <img className="block w-10 h-auto" alt="Icon" src={icon} />
       </div>
       <div className="flex-1 gap-y-1 flex flex-col justify-start items-start">
-        <span className={`block font-medium text-3hxl ${textColor}`}>{value}</span>
-        <span className="block text-xl text-title-light uppercase">{title}</span>
+        <span className={`block font-medium text-3hxl ${textColor}`}>
+          {value}
+        </span>
+        <span className="block text-xl text-title-light uppercase">
+          {title}
+        </span>
         <span className="block text-gray-medium text-base">{excerpt}</span>
       </div>
     </div>

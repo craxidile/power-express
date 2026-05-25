@@ -1,7 +1,7 @@
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-import {p} from "../../../utils/path-utils";
-import SafeArea from "../../_commons/safe-area";
+import { p } from '../../../utils/path-utils';
+import SafeArea from '../../_commons/safe-area';
 
 const SectionNext = () => {
   return (
@@ -12,13 +12,16 @@ const SectionNext = () => {
             <span className="text-title-pale text-base">โปรเจกต์ถัดไป</span>
           </Link>
           <Link to="/">
-            <img className="h-6 w-auto" alt="Next" src={p('mock/project/section-details/ic-next.svg')}/>
+            <img
+              className="h-6 w-auto"
+              alt="Next"
+              src={p('mock/project/section-details/ic-next.svg')}
+            />
           </Link>
         </div>
       </SafeArea>
     </div>
-
   );
-}
+};
 
 export default SectionNext;

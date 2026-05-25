@@ -1,7 +1,7 @@
-import {PropsWithChildren} from "react";
+import { PropsWithChildren } from 'react';
 
-import Nav, {NavTheme} from "../../_commons/nav";
-import Footer from "../../_commons/footer";
+import Nav, { NavTheme } from '../../_commons/nav';
+import Footer from '../../_commons/footer';
 
 const LayoutStandard = (props: PropsWithChildren) => {
   const { children } = props;

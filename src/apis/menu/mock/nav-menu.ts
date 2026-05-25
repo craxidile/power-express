@@ -1,4 +1,4 @@
-import {Menu} from "../../../models/menu";
+import { Menu } from '../../../models/menu';
 
 const navMenu: Menu = {
   id: 1,
@@ -46,6 +46,6 @@ const navMenu: Menu = {
       isCta: true,
     },
   ],
-}
+};
 
 export default navMenu;

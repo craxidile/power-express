@@ -1,4 +1,4 @@
-import {Menu} from "../../models/menu";
+import { Menu } from '../../models/menu';
 
 import mockNavMenu from './mock/nav-menu';
 import mockFooterMenu from './mock/footer-menu';

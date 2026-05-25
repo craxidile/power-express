@@ -1,4 +1,4 @@
-import {PropsWithChildren} from "react";
+import { PropsWithChildren } from 'react';
 
 export interface ProjectBannerRowProps {
   title: string;
@@ -9,8 +9,12 @@ const ProjectBannerRow = (props: PropsWithChildren<ProjectBannerRowProps>) => {
   const { title, value } = props;
   return (
     <div className="gap-y-2 flex flex-col justify-center items-center">
-      <span className="text-white-a70 text-xs lg:text-base uppercase leading-none">{title}</span>
-      <span className="text-white text-5xl lg:text-6hxl leading-none">{value}</span>
+      <span className="text-white-a70 text-xs lg:text-base uppercase leading-none">
+        {title}
+      </span>
+      <span className="text-white text-5xl lg:text-6hxl leading-none">
+        {value}
+      </span>
     </div>
   );
 };
