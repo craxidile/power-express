@@ -1,5 +1,6 @@
+import { Partner } from '../../../models/partner';
+import { useVmScreen } from '../../../stores/vm-screen';
 import SafeArea from '../../_commons/safe-area';
-import { p } from '../../../utils/path-utils';
 import { PropsWithChildren, useMemo } from 'react';
 
 export enum SectionPartnersTheme {
@@ -9,10 +10,23 @@ export enum SectionPartnersTheme {
 
 export interface SectionPartnersProps {
   theme?: SectionPartnersTheme;
+  partners: Partner[];
 }
 
 const SectionPartners = (props: PropsWithChildren<SectionPartnersProps>) => {
-  const { theme } = props;
+  const { theme, partners } = props;
+
+  const { locale = 'th' } = useVmScreen();
+
+  const vendors = useMemo(
+    () => partners.filter((p) => p.type === 'vendor'),
+    [partners]
+  );
+
+  const clients = useMemo(
+    () => partners.filter((p) => p.type === 'client'),
+    [partners]
+  );
 
   const bgColor = useMemo(() => {
     switch (theme) {
@@ -35,27 +49,20 @@ const SectionPartners = (props: PropsWithChildren<SectionPartnersProps>) => {
               พันธมิตรด้านเทคโนโลยีที่ได้รับความไว้วางใจ
             </h3>
             <ul className="gap-6 grid grid-cols-3">
-              <li>
-                <img
-                  className="block"
-                  alt="Logo"
-                  src={p('mock/front/section-partners/mock-partner-01.png')}
-                />
-              </li>
-              <li>
-                <img
-                  className="block"
-                  alt="Logo"
-                  src={p('mock/front/section-partners/mock-partner-02.png')}
-                />
-              </li>
-              <li>
-                <img
-                  className="block"
-                  alt="Logo"
-                  src={p('mock/front/section-partners/mock-partner-03.png')}
-                />
-              </li>
+              {vendors.map((vendor) => {
+                const { id, name, logo } = vendor;
+                const localizedName = name ? name[locale] : '';
+                return (
+                  <li key={id}>
+                    <img
+                      className="block"
+                      alt={localizedName}
+                      title={localizedName}
+                      src={logo}
+                    />
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div className="gap-y-5 flex flex-col justify-start items-stretch">
@@ -63,27 +70,20 @@ const SectionPartners = (props: PropsWithChildren<SectionPartnersProps>) => {
               พันธมิตรธุรกิจที่ไว้วางใจเรา
             </h3>
             <ul className="gap-6 grid grid-cols-3">
-              <li>
-                <img
-                  className="block"
-                  alt="Logo"
-                  src={p('mock/front/section-partners/mock-partner-04.png')}
-                />
-              </li>
-              <li>
-                <img
-                  className="block"
-                  alt="Logo"
-                  src={p('mock/front/section-partners/mock-partner-05.png')}
-                />
-              </li>
-              <li>
-                <img
-                  className="block"
-                  alt="Logo"
-                  src={p('mock/front/section-partners/mock-partner-06.png')}
-                />
-              </li>
+              {clients.map((client) => {
+                const { id, name, logo } = client;
+                const localizedName = name ? name[locale] : '';
+                return (
+                  <li key={id}>
+                    <img
+                      className="block"
+                      alt={localizedName}
+                      title={localizedName}
+                      src={logo}
+                    />
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

@@ -1,16 +1,25 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
+import { p } from '../../../utils/path-utils';
+import { useVmScreen } from '../../../stores/vm-screen';
+import { useVmScreenProjectList } from '../../../stores/vm-screen-project-list';
 import LayoutBanner from '../../layouts/layout-banner';
 import ProjectBannerRow from '../../_commons/project-banner-row';
 import SafeArea from '../../_commons/safe-area';
 import ProjectGrid from '../../_commons/project-grid';
-import { p } from '../../../utils/path-utils';
 import ScrollStrip from '../../_commons/scroll-strip';
 import ProjectYearBox from '../../_commons/project-year-box';
-import { useVmScreen } from '../../../stores/vm-screen';
 
 const ScreenProjectList = () => {
   const { locale } = useVmScreen();
+
+  const vmScreenProjectList = useVmScreenProjectList();
+  const { projects = [] } = vmScreenProjectList;
+
+  useEffect(() => {
+    if (!vmScreenProjectList.bind) return;
+    vmScreenProjectList.bind();
+  }, [vmScreenProjectList]);
 
   const banner = useMemo(() => {
     return (
@@ -62,7 +71,7 @@ const ScreenProjectList = () => {
               <ProjectYearBox from={2024} to={2025} />
               <ProjectYearBox from={2025} isActive />
             </div>
-            <ProjectGrid locale={locale} />
+            <ProjectGrid locale={locale} projects={projects} />
           </div>
         </SafeArea>
       </div>

@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
 
+import { useVmScreen } from '../../../../../stores/vm-screen';
+import { useVmScreenProject } from '../../../../../stores/vm-screen-project';
 import SectionTwoCols from '../../../../sections/section-two-cols';
 import ContentTitle from '../../../../_commons/content-title';
 import ContentItem from '../../../../_commons/content-item';
@@ -7,28 +9,63 @@ import PhotoGallery from '../../../../_commons/photo-gallery';
 import { p } from '../../../../../utils/path-utils';
 
 const SectionDetails = () => {
-  const title = useMemo(() => {
+  const vmScreen = useVmScreen();
+  const { locale = 'th' } = vmScreen;
+
+  const vmScreenProject = useVmScreenProject();
+  const { project } = vmScreenProject;
+
+  const {
+    title,
+    location,
+    client,
+    capacity,
+    details,
+    completion,
+    energy,
+    treesPlanted,
+    photos = [],
+  } = project || {};
+
+  const localizedTitle = useMemo(
+    () => (title ? title[locale] : ''),
+    [locale, title]
+  );
+
+  const localizedClient = useMemo(
+    () => (client ? client[locale] : ''),
+    [locale, client]
+  );
+
+  const localizedLocation = useMemo(
+    () => (location ? location[locale] : ''),
+    [locale, location]
+  );
+
+  const localizedDetails = useMemo(
+    () => (details ? details[locale] : ''),
+    [locale, details]
+  );
+
+  const screenTitle = useMemo(() => {
     return (
       <ContentTitle
         caption="Project"
-        title="Blue Ribbon Marketing"
-        subtitle="400 kW Solar Array"
+        title={localizedTitle}
+        subtitle={`${capacity} kW Solar Array`}
       />
     );
-  }, []);
+  }, [capacity, localizedTitle]);
 
   const colEnd = useMemo(() => {
     return (
       <div className="flex flex-col justify-start items-stretch">
         <ul className="flex flex-col justify-start items-stretch">
           <li>
-            <ContentItem isCta title="กำลังการผลิต" text="200.64 kW" />
-            <ContentItem title="สถานที่" text="นครปฐม, ประเทศไทย" />
-            <ContentItem
-              title="ลูกค้า"
-              text="บริษัท บลูริบบอน มาร์เก็ตติ้ง จำกัด"
-            />
-            <ContentItem title="ปีที่แล้วเสร็จ" text="2023" />
+            <ContentItem isCta title="กำลังการผลิต" text={`${capacity} kW`} />
+            <ContentItem title="สถานที่" text={`${localizedLocation}`} />
+            <ContentItem title="ลูกค้า" text={localizedClient} />
+            <ContentItem title="ปีที่แล้วเสร็จ" text={`${completion ?? 0}`} />
           </li>
         </ul>
         <div className="gap-y-4 flex flex-col justify-start items-stretch">
@@ -46,7 +83,7 @@ const SectionDetails = () => {
               </span>
               <div className="gap-x-2 inline-flex flex-row justify-start items-end">
                 <span className="text-4xl lg:text-5xl font-medium leading-none">
-                  560,000
+                  {(energy ?? 0).toLocaleString()}
                 </span>
                 <span className="text-sm lg:text-base text-gray-dark">kWh</span>
               </div>
@@ -59,7 +96,7 @@ const SectionDetails = () => {
               Trees Planted
             </p>
             <span className="text-center text-4xl lg:text-5xl font-medium leading-none">
-              363
+              {(treesPlanted ?? 0).toLocaleString()}
             </span>
             <img
               alt="Environment"
@@ -69,29 +106,23 @@ const SectionDetails = () => {
         </div>
       </div>
     );
-  }, []);
+  }, [
+    capacity,
+    completion,
+    localizedClient,
+    localizedLocation,
+    energy,
+    treesPlanted,
+  ]);
 
   return (
     <div className="pt-20 pb-16 flex flex-col justify-start items-stretch">
-      <SectionTwoCols title={title} colEnd={colEnd}>
+      <SectionTwoCols title={screenTitle} colEnd={colEnd}>
         <div className="gap-y-16 flex flex-col flex-start items-stretch">
           <p className="text-gray-content text-base lg:text-lg">
-            การติดตั้งโซลาร์รูฟท็อปขนาดกลางบนโรงงานผลิตของเล่นส่งออกต่างประเทศ
-            เพื่อตอบโจทย์การใช้พลังงานสะอาดในกระบวนการผลิตเพื่อลดค่าใช้จ่ายในส่วนของค่าไฟฟ้า
-            ลดผลกระทบโลกร้อน
-            และในขณะเดียวกันช่วยเรื่องบรรเทาภาษีคาร์บอนที่คาดว่าจะเริ่มดำเนินการในต่างประเทศ
-            โดยใช้แผ่นโซลาร์ที่มีประสิทธิภาพสูงสุด (Tier 1)
-            และใช้อินเวอร์เตอร์ยี่ห้อหัวเว่ย
+            {localizedDetails}
           </p>
-          <PhotoGallery
-            photos={[
-              p('mock/project/section-details/mock-photo-01.jpg'),
-              p('mock/project/section-details/mock-photo-02.jpg'),
-              p('mock/project/section-details/mock-photo-03.jpg'),
-              p('mock/project/section-details/mock-photo-04.jpg'),
-              p('mock/project/section-details/mock-photo-04.jpg'),
-            ]}
-          />
+          <PhotoGallery photos={photos} />
         </div>
       </SectionTwoCols>
     </div>

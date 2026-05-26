@@ -1,5 +1,6 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
+import { useVmScreenAbout } from '../../../stores/vm-screen-about';
 import LayoutBanner from '../../layouts/layout-banner';
 import SafeArea from '../../_commons/safe-area';
 import SectionPartners, {
@@ -10,6 +11,14 @@ import SectionGrowth from './sections/section-growth';
 import { p } from '../../../utils/path-utils';
 
 const ScreenAbout = () => {
+  const vmScreenAbout = useVmScreenAbout();
+  const { partners = [] } = vmScreenAbout;
+
+  useEffect(() => {
+    if (!vmScreenAbout.bind) return;
+    vmScreenAbout.bind();
+  }, [vmScreenAbout]);
+
   const banner = useMemo(() => {
     return (
       <div
@@ -39,7 +48,10 @@ const ScreenAbout = () => {
       <div className="flex flex-col justify-start items-stretch">
         <SectionDetails />
         <SectionGrowth />
-        <SectionPartners theme={SectionPartnersTheme.light} />
+        <SectionPartners
+          theme={SectionPartnersTheme.light}
+          partners={partners}
+        />
       </div>
     </LayoutBanner>
   );

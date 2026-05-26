@@ -1,6 +1,9 @@
 import { p } from '../../../../../utils/path-utils';
+import { useVmScreenFront } from '../../../../../stores/vm-screen-front';
 
 const SectionImpact = () => {
+  const { projectSummary } = useVmScreenFront();
+
   return (
     <section className="py-10 lg:pt-[240px] lg:pb-[180px] flex flex-col justify-start items-stretch">
       <div className="gap-y-10 lg:gap-y-[120px] w-full max-w-[1328px] px-6 mx-auto flex flex-col justify-start items-stretch">
@@ -21,26 +24,28 @@ const SectionImpact = () => {
                 เพราะทุกโครงการคือก้าวสำคัญ
                 ที่นำเราไปสู่อนาคตแห่งพลังงานหมุนเวียน"
               </p>
-              <div className="mt-14 lg:mt-0 gap-x-11 lg:gap-x-0 lg:max-w-[528px] flex flex-row justify-start items-start">
-                <div className="gap-y-2 lg:gap-y-6 flex-1 flex flex-col justify-start items-start">
-                  <div className="w-12 h-1 bg-green-tag" />
-                  <span className="mt-2 lg:mt-0 block text-6xl lg:text-8xl font-medium">
-                    14
-                  </span>
-                  <span className="block text-sm lg:text-base text-secondary">
-                    โครงการที่เปิดดำเนินการ
-                  </span>
+              {projectSummary && (
+                <div className="mt-14 lg:mt-0 gap-x-11 lg:gap-x-0 lg:max-w-[528px] flex flex-row justify-start items-start">
+                  <div className="gap-y-2 lg:gap-y-6 flex-1 flex flex-col justify-start items-start">
+                    <div className="w-12 h-1 bg-green-tag" />
+                    <span className="mt-2 lg:mt-0 block text-6xl lg:text-8xl font-medium">
+                      {projectSummary.totalProjects}
+                    </span>
+                    <span className="block text-sm lg:text-base text-secondary">
+                      โครงการที่เปิดดำเนินการ
+                    </span>
+                  </div>
+                  <div className="gap-y-2 lg:gap-y-6 flex-1 flex flex-col justify-start items-start">
+                    <div className="w-12 h-1 bg-cta-primary" />
+                    <span className="mt-2 lg:mt-0 block text-6xl lg:text-8xl font-medium">
+                      {projectSummary.totalCapacities.toFixed(2)}
+                    </span>
+                    <span className="block text-sm lg:text-base text-secondary">
+                      {projectSummary.totalCapacities.toFixed(2)} เมกะวัตต์
+                    </span>
+                  </div>
                 </div>
-                <div className="gap-y-2 lg:gap-y-6 flex-1 flex flex-col justify-start items-start">
-                  <div className="w-12 h-1 bg-cta-primary" />
-                  <span className="mt-2 lg:mt-0 block text-6xl lg:text-8xl font-medium">
-                    5.96
-                  </span>
-                  <span className="block text-sm lg:text-base text-secondary">
-                    5.96 เมกะวัตต์
-                  </span>
-                </div>
-              </div>
+              )}
             </div>
           </div>
           <div className="lg:flex-1 lg:flex-shrink-0 flex flex-col justify-center items-center">

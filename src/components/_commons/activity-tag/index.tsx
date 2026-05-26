@@ -1,4 +1,6 @@
 import { PropsWithChildren, useMemo } from 'react';
+import { ActivityTag as ActivityTagModel } from '../../../models/activity';
+import { LocaleKey } from '../../../models/_commons/localized';
 
 export enum ActivityTagSize {
   normal = 'normal',
@@ -6,12 +8,19 @@ export enum ActivityTagSize {
 }
 
 export interface ActivityTagProps {
-  tag: string;
+  locale?: LocaleKey;
   size?: ActivityTagSize;
+  tag: ActivityTagModel;
 }
 
 const ActivityTag = (props: PropsWithChildren<ActivityTagProps>) => {
-  const { tag, size } = props;
+  const { locale = 'th', tag, size } = props;
+
+  const localizedTag = useMemo(() => {
+    if (!tag?.title) return '';
+    return tag.title[locale];
+  }, [locale, tag]);
+
   const fontSize = useMemo(() => {
     switch (size) {
       case ActivityTagSize.small:
@@ -23,10 +32,10 @@ const ActivityTag = (props: PropsWithChildren<ActivityTagProps>) => {
   }, [size]);
 
   return (
-    <div
-      className={`py-1 px-3 ${tag === 'News' ? 'bg-green-tag' : 'bg-cta-primary'}`}
-    >
-      <span className={`block text-white uppercase ${fontSize}`}>{tag}</span>
+    <div className="py-1 px-3" style={{ backgroundColor: tag.color }}>
+      <span className={`block text-white uppercase ${fontSize}`}>
+        {localizedTag}
+      </span>
     </div>
   );
 };

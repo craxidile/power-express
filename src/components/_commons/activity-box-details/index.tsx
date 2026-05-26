@@ -1,8 +1,11 @@
 import { PropsWithChildren, useMemo } from 'react';
 import dayjs from 'dayjs';
-import { Link } from 'react-router-dom';
+
 import { p } from '../../../utils/path-utils';
+import { LocaleKey } from '../../../models/_commons/localized';
+import { Activity } from '../../../models/activity';
 import ActivityTag from '../activity-tag';
+import { localizedDate } from '../../../utils/ date-utils';
 
 export enum ActivityBoxDetailsMode {
   full = 'full',
@@ -10,61 +13,77 @@ export enum ActivityBoxDetailsMode {
 }
 
 export interface ActivityBoxDetailsProps {
-  title: string;
-  tag: string;
-  type: string;
-  publishedAt: Date;
-  excerpt?: string;
+  locale?: LocaleKey;
   mode?: ActivityBoxDetailsMode;
+  activity: Activity;
 }
 
 const ActivityBoxDetails = (
   props: PropsWithChildren<ActivityBoxDetailsProps>
 ) => {
-  const {
-    title,
-    excerpt,
-    tag,
-    publishedAt,
-    type,
-    mode = ActivityBoxDetailsMode.full,
-  } = props;
+  const { locale = 'th', mode = ActivityBoxDetailsMode.full, activity } = props;
+  const { title, excerpt, tag, publishedAt, type } = activity;
+
+  const localizedType = useMemo(() => {
+    if (!type?.title) return '';
+    return type.title[locale];
+  }, [locale, type]);
+
+  const localizedTitle = useMemo(() => {
+    if (!title) return '';
+    return title[locale];
+  }, [locale, title]);
+
+  const localizedExcerpt = useMemo(() => {
+    if (!excerpt) return '';
+    return excerpt[locale];
+  }, [locale, excerpt]);
 
   const topMargin = useMemo(
     () => (mode === ActivityBoxDetailsMode.full ? 'mt-5 lg:mt-6' : ''),
     [mode]
   );
+
+  const titleLineClamp = useMemo(
+    () => (mode === ActivityBoxDetailsMode.full ? 'line-clamp-2' : ''),
+    [mode]
+  );
+
   const dateAndType = useMemo(() => {
     return (
       <div className="mt-5 gap-x-3 flex flex-row justify-start items-center text-xs lg:text-base uppercase">
         <span className="block text-date-light">
-          {dayjs(publishedAt).format('DD MMM YYYY')}
+          {localizedDate(locale, publishedAt)}
         </span>
         <div className="self-stretch w-px bg-sep-gray" />
-        <span
-          className={`block ${type === 'Awards' ? 'text-activity-type' : 'text-cta-primary'}`}
-        >
-          {type}
-        </span>
+        {type && (
+          <span className="block" style={{ color: type.color }}>
+            {localizedType}
+          </span>
+        )}
       </div>
     );
-  }, [publishedAt, type]);
+  }, [localizedType, publishedAt, type]);
 
   return (
     <div className="flex flex-col justify-start items-stretch">
-      <div
-        className={`${topMargin} gap-x-4 flex flex-row justify-start items-stretch`}
-      >
-        <ActivityTag tag={tag} />
-      </div>
+      {tag && (
+        <div
+          className={`${topMargin} gap-x-4 flex flex-row justify-start items-stretch`}
+        >
+          <ActivityTag tag={tag} />
+        </div>
+      )}
       {mode === ActivityBoxDetailsMode.full ? dateAndType : null}
-      <h2 className="block mt-6 text-2xl lg:text-3hxl font-medium leading-[1.2]">
-        {title}
+      <h2
+        className={`mt-6 text-2xl lg:text-3hxl font-medium leading-[1.2] ${titleLineClamp}`}
+      >
+        {localizedTitle}
       </h2>
       {mode === ActivityBoxDetailsMode.title ? dateAndType : null}
       {mode !== ActivityBoxDetailsMode.full || !excerpt ? null : (
         <span className="mt-5 lg:mt-3 text-base text-gray-excerpt line-clamp-3">
-          {excerpt}
+          {localizedExcerpt}
         </span>
       )}
       {mode !== ActivityBoxDetailsMode.full ? null : (

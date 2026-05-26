@@ -1,14 +1,21 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
+import React, { PropsWithChildren, ReactElement, useEffect } from 'react';
 
+import { useVmScreen } from '../../../stores/vm-screen';
+import { useVmScreenActivityList } from '../../../stores/vm-screen-activity-list';
 import LayoutStandard from '../../layouts/layout-standard';
 import SafeArea from '../../_commons/safe-area';
 import ActivityGrid from '../../_commons/activity-grid';
 import HlActivityBox from '../../_commons/hl-activity-box';
-import { p } from '../../../utils/path-utils';
-import { useVmScreen } from '../../../stores/vm-screen';
 
 const ProjectScreen = (props: PropsWithChildren): ReactElement => {
   const { locale } = useVmScreen();
+
+  const vmScreenActivityList = useVmScreenActivityList();
+  const { headActivity, otherActivities } = vmScreenActivityList;
+  useEffect(() => {
+    if (!vmScreenActivityList.bind) return;
+    vmScreenActivityList.bind();
+  }, [vmScreenActivityList]);
 
   return (
     <LayoutStandard>
@@ -27,18 +34,14 @@ const ProjectScreen = (props: PropsWithChildren): ReactElement => {
                 และเรื่องราวความสำเร็จบนเส้นทางพลังงานหมุนเวียนของเรา
               </span>
             </div>
-            <div className="flex flex-col justify-start items-stretch">
-              <HlActivityBox
-                locale={locale}
-                image={p('mock/front/section-activities/mock-activity-01.jpg')}
-                tag="News"
-                type="CSR"
-                publishedAt={new Date()}
-                title="PEX Expands Solar Capacity in Central Thailand"
-                excerpt="PowerExpress1980 announces new 2.5 MW installation project in Ayutthaya province, furthering commitment to renewable energy expansion across the region."
-              />
-            </div>
-            <ActivityGrid locale={locale} />
+            {headActivity && (
+              <div className="flex flex-col justify-start items-stretch">
+                <HlActivityBox locale={locale} activity={headActivity} />
+              </div>
+            )}
+            {otherActivities && (
+              <ActivityGrid locale={locale} activities={otherActivities} />
+            )}
           </div>
         </SafeArea>
       </div>

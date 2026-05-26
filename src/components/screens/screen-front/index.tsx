@@ -13,6 +13,7 @@ import { useVmScreenFront } from '../../../stores/vm-screen-front';
 
 const ScreenFront = (): ReactElement => {
   const vmScreenFront = useVmScreenFront();
+  const { partners = [] } = vmScreenFront;
 
   useEffect(() => {
     if (!vmScreenFront.bind) return;
@@ -25,7 +26,7 @@ const ScreenFront = (): ReactElement => {
       <SectionBenefits />
       <SectionBusiness />
       <SectionProjects />
-      <SectionPartners />
+      <SectionPartners partners={partners} />
       <SectionImpact />
       <SectionActivities />
       <SectionContact />

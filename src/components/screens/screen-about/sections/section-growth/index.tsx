@@ -1,8 +1,20 @@
+import { useMemo } from 'react';
 import { p } from '../../../../../utils/path-utils';
+
+import { useVmScreenAbout } from '../../../../../stores/vm-screen-about';
 import StatRow, { StatRowTheme } from '../../../../_commons/stat-row';
 import StatBox, { StatBoxTheme } from '../../../../_commons/stat-box';
 
 const SectionGrowth = () => {
+  const { projectSummary } = useVmScreenAbout();
+  const { totalProjects, totalCapacities } = projectSummary ?? {};
+
+  const totalCapacitiesText = useMemo(
+    () => (totalCapacities ?? 0).toFixed(2),
+    [totalCapacities]
+  );
+
+  if (!projectSummary) return null;
   return (
     <section className="bg-pale py-20 flex flex-col justify-start items-stretch">
       <div className="w-full max-w-[1466] gap-y-10 px-6 max-auto flex flex-col justify-start items-stretch">
@@ -15,7 +27,7 @@ const SectionGrowth = () => {
               <li>
                 <StatBox
                   icon={p('mock/about/section-growth/ic-pin.svg')}
-                  value="14"
+                  value={`${totalProjects}`}
                   title="โครงการที่เปิดดำเนินการ"
                   theme={StatBoxTheme.secondary}
                 />
@@ -23,7 +35,7 @@ const SectionGrowth = () => {
               <li>
                 <StatBox
                   icon={p('mock/about/section-growth/ic-watt.svg')}
-                  value="5.96"
+                  value={totalCapacitiesText}
                   title="กำลังการผลิตติดตั้งรวม 5.96 เมกะวัตต์"
                   theme={StatBoxTheme.primary}
                 />

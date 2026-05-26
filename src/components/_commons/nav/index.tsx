@@ -1,5 +1,5 @@
 import { PropsWithChildren, useCallback, useEffect, useMemo } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import SafeArea from '../safe-area';
 import { p } from '../../../utils/path-utils';
@@ -20,6 +20,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
   const { theme = NavTheme.light } = props;
 
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const {
     locale = 'th',
@@ -27,6 +28,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
     popupVisible,
     setPopupVisible,
   } = useVmScreen();
+
   const menuItems = useMemo((): MenuItem[] => {
     if (!navMenu) return [];
     const { items } = navMenu;
@@ -93,6 +95,12 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
     [pathname, locale]
   );
 
+  const onClickLocale = useCallback(() => {
+    const nextLocale = locale === 'th' ? 'en' : 'th';
+    const path = pathname.replace(/^\/[^/]+/, `/${nextLocale}`);
+    navigate(path);
+  }, [locale, pathname, navigate]);
+
   return (
     <>
       <div className="z-[10] absolute top-0 left-1/2 -translate-x-1/2 w-full h-24 lg:h-[112px] flex flex-col justify-stretch items-stretch">
@@ -128,6 +136,11 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
                   </li>
                 );
               })}
+              <li>
+                <button onClick={onClickLocale}>
+                  <span className="opacity-50">{locale.toUpperCase()}</span>
+                </button>
+              </li>
             </ul>
           </div>
         </SafeArea>
@@ -167,6 +180,16 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
                 </li>
               );
             })}
+            <li className="py-6">
+              <div className="h-px bg-sep-pale" />
+            </li>
+            <li>
+              <button onClick={onClickLocale}>
+                <span className="font-medium text-2xl">
+                  {locale.toUpperCase()}
+                </span>
+              </button>
+            </li>
           </ul>
         </div>
       </LayoutPopup>
