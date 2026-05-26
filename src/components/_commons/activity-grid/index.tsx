@@ -1,10 +1,10 @@
 import ActivityBox from '../activity-box';
 import { Activity } from '../../../models/activity';
 import { PropsWithChildren } from 'react';
-import { LocaleKey } from '../../../models/_commons/localized';
+import { Locale } from '../../../models/_commons/localized';
 
 export interface ActivityGridProps {
-  locale?: LocaleKey;
+  locale?: Locale;
   activities: Activity[];
 }
 

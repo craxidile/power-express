@@ -1,17 +1,23 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useMemo } from 'react';
 
+import { Locale } from '../../../models/_commons/localized';
 import { HeroBanner } from '../../../models/hero-banner';
-
-import s from './styles.module.css';
 import TextLines from '../text-lines';
 
+import s from './styles.module.css';
+
 export interface BusinessBannerProps {
+  locale?: Locale;
   heroBanner: HeroBanner;
 }
 
 const BusinessBanner = (props: PropsWithChildren<BusinessBannerProps>) => {
-  const { heroBanner } = props;
+  const { locale = 'th', heroBanner } = props;
   const { banner, title, subtitle, icon, excerpt } = heroBanner;
+
+  const localizedTitle = useMemo(() => title[locale], [locale, title]);
+  const localizedSubtitle = useMemo(() => subtitle[locale], [locale, subtitle]);
+  const localizedExcerpt = useMemo(() => excerpt[locale], [locale, excerpt]);
 
   return (
     <div
@@ -28,17 +34,17 @@ const BusinessBanner = (props: PropsWithChildren<BusinessBannerProps>) => {
             <img className="block w-8 h-auto lg:w-10" alt="Icon" src={icon} />
           </div>
           <h3 className="m-0 p-0 leading-none text-white font-medium text-3xl lg:text-4hxl text-center">
-            {title}
+            {localizedTitle}
           </h3>
-          <span className="text-sm lg:text-base font-medium text-cta-primary text-center">
-            {subtitle}
+          <span className="text-sm lg:text-base font-medium text-cta-primary text-center uppercase">
+            {localizedSubtitle}
           </span>
           <div className="flex flex-col justify-start items-stretch">
             <p className="lg:hidden text-base text-white text-center">
-              {excerpt}
+              {localizedExcerpt}
             </p>
             <p className="hidden lg:inline text-base text-white text-center">
-              <TextLines text={excerpt} />
+              <TextLines text={localizedExcerpt} />
             </p>
           </div>
         </div>

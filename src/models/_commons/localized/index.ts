@@ -1,4 +1,10 @@
-export type LocaleKey = 'th' | 'en';
+export type Locale = 'th' | 'en';
+
 export type LocalizedText = {
-  [key in LocaleKey]: string;
+  [key in Locale]: string;
 };
+
+export interface LocalizedKeyText {
+  key: string;
+  text: LocalizedText;
+}

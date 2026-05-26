@@ -1,11 +1,11 @@
 import { PropsWithChildren } from 'react';
 
-import { LocaleKey } from '../../../models/_commons/localized';
+import { Locale } from '../../../models/_commons/localized';
 import { Project } from '../../../models/project';
 import ProjectBox from '../project-box';
 
 export interface ProjectGridProps {
-  locale?: LocaleKey;
+  locale?: Locale;
   projects: Project[];
 }
 

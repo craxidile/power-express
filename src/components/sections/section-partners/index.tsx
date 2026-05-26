@@ -1,4 +1,5 @@
 import { Partner } from '../../../models/partner';
+import { l } from '../../../utils/localization-utils';
 import { useVmScreen } from '../../../stores/vm-screen';
 import SafeArea from '../../_commons/safe-area';
 import { PropsWithChildren, useMemo } from 'react';
@@ -16,7 +17,7 @@ export interface SectionPartnersProps {
 const SectionPartners = (props: PropsWithChildren<SectionPartnersProps>) => {
   const { theme, partners } = props;
 
-  const { locale = 'th' } = useVmScreen();
+  const { locale = 'th', localizations = [] } = useVmScreen();
 
   const vendors = useMemo(
     () => partners.filter((p) => p.type === 'vendor'),
@@ -45,8 +46,8 @@ const SectionPartners = (props: PropsWithChildren<SectionPartnersProps>) => {
       <SafeArea>
         <div className="gap-y-12 lg:gap-y-20 flex flex-col justify-start items-stretch">
           <div className="gap-y-7 lg:gap-y-5 flex flex-col justify-start items-stretch">
-            <h3 className="text-center text-title-light text-sm lg:text-2xl font-medium">
-              พันธมิตรด้านเทคโนโลยีที่ได้รับความไว้วางใจ
+            <h3 className="uppercase text-center text-title-light text-sm lg:text-2xl font-medium">
+              {l(locale, localizations, 'partners.title-vendors')}
             </h3>
             <ul className="gap-6 grid grid-cols-3">
               {vendors.map((vendor) => {
@@ -66,8 +67,8 @@ const SectionPartners = (props: PropsWithChildren<SectionPartnersProps>) => {
             </ul>
           </div>
           <div className="gap-y-5 flex flex-col justify-start items-stretch">
-            <h3 className="text-center text-title-light text-sm lg:text-2xl font-medium">
-              พันธมิตรธุรกิจที่ไว้วางใจเรา
+            <h3 className="uppercase text-center text-title-light text-sm lg:text-2xl font-medium">
+              {l(locale, localizations, 'partners.title-clients')}
             </h3>
             <ul className="gap-6 grid grid-cols-3">
               {clients.map((client) => {

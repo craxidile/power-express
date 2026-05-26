@@ -1,13 +1,13 @@
 import { PropsWithChildren } from 'react';
 import { Link } from 'react-router-dom';
 
-import { LocaleKey } from '../../../models/_commons/localized';
+import { Locale } from '../../../models/_commons/localized';
 import { Activity } from '../../../models/activity';
 import ActivityBox from '../activity-box';
 import ActivityBoxDetails from '../activity-box-details';
 
 export interface ProjectBoxProps {
-  locale?: LocaleKey;
+  locale?: Locale;
   activity: Activity;
 }
 

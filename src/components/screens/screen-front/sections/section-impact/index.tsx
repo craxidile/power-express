@@ -1,8 +1,21 @@
+import { useMemo } from 'react';
+
 import { p } from '../../../../../utils/path-utils';
+import { l } from '../../../../../utils/localization-utils';
+import { useVmScreen } from '../../../../../stores/vm-screen';
 import { useVmScreenFront } from '../../../../../stores/vm-screen-front';
+import TextLines from '../../../../_commons/text-lines';
 
 const SectionImpact = () => {
+  const { locale = 'th', localizations = [] } = useVmScreen();
+
   const { projectSummary } = useVmScreenFront();
+  const { totalCapacities = 0 } = projectSummary ?? {};
+
+  const totalCapacitiesText = useMemo(
+    () => totalCapacities.toFixed(2),
+    [totalCapacities]
+  );
 
   return (
     <section className="py-10 lg:pt-[240px] lg:pb-[180px] flex flex-col justify-start items-stretch">
@@ -10,19 +23,16 @@ const SectionImpact = () => {
         <div className="gap-y-16 lg:gap-y-0 flex flex-col lg:flex-row justify-start items-stretch">
           <div className="lg:flex-1 lg:flex-shrink-0 flex flex-col justify-start items-stretch">
             <div className="gap-y-6 lg:gap-y-10 flex flex-col justify-start items-stretch">
-              <h6 className="text-title-light text-sm lg:text-2xl font-medium">
-                ผลลัพธ์ของเรา
-              </h6>
-              <h2 className="text-4xl lg:text-5xl font-medium leading-[1.2]">
-                ขับเคลื่อนการเติบโต
-                <br />
-                อย่างยั่งยืนไปทั่วประเทศไทย
+              <h2 className="text-title-light text-sm lg:text-2xl font-medium uppercase">
+                {l(locale, localizations, 'front.title-impact')}
               </h2>
+              <h6 className="text-4xl lg:text-5xl font-medium leading-[1.2]">
+                <TextLines
+                  text={l(locale, localizations, 'front.cta-impact')}
+                />
+              </h6>
               <p className="text-lg text-gray-excerpt">
-                "ด้วยผลงานกว่า 14 โครงการที่ผลิตพลังงานสะอาดรวม 5.96 เมกะวัตต์
-                นี่เป็นเพียงจุดเริ่มต้นของเราเท่านั้น
-                เพราะทุกโครงการคือก้าวสำคัญ
-                ที่นำเราไปสู่อนาคตแห่งพลังงานหมุนเวียน"
+                {l(locale, localizations, 'front.excerpt-impact')}
               </p>
               {projectSummary && (
                 <div className="mt-14 lg:mt-0 gap-x-11 lg:gap-x-0 lg:max-w-[528px] flex flex-row justify-start items-start">
@@ -31,17 +41,18 @@ const SectionImpact = () => {
                     <span className="mt-2 lg:mt-0 block text-6xl lg:text-8xl font-medium">
                       {projectSummary.totalProjects}
                     </span>
-                    <span className="block text-sm lg:text-base text-secondary">
-                      โครงการที่เปิดดำเนินการ
+                    <span className="block text-sm lg:text-base text-secondary uppercase">
+                      {l(locale, localizations, 'general.active-sites')}
                     </span>
                   </div>
                   <div className="gap-y-2 lg:gap-y-6 flex-1 flex flex-col justify-start items-start">
                     <div className="w-12 h-1 bg-cta-primary" />
                     <span className="mt-2 lg:mt-0 block text-6xl lg:text-8xl font-medium">
-                      {projectSummary.totalCapacities.toFixed(2)}
+                      {totalCapacitiesText}
                     </span>
-                    <span className="block text-sm lg:text-base text-secondary">
-                      {projectSummary.totalCapacities.toFixed(2)} เมกะวัตต์
+                    <span className="block text-sm lg:text-base text-secondary uppercase">
+                      {totalCapacitiesText}{' '}
+                      {l(locale, localizations, 'general.megawatts')}
                     </span>
                   </div>
                 </div>
@@ -57,7 +68,7 @@ const SectionImpact = () => {
           </div>
         </div>
         <span className="block text-lg lg:text-2xl text-cta-primary font-semibold text-center">
-          และจะเพิ่มขึ้นอีกในเร็วๆ นี้!
+          {l(locale, localizations, 'front.more-to-come')}
         </span>
       </div>
     </section>

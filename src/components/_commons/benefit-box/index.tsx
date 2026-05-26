@@ -1,10 +1,10 @@
 import { PropsWithChildren, useMemo } from 'react';
 import { Benefit } from '../../../models/benefit';
-import { LocaleKey } from '../../../models/_commons/localized';
+import { Locale } from '../../../models/_commons/localized';
 import TextLines from '../text-lines';
 
 export interface BenefitBoxProps {
-  locale?: LocaleKey;
+  locale?: Locale;
   benefit: Benefit;
 }
 

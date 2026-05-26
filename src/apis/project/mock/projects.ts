@@ -82,7 +82,7 @@ const projects: Project[] = [
     banner: p('mock/front/section-projects/mock-project-03.jpg'),
     title: {
       th: 'Bangkok Distribution Center',
-      en: '',
+      en: 'Bangkok Distribution Center',
     },
     excerpt: {
       th: 'Large-scale rooftop installation on industrial warehouse complex. This comprehensive solar solution provides significant energy cost reduction and demonstrates our expertise in commercial-scale implementations.',

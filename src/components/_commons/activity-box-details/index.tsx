@@ -1,9 +1,10 @@
 import { PropsWithChildren, useMemo } from 'react';
-import dayjs from 'dayjs';
 
-import { p } from '../../../utils/path-utils';
-import { LocaleKey } from '../../../models/_commons/localized';
+import { Locale } from '../../../models/_commons/localized';
 import { Activity } from '../../../models/activity';
+import { p } from '../../../utils/path-utils';
+import { l } from '../../../utils/localization-utils';
+import { useVmScreen } from '../../../stores/vm-screen';
 import ActivityTag from '../activity-tag';
 import { localizedDate } from '../../../utils/ date-utils';
 
@@ -13,7 +14,7 @@ export enum ActivityBoxDetailsMode {
 }
 
 export interface ActivityBoxDetailsProps {
-  locale?: LocaleKey;
+  locale?: Locale;
   mode?: ActivityBoxDetailsMode;
   activity: Activity;
 }
@@ -21,6 +22,8 @@ export interface ActivityBoxDetailsProps {
 const ActivityBoxDetails = (
   props: PropsWithChildren<ActivityBoxDetailsProps>
 ) => {
+  const { localizations = [] } = useVmScreen();
+
   const { locale = 'th', mode = ActivityBoxDetailsMode.full, activity } = props;
   const { title, excerpt, tag, publishedAt, type } = activity;
 
@@ -63,7 +66,7 @@ const ActivityBoxDetails = (
         )}
       </div>
     );
-  }, [localizedType, publishedAt, type]);
+  }, [locale, localizedType, publishedAt, type]);
 
   return (
     <div className="flex flex-col justify-start items-stretch">
@@ -71,7 +74,7 @@ const ActivityBoxDetails = (
         <div
           className={`${topMargin} gap-x-4 flex flex-row justify-start items-stretch`}
         >
-          <ActivityTag tag={tag} />
+          <ActivityTag locale={locale} tag={tag} />
         </div>
       )}
       {mode === ActivityBoxDetailsMode.full ? dateAndType : null}
@@ -88,7 +91,9 @@ const ActivityBoxDetails = (
       )}
       {mode !== ActivityBoxDetailsMode.full ? null : (
         <div className="mt-5 gap-x-2 flex flex-row justify-start items-center">
-          <span className="text-sm lg:text-base underline">Read more</span>
+          <span className="text-sm lg:text-base underline">
+            {l(locale, localizations, 'general.read-more')}
+          </span>
           <img
             className="h-3 lg:h-auto"
             alt="Icon"

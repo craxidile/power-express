@@ -1,13 +1,14 @@
-import SafeArea from '../../../../_commons/safe-area';
-import BenefitBox from '../../../../_commons/benefit-box';
+import { p } from '../../../../../utils/path-utils';
+import { l } from '../../../../../utils/localization-utils';
 import { useVmScreenFront } from '../../../../../stores/vm-screen-front';
 import { useVmScreen } from '../../../../../stores/vm-screen';
-import { p } from '../../../../../utils/path-utils';
+import SafeArea from '../../../../_commons/safe-area';
+import BenefitBox from '../../../../_commons/benefit-box';
 
 import s from './styles.module.css';
 
 const SectionBenefits = () => {
-  const { locale } = useVmScreen();
+  const { locale = 'th', localizations = [] } = useVmScreen();
   const { benefits = [] } = useVmScreenFront();
 
   return (
@@ -22,7 +23,7 @@ const SectionBenefits = () => {
             src={p('logo-dark.png')}
           />
           <h2 className="block self-center py-4 lg:px-0 lg:pt-6 pb-4 text-sm lg-text-3hxl font-medium">
-            5 เหตุผลที่ธุรกิจชั้นนำเลือก Power Express
+            {l(locale, localizations, 'front.title-benefits')}
           </h2>
           <div className="self-center mb-10 lg:mb-12 bg-sep-green-light w-12 h-1" />
           <ul className="flex flex-col lg:flex-row justify-start items-center lg:items-start lg-items-start">

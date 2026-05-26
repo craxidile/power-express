@@ -1,19 +1,23 @@
+import { useCallback, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { atom, useAtom } from 'jotai';
 
 import { Menu } from '../../models/menu';
-import { useCallback, useEffect } from 'react';
+import { LocalizedKeyText } from '../../models/_commons/localized';
 import { findMenu } from '../../apis/menu';
-import { useParams } from 'react-router-dom';
+import { listLocalizations } from '../../apis/localization';
 
 const localeState = atom<'th' | 'en'>('th');
 const navMenuState = atom<Menu | null>(null);
 const footerMenuState = atom<Menu | null>(null);
 const socialMenuState = atom<Menu | null>(null);
 const popupVisibleState = atom<boolean>(false);
+const localizationsState = atom<LocalizedKeyText[]>([]);
 
 export interface IVmScreen {
   // Observables
   locale?: 'th' | 'en';
+  localizations?: LocalizedKeyText[];
   navMenu?: Menu | null;
   footerMenu?: Menu | null;
   socialMenu?: Menu | null;
@@ -29,6 +33,7 @@ export const useVmScreen = (): IVmScreen => {
   const { locale: localeParam } = useParams();
 
   const [locale, setLocale] = useAtom(localeState);
+  const [localizations, setLocalizations] = useAtom(localizationsState);
   const [navMenu, setNavMenu] = useAtom(navMenuState);
   const [footerMenu, setFooterMenu] = useAtom(footerMenuState);
   const [socialMenu, setSocialMenu] = useAtom(socialMenuState);
@@ -53,6 +58,16 @@ export const useVmScreen = (): IVmScreen => {
       await Promise.all([
         new Promise(async (resolve, reject) => {
           try {
+            const localizations = await listLocalizations();
+            setLocalizations(localizations);
+            resolve(localizations);
+          } catch (error) {
+            console.log('>>error<<', 'list_localizations', error);
+            reject(error);
+          }
+        }),
+        new Promise(async (resolve, reject) => {
+          try {
             const navMenu = await findMenu('nav');
             setNavMenu(navMenu);
             resolve(navMenu);
@@ -73,10 +88,11 @@ export const useVmScreen = (): IVmScreen => {
         }),
       ]);
     })();
-  }, [setFooterMenu, setNavMenu]);
+  }, [setLocalizations, setFooterMenu, setNavMenu]);
 
   // Observables
   store.locale = locale;
+  store.localizations = localizations;
   store.navMenu = navMenu;
   store.footerMenu = footerMenu;
   store.socialMenu = socialMenu;

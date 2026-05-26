@@ -1,12 +1,14 @@
-import SafeArea from '../safe-area';
-import { p } from '../../../utils/path-utils';
 import { Link } from 'react-router-dom';
+
+import { p } from '../../../utils/path-utils';
+import { l } from '../../../utils/localization-utils';
+import { MenuItem } from '../../../models/menu';
 import { useVmScreen } from '../../../stores/vm-screen';
 import { useMemo } from 'react';
-import { MenuItem } from '../../../models/menu';
+import SafeArea from '../safe-area';
 
 const Footer = () => {
-  const { locale = 'th', footerMenu } = useVmScreen();
+  const { locale = 'th', localizations = [], footerMenu } = useVmScreen();
   const footerMenuItems = useMemo((): MenuItem[] => {
     if (!footerMenu) return [];
     const { items } = footerMenu;
@@ -74,7 +76,8 @@ const Footer = () => {
           </div>
           <div className="p-4 flex flex-col justify-start items-stretch border-t border-t-white-a20">
             <span className="text-white text-sm text-center">
-              © 2026 Power Express. สงวนลิขสิทธิ์
+              © 2026 Power Express.{' '}
+              {l(locale, localizations, 'general.copyrights')}
             </span>
           </div>
         </div>

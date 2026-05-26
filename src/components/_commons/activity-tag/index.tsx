@@ -1,6 +1,6 @@
 import { PropsWithChildren, useMemo } from 'react';
 import { ActivityTag as ActivityTagModel } from '../../../models/activity';
-import { LocaleKey } from '../../../models/_commons/localized';
+import { Locale } from '../../../models/_commons/localized';
 
 export enum ActivityTagSize {
   normal = 'normal',
@@ -8,7 +8,7 @@ export enum ActivityTagSize {
 }
 
 export interface ActivityTagProps {
-  locale?: LocaleKey;
+  locale?: Locale;
   size?: ActivityTagSize;
   tag: ActivityTagModel;
 }

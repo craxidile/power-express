@@ -2,12 +2,12 @@ import { PropsWithChildren, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 import { localizedDate } from '../../../utils/ date-utils';
-import { LocaleKey } from '../../../models/_commons/localized';
+import { Locale } from '../../../models/_commons/localized';
 import { Activity } from '../../../models/activity';
 import ActivityTag, { ActivityTagSize } from '../activity-tag';
 
 export interface MiniActivityBoxProps {
-  locale?: LocaleKey;
+  locale?: Locale;
   activity: Activity;
 }
 
