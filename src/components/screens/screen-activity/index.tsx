@@ -1,6 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
+import { l } from '../../../utils/localization-utils';
+import { useVmScreen } from '../../../stores/vm-screen';
 import { useVmScreenActivity } from '../../../stores/vm-screen-activity';
 import LayoutStandard from '../../layouts/layout-standard';
 import SectionDetails from './sections/section-details';
@@ -10,7 +12,17 @@ const ScreenActivity = () => {
   const params = useParams();
   const { id } = params;
 
+  const { locale = 'th', localizations = [] } = useVmScreen();
+
   const vmScreenActivity = useVmScreenActivity();
+  const { activity } = vmScreenActivity;
+  const { nextActivityId } = activity ?? {};
+
+  const url = useMemo(
+    () => `/${locale}/activity/${nextActivityId}`,
+    [locale, nextActivityId]
+  );
+
   useEffect(() => {
     if (!vmScreenActivity.bind) return;
     vmScreenActivity.bind(id ?? '');
@@ -19,7 +31,12 @@ const ScreenActivity = () => {
   return (
     <LayoutStandard>
       <SectionDetails />
-      <SectionNext />
+      {nextActivityId && (
+        <SectionNext
+          url={url}
+          text={l(locale, localizations, 'activity.next-activity')}
+        />
+      )}
     </LayoutStandard>
   );
 };

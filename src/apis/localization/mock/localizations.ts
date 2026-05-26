@@ -23,6 +23,13 @@ const localizations: LocalizedKeyText[] = [
     },
   },
   {
+    key: 'general.mw',
+    text: {
+      th: 'เมกะวัตต์',
+      en: 'MW',
+    },
+  },
+  {
     key: 'general.copyrights',
     text: {
       th: 'สงวนลิขสิทธิ์',
@@ -181,6 +188,83 @@ const localizations: LocalizedKeyText[] = [
     text: {
       th: 'ขับเคลื่อนธุรกิจของคุณ\nด้วยโซลูชันพลังงานหมุนเวียนที่ยั่งยืน',
       en: 'Empowering businesses with sustainable renewable energy solutions',
+    },
+  },
+  {
+    key: 'project.title-project',
+    text: {
+      th: 'โปรเจกต์',
+      en: 'Project',
+    },
+  },
+  {
+    key: 'project.next-project',
+    text: {
+      th: 'โปรเจกต์ถัดไป',
+      en: 'Next Project',
+    },
+  },
+  {
+    key: 'project-list.sm:title-projects',
+    text: {
+      th: 'โครงการ\nของเรา',
+      en: 'Our\nProjects',
+    },
+  },
+  {
+    key: 'project-list.title-projects',
+    text: {
+      th: 'โครงการของเรา',
+      en: 'Our Projects',
+    },
+  },
+  {
+    key: 'project-list.no-of-sites',
+    text: {
+      th: 'จำนวนโครงการ',
+      en: 'No. of Sites',
+    },
+  },
+  {
+    key: 'project-list.total-capacities',
+    text: {
+      th: 'กำลังการผลิตติดตั้งรวม',
+      en: 'Total Installed Capacity',
+    },
+  },
+  {
+    key: 'activity.other-activities',
+    text: {
+      th: 'กิจกรรมอื่นๆ',
+      en: 'Other Activities',
+    },
+  },
+  {
+    key: 'activity.next-activity',
+    text: {
+      th: 'ข่าวถัดไป',
+      en: 'Next Activity',
+    },
+  },
+  {
+    key: 'activity-list.subtitle-activities',
+    text: {
+      th: 'ข่าวสารและกิจกรรมล่าสุด',
+      en: 'Our activities',
+    },
+  },
+  {
+    key: 'activity-list.title-activities',
+    text: {
+      th: 'กิจกรรมล่าสุด',
+      en: 'Latest Insights',
+    },
+  },
+  {
+    key: 'activity-list.excerpt-activities',
+    text: {
+      th: 'ข่าว อีเวนต์ และเรื่องราวความสำเร็จบนเส้นทางพลังงานหมุนเวียนของเรา',
+      en: 'News, events, and stories from our journey in renewable energy.',
     },
   },
 ];

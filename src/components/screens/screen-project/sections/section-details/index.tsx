@@ -7,10 +7,11 @@ import ContentTitle from '../../../../_commons/content-title';
 import ContentItem from '../../../../_commons/content-item';
 import PhotoGallery from '../../../../_commons/photo-gallery';
 import { p } from '../../../../../utils/path-utils';
+import { l } from '../../../../../utils/localization-utils';
 
 const SectionDetails = () => {
   const vmScreen = useVmScreen();
-  const { locale = 'th' } = vmScreen;
+  const { locale = 'th', localizations = [] } = vmScreen;
 
   const vmScreenProject = useVmScreenProject();
   const { project } = vmScreenProject;
@@ -50,22 +51,35 @@ const SectionDetails = () => {
   const screenTitle = useMemo(() => {
     return (
       <ContentTitle
-        caption="Project"
+        caption={l(locale, localizations, 'project.title-project')}
         title={localizedTitle}
         subtitle={`${capacity} kW Solar Array`}
       />
     );
-  }, [capacity, localizedTitle]);
+  }, [capacity, locale, localizations, localizedTitle]);
 
   const colEnd = useMemo(() => {
     return (
       <div className="flex flex-col justify-start items-stretch">
         <ul className="flex flex-col justify-start items-stretch">
           <li>
-            <ContentItem isCta title="กำลังการผลิต" text={`${capacity} kW`} />
-            <ContentItem title="สถานที่" text={`${localizedLocation}`} />
-            <ContentItem title="ลูกค้า" text={localizedClient} />
-            <ContentItem title="ปีที่แล้วเสร็จ" text={`${completion ?? 0}`} />
+            <ContentItem
+              isCta
+              title={l(locale, localizations, 'project-box.capacity')}
+              text={`${capacity} kW`}
+            />
+            <ContentItem
+              title={l(locale, localizations, 'project-box.location')}
+              text={`${localizedLocation}`}
+            />
+            <ContentItem
+              title={l(locale, localizations, 'project-box.client')}
+              text={localizedClient}
+            />
+            <ContentItem
+              title={l(locale, localizations, 'project-box.completion')}
+              text={`${completion ?? 0}`}
+            />
           </li>
         </ul>
         <div className="gap-y-4 flex flex-col justify-start items-stretch">

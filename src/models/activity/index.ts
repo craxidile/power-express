@@ -22,4 +22,5 @@ export interface Activity {
   title: LocalizedText;
   excerpt?: LocalizedText;
   details?: LocalizedText;
+  nextActivityId: number | null;
 }

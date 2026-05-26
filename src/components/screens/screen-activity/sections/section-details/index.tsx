@@ -1,4 +1,6 @@
 import { useMemo } from 'react';
+
+import { l } from '../../../../../utils/localization-utils';
 import { useVmScreen } from '../../../../../stores/vm-screen';
 import { useVmScreenActivity } from '../../../../../stores/vm-screen-activity';
 import ActivityBoxDetails, {
@@ -9,7 +11,7 @@ import MiniActivityBox from '../../../../_commons/mini-activity-box';
 import TextLines from '../../../../_commons/text-lines';
 
 const SectionDetails = () => {
-  const { locale = 'th' } = useVmScreen();
+  const { locale = 'th', localizations = [] } = useVmScreen();
 
   const { activity, otherActivities = [] } = useVmScreenActivity();
   const { banner, details } = activity ?? {};
@@ -44,7 +46,7 @@ const SectionDetails = () => {
             </div>
             <div className="gap-y-6 flex-1 lg:max-w-80 flex flex-col justify-start items-stretch">
               <h3 className="text-title-pale text-base lg:text-2xl uppercase">
-                กิจกรรมอื่นๆ
+                {l(locale, localizations, 'activity.other-activities')}
               </h3>
               <ul className="gap-y-6 flex flex-col justify-start items-stretch">
                 {otherActivities.map((activity) => {

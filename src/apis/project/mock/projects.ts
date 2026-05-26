@@ -16,7 +16,7 @@ const projects: Project[] = [
     },
     details: {
       th: 'การติดตั้งโซลาร์รูฟท็อปขนาดกลางบนโรงงานผลิตของเล่นส่งออกต่างประเทศ เพื่อตอบโจทย์การใช้พลังงานสะอาดในกระบวนการผลิตเพื่อลดค่าใช้จ่ายในส่วนของค่าไฟฟ้า ลดผลกระทบโลกร้อน และในขณะเดียวกันช่วยเรื่องบรรเทาภาษีคาร์บอนที่คาดว่าจะเริ่มดำเนินการในต่างประเทศ โดยใช้แผ่นโซลาร์ที่มีประสิทธิภาพสูงสุด (Tier 1) และใช้อินเวอร์เตอร์ยี่ห้อหัวเว่ย',
-      en: 'การติดตั้งโซลาร์รูฟท็อปขนาดกลางบนโรงงานผลิตของเล่นส่งออกต่างประเทศ เพื่อตอบโจทย์การใช้พลังงานสะอาดในกระบวนการผลิตเพื่อลดค่าใช้จ่ายในส่วนของค่าไฟฟ้า ลดผลกระทบโลกร้อน และในขณะเดียวกันช่วยเรื่องบรรเทาภาษีคาร์บอนที่คาดว่าจะเริ่มดำเนินการในต่างประเทศ โดยใช้แผ่นโซลาร์ที่มีประสิทธิภาพสูงสุด (Tier 1) และใช้อินเวอร์เตอร์ยี่ห้อหัวเว่ย',
+      en: 'Installation of a medium-sized solar rooftop on a factory that exports toys overseas, to meet the demand for clean energy in the production process to reduce electricity costs, mitigate global warming impact, and simultaneously help alleviate carbon tax issues anticipated to begin in foreign countries, using high-efficiency (Tier 1) solar panels and Huawei inverters.',
     },
     client: {
       th: 'ABC Co., Ltd',
@@ -53,7 +53,7 @@ const projects: Project[] = [
     },
     details: {
       th: 'การติดตั้งโซลาร์รูฟท็อปขนาดกลางบนโรงงานผลิตของเล่นส่งออกต่างประเทศ เพื่อตอบโจทย์การใช้พลังงานสะอาดในกระบวนการผลิตเพื่อลดค่าใช้จ่ายในส่วนของค่าไฟฟ้า ลดผลกระทบโลกร้อน และในขณะเดียวกันช่วยเรื่องบรรเทาภาษีคาร์บอนที่คาดว่าจะเริ่มดำเนินการในต่างประเทศ โดยใช้แผ่นโซลาร์ที่มีประสิทธิภาพสูงสุด (Tier 1) และใช้อินเวอร์เตอร์ยี่ห้อหัวเว่ย',
-      en: 'การติดตั้งโซลาร์รูฟท็อปขนาดกลางบนโรงงานผลิตของเล่นส่งออกต่างประเทศ เพื่อตอบโจทย์การใช้พลังงานสะอาดในกระบวนการผลิตเพื่อลดค่าใช้จ่ายในส่วนของค่าไฟฟ้า ลดผลกระทบโลกร้อน และในขณะเดียวกันช่วยเรื่องบรรเทาภาษีคาร์บอนที่คาดว่าจะเริ่มดำเนินการในต่างประเทศ โดยใช้แผ่นโซลาร์ที่มีประสิทธิภาพสูงสุด (Tier 1) และใช้อินเวอร์เตอร์ยี่ห้อหัวเว่ย',
+      en: 'Installation of a medium-sized solar rooftop on a factory that exports toys overseas, to meet the demand for clean energy in the production process to reduce electricity costs, mitigate global warming impact, and simultaneously help alleviate carbon tax issues anticipated to begin in foreign countries, using high-efficiency (Tier 1) solar panels and Huawei inverters.',
     },
     client: {
       th: 'ABC Co., Ltd',
@@ -90,7 +90,7 @@ const projects: Project[] = [
     },
     details: {
       th: 'การติดตั้งโซลาร์รูฟท็อปขนาดกลางบนโรงงานผลิตของเล่นส่งออกต่างประเทศ เพื่อตอบโจทย์การใช้พลังงานสะอาดในกระบวนการผลิตเพื่อลดค่าใช้จ่ายในส่วนของค่าไฟฟ้า ลดผลกระทบโลกร้อน และในขณะเดียวกันช่วยเรื่องบรรเทาภาษีคาร์บอนที่คาดว่าจะเริ่มดำเนินการในต่างประเทศ โดยใช้แผ่นโซลาร์ที่มีประสิทธิภาพสูงสุด (Tier 1) และใช้อินเวอร์เตอร์ยี่ห้อหัวเว่ย',
-      en: 'การติดตั้งโซลาร์รูฟท็อปขนาดกลางบนโรงงานผลิตของเล่นส่งออกต่างประเทศ เพื่อตอบโจทย์การใช้พลังงานสะอาดในกระบวนการผลิตเพื่อลดค่าใช้จ่ายในส่วนของค่าไฟฟ้า ลดผลกระทบโลกร้อน และในขณะเดียวกันช่วยเรื่องบรรเทาภาษีคาร์บอนที่คาดว่าจะเริ่มดำเนินการในต่างประเทศ โดยใช้แผ่นโซลาร์ที่มีประสิทธิภาพสูงสุด (Tier 1) และใช้อินเวอร์เตอร์ยี่ห้อหัวเว่ย',
+      en: 'Installation of a medium-sized solar rooftop on a factory that exports toys overseas, to meet the demand for clean energy in the production process to reduce electricity costs, mitigate global warming impact, and simultaneously help alleviate carbon tax issues anticipated to begin in foreign countries, using high-efficiency (Tier 1) solar panels and Huawei inverters.',
     },
     client: {
       th: 'ABC Co., Ltd',
@@ -127,7 +127,7 @@ const projects: Project[] = [
     },
     details: {
       th: 'การติดตั้งโซลาร์รูฟท็อปขนาดกลางบนโรงงานผลิตของเล่นส่งออกต่างประเทศ เพื่อตอบโจทย์การใช้พลังงานสะอาดในกระบวนการผลิตเพื่อลดค่าใช้จ่ายในส่วนของค่าไฟฟ้า ลดผลกระทบโลกร้อน และในขณะเดียวกันช่วยเรื่องบรรเทาภาษีคาร์บอนที่คาดว่าจะเริ่มดำเนินการในต่างประเทศ โดยใช้แผ่นโซลาร์ที่มีประสิทธิภาพสูงสุด (Tier 1) และใช้อินเวอร์เตอร์ยี่ห้อหัวเว่ย',
-      en: 'การติดตั้งโซลาร์รูฟท็อปขนาดกลางบนโรงงานผลิตของเล่นส่งออกต่างประเทศ เพื่อตอบโจทย์การใช้พลังงานสะอาดในกระบวนการผลิตเพื่อลดค่าใช้จ่ายในส่วนของค่าไฟฟ้า ลดผลกระทบโลกร้อน และในขณะเดียวกันช่วยเรื่องบรรเทาภาษีคาร์บอนที่คาดว่าจะเริ่มดำเนินการในต่างประเทศ โดยใช้แผ่นโซลาร์ที่มีประสิทธิภาพสูงสุด (Tier 1) และใช้อินเวอร์เตอร์ยี่ห้อหัวเว่ย',
+      en: 'Installation of a medium-sized solar rooftop on a factory that exports toys overseas, to meet the demand for clean energy in the production process to reduce electricity costs, mitigate global warming impact, and simultaneously help alleviate carbon tax issues anticipated to begin in foreign countries, using high-efficiency (Tier 1) solar panels and Huawei inverters.',
     },
     client: {
       th: 'ABC Co., Ltd',
@@ -164,7 +164,7 @@ const projects: Project[] = [
     },
     details: {
       th: 'การติดตั้งโซลาร์รูฟท็อปขนาดกลางบนโรงงานผลิตของเล่นส่งออกต่างประเทศ เพื่อตอบโจทย์การใช้พลังงานสะอาดในกระบวนการผลิตเพื่อลดค่าใช้จ่ายในส่วนของค่าไฟฟ้า ลดผลกระทบโลกร้อน และในขณะเดียวกันช่วยเรื่องบรรเทาภาษีคาร์บอนที่คาดว่าจะเริ่มดำเนินการในต่างประเทศ โดยใช้แผ่นโซลาร์ที่มีประสิทธิภาพสูงสุด (Tier 1) และใช้อินเวอร์เตอร์ยี่ห้อหัวเว่ย',
-      en: 'การติดตั้งโซลาร์รูฟท็อปขนาดกลางบนโรงงานผลิตของเล่นส่งออกต่างประเทศ เพื่อตอบโจทย์การใช้พลังงานสะอาดในกระบวนการผลิตเพื่อลดค่าใช้จ่ายในส่วนของค่าไฟฟ้า ลดผลกระทบโลกร้อน และในขณะเดียวกันช่วยเรื่องบรรเทาภาษีคาร์บอนที่คาดว่าจะเริ่มดำเนินการในต่างประเทศ โดยใช้แผ่นโซลาร์ที่มีประสิทธิภาพสูงสุด (Tier 1) และใช้อินเวอร์เตอร์ยี่ห้อหัวเว่ย',
+      en: 'Installation of a medium-sized solar rooftop on a factory that exports toys overseas, to meet the demand for clean energy in the production process to reduce electricity costs, mitigate global warming impact, and simultaneously help alleviate carbon tax issues anticipated to begin in foreign countries, using high-efficiency (Tier 1) solar panels and Huawei inverters.',
     },
     client: {
       th: 'ABC Co., Ltd',
@@ -201,7 +201,7 @@ const projects: Project[] = [
     },
     details: {
       th: 'การติดตั้งโซลาร์รูฟท็อปขนาดกลางบนโรงงานผลิตของเล่นส่งออกต่างประเทศ เพื่อตอบโจทย์การใช้พลังงานสะอาดในกระบวนการผลิตเพื่อลดค่าใช้จ่ายในส่วนของค่าไฟฟ้า ลดผลกระทบโลกร้อน และในขณะเดียวกันช่วยเรื่องบรรเทาภาษีคาร์บอนที่คาดว่าจะเริ่มดำเนินการในต่างประเทศ โดยใช้แผ่นโซลาร์ที่มีประสิทธิภาพสูงสุด (Tier 1) และใช้อินเวอร์เตอร์ยี่ห้อหัวเว่ย',
-      en: 'การติดตั้งโซลาร์รูฟท็อปขนาดกลางบนโรงงานผลิตของเล่นส่งออกต่างประเทศ เพื่อตอบโจทย์การใช้พลังงานสะอาดในกระบวนการผลิตเพื่อลดค่าใช้จ่ายในส่วนของค่าไฟฟ้า ลดผลกระทบโลกร้อน และในขณะเดียวกันช่วยเรื่องบรรเทาภาษีคาร์บอนที่คาดว่าจะเริ่มดำเนินการในต่างประเทศ โดยใช้แผ่นโซลาร์ที่มีประสิทธิภาพสูงสุด (Tier 1) และใช้อินเวอร์เตอร์ยี่ห้อหัวเว่ย',
+      en: 'Installation of a medium-sized solar rooftop on a factory that exports toys overseas, to meet the demand for clean energy in the production process to reduce electricity costs, mitigate global warming impact, and simultaneously help alleviate carbon tax issues anticipated to begin in foreign countries, using high-efficiency (Tier 1) solar panels and Huawei inverters.',
     },
     client: {
       th: 'ABC Co., Ltd',

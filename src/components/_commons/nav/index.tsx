@@ -89,7 +89,9 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
     (url: string): boolean => {
       return (
         pathname.replace(/\/$/, '') ===
-        `/${locale}${url}`.replace(/\/+/, '/').replace(/\/$/, '')
+          `/${locale}${url}`.replace(/\/+/, '/').replace(/\/$/, '') ||
+        pathname.replace(/\/[0-9]+$/, '').replace(/\/$/, '') ===
+          `/${locale}${url}`.replace(/\/+/, '/').replace(/\/$/, '')
       );
     },
     [pathname, locale]
