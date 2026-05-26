@@ -1,5 +1,8 @@
 import { useEffect, useMemo } from 'react';
 
+import { p } from '../../../utils/path-utils';
+import { l } from '../../../utils/localization-utils';
+import { useVmScreen } from '../../../stores/vm-screen';
 import { useVmScreenAbout } from '../../../stores/vm-screen-about';
 import LayoutBanner from '../../layouts/layout-banner';
 import SafeArea from '../../_commons/safe-area';
@@ -8,9 +11,11 @@ import SectionPartners, {
 } from '../../sections/section-partners';
 import SectionDetails from './sections/section-details';
 import SectionGrowth from './sections/section-growth';
-import { p } from '../../../utils/path-utils';
+import TextLines from '../../_commons/text-lines';
 
 const ScreenAbout = () => {
+  const { locale = 'th', localizations = [] } = useVmScreen();
+
   const vmScreenAbout = useVmScreenAbout();
   const { partners = [] } = vmScreenAbout;
 
@@ -31,17 +36,19 @@ const ScreenAbout = () => {
           <SafeArea>
             <div className="flex-1 flex flex-col justify-end items-stretch">
               <h1 className="hidden lg:block text-white text-9xl font-medium">
-                เกี่ยวกับเรา
+                {l(locale, localizations, 'about.title-company')}
               </h1>
               <h1 className="lg:hidden text-white text-7xl font-medium">
-                เกี่ยวกับเรา
+                <TextLines
+                  text={l(locale, localizations, 'about.sm:title-company')}
+                />
               </h1>
             </div>
           </SafeArea>
         </div>
       </div>
     );
-  }, []);
+  }, [locale, localizations]);
 
   return (
     <LayoutBanner isFilled banner={banner}>

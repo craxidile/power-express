@@ -36,7 +36,7 @@ const StatBox = (props: PropsWithChildren<StatBoxProps>) => {
       >
         {value}
       </span>
-      <span className="block text-base text-title-light text-center">
+      <span className="block text-base text-title-light text-center uppercase">
         {title}
       </span>
     </div>

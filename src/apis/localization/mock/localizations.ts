@@ -16,6 +16,13 @@ const localizations: LocalizedKeyText[] = [
     },
   },
   {
+    key: 'general.total-capacities',
+    text: {
+      th: 'กำลังการผลิตติดตั้งรวม',
+      en: 'MWp Total Capacity',
+    },
+  },
+  {
     key: 'general.megawatts',
     text: {
       th: 'เมกะวัตต์',
@@ -265,6 +272,97 @@ const localizations: LocalizedKeyText[] = [
     text: {
       th: 'ข่าว อีเวนต์ และเรื่องราวความสำเร็จบนเส้นทางพลังงานหมุนเวียนของเรา',
       en: 'News, events, and stories from our journey in renewable energy.',
+    },
+  },
+  {
+    key: 'about.story',
+    text: {
+      th: 'Power Express ก่อตั้งขึ้นด้วยวิสัยทัศน์ที่แน่วแน่ในการนำพาธุรกิจและอุตสาหกรรมไทยไปสู่อนาคตแห่งพลังงานที่ยั่งยืน พันธกิจของเราขับเคลื่อนด้วยความมุ่งมั่นที่จะสร้างผลกระทบเชิงบวกใน 3 มิติสำคัญ ได้แก่ ผลกำไร (Profit), สิ่งแวดล้อม (Planet) และผู้คน (People)\n\nเราคือพันธมิตรผู้ให้บริการโซลูชันพลังงานแสงอาทิตย์สำหรับภาคธุรกิจและอุตสาหกรรม (C&I) อย่างเต็มรูปแบบ (Full Support) โดยมีความเชี่ยวชาญพิเศษด้านสัญญาซื้อขายไฟฟ้าภาคเอกชน (Private PPA) ที่ช่วยให้คุณ "ประหยัดค่าใช้จ่ายได้ทันที" ภายใต้โมเดล "ลงทุน 0 บาท" ด้วยทุนจดทะเบียน 40 ล้านบาท และประสบการณ์ในอุตสาหกรรมกว่า 17 ปี เราดูแลครบวงจรตั้งแต่การจัดหาเงินทุน การออกแบบวิศวกรรม ไปจนถึงการบำรุงรักษาเชิงรุก เพื่อรับประกันประสิทธิภาพสูงสุดและส่งมอบกรรมสิทธิ์ในระบบทั้งหมดให้แก่พันธมิตรเมื่อสิ้นสุดสัญญา เพื่อการเติบโตอย่างยั่งยืนไปพร้อมกับเรา',
+      en: 'Power Express was founded with a singular vision: to lead Thai businesses and industries toward a sustainable energy future. Our mission is driven by a focus on creating impact across three vital dimensions: Profit, Planet, and People.\n\nAs a premier C&I solar solution provider, we serve as your comprehensive partner (Full Support). We specialize in Private Power Purchase Agreements (PPAs) that offer a clear path to "Instant Savings" with "Zero Investment". Backed by 40 Million Baht registered capital and 17+ years of expertise, we manage the entire project lifecycle—from strategic financing and engineering design to proactive maintenance. Our commitment ensures maximum operational efficiency and a guaranteed transfer of full asset ownership upon contract completion, empowering our partners to grow sustainably.',
+    },
+  },
+  {
+    key: 'about.title-company',
+    text: {
+      th: 'เกี่ยวกับเรา',
+      en: 'Our Company',
+    },
+  },
+  {
+    key: 'about.sm:title-company',
+    text: {
+      th: 'เกี่ยวกับเรา',
+      en: 'Our\nCompany',
+    },
+  },
+  {
+    key: 'about.title-impact',
+    text: {
+      th: 'ศักยภาพและการเติบโต',
+      en: 'Impact & Scale',
+    },
+  },
+  {
+    key: 'about.qty-success-rate',
+    text: {
+      th: '100%',
+      en: '100%',
+    },
+  },
+  {
+    key: 'about.title-success-rate',
+    text: {
+      th: 'ความสำเร็จในการติดตั้ง',
+      en: 'Installation Success',
+    },
+  },
+  {
+    key: 'about.excerpt-success-rate',
+    text: {
+      th: 'ประสิทธิภาพของระบบเป็นไปตามความคาดหมาย',
+      en: 'System performance rate as expected',
+    },
+  },
+  {
+    key: 'about.qty-experience',
+    text: {
+      th: '17+',
+      en: '17+',
+    },
+  },
+  {
+    key: 'about.title-experience',
+    text: {
+      th: 'ประสบการณ์กว่า 17 ปี',
+      en: 'years experience',
+    },
+  },
+  {
+    key: 'about.excerpt-experience',
+    text: {
+      th: 'ส่งมอบโซลูชันพลังงานหมุนเวียนอย่างต่อเนื่องตั้งแต่ปี พ.ศ. 2551',
+      en: 'Delivering renewable energy solutions since 2008',
+    },
+  },
+  {
+    key: 'about.qty-output',
+    text: {
+      th: '8,400+',
+      en: '8,400+',
+    },
+  },
+  {
+    key: 'about.title-output',
+    text: {
+      th: 'พลังงานที่ผลิตได้ 8,400+ เมกะวัตต์ชั่วโมงต่อปี',
+      en: 'mwh annual output',
+    },
+  },
+  {
+    key: 'about.excerpt-output',
+    text: {
+      th: 'ปริมาณพลังงานสะอาดโดยประมาณที่ผลิตได้ในแต่ละปี',
+      en: 'Estimated clean energy generated annually',
     },
   },
 ];
