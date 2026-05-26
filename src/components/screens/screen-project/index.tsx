@@ -29,8 +29,6 @@ const ScreenProject = () => {
     [locale, nextProjectId]
   );
 
-  if (!nextProjectId) return null;
-
   return (
     <LayoutStandard>
       <div className="flex flex-col justify-start items-stretch">
