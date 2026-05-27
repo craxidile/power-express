@@ -1,12 +1,14 @@
-import { p } from '../../../../../utils/path-utils';
+import { useVmScreenProject } from '../../../../../stores/vm-screen-project';
 
 const SectionBanner = () => {
+  const vmScreenProject = useVmScreenProject();
+  const { project } = vmScreenProject;
+  const { banner } = project ?? {};
+
   return (
     <section
       className="h-[560px] lg:h-[800px]"
-      style={{
-        background: `url(${p('mock/project/section-banner/mock-banner.jpg')}) no-repeat center/cover`,
-      }}
+      style={{ background: `url(${banner}) no-repeat center/cover` }}
     />
   );
 };
