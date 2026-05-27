@@ -10,9 +10,10 @@ import TextLines from '../../../../_commons/text-lines';
 const SectionContact = () => {
   const { locale = 'th', localizations = [] } = useVmScreen();
 
-  const mapUrl = useMemo(() => {
-    return 'https://www.google.com/maps/place/157+Soi+Ari+Samphan+2,+Phaya+Thai,+Khet+Phaya+Thai,+Krung+Thep+Maha+Nakhon+10400/@13.7725501,100.5333465,17z/data=!3m1!4b1!4m6!3m5!1s0x30e29eae9a746c31:0xc671315ee64cc9da!8m2!3d13.7725449!4d100.5359214!16s%2Fg%2F11snqw6_fl?entry=ttu&g_ep=EgoyMDI2MDUyNS4wIKXMDSoASAFQAw%3D%3D';
-  }, []);
+  const mapUrl = useMemo(
+    () => l(locale, localizations, 'contact.map-url'),
+    [locale, localizations]
+  );
 
   return (
     <div
