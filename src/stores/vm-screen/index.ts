@@ -1,6 +1,7 @@
 import { useCallback, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { atom, useAtom } from 'jotai';
+import axios from 'axios';
 
 import { Menu } from '../../models/menu';
 import { LocalizedKeyText } from '../../models/_commons/localized';
@@ -87,6 +88,23 @@ export const useVmScreen = (): IVmScreen => {
           }
         }),
       ]);
+    })();
+
+    (async () => {
+      try {
+        const response = await axios.get(
+          'https://dokpdnckdhdeprasltyo.supabase.co/functions/v1/database-access',
+          {
+            headers: {
+              apiKey: 'sb_publishable_3-vOwfbokwwQ6fdtohuFvg_-8UFOQ0D',
+            },
+          }
+        );
+        const { data } = response;
+        console.log('>>data<<', data);
+      } catch (error) {
+        console.log('>>error<<', error);
+      }
     })();
   }, [setLocalizations, setFooterMenu, setNavMenu]);
 

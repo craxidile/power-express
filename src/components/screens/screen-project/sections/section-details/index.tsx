@@ -20,6 +20,7 @@ const SectionDetails = () => {
     title,
     location,
     client,
+    solarArray,
     capacity,
     details,
     completion,
@@ -53,7 +54,7 @@ const SectionDetails = () => {
       <ContentTitle
         caption={l(locale, localizations, 'project.title-project')}
         title={localizedTitle}
-        subtitle={`${capacity} kW Solar Array`}
+        subtitle={`${solarArray} kW Solar Array`}
       />
     );
   }, [capacity, locale, localizations, localizedTitle]);

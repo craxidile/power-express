@@ -10,6 +10,7 @@ export interface Project {
   client: LocalizedText;
   location: LocalizedText;
   capacity: number;
+  solarArray: number;
   completion: number;
   energy: number;
   treesPlanted?: number;

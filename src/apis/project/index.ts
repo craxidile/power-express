@@ -1,13 +1,32 @@
+import axios from 'axios';
+
+import { apiPrefix, apiKey } from '../../config/constants';
 import { Project } from '../../models/project';
 import { ProjectSummary } from '../../models/project-summary';
 import mockProjects from './mock/projects';
 
 export const listLatestProjects = async (): Promise<Project[]> => {
-  return Promise.resolve(mockProjects.slice(0, 6));
+  // return Promise.resolve(mockProjects.slice(0, 6));
+  const response = await axios.get<Project[]>(
+    `${apiPrefix}/list-all-projects`,
+    {
+      headers: { apiKey },
+    }
+  );
+  const { data } = response;
+  return data.splice(0, 6);
 };
 
 export const listProjects = async (): Promise<Project[]> => {
-  return Promise.resolve(mockProjects);
+  // return Promise.resolve(mockProjects);
+  const response = await axios.get<Project[]>(
+    `${apiPrefix}/list-all-projects`,
+    {
+      headers: { apiKey },
+    }
+  );
+  const { data } = response;
+  return data;
 };
 
 export const listProjectCompletions = async (): Promise<number[]> => {
@@ -17,7 +36,15 @@ export const listProjectCompletions = async (): Promise<number[]> => {
 };
 
 export const findProjectById = async (id: number): Promise<Project | null> => {
-  return Promise.resolve(mockProjects.find((p) => p.id === id) ?? null);
+  // return Promise.resolve(mockProjects.find((p) => p.id === id) ?? null);
+  const response = await axios.get<Project | null>(
+    `${apiPrefix}/find-project-by-id?id=${id}`,
+    {
+      headers: { apiKey },
+    }
+  );
+  const { data } = response;
+  return data;
 };
 
 export const findProjectSummary = async (): Promise<ProjectSummary> => {
