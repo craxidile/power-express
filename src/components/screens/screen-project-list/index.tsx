@@ -64,7 +64,9 @@ const ScreenProjectList = () => {
             </div>
           </div>
         </div>
-        <ScrollStrip text="เลื่อนลงเพื่อดูเพิ่มเติม" />
+        <div className="lg:hidden flex flex-col justify-end items-center">
+          <ScrollStrip text={l(locale, localizations, 'general.explore')} />
+        </div>
       </div>
     );
   }, [locale, localizations]);

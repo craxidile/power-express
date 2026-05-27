@@ -2,6 +2,13 @@ import { LocalizedKeyText } from '../../../models/_commons/localized';
 
 const localizations: LocalizedKeyText[] = [
   {
+    key: 'general.explore',
+    text: {
+      th: 'เลื่อนลงเพื่อดูเพิ่มเติม',
+      en: 'Explore',
+    },
+  },
+  {
     key: 'general.slide-more',
     text: {
       th: 'เลื่อนลงเพื่อดูเพิ่มเติม',
