@@ -1,12 +1,18 @@
-import { useVmScreen } from '../../../../../stores/vm-screen';
+import { useMemo } from 'react';
+
 import { p } from '../../../../../utils/path-utils';
 import { l } from '../../../../../utils/localization-utils';
+import { useVmScreen } from '../../../../../stores/vm-screen';
 import SafeArea from '../../../../_commons/safe-area';
 import ContactRow from '../../../../_commons/contact-row';
 import TextLines from '../../../../_commons/text-lines';
 
 const SectionContact = () => {
   const { locale = 'th', localizations = [] } = useVmScreen();
+
+  const mapUrl = useMemo(() => {
+    return 'https://www.google.com/maps/place/157+Soi+Ari+Samphan+2,+Phaya+Thai,+Khet+Phaya+Thai,+Krung+Thep+Maha+Nakhon+10400/@13.7725501,100.5333465,17z/data=!3m1!4b1!4m6!3m5!1s0x30e29eae9a746c31:0xc671315ee64cc9da!8m2!3d13.7725449!4d100.5359214!16s%2Fg%2F11snqw6_fl?entry=ttu&g_ep=EgoyMDI2MDUyNS4wIKXMDSoASAFQAw%3D%3D';
+  }, []);
 
   return (
     <div
@@ -51,7 +57,7 @@ const SectionContact = () => {
             <a
               className="block border-0"
               target="_blank"
-              href="https://www.google.com/maps/place/157+Soi+Ari+Samphan+2,+Phaya+Thai,+Khet+Phaya+Thai,+Krung+Thep+Maha+Nakhon+10400/@13.7725501,100.5333465,17z/data=!3m1!4b1!4m6!3m5!1s0x30e29eae9a746c31:0xc671315ee64cc9da!8m2!3d13.7725449!4d100.5359214!16s%2Fg%2F11snqw6_fl?entry=ttu&g_ep=EgoyMDI2MDUyNS4wIKXMDSoASAFQAw%3D%3D"
+              href={mapUrl}
               rel="noreferrer"
             >
               <img
@@ -62,13 +68,18 @@ const SectionContact = () => {
             </a>
           </div>
         </div>
-        <div className="absolute bottom-0 left-8 right-8 lg:hidden box-border p-4 bg-white rounded-2xl flex flex-col justify-center items-center">
+        <a
+          className="p-4 absolute bottom-0 left-8 right-8 lg:hidden box-border bg-white rounded-2xl flex flex-col justify-center items-center"
+          href={mapUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
           <img
             className="block h-6"
             alt="Google Maps"
             src={p('mock/front/section-contact/google-maps.svg')}
           />
-        </div>
+        </a>
       </SafeArea>
     </div>
   );
