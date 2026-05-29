@@ -16,8 +16,8 @@ export interface Activity {
   id: number;
   thumbnail: string;
   banner: string;
-  tag?: ActivityTag;
-  type?: ActivityType;
+  tag?: ActivityTag | null;
+  type?: ActivityType | null;
   publishedAt?: string;
   title: LocalizedText;
   excerpt?: LocalizedText;
