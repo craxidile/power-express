@@ -2,7 +2,7 @@ import { ActivityType } from '../../../models/activity';
 
 const activityTypes: ActivityType[] = [
   {
-    id: 'CSR',
+    id: 1,
     color: '#FF6B35',
     title: {
       th: 'บรรษัทบริบาล',
@@ -10,7 +10,7 @@ const activityTypes: ActivityType[] = [
     },
   },
   {
-    id: 'AWD',
+    id: 2,
     color: '#2D5A3D',
     title: {
       th: 'รางวัล',
@@ -18,7 +18,7 @@ const activityTypes: ActivityType[] = [
     },
   },
   {
-    id: 'MST',
+    id: 3,
     color: '#FF6B35',
     title: {
       th: 'ก้าวย่างสำคัญ',

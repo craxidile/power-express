@@ -2,7 +2,7 @@ import { ActivityTag } from '../../../models/activity';
 
 const activityTags: ActivityTag[] = [
   {
-    id: 'NEW',
+    id: 1,
     color: '#2D5A3D',
     title: {
       th: 'ใหม่',
@@ -10,7 +10,7 @@ const activityTags: ActivityTag[] = [
     },
   },
   {
-    id: 'SUS',
+    id: 2,
     color: '#FF6B35',
     title: {
       th: 'ความยั่งยืน',
@@ -18,7 +18,7 @@ const activityTags: ActivityTag[] = [
     },
   },
   {
-    id: 'EVT',
+    id: 3,
     color: '#FF6B35',
     title: {
       th: 'อีเวนต์',

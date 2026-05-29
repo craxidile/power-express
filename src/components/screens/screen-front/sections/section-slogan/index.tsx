@@ -10,7 +10,7 @@ const SectionSlogan = () => {
 
   return (
     <section
-      className="relative h-screen min-h-screen lg:min-h-[720px] bg-gray-100 flex flex-col justify-start items-stretch"
+      className="relative h-screen min-h-svh lg:min-h-[720px] bg-gray-100 flex flex-col justify-start items-stretch"
       style={{
         background: `url(${p('mock/front/section-slogan/bg.jpg')}) no-repeat center/cover`,
       }}
