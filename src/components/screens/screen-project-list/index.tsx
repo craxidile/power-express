@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from 'react';
 
 import { p } from '../../../utils/path-utils';
+import { l } from '../../../utils/localization-utils';
 import { useVmScreen } from '../../../stores/vm-screen';
 import { useVmScreenProjectList } from '../../../stores/vm-screen-project-list';
 import LayoutBanner from '../../layouts/layout-banner';
@@ -9,8 +10,8 @@ import SafeArea from '../../_commons/safe-area';
 import ProjectGrid from '../../_commons/project-grid';
 import ScrollStrip from '../../_commons/scroll-strip';
 import ProjectYearBox from '../../_commons/project-year-box';
-import { l } from '../../../utils/localization-utils';
 import TextLines from '../../_commons/text-lines';
+import Loading from '../../_commons/loading';
 
 const ScreenProjectList = () => {
   const { locale = 'th', localizations = [] } = useVmScreen();
@@ -65,13 +66,17 @@ const ScreenProjectList = () => {
               </div>
             </div>
           </div>
-        ) : null}
+        ) : (
+          <div className="bg-black-a40 absolute left-0 top-0 w-full h-full flex flex-col justify-center items-center">
+            <Loading />
+          </div>
+        )}
         <div className="lg:hidden flex flex-col justify-end items-center">
           <ScrollStrip text={l(locale, localizations, 'general.explore')} />
         </div>
       </div>
     );
-  }, [locale, localizations]);
+  }, [locale, localizations, projectSummary]);
 
   return (
     <LayoutBanner banner={banner}>

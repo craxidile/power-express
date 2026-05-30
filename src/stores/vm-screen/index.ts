@@ -101,7 +101,7 @@ export const useVmScreen = (): IVmScreen => {
           }
         );
         const { data } = response;
-        console.log('>>data<<', data);
+        // console.log('>>data<<', data);
       } catch (error) {
         console.log('>>error<<', error);
       }
