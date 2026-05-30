@@ -9,7 +9,11 @@ import { Activity } from '../../models/activity';
 import { Partner } from '../../models/partner';
 import { listHeroBanners } from '../../apis/hero-banner';
 import { listBenefits } from '../../apis/benefit';
-import { listLatestProjects, findProjectSummary } from '../../apis/project';
+import {
+  listLatestProjects,
+  findProjectSummary,
+  countProjects,
+} from '../../apis/project';
 import { listLatestActivities } from '../../apis/activity';
 import { listPartners } from '../../apis/partner';
 
@@ -24,6 +28,7 @@ export interface IVmScreenFront {
   // Observables
   benefits?: Benefit[];
   heroBanners?: HeroBanner[];
+  projectCount?: number;
   projects?: Project[];
   projectSummary?: ProjectSummary | null;
   activities?: Activity[];
