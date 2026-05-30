@@ -16,7 +16,7 @@ const ScreenProjectList = () => {
   const { locale = 'th', localizations = [] } = useVmScreen();
 
   const vmScreenProjectList = useVmScreenProjectList();
-  const { projects = [] } = vmScreenProjectList;
+  const { projects = [], projectSummary } = vmScreenProjectList;
 
   useEffect(() => {
     if (!vmScreenProjectList.bind) return;
@@ -31,39 +31,41 @@ const ScreenProjectList = () => {
           background: `url(${p('mock/project-list/mock-banner.jpg')}) no-repeat center/cover`,
         }}
       >
-        <div className="bg-black-a40 absolute left-0 top-0 w-full h-full flex flex-col justify-center items-center">
-          <div className="-translate-y-[10%] gap-y-16 lg:gap-y-12 flex flex-col justify-center items-center">
-            <div className="flex flex-col justify-start items-stretch">
-              <h1 className="hidden lg:block text-center text-white text-9xl font-medium">
-                {l(locale, localizations, 'project-list.title-projects')}
-              </h1>
-              <h1 className="lg:hidden text-center text-white text-7xl font-medium">
-                <TextLines
-                  text={l(
+        {projectSummary ? (
+          <div className="bg-black-a40 absolute left-0 top-0 w-full h-full flex flex-col justify-center items-center">
+            <div className="-translate-y-[10%] gap-y-16 lg:gap-y-12 flex flex-col justify-center items-center">
+              <div className="flex flex-col justify-start items-stretch">
+                <h1 className="hidden lg:block text-center text-white text-9xl font-medium">
+                  {l(locale, localizations, 'project-list.title-projects')}
+                </h1>
+                <h1 className="lg:hidden text-center text-white text-7xl font-medium">
+                  <TextLines
+                    text={l(
+                      locale,
+                      localizations,
+                      'project-list.sm:title-projects'
+                    )}
+                  />
+                </h1>
+              </div>
+              <div className="gap-y-12 lg:gap-y-0 lg:gap-x-16 flex flex-col lg:flex-row justify-center items-center">
+                <ProjectBannerRow
+                  title={l(locale, localizations, 'project-list.no-of-sites')}
+                  value={`${projectSummary.totalProjects}`}
+                />
+                <div className="hidden lg:block w-px h-full max-h-16 bg-white-a30" />
+                <ProjectBannerRow
+                  title={l(
                     locale,
                     localizations,
-                    'project-list.sm:title-projects'
+                    'project-list.total-capacities'
                   )}
+                  value={`${projectSummary.totalCapacities.toFixed(2)} ${l(locale, localizations, 'general.mw')}`}
                 />
-              </h1>
-            </div>
-            <div className="gap-y-12 lg:gap-y-0 lg:gap-x-16 flex flex-col lg:flex-row justify-center items-center">
-              <ProjectBannerRow
-                title={l(locale, localizations, 'project-list.no-of-sites')}
-                value="14"
-              />
-              <div className="hidden lg:block w-px h-full max-h-16 bg-white-a30" />
-              <ProjectBannerRow
-                title={l(
-                  locale,
-                  localizations,
-                  'project-list.total-capacities'
-                )}
-                value={`5.96 ${l(locale, localizations, 'general.mw')}`}
-              />
+              </div>
             </div>
           </div>
-        </div>
+        ) : null}
         <div className="lg:hidden flex flex-col justify-end items-center">
           <ScrollStrip text={l(locale, localizations, 'general.explore')} />
         </div>
