@@ -11,7 +11,7 @@ const LayoutStandard = (props: PropsWithChildren) => {
       <div className="h-[112px] flex flex-row justify-start items-stretch">
         <Nav theme={NavTheme.dark} />
       </div>
-      <div className="flex-1 flex flex-col justify-start items-stretch">
+      <div className="min-h-80 flex-1 flex flex-col justify-start items-stretch">
         {children}
       </div>
       <Footer />

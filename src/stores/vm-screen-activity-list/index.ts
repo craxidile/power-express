@@ -4,10 +4,12 @@ import { atom, useAtom } from 'jotai';
 import { Activity } from '../../models/activity';
 import { listActivities } from '../../apis/activity';
 
+const loadingState = atom<boolean>(false);
 const activitiesState = atom<Activity[]>([]);
 
 export interface IVmScreenActivityList {
   // Observables
+  loading?: boolean;
   headActivity?: Activity | null;
   otherActivities?: Activity[];
   // Actions
@@ -17,29 +19,38 @@ export interface IVmScreenActivityList {
 const store: IVmScreenActivityList = {};
 
 export const useVmScreenActivityList = (): IVmScreenActivityList => {
+  const [loading, setLoading] = useAtom(loadingState);
   const [activities, setActivities] = useAtom(activitiesState);
 
   const bind = useCallback(() => {
+    setLoading(true);
     (async () => {
-      await Promise.all([
-        new Promise(async (resolve, reject) => {
-          try {
-            const activities = await listActivities();
-            setActivities(activities);
-            resolve(activities);
-          } catch (error) {
-            console.log('>>error<< list_activities', error);
-            reject(error);
-          }
-        }),
-      ]);
+      try {
+        await Promise.all([
+          new Promise(async (resolve, reject) => {
+            try {
+              const activities = await listActivities();
+              setActivities(activities);
+              resolve(activities);
+            } catch (error) {
+              console.log('>>error<< list_activities', error);
+              reject(error);
+            }
+          }),
+        ]);
+      } catch (error) {
+        console.log('>>error<< binding', error);
+      } finally {
+        setLoading(false);
+      }
     })();
-  }, [setActivities]);
+  }, [setActivities, setLoading]);
 
   const headActivity = useMemo(() => activities[0] ?? null, [activities]);
   const otherActivities = useMemo(() => activities.slice(1), [activities]);
 
   // Observables
+  store.loading = loading;
   store.headActivity = headActivity;
   store.otherActivities = otherActivities;
 
