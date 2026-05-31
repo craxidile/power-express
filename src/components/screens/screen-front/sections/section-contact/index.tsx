@@ -10,10 +10,27 @@ import TextLines from '../../../../_commons/text-lines';
 const SectionContact = () => {
   const { locale = 'th', localizations = [] } = useVmScreen();
 
+  const { contacts } = useVmScreen();
+
   const mapUrl = useMemo(
     () => l(locale, localizations, 'contact.map-url'),
     [locale, localizations]
   );
+
+  const addressContact = useMemo(() => {
+    if (!contacts) return null;
+    return contacts.find((c) => c.type === 'address') ?? null;
+  }, [contacts]);
+
+  const telContact = useMemo(() => {
+    if (!contacts) return null;
+    return contacts.find((c) => c.type === 'tel') ?? null;
+  }, [contacts]);
+
+  const emailContact = useMemo(() => {
+    if (!contacts) return null;
+    return contacts.find((c) => c.type === 'email') ?? null;
+  }, [contacts]);
 
   return (
     <div
@@ -34,26 +51,30 @@ const SectionContact = () => {
               <TextLines text={l(locale, localizations, 'front.cta-contact')} />
             </p>
             <ul className="mt-8 gap-y-4 flex flex-col justify-start items-start">
-              <li>
-                <ContactRow
-                  icon={p('mock/front/section-contact/ic-pin.svg')}
-                  text={l(locale, localizations, 'contact.address')}
-                />
-              </li>
-              <li>
-                <ContactRow
-                  isPhone
-                  icon={p('mock/front/section-contact/ic-tel.svg')}
-                  text={l(locale, localizations, 'contact.tel')}
-                />
-              </li>
-              <li>
-                <ContactRow
-                  isEmail
-                  icon={p('mock/front/section-contact/ic-mail.svg')}
-                  text={l(locale, localizations, 'contact.email')}
-                />
-              </li>
+              {addressContact && (
+                <li>
+                  <ContactRow
+                    icon={addressContact.icon}
+                    text={addressContact.text[locale]}
+                  />
+                </li>
+              )}
+              {telContact && (
+                <li>
+                  <ContactRow
+                    icon={telContact.icon}
+                    text={telContact.text[locale]}
+                  />
+                </li>
+              )}
+              {emailContact && (
+                <li>
+                  <ContactRow
+                    icon={emailContact.icon}
+                    text={emailContact.text[locale]}
+                  />
+                </li>
+              )}
             </ul>
             <a
               className="block border-0"
