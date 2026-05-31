@@ -10,8 +10,8 @@ const activities: Activity[] = [
     id: 1,
     thumbnail: p('mock/front/section-activities/mock-activity-01.jpg'),
     banner: p('mock/activity/mock-banner.jpg'),
-    tag: tags.find((t) => t.title.en === 'New'),
-    type: types.find((t) => t.title.en === 'Milestones'),
+    tag: tags.find((t) => t.title.en === 'New') ?? null,
+    type: types.find((t) => t.title.en === 'Milestones') ?? null,
     publishedAt: dayjs().toISOString(),
     title: {
       th: 'Power Express ประกาศความสำเร็จ เปิดดำเนินการโครงการ Solar PPA ร่วมกับ PSP [SET] ตอกย้ำความไว้วางใจที่บริษัทมหาชนชั้นนำเลือกใช้บริการ',
@@ -31,8 +31,8 @@ const activities: Activity[] = [
     id: 2,
     thumbnail: p('mock/front/section-activities/mock-activity-02.jpg'),
     banner: p('mock/activity/mock-banner.jpg'),
-    tag: tags.find((t) => t.title.en === 'Sustainability'),
-    type: types.find((t) => t.title.en === 'CSR'),
+    tag: tags.find((t) => t.title.en === 'Sustainability') ?? null,
+    type: types.find((t) => t.title.en === 'CSR') ?? null,
     publishedAt: dayjs().toISOString(),
     title: {
       th: 'โครงการ CSR ประจำปี: พลังงานสะอาด เพื่อโรงเรียน',
@@ -52,8 +52,8 @@ const activities: Activity[] = [
     id: 3,
     thumbnail: p('mock/front/section-activities/mock-activity-03.jpg'),
     banner: p('mock/activity/mock-banner.jpg'),
-    tag: tags.find((t) => t.title.en === 'Event'),
-    type: types.find((t) => t.title.en === 'Awards'),
+    tag: tags.find((t) => t.title.en === 'Event') ?? null,
+    type: types.find((t) => t.title.en === 'Awards') ?? null,
     publishedAt: dayjs().toISOString(),
     title: {
       th: 'รางวัล Thailand Green Excellence Award 2025',

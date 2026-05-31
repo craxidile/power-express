@@ -16,11 +16,11 @@ export interface Activity {
   id: number;
   thumbnail: string;
   banner: string;
-  tag?: ActivityTag | null;
-  type?: ActivityType | null;
-  publishedAt?: string;
+  tag: ActivityTag | null;
+  type: ActivityType | null;
   title: LocalizedText;
-  excerpt?: LocalizedText;
-  details?: LocalizedText;
+  excerpt: LocalizedText;
+  details: LocalizedText;
+  publishedAt: string;
   nextActivityId: number | null;
 }
