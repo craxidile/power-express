@@ -5,7 +5,6 @@ import Footer from '../../_commons/footer';
 
 const LayoutStandard = (props: PropsWithChildren) => {
   const { children } = props;
-
   return (
     <div className="min-h-screen flex flex-col justify-start items-stretch">
       <div className="h-[112px] flex flex-row justify-start items-stretch">

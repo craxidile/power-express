@@ -2,18 +2,31 @@ import { Link } from 'react-router-dom';
 
 import { p } from '../../../utils/path-utils';
 import { l } from '../../../utils/localization-utils';
+import { Contact } from '../../../models/contact';
 import { MenuItem } from '../../../models/menu';
 import { useVmScreen } from '../../../stores/vm-screen';
 import { useMemo } from 'react';
 import SafeArea from '../safe-area';
 
 const Footer = () => {
-  const { locale = 'th', localizations = [], footerMenu } = useVmScreen();
+  const {
+    locale = 'th',
+    localizations = [],
+    footerMenu,
+    contacts,
+  } = useVmScreen();
+
   const footerMenuItems = useMemo((): MenuItem[] => {
     if (!footerMenu) return [];
     const { items } = footerMenu;
     return items ?? [];
   }, [footerMenu]);
+
+  const socialContacts = useMemo(() => {
+    if (!contacts) return [];
+    const otherTypes = ['address', 'tel', 'email', 'maps'];
+    return contacts.filter((c) => !otherTypes.includes(c.type));
+  }, [contacts]);
 
   return (
     <footer className="bg-gray-footer pt-16 lg:pb-0 flex flex-col justify-start items-stretch">
@@ -53,24 +66,20 @@ const Footer = () => {
             <div className="gap-y-4 lg:w-[164px] flex flex-col justify-start items-center lg:items-stretch">
               <span className="text-lime text-base font-medium">Follow us</span>
               <div className="gap-x-4 flex flex-row justify-start items-stretch">
-                <Link to="/">
-                  <div className="rounded-full bg-white-a10 w-10 h-10 flex flex-col justify-center items-center">
-                    <img
-                      className="h-5 w-auto"
-                      alt="Facebook"
-                      src={p('mock/commons/footer/ic-fb.svg')}
-                    />
-                  </div>
-                </Link>
-                <Link to="/">
-                  <div className="rounded-full bg-white-a10 w-10 h-10 flex flex-col justify-center items-center">
-                    <img
-                      className="h-5 w-auto"
-                      alt="Facebook"
-                      src={p('mock/commons/footer/ic-linked-in.svg')}
-                    />
-                  </div>
-                </Link>
+                {socialContacts.map((contact) => {
+                  const { icon, url, text } = contact;
+                  return (
+                    <a target="_blank" href={url ?? '/'} rel="noreferrer">
+                      <div className="rounded-full bg-white-a10 w-10 h-10 flex flex-col justify-center items-center">
+                        <img
+                          className="h-5 w-auto"
+                          alt={text[locale]}
+                          src={icon}
+                        />
+                      </div>
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>

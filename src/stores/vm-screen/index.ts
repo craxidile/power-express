@@ -7,11 +7,13 @@ import { Menu } from '../../models/menu';
 import { LocalizedKeyText } from '../../models/_commons/localized';
 import { findMenu } from '../../apis/menu';
 import { listLocalizations } from '../../apis/localization';
+import { Contact } from '../../models/contact';
+import { listContacts } from '../../apis/contact';
 
 const localeState = atom<'th' | 'en'>('th');
 const navMenuState = atom<Menu | null>(null);
 const footerMenuState = atom<Menu | null>(null);
-const socialMenuState = atom<Menu | null>(null);
+const contactsState = atom<Contact[]>([]);
 const popupVisibleState = atom<boolean>(false);
 const localizationsState = atom<LocalizedKeyText[]>([]);
 
@@ -21,7 +23,7 @@ export interface IVmScreen {
   localizations?: LocalizedKeyText[];
   navMenu?: Menu | null;
   footerMenu?: Menu | null;
-  socialMenu?: Menu | null;
+  contacts?: Contact[];
   popupVisible?: boolean;
   // Actions
   bind?: () => void;
@@ -37,7 +39,7 @@ export const useVmScreen = (): IVmScreen => {
   const [localizations, setLocalizations] = useAtom(localizationsState);
   const [navMenu, setNavMenu] = useAtom(navMenuState);
   const [footerMenu, setFooterMenu] = useAtom(footerMenuState);
-  const [socialMenu, setSocialMenu] = useAtom(socialMenuState);
+  const [contacts, setContacts] = useAtom(contactsState);
   const [popupVisible, setPopupVisible] = useAtom(popupVisibleState);
 
   useEffect(() => {
@@ -87,33 +89,26 @@ export const useVmScreen = (): IVmScreen => {
             reject(error);
           }
         }),
+        new Promise(async (resolve, reject) => {
+          try {
+            const contacts = await listContacts();
+            setContacts(contacts);
+            resolve(contacts);
+          } catch (error) {
+            console.log('>>error<<', 'footer_menu', error);
+            reject(error);
+          }
+        }),
       ]);
     })();
-
-    (async () => {
-      try {
-        const response = await axios.get(
-          'https://dokpdnckdhdeprasltyo.supabase.co/functions/v1/database-access',
-          {
-            headers: {
-              apiKey: 'sb_publishable_3-vOwfbokwwQ6fdtohuFvg_-8UFOQ0D',
-            },
-          }
-        );
-        const { data } = response;
-        // console.log('>>data<<', data);
-      } catch (error) {
-        console.log('>>error<<', error);
-      }
-    })();
-  }, [setLocalizations, setFooterMenu, setNavMenu]);
+  }, [setLocalizations, setFooterMenu, setNavMenu, setContacts]);
 
   // Observables
   store.locale = locale;
   store.localizations = localizations;
   store.navMenu = navMenu;
   store.footerMenu = footerMenu;
-  store.socialMenu = socialMenu;
+  store.contacts = contacts;
   store.popupVisible = popupVisible;
 
   // Actions
