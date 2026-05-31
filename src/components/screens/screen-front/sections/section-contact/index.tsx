@@ -70,6 +70,7 @@ const SectionContact = () => {
                   <ContactRow
                     icon={telContact.icon}
                     text={telContact.text[locale]}
+                    isPhone
                   />
                 </li>
               )}
@@ -78,6 +79,7 @@ const SectionContact = () => {
                   <ContactRow
                     icon={emailContact.icon}
                     text={emailContact.text[locale]}
+                    isEmail
                   />
                 </li>
               )}
