@@ -1,15 +1,18 @@
 import { useVmScreenProject } from '../../../../../stores/vm-screen-project';
+import Loading from '../../../../_commons/loading';
 
 const SectionBanner = () => {
   const vmScreenProject = useVmScreenProject();
-  const { project } = vmScreenProject;
+  const { loading, project } = vmScreenProject;
   const { banner } = project ?? {};
 
   return (
     <section
-      className="h-[560px] lg:h-[800px]"
+      className="h-[560px] lg:h-[800px] flex flex-col justify-center items-center"
       style={{ background: `url(${banner}) no-repeat center/cover` }}
-    />
+    >
+      {loading && <Loading />}
+    </section>
   );
 };
 

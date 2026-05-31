@@ -38,10 +38,33 @@ export const listProjects = async (): Promise<Project[]> => {
   return data;
 };
 
+export const listProjectsByCompletion = async (
+  min: number,
+  max: number
+): Promise<Project[]> => {
+  // return Promise.resolve(mockProjects);
+  const response = await axios.get<Project[]>(
+    `${apiPrefix}/list-projects-by-completion?min=${min}&max=${max}`,
+    {
+      headers: { apiKey },
+    }
+  );
+  const { data } = response;
+  return data;
+};
+
 export const listProjectCompletions = async (): Promise<number[]> => {
-  const completionSet = new Set<number>();
-  for (const project of mockProjects) completionSet.add(project.completion);
-  return Promise.resolve(Array.from(completionSet));
+  // const completionSet = new Set<number>();
+  // for (const project of mockProjects) completionSet.add(project.completion);
+  // return Promise.resolve(Array.from(completionSet));
+  const response = await axios.get<number[]>(
+    `${apiPrefix}/list-project-completions`,
+    {
+      headers: { apiKey },
+    }
+  );
+  const { data } = response;
+  return data;
 };
 
 export const findProjectById = async (id: number): Promise<Project | null> => {

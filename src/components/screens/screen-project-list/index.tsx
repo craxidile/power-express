@@ -1,4 +1,5 @@
 import { useEffect, useMemo } from 'react';
+import dayjs from 'dayjs';
 
 import { p } from '../../../utils/path-utils';
 import { l } from '../../../utils/localization-utils';
@@ -17,7 +18,13 @@ const ScreenProjectList = () => {
   const { locale = 'th', localizations = [] } = useVmScreen();
 
   const vmScreenProjectList = useVmScreenProjectList();
-  const { projects = [], projectSummary } = vmScreenProjectList;
+  const {
+    loading,
+    projects = [],
+    completionRanges = [],
+    projectSummary,
+    currentCompletionRange,
+  } = vmScreenProjectList;
 
   useEffect(() => {
     if (!vmScreenProjectList.bind) return;
@@ -87,13 +94,30 @@ const ScreenProjectList = () => {
               {l(locale, localizations, 'project-list.title-projects')}
             </h2>
             <div className="gap-x-6 gap-y-4 lg:gap-y-10 lg:gap-x-20 flex flex-row justify-center items-center flex-wrap">
-              <ProjectYearBox from={2015} to={2017} />
-              <ProjectYearBox from={2018} to={2020} />
-              <ProjectYearBox from={2021} to={2023} />
-              <ProjectYearBox from={2024} to={2025} />
-              <ProjectYearBox from={2025} isActive />
+              {completionRanges.map((range, index) => {
+                const [min, max] = range;
+                return (
+                  <ProjectYearBox
+                    from={min}
+                    to={max !== dayjs().year() ? max : undefined}
+                    onClick={() =>
+                      vmScreenProjectList.setCompletion &&
+                      vmScreenProjectList.setCompletion(min, max)
+                    }
+                    isActive={
+                      !!currentCompletionRange &&
+                      currentCompletionRange[0] === min &&
+                      currentCompletionRange[1] === max
+                    }
+                  />
+                );
+              })}
             </div>
-            <ProjectGrid locale={locale} projects={projects} />
+            {!loading ? (
+              <ProjectGrid locale={locale} projects={projects} />
+            ) : (
+              <Loading />
+            )}
           </div>
         </SafeArea>
       </div>

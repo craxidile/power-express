@@ -57,7 +57,7 @@ const SectionDetails = () => {
         subtitle={`${solarArray} kW Solar Array`}
       />
     );
-  }, [capacity, locale, localizations, localizedTitle]);
+  }, [locale, localizations, localizedTitle, solarArray]);
 
   const colEnd = useMemo(() => {
     return (
@@ -130,6 +130,7 @@ const SectionDetails = () => {
     treesPlanted,
   ]);
 
+  if (!project) return null;
   return (
     <div className="pt-20 pb-16 flex flex-col justify-start items-stretch">
       <SectionTwoCols title={screenTitle} colEnd={colEnd}>

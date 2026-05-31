@@ -4,10 +4,12 @@ import { atom, useAtom } from 'jotai';
 import { Project } from '../../models/project';
 import { findProjectById } from '../../apis/project';
 
+const loadingState = atom<boolean>(false);
 const projectState = atom<Project | null>(null);
 
 export interface IVmScreenProject {
   // Observables
+  loading?: boolean;
   project?: Project | null;
   // Actions
   bind?: (id: string) => void;
@@ -16,29 +18,38 @@ export interface IVmScreenProject {
 const store: IVmScreenProject = {};
 
 export const useVmScreenProject = (): IVmScreenProject => {
+  const [loading, setLoading] = useAtom(loadingState);
   const [project, setProject] = useAtom(projectState);
 
   const bind = useCallback(
     (id: string) => {
       (async () => {
-        await Promise.all([
-          new Promise(async (resolve, reject) => {
-            try {
-              const project = await findProjectById(+(id ?? '0'));
-              setProject(project);
-              resolve(project);
-            } catch (error) {
-              console.log('>>error<< find_project_by_id', error);
-              reject(error);
-            }
-          }),
-        ]);
+        setLoading(true);
+        try {
+          await Promise.all([
+            new Promise(async (resolve, reject) => {
+              try {
+                const project = await findProjectById(+(id ?? '0'));
+                setProject(project);
+                resolve(project);
+              } catch (error) {
+                console.log('>>error<< find_project_by_id', error);
+                reject(error);
+              }
+            }),
+          ]);
+        } catch (error) {
+          console.log('>>error<<', error);
+        } finally {
+          setLoading(false);
+        }
       })();
     },
-    [setProject]
+    [setLoading, setProject]
   );
 
   // Observables
+  store.loading = loading;
   store.project = project;
 
   // Actions
