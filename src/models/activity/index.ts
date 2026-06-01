@@ -1,13 +1,13 @@
 import { LocalizedText } from '../_commons/localized';
 
 export interface ActivityTag {
-  id: string;
+  id: number;
   color: string;
   title: LocalizedText;
 }
 
 export interface ActivityType {
-  id: string;
+  id: number;
   color: string;
   title: LocalizedText;
 }
@@ -16,11 +16,11 @@ export interface Activity {
   id: number;
   thumbnail: string;
   banner: string;
-  tag?: ActivityTag;
-  type?: ActivityType;
-  publishedAt?: string;
+  tag: ActivityTag | null;
+  type: ActivityType | null;
   title: LocalizedText;
-  excerpt?: LocalizedText;
-  details?: LocalizedText;
+  excerpt: LocalizedText;
+  details: LocalizedText;
+  publishedAt: string;
   nextActivityId: number | null;
 }

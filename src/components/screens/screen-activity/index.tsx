@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { l } from '../../../utils/localization-utils';
@@ -7,6 +7,8 @@ import { useVmScreenActivity } from '../../../stores/vm-screen-activity';
 import LayoutStandard from '../../layouts/layout-standard';
 import SectionDetails from './sections/section-details';
 import SectionNext from '../../sections/section-next';
+import { p } from '../../../utils/path-utils';
+import Loading from '../../_commons/loading';
 
 const ScreenActivity = () => {
   const params = useParams();
@@ -15,7 +17,7 @@ const ScreenActivity = () => {
   const { locale = 'th', localizations = [] } = useVmScreen();
 
   const vmScreenActivity = useVmScreenActivity();
-  const { activity } = vmScreenActivity;
+  const { activity, loading } = vmScreenActivity;
   const { nextActivityId } = activity ?? {};
 
   const url = useMemo(
@@ -30,12 +32,18 @@ const ScreenActivity = () => {
 
   return (
     <LayoutStandard>
-      <SectionDetails />
-      {nextActivityId && (
-        <SectionNext
-          url={url}
-          text={l(locale, localizations, 'activity.next-activity')}
-        />
+      {!loading ? (
+        <>
+          <SectionDetails />
+          {nextActivityId && (
+            <SectionNext
+              url={url}
+              text={l(locale, localizations, 'activity.next-activity')}
+            />
+          )}
+        </>
+      ) : (
+        <Loading />
       )}
     </LayoutStandard>
   );

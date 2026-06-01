@@ -23,6 +23,7 @@ module.exports = {
         'gray-content': '#364153',
         'gray-footer': '#192114',
         'gray-dark': '#0A0A0A',
+        'blue-map': '#0084FF',
         'cta-primary': '#FF6B35',
         'sep-pale': '#F3F4F6',
         'sep-light': '#EAEAEA',

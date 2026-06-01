@@ -3,6 +3,7 @@ import { l } from '../../../utils/localization-utils';
 import { useVmScreen } from '../../../stores/vm-screen';
 import SafeArea from '../../_commons/safe-area';
 import { PropsWithChildren, useMemo } from 'react';
+import PartnerStrip from '../../_commons/partner-strip';
 
 export enum SectionPartnersTheme {
   normal = 'normal',
@@ -49,43 +50,13 @@ const SectionPartners = (props: PropsWithChildren<SectionPartnersProps>) => {
             <h3 className="uppercase text-center text-title-light text-sm lg:text-2xl font-medium">
               {l(locale, localizations, 'partners.title-vendors')}
             </h3>
-            <ul className="gap-6 grid grid-cols-3">
-              {vendors.map((vendor) => {
-                const { id, name, logo } = vendor;
-                const localizedName = name ? name[locale] : '';
-                return (
-                  <li key={id}>
-                    <img
-                      className="block"
-                      alt={localizedName}
-                      title={localizedName}
-                      src={logo}
-                    />
-                  </li>
-                );
-              })}
-            </ul>
+            <PartnerStrip locale={locale} partners={vendors} />
           </div>
           <div className="gap-y-5 flex flex-col justify-start items-stretch">
             <h3 className="uppercase text-center text-title-light text-sm lg:text-2xl font-medium">
               {l(locale, localizations, 'partners.title-clients')}
             </h3>
-            <ul className="gap-6 grid grid-cols-3">
-              {clients.map((client) => {
-                const { id, name, logo } = client;
-                const localizedName = name ? name[locale] : '';
-                return (
-                  <li key={id}>
-                    <img
-                      className="block"
-                      alt={localizedName}
-                      title={localizedName}
-                      src={logo}
-                    />
-                  </li>
-                );
-              })}
-            </ul>
+            <PartnerStrip locale={locale} partners={clients} />
           </div>
         </div>
       </SafeArea>

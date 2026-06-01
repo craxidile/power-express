@@ -58,11 +58,13 @@ const ActivityBoxDetails = (
         <span className="block text-date-light">
           {localizedDate(locale, publishedAt)}
         </span>
-        <div className="self-stretch w-px bg-sep-gray" />
         {type && (
-          <span className="block" style={{ color: type.color }}>
-            {localizedType}
-          </span>
+          <>
+            <div className="self-stretch w-px bg-sep-gray" />
+            <span className="block" style={{ color: type.color }}>
+              {localizedType}
+            </span>
+          </>
         )}
       </div>
     );

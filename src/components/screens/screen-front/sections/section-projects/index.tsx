@@ -9,7 +9,7 @@ import { useVmScreenFront } from '../../../../../stores/vm-screen-front';
 
 const SectionProjects = () => {
   const { locale = 'th', localizations = [] } = useVmScreen();
-  const { projects = [], projectSummary } = useVmScreenFront();
+  const { projects = [], projectCount, projectSummary } = useVmScreenFront();
 
   return (
     <section className="py-10 lg:py-20 flex flex-col justify-start items-stretch">

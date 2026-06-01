@@ -14,9 +14,11 @@ const SectionDetails = () => {
   const { locale = 'th', localizations = [] } = useVmScreen();
 
   const { activity, otherActivities = [] } = useVmScreenActivity();
-  const { banner, details } = activity ?? {};
+  const { banner, thumbnail, details } = activity ?? {};
 
   const bannerUrl = useMemo(() => banner ?? '', [banner]);
+  const thumbnailUrl = useMemo(() => thumbnail ?? '', [thumbnail]);
+
   const localizedDetails = useMemo(() => {
     if (!details) return '';
     return details[locale];
@@ -33,10 +35,19 @@ const SectionDetails = () => {
               activity={activity}
               mode={ActivityBoxDetailsMode.title}
             />
-            <div
-              className="h-[644px]"
-              style={{ background: `url(${bannerUrl}) no-repeat center/cover` }}
-            ></div>
+            <div className="flex flex-col justify-start items-stretch">
+              <div
+                className="hidden lg:block h-[644px]"
+                style={{
+                  background: `url(${bannerUrl}) no-repeat center/cover`,
+                }}
+              />
+              <img
+                alt="Banner"
+                className="block lg:hidden w-full h-auto"
+                src={thumbnailUrl}
+              />
+            </div>
           </div>
           <div className="gap-y-16 lg:gap-y-0 lg:gap-x-16 flex flex-col lg:flex-row justify-start items-start">
             <div className="flex-1 flex flex-col justify-start items-stretch">

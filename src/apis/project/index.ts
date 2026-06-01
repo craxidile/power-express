@@ -5,16 +5,25 @@ import { Project } from '../../models/project';
 import { ProjectSummary } from '../../models/project-summary';
 import mockProjects from './mock/projects';
 
+export const countProjects = async (): Promise<Project[]> => {
+  // return Promise.resolve(mockProjects.slice(0, 6));
+  const response = await axios.get<Project[]>(`${apiPrefix}/count-projects`, {
+    headers: { apiKey },
+  });
+  const { data } = response;
+  return data;
+};
+
 export const listLatestProjects = async (): Promise<Project[]> => {
   // return Promise.resolve(mockProjects.slice(0, 6));
   const response = await axios.get<Project[]>(
-    `${apiPrefix}/list-all-projects`,
+    `${apiPrefix}/list-latest-projects`,
     {
       headers: { apiKey },
     }
   );
   const { data } = response;
-  return data.splice(0, 6);
+  return data;
 };
 
 export const listProjects = async (): Promise<Project[]> => {
@@ -29,10 +38,33 @@ export const listProjects = async (): Promise<Project[]> => {
   return data;
 };
 
+export const listProjectsByCompletion = async (
+  min: number,
+  max: number
+): Promise<Project[]> => {
+  // return Promise.resolve(mockProjects);
+  const response = await axios.get<Project[]>(
+    `${apiPrefix}/list-projects-by-completion?min=${min}&max=${max}`,
+    {
+      headers: { apiKey },
+    }
+  );
+  const { data } = response;
+  return data;
+};
+
 export const listProjectCompletions = async (): Promise<number[]> => {
-  const completionSet = new Set<number>();
-  for (const project of mockProjects) completionSet.add(project.completion);
-  return Promise.resolve(Array.from(completionSet));
+  // const completionSet = new Set<number>();
+  // for (const project of mockProjects) completionSet.add(project.completion);
+  // return Promise.resolve(Array.from(completionSet));
+  const response = await axios.get<number[]>(
+    `${apiPrefix}/list-project-completions`,
+    {
+      headers: { apiKey },
+    }
+  );
+  const { data } = response;
+  return data;
 };
 
 export const findProjectById = async (id: number): Promise<Project | null> => {
@@ -48,8 +80,17 @@ export const findProjectById = async (id: number): Promise<Project | null> => {
 };
 
 export const findProjectSummary = async (): Promise<ProjectSummary> => {
-  const { length: totalProjects } = mockProjects;
-  const totalCapacities =
-    mockProjects.reduce((acc, p) => acc + p.capacity, 0) / 1000;
-  return Promise.resolve({ totalProjects, totalCapacities });
+  // const { length: totalProjects } = mockProjects;
+  // const totalCapacities =
+  //   mockProjects.reduce((acc, p) => acc + p.capacity, 0) / 1000;
+  // return Promise.resolve({ totalProjects, totalCapacities });
+  const response = await axios.get<ProjectSummary>(
+    `${apiPrefix}/summarize-projects`,
+    {
+      headers: { apiKey },
+    }
+  );
+  const { data } = response;
+  data.totalCapacities /= 1000;
+  return data || { totalProjects: 0, totalCapacities: 0 };
 };

@@ -6,6 +6,7 @@ import SafeArea from '../../../../_commons/safe-area';
 import BenefitBox from '../../../../_commons/benefit-box';
 
 import s from './styles.module.css';
+import TextLines from '../../../../_commons/text-lines';
 
 const SectionBenefits = () => {
   const { locale = 'th', localizations = [] } = useVmScreen();
@@ -22,8 +23,10 @@ const SectionBenefits = () => {
             alt="Logo"
             src={p('logo-dark.png')}
           />
-          <h2 className="block self-center py-4 lg:px-0 lg:pt-6 pb-4 text-sm lg-text-3hxl font-medium">
-            {l(locale, localizations, 'front.title-benefits')}
+          <h2 className="block self-center py-4 lg:px-0 lg:pt-6 pb-4 text-sm lg-text-3hxl font-medium text-center">
+            <TextLines
+              text={l(locale, localizations, 'front.title-benefits')}
+            />
           </h2>
           <div className="self-center mb-10 lg:mb-12 bg-sep-green-light w-12 h-1" />
           <ul className="flex flex-col lg:flex-row justify-start items-center lg:items-start lg-items-start">

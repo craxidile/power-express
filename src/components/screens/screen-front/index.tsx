@@ -13,7 +13,7 @@ import { useVmScreenFront } from '../../../stores/vm-screen-front';
 
 const ScreenFront = (): ReactElement => {
   const vmScreenFront = useVmScreenFront();
-  const { partners = [] } = vmScreenFront;
+  const { loading, partners = [] } = vmScreenFront;
 
   useEffect(() => {
     if (!vmScreenFront.bind) return;
@@ -23,14 +23,18 @@ const ScreenFront = (): ReactElement => {
   return (
     <div className="flex flex-col justify-start items-stretch">
       <SectionSlogan />
-      <SectionBenefits />
-      <SectionBusiness />
-      <SectionProjects />
-      <SectionPartners partners={partners} />
-      <SectionImpact />
-      <SectionActivities />
-      <SectionContact />
-      <Footer />
+      {loading || (
+        <>
+          <SectionBenefits />
+          <SectionBusiness />
+          <SectionProjects />
+          <SectionPartners partners={partners} />
+          <SectionImpact />
+          <SectionActivities />
+          <SectionContact />
+          <Footer />
+        </>
+      )}
     </div>
   );
 };

@@ -24,13 +24,22 @@ const SectionDetails = () => {
     return (
       <ul className="flex flex-col justify-start items-stretch">
         <li>
-          <ContentItem title="Established" text="May 12, 2008" />
-          <ContentItem title="Registered Capital" text="฿40 Million" />
-          <ContentItem title="Headquarters" text="Bangkok, Thailand" />
+          <ContentItem
+            title={l(locale, localizations, 'about.caption-established')}
+            text={l(locale, localizations, 'about.text-established')}
+          />
+          <ContentItem
+            title={l(locale, localizations, 'about.caption-capital')}
+            text={l(locale, localizations, 'about.text-capital')}
+          />
+          <ContentItem
+            title={l(locale, localizations, 'about.caption-headquarter')}
+            text={l(locale, localizations, 'about.text-headquarter')}
+          />
         </li>
       </ul>
     );
-  }, []);
+  }, [locale, localizations]);
 
   return (
     <div className="py-20 flex flex-col justify-start items-stretch">

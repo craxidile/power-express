@@ -10,9 +10,32 @@ import TextLines from '../../../../_commons/text-lines';
 const SectionContact = () => {
   const { locale = 'th', localizations = [] } = useVmScreen();
 
-  const mapUrl = useMemo(
-    () => l(locale, localizations, 'contact.map-url'),
-    [locale, localizations]
+  const { contacts } = useVmScreen();
+
+  const addressContact = useMemo(() => {
+    if (!contacts) return null;
+    return contacts.find((c) => c.type === 'address') ?? null;
+  }, [contacts]);
+
+  const telContact = useMemo(() => {
+    if (!contacts) return null;
+    return contacts.find((c) => c.type === 'tel') ?? null;
+  }, [contacts]);
+
+  const emailContact = useMemo(() => {
+    if (!contacts) return null;
+    return contacts.find((c) => c.type === 'email') ?? null;
+  }, [contacts]);
+
+  const mapsContact = useMemo(() => {
+    if (!contacts) return null;
+    return contacts.find((c) => c.type === 'maps') ?? null;
+  }, [contacts]);
+
+  const mapUrl = useMemo(() => mapsContact?.url ?? null, [mapsContact]);
+  const mapText = useMemo(
+    () => (mapsContact?.text ? mapsContact.text[locale] : null),
+    [locale, mapsContact]
   );
 
   return (
@@ -34,53 +57,65 @@ const SectionContact = () => {
               <TextLines text={l(locale, localizations, 'front.cta-contact')} />
             </p>
             <ul className="mt-8 gap-y-4 flex flex-col justify-start items-start">
-              <li>
-                <ContactRow
-                  icon={p('mock/front/section-contact/ic-pin.svg')}
-                  text={l(locale, localizations, 'contact.address')}
-                />
-              </li>
-              <li>
-                <ContactRow
-                  isPhone
-                  icon={p('mock/front/section-contact/ic-tel.svg')}
-                  text={l(locale, localizations, 'contact.tel')}
-                />
-              </li>
-              <li>
-                <ContactRow
-                  isEmail
-                  icon={p('mock/front/section-contact/ic-mail.svg')}
-                  text={l(locale, localizations, 'contact.email')}
-                />
-              </li>
+              {addressContact && (
+                <li>
+                  <ContactRow
+                    icon={addressContact.icon}
+                    text={addressContact.text[locale]}
+                  />
+                </li>
+              )}
+              {telContact && (
+                <li>
+                  <ContactRow
+                    icon={telContact.icon}
+                    text={telContact.text[locale]}
+                    isPhone
+                  />
+                </li>
+              )}
+              {emailContact && (
+                <li>
+                  <ContactRow
+                    icon={emailContact.icon}
+                    text={emailContact.text[locale]}
+                    isEmail
+                  />
+                </li>
+              )}
             </ul>
             <a
-              className="block border-0"
+              className="hidden lg:flex h-7 mt-20 gap-x-2  border-0 flex-row justify-start items-center"
               target="_blank"
-              href={mapUrl}
+              href={mapUrl ?? '/'}
               rel="noreferrer"
             >
+              <span className="text-blue-map text-lg font-medium underline">
+                {mapText}
+              </span>
               <img
-                className="hidden lg:block h-7 mt-20"
-                alt="Google Maps"
-                src={p('mock/front/section-contact/google-maps.svg')}
+                alt="Maps"
+                src={p('mock/front/section-contact/ic-map-link.svg')}
               />
             </a>
           </div>
         </div>
-        <a
-          className="p-4 absolute bottom-0 left-8 right-8 lg:hidden box-border bg-white rounded-2xl flex flex-col justify-center items-center"
-          href={mapUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            className="block h-6"
-            alt="Google Maps"
-            src={p('mock/front/section-contact/google-maps.svg')}
-          />
-        </a>
+        {mapUrl && (
+          <a
+            className="p-4 absolute bottom-0 left-8 right-8 lg:hidden box-border bg-white rounded-2xl gap-x-2 flex flex-row justify-center items-center"
+            href={mapUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="text-blue-map text-base font-medium underline">
+              {mapText}
+            </span>
+            <img
+              alt="Maps"
+              src={p('mock/front/section-contact/ic-map-link.svg')}
+            />
+          </a>
+        )}
       </SafeArea>
     </div>
   );
