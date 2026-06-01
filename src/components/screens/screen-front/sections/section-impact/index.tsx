@@ -10,12 +10,19 @@ const SectionImpact = () => {
   const { locale = 'th', localizations = [] } = useVmScreen();
 
   const { projectSummary } = useVmScreenFront();
-  const { totalCapacities = 0 } = projectSummary ?? {};
+  const { totalProjects = 0, totalCapacities = 0 } = projectSummary ?? {};
 
   const totalCapacitiesText = useMemo(
     () => totalCapacities.toFixed(2),
     [totalCapacities]
   );
+
+  const localizedExcerptImpact = useMemo(() => {
+    const excerpt = l(locale, localizations, 'front.excerpt-impact') ?? '';
+    return excerpt
+      .replace(/\{\{total-projects}}/g, `${totalProjects}`)
+      .replace(/\{\{total-capabilities}}/g, totalCapacitiesText);
+  }, [locale, localizations, totalProjects, totalCapacitiesText]);
 
   return (
     <section className="py-10 lg:pt-[240px] lg:pb-[180px] flex flex-col justify-start items-stretch">
@@ -32,7 +39,7 @@ const SectionImpact = () => {
                 />
               </h6>
               <p className="text-lg text-gray-excerpt">
-                {l(locale, localizations, 'front.excerpt-impact')}
+                {localizedExcerptImpact}
               </p>
               {projectSummary && (
                 <div className="mt-14 lg:mt-0 gap-x-11 lg:gap-x-0 lg:max-w-[528px] flex flex-row justify-start items-start">
