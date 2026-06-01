@@ -54,10 +54,10 @@ const SectionDetails = () => {
       <ContentTitle
         caption={l(locale, localizations, 'project.title-project')}
         title={localizedTitle}
-        subtitle={`${solarArray} kW Solar Array`}
+        subtitle={solarArray ? `${solarArray} kW Solar Array` : undefined}
       />
     );
-  }, [capacity, locale, localizations, localizedTitle]);
+  }, [locale, localizations, localizedTitle, solarArray]);
 
   const colEnd = useMemo(() => {
     return (
@@ -84,48 +84,56 @@ const SectionDetails = () => {
           </li>
         </ul>
         <div className="gap-y-4 flex flex-col justify-start items-stretch">
-          <div className="p-10 gap-x-6 flex flex-row justify-center items-center rounded-3xl bg-pale">
-            <div className="w-12 h-12 lg:w-[100px] lg:h-[100px] flex flex-col justify-center items-center bg-white rounded-full">
-              <img
-                className="w-6 lg:w-10 h-auto"
-                alt="Energy"
-                src={p('mock/project/section-details/ic-energy.svg')}
-              />
-            </div>
-            <div className="gap-y-2 lg:gap-y-4 lg:min-w-60 flex flex-col justify-start items-start">
-              <span className="text-title-pale text-sm lg:text-base">
-                Energy Production
-              </span>
-              <div className="gap-x-2 inline-flex flex-row justify-start items-end">
-                <span className="text-4xl lg:text-5xl font-medium leading-none">
-                  {(energy ?? 0).toLocaleString()}
+          {!!energy && (
+            <div className="p-10 gap-x-6 flex flex-row justify-center items-center rounded-3xl bg-pale">
+              <div className="w-12 h-12 lg:w-[100px] lg:h-[100px] flex flex-col justify-center items-center bg-white rounded-full">
+                <img
+                  className="w-6 lg:w-10 h-auto"
+                  alt="Energy"
+                  src={p('mock/project/section-details/ic-energy.svg')}
+                />
+              </div>
+              <div className="gap-y-2 lg:gap-y-4 lg:min-w-60 flex flex-col justify-start items-start">
+                <span className="text-title-pale text-sm lg:text-base">
+                  Energy Production
                 </span>
-                <span className="text-sm lg:text-base text-gray-dark">kWh</span>
+                <div className="gap-x-2 inline-flex flex-row justify-start items-end">
+                  <span className="text-4xl lg:text-5xl font-medium leading-none">
+                    {Number(+energy ?? 0).toLocaleString()}
+                  </span>
+                  <span className="text-sm lg:text-base text-gray-dark">
+                    kWh
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="p-10 gap-y-4 flex flex-col justify-start items-stretch rounded-3xl bg-pale">
-            <p className="text-base lg:text-2xl text-title-pale text-center">
-              Equivalent
-              <br />
-              Trees Planted
-            </p>
-            <span className="text-center text-4xl lg:text-5xl font-medium leading-none">
-              {(treesPlanted ?? 0).toLocaleString()}
-            </span>
-            <img
-              alt="Environment"
-              src={p('mock/project/section-details/environment.png')}
-            />
-          </div>
+          )}
+          {treesPlanted && (
+            <div className="p-10 gap-y-4 flex flex-col justify-start items-stretch rounded-3xl bg-pale">
+              <p className="text-base lg:text-2xl text-title-pale text-center">
+                Equivalent
+                <br />
+                Trees Planted
+              </p>
+              <span className="text-center text-4xl lg:text-5xl font-medium leading-none">
+                {(treesPlanted ?? 0).toLocaleString()}
+              </span>
+              <img
+                alt="Environment"
+                src={p('mock/project/section-details/environment.png')}
+              />
+            </div>
+          )}
         </div>
       </div>
     );
   }, [
+    locale,
+    localizations,
     capacity,
-    completion,
-    localizedClient,
     localizedLocation,
+    localizedClient,
+    completion,
     energy,
     treesPlanted,
   ]);

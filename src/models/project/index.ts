@@ -10,10 +10,10 @@ export interface Project {
   client: LocalizedText;
   location: LocalizedText;
   capacity: number;
-  solarArray: number;
   completion: number;
-  energy: number;
-  treesPlanted?: number;
+  energy: string | null;
+  solarArray: string | null;
+  treesPlanted: string | null;
   photos: string[];
   nextProjectId: number | null;
 }
