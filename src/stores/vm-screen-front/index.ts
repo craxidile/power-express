@@ -17,6 +17,7 @@ import {
 import { listLatestActivities } from '../../apis/activity';
 import { listPartners } from '../../apis/partner';
 
+const loadingState = atom<boolean>(false);
 const benefitsState = atom<Benefit[]>([]);
 const heroBannersState = atom<HeroBanner[]>([]);
 const projectsState = atom<Project[]>([]);
@@ -26,6 +27,7 @@ const partnersState = atom<Partner[]>([]);
 
 export interface IVmScreenFront {
   // Observables
+  loading?: boolean;
   benefits?: Benefit[];
   heroBanners?: HeroBanner[];
   projectCount?: number;
@@ -40,6 +42,7 @@ export interface IVmScreenFront {
 const store: IVmScreenFront = {};
 
 export const useVmScreenFront = (): IVmScreenFront => {
+  const [loading, setLoading] = useAtom(loadingState);
   const [benefits, setBenefits] = useAtom(benefitsState);
   const [heroBanners, setHeroBanners] = useAtom(heroBannersState);
   const [projects, setProjects] = useAtom(projectsState);
@@ -48,70 +51,77 @@ export const useVmScreenFront = (): IVmScreenFront => {
   const [partners, setPartners] = useAtom(partnersState);
 
   const bind = useCallback(() => {
+    setLoading(true);
     (async () => {
-      await Promise.all([
-        new Promise(async (resolve, reject) => {
-          try {
-            const benefits = await listBenefits();
-            setBenefits(benefits ?? []);
-            resolve(benefits);
-          } catch (error) {
-            console.log('>>error<< list_benefits', error);
-            reject(error);
-          }
-        }),
-        new Promise(async (resolve, reject) => {
-          try {
-            const heroBanners = await listHeroBanners();
-            setHeroBanners(heroBanners ?? []);
-            resolve(heroBanners);
-          } catch (error) {
-            console.log('>>error<< list_hero_banners', error);
-            reject(error);
-          }
-        }),
-        new Promise(async (resolve, reject) => {
-          try {
-            const projects = await listLatestProjects();
-            setProjects(projects ?? []);
-            resolve(projects);
-          } catch (error) {
-            console.log('>>error<< list_projects', error);
-            reject(error);
-          }
-        }),
-        new Promise(async (resolve, reject) => {
-          try {
-            const projectSummary = await findProjectSummary();
-            setProjectSummary(projectSummary);
-            resolve(projectSummary);
-          } catch (error) {
-            console.log('>>error<< find_project_summary', error);
-            reject(error);
-          }
-        }),
-        new Promise(async (resolve, reject) => {
-          try {
-            const activities = await listLatestActivities();
-            setActivities(activities);
-            resolve(activities);
-          } catch (error) {
-            console.log('>>error<< list_latest_activities', error);
-            reject(error);
-          }
-        }),
-        new Promise(async (resolve, reject) => {
-          try {
-            const partners = await listPartners();
-            partners.sort((a, b) => a.seq - b.seq);
-            setPartners(partners);
-            resolve(partners);
-          } catch (error) {
-            console.log('>>error<< list_partners', error);
-            reject(error);
-          }
-        }),
-      ]);
+      try {
+        await Promise.all([
+          new Promise(async (resolve, reject) => {
+            try {
+              const benefits = await listBenefits();
+              setBenefits(benefits ?? []);
+              resolve(benefits);
+            } catch (error) {
+              console.log('>>error<< list_benefits', error);
+              reject(error);
+            }
+          }),
+          new Promise(async (resolve, reject) => {
+            try {
+              const heroBanners = await listHeroBanners();
+              setHeroBanners(heroBanners ?? []);
+              resolve(heroBanners);
+            } catch (error) {
+              console.log('>>error<< list_hero_banners', error);
+              reject(error);
+            }
+          }),
+          new Promise(async (resolve, reject) => {
+            try {
+              const projects = await listLatestProjects();
+              setProjects(projects ?? []);
+              resolve(projects);
+            } catch (error) {
+              console.log('>>error<< list_projects', error);
+              reject(error);
+            }
+          }),
+          new Promise(async (resolve, reject) => {
+            try {
+              const projectSummary = await findProjectSummary();
+              setProjectSummary(projectSummary);
+              resolve(projectSummary);
+            } catch (error) {
+              console.log('>>error<< find_project_summary', error);
+              reject(error);
+            }
+          }),
+          new Promise(async (resolve, reject) => {
+            try {
+              const activities = await listLatestActivities();
+              setActivities(activities);
+              resolve(activities);
+            } catch (error) {
+              console.log('>>error<< list_latest_activities', error);
+              reject(error);
+            }
+          }),
+          new Promise(async (resolve, reject) => {
+            try {
+              const partners = await listPartners();
+              partners.sort((a, b) => a.seq - b.seq);
+              setPartners(partners);
+              resolve(partners);
+            } catch (error) {
+              console.log('>>error<< list_partners', error);
+              reject(error);
+            }
+          }),
+        ]);
+      } catch (error) {
+        console.log('>>error<<', error);
+      } finally {
+        setLoading(false);
+      }
     })();
   }, [
     setActivities,
@@ -123,6 +133,7 @@ export const useVmScreenFront = (): IVmScreenFront => {
   ]);
 
   // Observables
+  store.loading = loading;
   store.benefits = benefits;
   store.heroBanners = heroBanners;
   store.projects = projects;

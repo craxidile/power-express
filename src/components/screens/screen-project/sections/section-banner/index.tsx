@@ -8,7 +8,7 @@ const SectionBanner = () => {
 
   return (
     <section
-      className="h-[560px] lg:h-[800px] flex flex-col justify-center items-center"
+      className="h-[400px] lg:h-[800px] flex flex-col justify-center items-center"
       style={{ background: `url(${banner}) no-repeat center/cover` }}
     >
       {loading && <Loading />}
