@@ -13,7 +13,7 @@ const LayoutBanner = (props: PropsWithChildren<LayoutBannerProps>) => {
   return (
     <div className="min-h-screen flex flex-col justify-start items-stretch">
       <div
-        className={`relative h-svh lg:max-h-none lg:min-h-[900px] flex flex-col justify-stretch items-stretch ${!isFilled ? '' : 'max-h-[400px]'}`}
+        className={`relative h-svh lg:max-h-none lg:min-h-[900px] flex flex-col justify-stretch items-stretch ${!isFilled ? '' : 'max-h-[480px]'}`}
       >
         <Nav theme={NavTheme.light} />
         {banner}
