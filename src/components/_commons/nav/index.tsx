@@ -105,7 +105,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
 
   return (
     <>
-      <div className="z-[10] absolute top-0 left-1/2 -translate-x-1/2 w-full h-24 lg:h-[112px] flex flex-col justify-stretch items-stretch">
+      <div className="z-[10] absolute top-0 left-1/2 -translate-x-1/2 w-full h-20 lg:h-[112px] flex flex-col justify-stretch items-stretch">
         <SafeArea>
           <div className="w-full h-full flex flex-row justify-start items-center">
             <Link to={`/${locale}`}>

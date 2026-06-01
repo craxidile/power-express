@@ -16,7 +16,7 @@ const ContentTitle = (props: PropsWithChildren<ScreenContentProps>) => {
             {caption}
           </span>
         )}
-        <h1 className="text-5xl lg:text-6hxl font-medium text-title-dark">
+        <h1 className="text-5xl lg:text-6hxl font-medium leading-[1.2] text-title-dark">
           {title}
         </h1>
         {subtitle && (
