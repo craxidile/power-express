@@ -2,13 +2,14 @@ import { useMemo } from 'react';
 import { p } from '../../../../../utils/path-utils';
 
 import { l } from '../../../../../utils/localization-utils';
+import { m } from '../../../../../utils/media-utils';
 import { useVmScreen } from '../../../../../stores/vm-screen';
 import { useVmScreenAbout } from '../../../../../stores/vm-screen-about';
 import StatRow, { StatRowTheme } from '../../../../_commons/stat-row';
 import StatBox, { StatBoxTheme } from '../../../../_commons/stat-box';
 
 const SectionGrowth = () => {
-  const { locale = 'th', localizations = [] } = useVmScreen();
+  const { locale = 'th', localizations = [], media } = useVmScreen();
 
   const { projectSummary } = useVmScreenAbout();
   const { totalProjects, totalCapacities } = projectSummary ?? {};
@@ -83,7 +84,7 @@ const SectionGrowth = () => {
             <img
               className="w-[404px] h-auto"
               alt="Map"
-              src={p('mock/about/section-growth/mock-map.png')}
+              src={m(media, 'about.figure-map')}
             />
           </div>
         </div>

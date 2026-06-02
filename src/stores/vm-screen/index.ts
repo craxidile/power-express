@@ -9,6 +9,8 @@ import { findMenu } from '../../apis/menu';
 import { listLocalizations } from '../../apis/localization';
 import { Contact } from '../../models/contact';
 import { listContacts } from '../../apis/contact';
+import { Media } from '../../models/media';
+import { listMedia } from '../../apis/media';
 
 const localeState = atom<'th' | 'en'>('th');
 const navMenuState = atom<Menu | null>(null);
@@ -16,11 +18,13 @@ const footerMenuState = atom<Menu | null>(null);
 const contactsState = atom<Contact[]>([]);
 const popupVisibleState = atom<boolean>(false);
 const localizationsState = atom<LocalizedKeyText[]>([]);
+const mediaState = atom<Media[]>([]);
 
 export interface IVmScreen {
   // Observables
   locale?: 'th' | 'en';
   localizations?: LocalizedKeyText[];
+  media?: Media[];
   navMenu?: Menu | null;
   footerMenu?: Menu | null;
   contacts?: Contact[];
@@ -37,6 +41,7 @@ export const useVmScreen = (): IVmScreen => {
 
   const [locale, setLocale] = useAtom(localeState);
   const [localizations, setLocalizations] = useAtom(localizationsState);
+  const [media, setMedia] = useAtom(mediaState);
   const [navMenu, setNavMenu] = useAtom(navMenuState);
   const [footerMenu, setFooterMenu] = useAtom(footerMenuState);
   const [contacts, setContacts] = useAtom(contactsState);
@@ -64,6 +69,16 @@ export const useVmScreen = (): IVmScreen => {
             const localizations = await listLocalizations();
             setLocalizations(localizations);
             resolve(localizations);
+          } catch (error) {
+            console.log('>>error<<', 'list_localizations', error);
+            reject(error);
+          }
+        }),
+        new Promise(async (resolve, reject) => {
+          try {
+            const media = await listMedia();
+            setMedia(media);
+            resolve(media);
           } catch (error) {
             console.log('>>error<<', 'list_localizations', error);
             reject(error);
@@ -101,10 +116,11 @@ export const useVmScreen = (): IVmScreen => {
         }),
       ]);
     })();
-  }, [setLocalizations, setFooterMenu, setNavMenu, setContacts]);
+  }, [setLocalizations, setMedia, setNavMenu, setFooterMenu, setContacts]);
 
   // Observables
   store.locale = locale;
+  store.media = media;
   store.localizations = localizations;
   store.navMenu = navMenu;
   store.footerMenu = footerMenu;

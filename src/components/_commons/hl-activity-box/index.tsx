@@ -16,8 +16,8 @@ const HlActivityBox = (props: PropsWithChildren<ProjectBoxProps>) => {
   const { id, thumbnail } = activity;
 
   return (
-    <Link to={`/${locale}/activity/${id ?? 'test'}`}>
-      <div className="flex flex-col justify-start items-stretch">
+    <div className="flex flex-col justify-start items-stretch">
+      <Link to={`/${locale}/activity/${id ?? 'test'}`}>
         <div className="gap-x-10 hidden lg:flex flex-row justify-start items-stretch">
           <div
             className="max-w-[722px] h-[406px] flex-1"
@@ -27,11 +27,11 @@ const HlActivityBox = (props: PropsWithChildren<ProjectBoxProps>) => {
             <ActivityBoxDetails locale={locale} activity={activity} />
           </div>
         </div>
-        <div className="lg:hidden flex flex-col justify-start items-stretch">
-          <ActivityBox locale={locale} activity={activity} />
-        </div>
+      </Link>
+      <div className="lg:hidden flex flex-col justify-start items-stretch">
+        <ActivityBox locale={locale} activity={activity} />
       </div>
-    </Link>
+    </div>
   );
 };
 

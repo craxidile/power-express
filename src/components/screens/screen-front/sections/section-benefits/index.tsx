@@ -7,10 +7,18 @@ import BenefitBox from '../../../../_commons/benefit-box';
 
 import s from './styles.module.css';
 import TextLines from '../../../../_commons/text-lines';
+import { useMemo } from 'react';
 
 const SectionBenefits = () => {
   const { locale = 'th', localizations = [] } = useVmScreen();
   const { benefits = [] } = useVmScreenFront();
+
+  const localizedTitleBenefits = useMemo(() => {
+    const text = l(locale, localizations, 'front.title-benefits');
+    return text
+      ? text.replace(/\{\{total-benefits}}/g, `${benefits.length}`)
+      : '';
+  }, [locale, localizations, benefits]);
 
   return (
     <section
@@ -24,17 +32,15 @@ const SectionBenefits = () => {
             src={p('logo-dark.png')}
           />
           <h2 className="block self-center py-4 lg:px-0 lg:pt-6 pb-4 text-sm lg-text-3hxl font-medium text-center">
-            <TextLines
-              text={l(locale, localizations, 'front.title-benefits')}
-            />
+            <TextLines text={localizedTitleBenefits} />
           </h2>
           <div className="self-center mb-10 lg:mb-12 bg-sep-green-light w-12 h-1" />
           <ul className="flex flex-col lg:flex-row justify-start items-center lg:items-start lg-items-start">
             {benefits.map((benefit) => {
               const { id } = benefit;
               return (
-                <li>
-                  <BenefitBox key={id} locale={locale} benefit={benefit} />
+                <li key={id}>
+                  <BenefitBox locale={locale} benefit={benefit} />
                 </li>
               );
             })}

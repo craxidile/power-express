@@ -1,8 +1,8 @@
 import { useEffect, useMemo } from 'react';
 import dayjs from 'dayjs';
 
-import { p } from '../../../utils/path-utils';
 import { l } from '../../../utils/localization-utils';
+import { m } from '../../../utils/media-utils';
 import { useVmScreen } from '../../../stores/vm-screen';
 import { useVmScreenProjectList } from '../../../stores/vm-screen-project-list';
 import LayoutBanner from '../../layouts/layout-banner';
@@ -15,7 +15,7 @@ import TextLines from '../../_commons/text-lines';
 import Loading from '../../_commons/loading';
 
 const ScreenProjectList = () => {
-  const { locale = 'th', localizations = [] } = useVmScreen();
+  const { locale = 'th', localizations = [], media } = useVmScreen();
 
   const vmScreenProjectList = useVmScreenProjectList();
   const {
@@ -34,9 +34,9 @@ const ScreenProjectList = () => {
   const banner = useMemo(() => {
     return (
       <div
-        className="flex-1 flex flex-col justify-start items-stretch"
+        className="flex-1 flex flex-col justify-start items-stretch transition-all delay-700"
         style={{
-          background: `url(${p('mock/project-list/mock-banner.jpg')}) no-repeat center/cover`,
+          background: `#ccc url(${m(media, 'project-list.banner-main')}) no-repeat center/cover`,
         }}
       >
         {projectSummary ? (
@@ -83,7 +83,7 @@ const ScreenProjectList = () => {
         </div>
       </div>
     );
-  }, [locale, localizations, projectSummary]);
+  }, [locale, localizations, projectSummary, media]);
 
   return (
     <LayoutBanner banner={banner}>
@@ -98,6 +98,7 @@ const ScreenProjectList = () => {
                 const [min, max] = range;
                 return (
                   <ProjectYearBox
+                    key={`${min}-${max}`}
                     from={min}
                     to={max !== dayjs().year() ? max : undefined}
                     onClick={() =>

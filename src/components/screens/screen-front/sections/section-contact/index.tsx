@@ -2,13 +2,14 @@ import { useMemo } from 'react';
 
 import { p } from '../../../../../utils/path-utils';
 import { l } from '../../../../../utils/localization-utils';
+import { m } from '../../../../../utils/media-utils';
 import { useVmScreen } from '../../../../../stores/vm-screen';
 import SafeArea from '../../../../_commons/safe-area';
 import ContactRow from '../../../../_commons/contact-row';
 import TextLines from '../../../../_commons/text-lines';
 
 const SectionContact = () => {
-  const { locale = 'th', localizations = [] } = useVmScreen();
+  const { locale = 'th', localizations = [], media } = useVmScreen();
 
   const { contacts } = useVmScreen();
 
@@ -42,7 +43,7 @@ const SectionContact = () => {
     <div
       className="h-screen lg:h-auto py-10 lg:py-[80px] flex flex-col justify-start items-stretch"
       style={{
-        background: `url(${p('mock/front/section-contact/bg.png')}) no-repeat center/cover`,
+        background: `url(${m(media, 'front.banner-contact')}) no-repeat center/cover`,
       }}
     >
       <SafeArea>

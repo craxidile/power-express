@@ -23,7 +23,10 @@ const PartnerStrip = (props: PropsWithChildren<PartnerStripProps>) => {
   const createPartnerList = useCallback(
     (partners: Partner[]) => {
       return (
-        <ul className="embla__slide w-full gap-6 grid grid-cols-3">
+        <ul
+          key={partners[0]?.id ?? Math.random()}
+          className="embla__slide w-full gap-6 grid grid-cols-3"
+        >
           {partners.map((partner) => {
             const { id, name, logo } = partner;
             const localizedName = name ? name[locale] : '';

@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import SafeArea from '../safe-area';
 import { p } from '../../../utils/path-utils';
+import { m } from '../../../utils/media-utils';
 import { useVmScreen } from '../../../stores/vm-screen';
 import { MenuItem } from '../../../models/menu';
 import LayoutPopup from '../../layouts/layout-popup';
@@ -27,6 +28,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
     navMenu,
     popupVisible,
     setPopupVisible,
+    media,
   } = useVmScreen();
 
   const menuItems = useMemo((): MenuItem[] => {
@@ -48,12 +50,12 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
   const logoImage = useMemo(() => {
     switch (theme) {
       case NavTheme.light:
-        return 'logo-light.png';
+        return m(media, 'general.logo-light');
       case NavTheme.dark:
       default:
-        return 'logo-dark.png';
+        return m(media, 'general.logo-dark');
     }
-  }, [theme]);
+  }, [theme, media]);
 
   const logoHeight = useMemo(() => {
     switch (theme) {
@@ -109,7 +111,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
         <SafeArea>
           <div className="w-full h-full flex flex-row justify-start items-center">
             <Link to={`/${locale}`}>
-              <img className={`${logoHeight}`} alt="logo" src={p(logoImage)} />
+              <img className={`${logoHeight}`} alt="logo" src={logoImage} />
             </Link>
             <div className="flex-1" />
             <div className="lg:hidden flex flex-row justify-center items-center">

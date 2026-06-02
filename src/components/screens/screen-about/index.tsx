@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
 
-import { p } from '../../../utils/path-utils';
 import { l } from '../../../utils/localization-utils';
+import { m } from '../../../utils/media-utils';
 import { useVmScreen } from '../../../stores/vm-screen';
 import { useVmScreenAbout } from '../../../stores/vm-screen-about';
 import LayoutBanner from '../../layouts/layout-banner';
@@ -14,7 +14,7 @@ import SectionGrowth from './sections/section-growth';
 import TextLines from '../../_commons/text-lines';
 
 const ScreenAbout = () => {
-  const { locale = 'th', localizations = [] } = useVmScreen();
+  const { locale = 'th', localizations = [], media } = useVmScreen();
 
   const vmScreenAbout = useVmScreenAbout();
   const { partners = [] } = vmScreenAbout;
@@ -27,9 +27,9 @@ const ScreenAbout = () => {
   const banner = useMemo(() => {
     return (
       <div
-        className="flex-1 flex flex-col justify-start items-stretch"
+        className="flex-1 flex flex-col justify-start items-stretch transition-all delay-700"
         style={{
-          background: `url(${p('mock/about/mock-banner.jpg')}) no-repeat center/cover`,
+          background: `#ccc url(${m(media, 'about.banner-main')}) no-repeat center/cover`,
         }}
       >
         <div className="py-16 lg:py-[84px] bg-black-a40 absolute left-0 top-0 w-full h-full flex flex-col justify-start items-start">
@@ -48,7 +48,7 @@ const ScreenAbout = () => {
         </div>
       </div>
     );
-  }, [locale, localizations]);
+  }, [locale, localizations, media]);
 
   return (
     <LayoutBanner isFilled banner={banner}>

@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import { p } from '../../../utils/path-utils';
 import { l } from '../../../utils/localization-utils';
-import { Contact } from '../../../models/contact';
+import { m } from '../../../utils/media-utils';
 import { MenuItem } from '../../../models/menu';
 import { useVmScreen } from '../../../stores/vm-screen';
 import { useMemo } from 'react';
@@ -14,6 +13,7 @@ const Footer = () => {
     localizations = [],
     footerMenu,
     contacts,
+    media,
   } = useVmScreen();
 
   const footerMenuItems = useMemo((): MenuItem[] => {
@@ -37,7 +37,7 @@ const Footer = () => {
               <img
                 className="block mx-auto lg:mx-0 w-full max-w-80 lg:w-auto lg:max-w-none lg:h-[106px]"
                 alt="Logo"
-                src={p('logo-footer.png')}
+                src={m(media, 'general.logo-footer')}
               />
             </Link>
             <div className="relative flex-1 flex flex-col justify-center items-center">
@@ -67,9 +67,14 @@ const Footer = () => {
               <span className="text-lime text-base font-medium">Follow us</span>
               <div className="gap-x-4 flex flex-row justify-start items-stretch">
                 {socialContacts.map((contact) => {
-                  const { icon, url, text } = contact;
+                  const { id, icon, url, text } = contact;
                   return (
-                    <a target="_blank" href={url ?? '/'} rel="noreferrer">
+                    <a
+                      key={id}
+                      target="_blank"
+                      href={url ?? '/'}
+                      rel="noreferrer"
+                    >
                       <div className="rounded-full bg-white-a10 w-10 h-10 flex flex-col justify-center items-center">
                         <img
                           className="h-5 w-auto"

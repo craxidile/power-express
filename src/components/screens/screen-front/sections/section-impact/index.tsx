@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 
-import { p } from '../../../../../utils/path-utils';
 import { l } from '../../../../../utils/localization-utils';
+import { m } from '../../../../../utils/media-utils';
 import { useVmScreen } from '../../../../../stores/vm-screen';
 import { useVmScreenFront } from '../../../../../stores/vm-screen-front';
 import TextLines from '../../../../_commons/text-lines';
 
 const SectionImpact = () => {
-  const { locale = 'th', localizations = [] } = useVmScreen();
+  const { locale = 'th', localizations = [], media } = useVmScreen();
 
   const { projectSummary } = useVmScreenFront();
   const { totalProjects = 0, totalCapacities = 0 } = projectSummary ?? {};
@@ -70,7 +70,7 @@ const SectionImpact = () => {
             <img
               className="w-full lg:w-[310px]"
               alt="Map"
-              src={p('mock/front/section-impact/mock-map.png')}
+              src={m(media, 'front.figure-impact')}
             />
           </div>
         </div>
