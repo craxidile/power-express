@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 
+import { p } from '../../../../../utils/path-utils';
+import { l } from '../../../../../utils/localization-utils';
 import { useVmScreen } from '../../../../../stores/vm-screen';
 import { useVmScreenProject } from '../../../../../stores/vm-screen-project';
 import SectionTwoCols from '../../../../sections/section-two-cols';
 import ContentTitle from '../../../../_commons/content-title';
 import ContentItem from '../../../../_commons/content-item';
 import PhotoGallery from '../../../../_commons/photo-gallery';
-import { p } from '../../../../../utils/path-utils';
-import { l } from '../../../../../utils/localization-utils';
 import TextLines from '../../../../_commons/text-lines';
 
 const SectionDetails = () => {
