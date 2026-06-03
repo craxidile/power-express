@@ -153,7 +153,7 @@ const SectionDetails = () => {
           <p className="text-gray-content text-base lg:text-lg">
             {localizedDetails}
           </p>
-          <PhotoGallery photos={photos} />
+          <PhotoGallery locale={locale} photos={photos} />
         </div>
       </SectionTwoCols>
     </div>
