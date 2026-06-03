@@ -47,7 +47,10 @@ const SectionContact = () => {
       }}
     >
       <SafeArea>
-        <div className="px-2 lg:px-0 flex flex-col lg:flex-row justify-start items-stretch">
+        <div
+          id="contact"
+          className="px-2 lg:px-0 flex flex-col lg:flex-row justify-start items-stretch"
+        >
           <div className="box-border px-6 py-8 lg:p-20 w-full max-w-[718px] bg-white rounded-2xl">
             <h2 className="text-sm lg:text-2xl uppercase text-secondary font-medium">
               <TextLines

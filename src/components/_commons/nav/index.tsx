@@ -1,11 +1,17 @@
 import { PropsWithChildren, useCallback, useEffect, useMemo } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from 'react-router-dom';
 
-import SafeArea from '../safe-area';
+import { randomWithDigits } from '../../../utils/number-utils';
 import { p } from '../../../utils/path-utils';
 import { m } from '../../../utils/media-utils';
 import { useVmScreen } from '../../../stores/vm-screen';
 import { MenuItem } from '../../../models/menu';
+import SafeArea from '../safe-area';
 import LayoutPopup from '../../layouts/layout-popup';
 
 export enum NavTheme {
@@ -19,6 +25,11 @@ export interface NavProps {
 
 const Nav = (props: PropsWithChildren<NavProps>) => {
   const { theme = NavTheme.light } = props;
+
+  const { hash } = useLocation();
+
+  const [querystring] = useSearchParams();
+  const rand = querystring.get('rand');
 
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -80,7 +91,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
   useEffect(() => {
     if (!setPopupVisible) return;
     setPopupVisible(false);
-  }, [pathname, setPopupVisible]);
+  }, [pathname, hash, rand, setPopupVisible]);
 
   const onClickMenu = useCallback(() => {
     if (!setPopupVisible) return;
@@ -132,7 +143,9 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
                     key={id}
                     className={!isCta ? '' : 'font-semibold text-cta-primary'}
                   >
-                    <Link to={`/${locale}/${url}`}>
+                    <Link
+                      to={`/${locale}/${url.replace(/\{\{random}}/g, String(randomWithDigits(8)))}`}
+                    >
                       <span className={!isSamePath(url) ? '' : 'underline'}>
                         {localizedTitle}
                       </span>
@@ -174,7 +187,9 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
                   key={id}
                   className={`py-4 ${!isCta ? '' : 'font-semibold text-cta-primary'}`}
                 >
-                  <Link to={`/${locale}/${url}`}>
+                  <Link
+                    to={`/${locale}/${url.replace(/\{\{random}}/g, String(randomWithDigits(8)))}`}
+                  >
                     <span
                       className={`text-2xl ${!isSamePath(url) ? '' : 'font-semibold'}`}
                     >

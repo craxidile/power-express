@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { l } from '../../../utils/localization-utils';
 import { m } from '../../../utils/media-utils';
+import { randomWithDigits } from '../../../utils/number-utils';
 import { MenuItem } from '../../../models/menu';
 import { useVmScreen } from '../../../stores/vm-screen';
 import { useMemo } from 'react';
@@ -51,7 +52,9 @@ const Footer = () => {
                     const localizedTitle = title[locale];
                     return (
                       <li key={id} className="flex-1 flex-shrink-0">
-                        <Link to={`/${locale}/${url}`}>
+                        <Link
+                          to={`/${locale}/${url.replace(/\{\{random}}/g, String(randomWithDigits(8)))}`}
+                        >
                           <span className="text-sm text-white whitespace-nowrap">
                             {localizedTitle}
                           </span>

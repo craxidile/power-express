@@ -5,6 +5,7 @@ import {
   Navigate,
   Routes,
   useLocation,
+  useSearchParams,
 } from 'react-router-dom';
 
 import ScreenFront from './components/screens/screen-front';
@@ -17,11 +18,14 @@ import { IVmScreen, useVmScreen } from './stores/vm-screen';
 
 const ScrollToTopWrapper = (props: PropsWithChildren) => {
   const { children } = props;
+
   const { pathname } = useLocation();
+  const { hash } = useLocation();
 
   useEffect(() => {
+    if (hash) return;
     document.documentElement.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return <>{children}</>;
 };

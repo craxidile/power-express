@@ -42,7 +42,7 @@ const navMenu: Menu = {
         th: 'ติดต่อเรา',
         en: 'Contact Us',
       },
-      url: '/contact',
+      url: '/?rand={{random}}#contact',
       isCta: true,
     },
   ],
