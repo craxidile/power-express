@@ -13,6 +13,7 @@ import { useVmScreen } from '../../../stores/vm-screen';
 import { MenuItem } from '../../../models/menu';
 import SafeArea from '../safe-area';
 import LayoutPopup from '../../layouts/layout-popup';
+import { l } from '../../../utils/localization-utils';
 
 export enum NavTheme {
   light = 'light',
@@ -32,10 +33,12 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
   const rand = querystring.get('rand');
 
   const { pathname } = useLocation();
+
   const navigate = useNavigate();
 
   const {
     locale = 'th',
+    localizations = [],
     navMenu,
     popupVisible,
     setPopupVisible,
@@ -137,7 +140,6 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
             <ul className={`hidden lg:flex flex-row gap-x-6 ${textColor}`}>
               {menuItems.map((menuItem) => {
                 const { id, title, url, isCta } = menuItem;
-                const localizedTitle = title[locale] as string;
                 return (
                   <li
                     key={id}
@@ -147,7 +149,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
                       to={`/${locale}/${url.replace(/\{\{random}}/g, String(randomWithDigits(8)))}`}
                     >
                       <span className={!isSamePath(url) ? '' : 'underline'}>
-                        {localizedTitle}
+                        {l(locale, localizations, title)}
                       </span>
                     </Link>
                   </li>
@@ -181,7 +183,6 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
           <ul className="flex flex-col justify-start items-stretch">
             {menuItems.map((menuItem) => {
               const { id, title, url, isCta } = menuItem;
-              const localizedTitle = title[locale] as string;
               return (
                 <li
                   key={id}
@@ -193,7 +194,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
                     <span
                       className={`text-2xl ${!isSamePath(url) ? '' : 'font-semibold'}`}
                     >
-                      {localizedTitle}
+                      {l(locale, localizations, title)}
                     </span>
                   </Link>
                 </li>

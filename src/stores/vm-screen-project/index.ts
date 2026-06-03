@@ -23,6 +23,7 @@ export const useVmScreenProject = (): IVmScreenProject => {
 
   const bind = useCallback(
     (id: string) => {
+      setProject(null);
       (async () => {
         setLoading(true);
         try {
@@ -48,7 +49,6 @@ export const useVmScreenProject = (): IVmScreenProject => {
     [setLoading, setProject]
   );
 
-  // Observables
   store.loading = loading;
   store.project = project;
 

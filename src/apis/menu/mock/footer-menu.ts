@@ -6,42 +6,27 @@ const footerMenu: Menu = {
   items: [
     {
       id: 1,
-      title: {
-        th: 'หน้าแรก',
-        en: 'Home',
-      },
+      title: 'menu.home',
       url: '/',
     },
     {
       id: 2,
-      title: {
-        th: 'ธุรกิจของเรา',
-        en: 'Our Business',
-      },
+      title: 'menu.about',
       url: '/about',
     },
     {
       id: 3,
-      title: {
-        th: 'โครงการของเรา',
-        en: 'Our Projects',
-      },
+      title: 'menu.projects',
       url: '/project',
     },
     {
       id: 4,
-      title: {
-        th: 'กิจกรรมของเรา',
-        en: 'Our Activities',
-      },
+      title: 'menu.activities',
       url: '/activity',
     },
     {
       id: 5,
-      title: {
-        th: 'ติดต่อเรา',
-        en: 'Contact Us',
-      },
+      title: 'menu.contact',
       url: '/?rand={{random}}#contact',
     },
   ],

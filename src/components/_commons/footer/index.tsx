@@ -49,14 +49,13 @@ const Footer = () => {
                 <ul className="gap-y-4 lg:gap-3 flex flex-col lg:flex-row justify-start items-center lg:items-start flex-wrap">
                   {footerMenuItems.map((menuItem) => {
                     const { id, title, url } = menuItem;
-                    const localizedTitle = title[locale];
                     return (
                       <li key={id} className="flex-1 flex-shrink-0">
                         <Link
                           to={`/${locale}/${url.replace(/\{\{random}}/g, String(randomWithDigits(8)))}`}
                         >
                           <span className="text-sm text-white whitespace-nowrap">
-                            {localizedTitle}
+                            {l(locale, localizations, title)}
                           </span>
                         </Link>
                       </li>

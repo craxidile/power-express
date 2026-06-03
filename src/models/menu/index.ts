@@ -3,7 +3,7 @@ import { LocalizedText } from '../_commons/localized';
 export interface MenuItem {
   id: number;
   icon?: string;
-  title: LocalizedText;
+  title: string;
   url: string;
   isCta?: boolean;
 }

@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 import { useVmScreen } from '../../../stores/vm-screen';
 import { useVmScreenProject } from '../../../stores/vm-screen-project';
