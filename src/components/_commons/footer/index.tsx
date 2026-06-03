@@ -44,7 +44,7 @@ const Footer = () => {
             <div className="relative flex-1 flex flex-col justify-center items-center">
               <div className="gap-y-3 w-full lg:max-w-[800px] lg:pt-4 lg:pb-9 flex flex-col justify-start items-center lg:items-stretch">
                 <span className="block text-lime text-base font-medium">
-                  Menu
+                  {l(locale, localizations, 'footer.title-menu')}
                 </span>
                 <ul className="gap-y-4 lg:gap-3 flex flex-col lg:flex-row justify-start items-center lg:items-start flex-wrap">
                   {footerMenuItems.map((menuItem) => {
@@ -66,7 +66,9 @@ const Footer = () => {
             </div>
             <div className="h-px bg-white-a10 lg:hidden" />
             <div className="gap-y-4 lg:w-[164px] flex flex-col justify-start items-center lg:items-stretch">
-              <span className="text-lime text-base font-medium">Follow us</span>
+              <span className="text-lime text-base font-medium">
+                {l(locale, localizations, 'footer.title-follow-us')}
+              </span>
               <div className="gap-x-4 flex flex-row justify-start items-stretch">
                 {socialContacts.map((contact) => {
                   const { id, icon, url, text } = contact;
