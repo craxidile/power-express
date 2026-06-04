@@ -1,4 +1,4 @@
-import { PropsWithChildren, useMemo } from 'react';
+import { PropsWithChildren, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Locale } from '../../../models/_commons/localized';
@@ -13,7 +13,7 @@ export interface ProjectBoxProps {
 }
 
 const ProjectBox = (props: PropsWithChildren<ProjectBoxProps>) => {
-  const { localizations = [] } = useVmScreen();
+  const { localizations = [], windowWidth } = useVmScreen();
 
   const { locale = 'th', project } = props;
   const {
@@ -26,6 +26,8 @@ const ProjectBox = (props: PropsWithChildren<ProjectBoxProps>) => {
     capacity,
     completion,
   } = project;
+
+  const [isLongText, setLongText] = useState<boolean>(false);
 
   const localizedTitle = useMemo(
     () => title[locale ?? 'th'] ?? '',
@@ -47,31 +49,40 @@ const ProjectBox = (props: PropsWithChildren<ProjectBoxProps>) => {
     [location, locale]
   );
 
+  useEffect(() => {
+    if (!windowWidth || windowWidth <= 1024) {
+      return setLongText(false);
+    }
+    setLongText(true);
+  }, [localizedClient, windowWidth]);
+
   return (
     <Link to={`/${locale}/project/${id ?? 'test'}`}>
       <div className="h-full flex flex-col justify-start items-stretch">
         <div
-          className="aspect-[0.8291] bg-gray-300"
+          className="flex-shrink-0 aspect-[0.8291] bg-gray-300"
           style={{ background: `url(${thumbnail}) no-repeat center/cover` }}
         />
-        <h2 className="block mt-6 text-3hxl font-medium leading-[1.2]">
+        <h2 className="flex-shrink-0 block mt-6 text-3hxl font-medium leading-[1.2]">
           {localizedTitle}
         </h2>
         <div className="flex-1" />
         <span className="mt-3 text-base text-gray-excerpt line-clamp-3">
           {localizedExcerpt}
         </span>
-        <div className="my-4 h-px bg-sep-pale" />
-        <ul className="gap-4 grid grid-cols-2">
+        <div className="flex-shrink-0 my-4 h-px bg-sep-pale" />
+        <ul className="flex-shrink-0 gap-4 grid grid-cols-2">
           <li>
             <ProjectDetailRow
               title={l(locale, localizations, 'project-box.client')}
+              isLongText={isLongText}
               text={localizedClient}
             />
           </li>
           <li>
             <ProjectDetailRow
               title={l(locale, localizations, 'project-box.location')}
+              isLongText={isLongText}
               text={localizedLocation}
             />
           </li>

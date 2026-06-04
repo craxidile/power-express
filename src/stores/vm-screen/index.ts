@@ -19,6 +19,7 @@ const contactsState = atom<Contact[]>([]);
 const popupVisibleState = atom<boolean>(false);
 const localizationsState = atom<LocalizedKeyText[]>([]);
 const mediaState = atom<Media[]>([]);
+const windowWidthState = atom<number>(1024);
 
 export interface IVmScreen {
   // Observables
@@ -29,6 +30,7 @@ export interface IVmScreen {
   footerMenu?: Menu | null;
   contacts?: Contact[];
   popupVisible?: boolean;
+  windowWidth?: number;
   // Actions
   bind?: () => void;
   setPopupVisible?: (visible: boolean) => void;
@@ -46,6 +48,7 @@ export const useVmScreen = (): IVmScreen => {
   const [footerMenu, setFooterMenu] = useAtom(footerMenuState);
   const [contacts, setContacts] = useAtom(contactsState);
   const [popupVisible, setPopupVisible] = useAtom(popupVisibleState);
+  const [windowWidth, setWindowWidth] = useAtom(windowWidthState);
 
   useEffect(() => {
     if (!localeParam || localeParam === locale) return;
@@ -62,6 +65,10 @@ export const useVmScreen = (): IVmScreen => {
   }, [localeParam, locale, setLocale]);
 
   const bind = useCallback(() => {
+    const handler = () => {
+      setWindowWidth(document.documentElement.offsetWidth);
+    };
+    window.addEventListener('resize', handler);
     (async () => {
       await Promise.all([
         new Promise(async (resolve, reject) => {
@@ -116,6 +123,9 @@ export const useVmScreen = (): IVmScreen => {
         }),
       ]);
     })();
+    return () => {
+      window.removeEventListener('resize', handler);
+    };
   }, [setLocalizations, setMedia, setNavMenu, setFooterMenu, setContacts]);
 
   // Observables
@@ -126,6 +136,7 @@ export const useVmScreen = (): IVmScreen => {
   store.footerMenu = footerMenu;
   store.contacts = contacts;
   store.popupVisible = popupVisible;
+  store.windowWidth = windowWidth;
 
   // Actions
   store.bind = bind;
