@@ -34,12 +34,12 @@ const BusinessBanner = (props: PropsWithChildren<BusinessBannerProps>) => {
             <img className="block w-8 h-auto lg:w-10" alt="Icon" src={icon} />
           </div>
           <h3 className="m-0 p-0 leading-none text-white font-medium text-3xl lg:text-4hxl text-center">
-            {localizedTitle}
+            <TextLines text={localizedTitle} />
           </h3>
           <span className="text-sm lg:text-base font-medium text-cta-primary text-center uppercase">
-            {localizedSubtitle}
+            <TextLines text={localizedSubtitle} />
           </span>
-          <div className="flex flex-col justify-start items-stretch">
+          <div className="mx-auto max-w-[720px] flex flex-col justify-start items-stretch">
             <p className="lg:hidden text-base text-white text-center">
               {localizedExcerpt}
             </p>
