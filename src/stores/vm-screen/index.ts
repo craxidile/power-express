@@ -126,7 +126,14 @@ export const useVmScreen = (): IVmScreen => {
     return () => {
       window.removeEventListener('resize', handler);
     };
-  }, [setLocalizations, setMedia, setNavMenu, setFooterMenu, setContacts]);
+  }, [
+    setWindowWidth,
+    setLocalizations,
+    setMedia,
+    setNavMenu,
+    setFooterMenu,
+    setContacts,
+  ]);
 
   // Observables
   store.locale = locale;
