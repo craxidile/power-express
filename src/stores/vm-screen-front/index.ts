@@ -124,6 +124,7 @@ export const useVmScreenFront = (): IVmScreenFront => {
       }
     })();
   }, [
+    setLoading,
     setActivities,
     setBenefits,
     setHeroBanners,
