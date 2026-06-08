@@ -65,6 +65,7 @@ export const useVmScreen = (): IVmScreen => {
   }, [localeParam, locale, setLocale]);
 
   const bind = useCallback(() => {
+    setWindowWidth(document.documentElement.offsetWidth);
     const handler = () => {
       setWindowWidth(document.documentElement.offsetWidth);
     };
