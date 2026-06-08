@@ -1,11 +1,19 @@
 import { PropsWithChildren, useCallback, useEffect, useMemo } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from 'react-router-dom';
 
-import SafeArea from '../safe-area';
+import { randomWithDigits } from '../../../utils/number-utils';
 import { p } from '../../../utils/path-utils';
+import { m } from '../../../utils/media-utils';
 import { useVmScreen } from '../../../stores/vm-screen';
 import { MenuItem } from '../../../models/menu';
+import SafeArea from '../safe-area';
 import LayoutPopup from '../../layouts/layout-popup';
+import { l } from '../../../utils/localization-utils';
 
 export enum NavTheme {
   light = 'light',
@@ -19,14 +27,22 @@ export interface NavProps {
 const Nav = (props: PropsWithChildren<NavProps>) => {
   const { theme = NavTheme.light } = props;
 
+  const { hash } = useLocation();
+
+  const [querystring] = useSearchParams();
+  const rand = querystring.get('rand');
+
   const { pathname } = useLocation();
+
   const navigate = useNavigate();
 
   const {
     locale = 'th',
+    localizations = [],
     navMenu,
     popupVisible,
     setPopupVisible,
+    media,
   } = useVmScreen();
 
   const menuItems = useMemo((): MenuItem[] => {
@@ -48,12 +64,12 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
   const logoImage = useMemo(() => {
     switch (theme) {
       case NavTheme.light:
-        return 'logo-light.png';
+        return m(media, 'general.logo-light');
       case NavTheme.dark:
       default:
-        return 'logo-dark.png';
+        return m(media, 'general.logo-dark');
     }
-  }, [theme]);
+  }, [theme, media]);
 
   const logoHeight = useMemo(() => {
     switch (theme) {
@@ -78,7 +94,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
   useEffect(() => {
     if (!setPopupVisible) return;
     setPopupVisible(false);
-  }, [pathname, setPopupVisible]);
+  }, [pathname, hash, rand, setPopupVisible]);
 
   const onClickMenu = useCallback(() => {
     if (!setPopupVisible) return;
@@ -109,7 +125,7 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
         <SafeArea>
           <div className="w-full h-full flex flex-row justify-start items-center">
             <Link to={`/${locale}`}>
-              <img className={`${logoHeight}`} alt="logo" src={p(logoImage)} />
+              <img className={`${logoHeight}`} alt="logo" src={logoImage} />
             </Link>
             <div className="flex-1" />
             <div className="lg:hidden flex flex-row justify-center items-center">
@@ -124,15 +140,16 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
             <ul className={`hidden lg:flex flex-row gap-x-6 ${textColor}`}>
               {menuItems.map((menuItem) => {
                 const { id, title, url, isCta } = menuItem;
-                const localizedTitle = title[locale] as string;
                 return (
                   <li
                     key={id}
                     className={!isCta ? '' : 'font-semibold text-cta-primary'}
                   >
-                    <Link to={`/${locale}/${url}`}>
+                    <Link
+                      to={`/${locale}/${url.replace(/\{\{random}}/g, String(randomWithDigits(8)))}`}
+                    >
                       <span className={!isSamePath(url) ? '' : 'underline'}>
-                        {localizedTitle}
+                        {l(locale, localizations, title)}
                       </span>
                     </Link>
                   </li>
@@ -166,17 +183,18 @@ const Nav = (props: PropsWithChildren<NavProps>) => {
           <ul className="flex flex-col justify-start items-stretch">
             {menuItems.map((menuItem) => {
               const { id, title, url, isCta } = menuItem;
-              const localizedTitle = title[locale] as string;
               return (
                 <li
                   key={id}
                   className={`py-4 ${!isCta ? '' : 'font-semibold text-cta-primary'}`}
                 >
-                  <Link to={`/${locale}/${url}`}>
+                  <Link
+                    to={`/${locale}/${url.replace(/\{\{random}}/g, String(randomWithDigits(8)))}`}
+                  >
                     <span
                       className={`text-2xl ${!isSamePath(url) ? '' : 'font-semibold'}`}
                     >
-                      {localizedTitle}
+                      {l(locale, localizations, title)}
                     </span>
                   </Link>
                 </li>

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import { p } from '../../../utils/path-utils';
 import { l } from '../../../utils/localization-utils';
-import { Contact } from '../../../models/contact';
+import { m } from '../../../utils/media-utils';
+import { randomWithDigits } from '../../../utils/number-utils';
 import { MenuItem } from '../../../models/menu';
 import { useVmScreen } from '../../../stores/vm-screen';
 import { useMemo } from 'react';
@@ -14,6 +14,7 @@ const Footer = () => {
     localizations = [],
     footerMenu,
     contacts,
+    media,
   } = useVmScreen();
 
   const footerMenuItems = useMemo((): MenuItem[] => {
@@ -37,23 +38,24 @@ const Footer = () => {
               <img
                 className="block mx-auto lg:mx-0 w-full max-w-80 lg:w-auto lg:max-w-none lg:h-[106px]"
                 alt="Logo"
-                src={p('logo-footer.png')}
+                src={m(media, 'general.logo-footer')}
               />
             </Link>
             <div className="relative flex-1 flex flex-col justify-center items-center">
               <div className="gap-y-3 w-full lg:max-w-[800px] lg:pt-4 lg:pb-9 flex flex-col justify-start items-center lg:items-stretch">
                 {/*<span className="block text-lime text-base font-medium">*/}
-                {/*  Menu*/}
+                {/*  {l(locale, localizations, 'footer.title-menu')}*/}
                 {/*</span>*/}
                 <ul className="gap-y-4 lg:gap-3 flex flex-col lg:flex-row justify-start items-center lg:items-start flex-wrap">
                   {footerMenuItems.map((menuItem) => {
                     const { id, title, url } = menuItem;
-                    const localizedTitle = title[locale];
                     return (
                       <li key={id} className="flex-1 flex-shrink-0">
-                        <Link to={`/${locale}/${url}`}>
+                        <Link
+                          to={`/${locale}/${url.replace(/\{\{random}}/g, String(randomWithDigits(8)))}`}
+                        >
                           <span className="text-sm text-white whitespace-nowrap">
-                            {localizedTitle}
+                            {l(locale, localizations, title)}
                           </span>
                         </Link>
                       </li>
@@ -63,13 +65,20 @@ const Footer = () => {
               </div>
             </div>
             <div className="h-px bg-white-a10 lg:hidden" />
-            <div className="gap-y-4 lg:w-[164px] flex flex-col justify-center items-center lg:items-stretch">
-              {/*<span className="text-lime text-base font-medium">Follow us</span>*/}
+            <div className="gap-y-4 lg:w-[164px] flex flex-col justify-start items-center lg:items-stretch">
+              {/*<span className="text-lime text-base font-medium">*/}
+              {/*  {l(locale, localizations, 'footer.title-follow-us')}*/}
+              {/*</span>*/}
               <div className="gap-x-4 flex flex-row justify-start items-stretch">
                 {socialContacts.map((contact) => {
-                  const { icon, url, text } = contact;
+                  const { id, icon, url, text } = contact;
                   return (
-                    <a target="_blank" href={url ?? '/'} rel="noreferrer">
+                    <a
+                      key={id}
+                      target="_blank"
+                      href={url ?? '/'}
+                      rel="noreferrer"
+                    >
                       <div className="rounded-full bg-white-a10 w-10 h-10 flex flex-col justify-center items-center">
                         <img
                           className="h-5 w-auto"

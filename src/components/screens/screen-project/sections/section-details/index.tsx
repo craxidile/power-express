@@ -1,13 +1,14 @@
 import { useMemo } from 'react';
 
+import { p } from '../../../../../utils/path-utils';
+import { l } from '../../../../../utils/localization-utils';
 import { useVmScreen } from '../../../../../stores/vm-screen';
 import { useVmScreenProject } from '../../../../../stores/vm-screen-project';
 import SectionTwoCols from '../../../../sections/section-two-cols';
 import ContentTitle from '../../../../_commons/content-title';
 import ContentItem from '../../../../_commons/content-item';
 import PhotoGallery from '../../../../_commons/photo-gallery';
-import { p } from '../../../../../utils/path-utils';
-import { l } from '../../../../../utils/localization-utils';
+import TextLines from '../../../../_commons/text-lines';
 
 const SectionDetails = () => {
   const vmScreen = useVmScreen();
@@ -84,7 +85,7 @@ const SectionDetails = () => {
           </li>
         </ul>
         <div className="gap-y-4 flex flex-col justify-start items-stretch">
-          {!!energy && (
+          {energy && (
             <div className="p-10 gap-x-6 flex flex-row justify-center items-center rounded-3xl bg-pale">
               <div className="w-12 h-12 lg:w-[100px] lg:h-[100px] flex flex-col justify-center items-center bg-white rounded-full">
                 <img
@@ -95,14 +96,20 @@ const SectionDetails = () => {
               </div>
               <div className="gap-y-2 lg:gap-y-4 lg:min-w-60 flex flex-col justify-start items-start">
                 <span className="text-title-pale text-sm lg:text-base">
-                  Energy Production
+                  <TextLines
+                    text={l(
+                      locale,
+                      localizations,
+                      'project.title-energy-production'
+                    )}
+                  />
                 </span>
                 <div className="gap-x-2 inline-flex flex-row justify-start items-end">
                   <span className="text-4xl lg:text-5xl font-medium leading-none">
-                    {Number(+energy ?? 0).toLocaleString()}
+                    {Number(+energy || 0).toLocaleString()}
                   </span>
                   <span className="text-sm lg:text-base text-gray-dark">
-                    kWh
+                    {l(locale, localizations, 'general.kwh')}
                   </span>
                 </div>
               </div>
@@ -111,9 +118,9 @@ const SectionDetails = () => {
           {treesPlanted && (
             <div className="p-10 gap-y-4 flex flex-col justify-start items-stretch rounded-3xl bg-pale">
               <p className="text-base lg:text-2xl text-title-pale text-center">
-                Equivalent
-                <br />
-                Trees Planted
+                <TextLines
+                  text={l(locale, localizations, 'project.title-trees-planted')}
+                />
               </p>
               <span className="text-center text-4xl lg:text-5xl font-medium leading-none">
                 {(treesPlanted ?? 0).toLocaleString()}
@@ -146,7 +153,7 @@ const SectionDetails = () => {
           <p className="text-gray-content text-base lg:text-lg">
             {localizedDetails}
           </p>
-          <PhotoGallery photos={photos} />
+          <PhotoGallery locale={locale} photos={photos} />
         </div>
       </SectionTwoCols>
     </div>

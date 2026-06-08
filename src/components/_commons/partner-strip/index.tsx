@@ -24,7 +24,8 @@ const PartnerStrip = (props: PropsWithChildren<PartnerStripProps>) => {
     (partners: Partner[]) => {
       return (
         <ul
-          className={`embla__slide w-full gap-6 grid grid-cols-${ITEMS_PER_CARD}`}
+          key={partners[0]?.id ?? Math.random()}
+          className={`embla__slide w-full gap-6 grid grid-cols-5`}
         >
           {partners.map((partner) => {
             const { id, name, logo } = partner;

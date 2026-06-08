@@ -1,14 +1,21 @@
 import { PropsWithChildren, useCallback, useMemo, useState } from 'react';
 import { PhotoSlider } from 'react-photo-view';
 
+import { l } from '../../../utils/localization-utils';
+import { Locale } from '../../../models/_commons/localized';
+import { useVmScreen } from '../../../stores/vm-screen';
+
 const MAX_IMAGES_WITHOUT_HIDDEN = 4;
 
 export interface PhotoGalleryProps {
+  locale?: Locale;
   photos: string[];
 }
 
 const PhotoGallery = (props: PropsWithChildren<PhotoGalleryProps>) => {
-  const { photos } = props;
+  const { locale = 'th', photos } = props;
+
+  const { localizations = [] } = useVmScreen();
 
   const [previewIndex, setPreviewIndex] = useState(0);
   const [previewVisible, setPreviewVisible] = useState(false);
@@ -43,11 +50,15 @@ const PhotoGallery = (props: PropsWithChildren<PhotoGalleryProps>) => {
               {photoCount <= MAX_IMAGES_WITHOUT_HIDDEN ||
               index < lastIndex ? null : (
                 <div className="absolute left-0 top-0 w-full h-full bg-black-a50 gap-y-4 flex flex-col justify-center items-center">
-                  <span className="text-white text-base">See more</span>
+                  <span className="text-white text-base">
+                    {l(locale, localizations, 'general.see-more')}
+                  </span>
                   <span className="text-6hxl text-cta-primary">
                     +{moreCount}
                   </span>
-                  <span className="text-white text-base">Photos</span>
+                  <span className="text-white text-base">
+                    {l(locale, localizations, 'general.photos')}
+                  </span>
                 </div>
               )}
             </button>
