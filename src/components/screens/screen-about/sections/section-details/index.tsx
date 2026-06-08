@@ -21,6 +21,15 @@ const SectionDetails = () => {
     return null;
   }, []);
 
+  const story = useMemo(() => {
+    const story = l(locale, localizations, 'about.story');
+    const highlight = l(locale, localizations, 'about.story-highlight');
+    return story.replace(
+      highlight,
+      `<span style="color: #15ab1d; font-weight: 500">${highlight}</span>`
+    );
+  }, [locale, localizations]);
+
   const colEnd = useMemo(() => {
     return (
       <ul className="flex flex-col justify-start items-stretch">
@@ -46,7 +55,7 @@ const SectionDetails = () => {
     <div className="py-20 flex flex-col justify-start items-stretch">
       <SectionTwoCols title={title} colEnd={colEnd}>
         <p className="text-gray-content text-base lg:text-lg">
-          <TextLines text={l(locale, localizations, 'about.story')} />
+          <TextLines text={story} />
         </p>
       </SectionTwoCols>
     </div>

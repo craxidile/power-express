@@ -7,16 +7,7 @@ export interface TextLinesProps {
 const TextLines = (props: PropsWithChildren<TextLinesProps>) => {
   const { text } = props;
   return (
-    <>
-      {text.split('\n').map((line, index, lines) => {
-        return (
-          <Fragment key={`${index}-${line}`}>
-            {line}
-            {index !== lines.length - 1 && <br />}
-          </Fragment>
-        );
-      })}
-    </>
+    <div dangerouslySetInnerHTML={{ __html: text.replace(/\n/g, '<br/>') }} />
   );
 };
 
