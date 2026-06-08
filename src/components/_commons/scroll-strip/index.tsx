@@ -1,5 +1,7 @@
+import { PropsWithChildren, useCallback } from 'react';
+
 import { p } from '../../../utils/path-utils';
-import { PropsWithChildren } from 'react';
+import { scrollUp100Vh } from '../../../utils/window-utils';
 
 export interface ScrollStripProps {
   text: string;
@@ -7,8 +9,17 @@ export interface ScrollStripProps {
 
 const ScrollStrip = (props: PropsWithChildren<ScrollStripProps>) => {
   const { text } = props;
+
+  const onClick = useCallback(() => {
+    console.log('>>scroll_up<<');
+    scrollUp100Vh();
+  }, []);
+
   return (
-    <div className="absolute left-0 bottom-6 lg:bottom-20 w-full h-[104px] flex flex-col justify-start items-center">
+    <button
+      className="absolute left-0 bottom-6 lg:bottom-20 w-full h-[104px] flex flex-col justify-start items-center"
+      onClick={onClick}
+    >
       <span className="text-white text-xs lg:text-xl leading-[1.25] text-white-a70 uppercase">
         {text}
       </span>
@@ -18,7 +29,7 @@ const ScrollStrip = (props: PropsWithChildren<ScrollStripProps>) => {
         src={p('mock/front/section-slogan/arrow-down.svg')}
         alt="More"
       />
-    </div>
+    </button>
   );
 };
 

@@ -42,9 +42,9 @@ const Footer = () => {
             </Link>
             <div className="relative flex-1 flex flex-col justify-center items-center">
               <div className="gap-y-3 w-full lg:max-w-[800px] lg:pt-4 lg:pb-9 flex flex-col justify-start items-center lg:items-stretch">
-                <span className="block text-lime text-base font-medium">
-                  Menu
-                </span>
+                {/*<span className="block text-lime text-base font-medium">*/}
+                {/*  Menu*/}
+                {/*</span>*/}
                 <ul className="gap-y-4 lg:gap-3 flex flex-col lg:flex-row justify-start items-center lg:items-start flex-wrap">
                   {footerMenuItems.map((menuItem) => {
                     const { id, title, url } = menuItem;
@@ -63,8 +63,8 @@ const Footer = () => {
               </div>
             </div>
             <div className="h-px bg-white-a10 lg:hidden" />
-            <div className="gap-y-4 lg:w-[164px] flex flex-col justify-start items-center lg:items-stretch">
-              <span className="text-lime text-base font-medium">Follow us</span>
+            <div className="gap-y-4 lg:w-[164px] flex flex-col justify-center items-center lg:items-stretch">
+              {/*<span className="text-lime text-base font-medium">Follow us</span>*/}
               <div className="gap-x-4 flex flex-row justify-start items-stretch">
                 {socialContacts.map((contact) => {
                   const { icon, url, text } = contact;
@@ -85,7 +85,6 @@ const Footer = () => {
           </div>
           <div className="p-4 flex flex-col justify-start items-stretch border-t border-t-white-a20">
             <span className="text-white text-sm text-center">
-              © 2026 Power Express.{' '}
               {l(locale, localizations, 'general.copyrights')}
             </span>
           </div>

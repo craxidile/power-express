@@ -34,7 +34,7 @@ const ScreenAbout = () => {
       >
         <div className="py-16 lg:py-[84px] bg-black-a40 absolute left-0 top-0 w-full h-full flex flex-col justify-start items-start">
           <SafeArea>
-            <div className="flex-1 flex flex-col justify-end items-stretch">
+            <div className="flex-1 flex flex-col justify-center items-stretch">
               <h1 className="hidden lg:block text-white text-9xl font-medium">
                 {l(locale, localizations, 'about.title-company')}
               </h1>

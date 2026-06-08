@@ -11,13 +11,14 @@ const SectionDetails = () => {
   const { locale = 'th', localizations = [] } = useVmScreen();
 
   const title = useMemo(() => {
-    return (
-      <ContentTitle
-        caption="PowerExpress"
-        title="PEX"
-        subtitle="Empowering the Future"
-      />
-    );
+    // return (
+    //   <ContentTitle
+    //     caption="PowerExpress"
+    //     title="PEX"
+    //     subtitle="Empowering the Future"
+    //   />
+    // );
+    return null;
   }, []);
 
   const colEnd = useMemo(() => {

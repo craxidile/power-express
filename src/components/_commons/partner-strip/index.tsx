@@ -11,7 +11,7 @@ export interface PartnerStripProps {
 }
 
 const AUTOPLAY_DELAY = 5000;
-const ITEMS_PER_CARD = 3;
+const ITEMS_PER_CARD = 5;
 
 const PartnerStrip = (props: PropsWithChildren<PartnerStripProps>) => {
   const { locale = 'th', partners } = props;
@@ -23,7 +23,9 @@ const PartnerStrip = (props: PropsWithChildren<PartnerStripProps>) => {
   const createPartnerList = useCallback(
     (partners: Partner[]) => {
       return (
-        <ul className="embla__slide w-full gap-6 grid grid-cols-3">
+        <ul
+          className={`embla__slide w-full gap-6 grid grid-cols-${ITEMS_PER_CARD}`}
+        >
           {partners.map((partner) => {
             const { id, name, logo } = partner;
             const localizedName = name ? name[locale] : '';

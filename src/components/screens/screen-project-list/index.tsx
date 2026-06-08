@@ -10,7 +10,7 @@ import ProjectBannerRow from '../../_commons/project-banner-row';
 import SafeArea from '../../_commons/safe-area';
 import ProjectGrid from '../../_commons/project-grid';
 import ScrollStrip from '../../_commons/scroll-strip';
-import ProjectYearBox from '../../_commons/project-year-box';
+// import ProjectYearBox from '../../_commons/project-year-box';
 import TextLines from '../../_commons/text-lines';
 import Loading from '../../_commons/loading';
 
@@ -21,9 +21,9 @@ const ScreenProjectList = () => {
   const {
     loading,
     projects = [],
-    completionRanges = [],
     projectSummary,
-    currentCompletionRange,
+    // completionRanges = [],
+    // currentCompletionRange,
   } = vmScreenProjectList;
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const ScreenProjectList = () => {
       >
         {projectSummary ? (
           <div className="bg-black-a40 absolute left-0 top-0 w-full h-full flex flex-col justify-center items-center">
-            <div className="-translate-y-[10%] gap-y-16 lg:gap-y-12 flex flex-col justify-center items-center">
+            <div className="lg:translate-y-[10%] gap-y-16 lg:gap-y-12 flex flex-col justify-center items-center">
               <div className="flex flex-col justify-start items-stretch">
                 <h1 className="hidden lg:block text-center text-white text-9xl font-medium">
                   {l(locale, localizations, 'project-list.title-projects')}
@@ -93,26 +93,26 @@ const ScreenProjectList = () => {
             <h2 className="uppercase text-secondary text-center text-sm lg:text-2xl font-medium">
               {l(locale, localizations, 'project-list.title-projects')}
             </h2>
-            <div className="gap-x-6 gap-y-4 lg:gap-y-10 lg:gap-x-20 flex flex-row justify-center items-center flex-wrap">
-              {completionRanges.map((range, index) => {
-                const [min, max] = range;
-                return (
-                  <ProjectYearBox
-                    from={min}
-                    to={max !== dayjs().year() ? max : undefined}
-                    onClick={() =>
-                      vmScreenProjectList.setCompletion &&
-                      vmScreenProjectList.setCompletion(min, max)
-                    }
-                    isActive={
-                      !!currentCompletionRange &&
-                      currentCompletionRange[0] === min &&
-                      currentCompletionRange[1] === max
-                    }
-                  />
-                );
-              })}
-            </div>
+            {/*<div className="gap-x-6 gap-y-4 lg:gap-y-10 lg:gap-x-20 flex flex-row justify-center items-center flex-wrap">*/}
+            {/*  {completionRanges.map((range, index) => {*/}
+            {/*    const [min, max] = range;*/}
+            {/*    return (*/}
+            {/*      <ProjectYearBox*/}
+            {/*        from={min}*/}
+            {/*        to={max !== dayjs().year() ? max : undefined}*/}
+            {/*        onClick={() =>*/}
+            {/*          vmScreenProjectList.setCompletion &&*/}
+            {/*          vmScreenProjectList.setCompletion(min, max)*/}
+            {/*        }*/}
+            {/*        isActive={*/}
+            {/*          !!currentCompletionRange &&*/}
+            {/*          currentCompletionRange[0] === min &&*/}
+            {/*          currentCompletionRange[1] === max*/}
+            {/*        }*/}
+            {/*      />*/}
+            {/*    );*/}
+            {/*  })}*/}
+            {/*</div>*/}
             {!loading ? (
               <ProjectGrid locale={locale} projects={projects} />
             ) : (

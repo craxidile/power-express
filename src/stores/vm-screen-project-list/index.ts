@@ -3,6 +3,7 @@ import { atom, useAtom } from 'jotai';
 
 import { Project } from '../../models/project';
 import {
+  listProjects,
   findProjectSummary,
   listProjectCompletions,
   listProjectsByCompletion,
@@ -61,16 +62,16 @@ export const useVmScreenProjectList = (): IVmScreenProjectList => {
   const bind = useCallback(() => {
     (async () => {
       await Promise.all([
-        // new Promise(async (resolve, reject) => {
-        //   try {
-        //     const projects = await listProjects();
-        //     setProjects(projects);
-        //     resolve(projects);
-        //   } catch (error) {
-        //     console.log('>>error<< list_projects', error);
-        //     reject(error);
-        //   }
-        // }),
+        new Promise(async (resolve, reject) => {
+          try {
+            const projects = await listProjects();
+            setProjects(projects);
+            resolve(projects);
+          } catch (error) {
+            console.log('>>error<< list_projects', error);
+            reject(error);
+          }
+        }),
         new Promise(async (resolve, reject) => {
           try {
             const projectSummary = await findProjectSummary();
@@ -92,7 +93,7 @@ export const useVmScreenProjectList = (): IVmScreenProjectList => {
             }
             console.log('>>completion_ranges<<', completionRanges);
             setCompletionRanges(completionRanges);
-            await setCompletion(completionRanges[0][0], completionRanges[0][1]);
+            // await setCompletion(completionRanges[0][0], completionRanges[0][1]);
             resolve(completionRanges);
           } catch (error) {
             console.log('>>error<< find_completions', error);
@@ -100,7 +101,7 @@ export const useVmScreenProjectList = (): IVmScreenProjectList => {
         }),
       ]);
     })();
-  }, [setProjectSummary, setCompletionRanges, setCompletion]);
+  }, [setProjects, setProjectSummary, setCompletionRanges, setCompletion]);
 
   // Observables
   store.loading = loading;
@@ -111,7 +112,8 @@ export const useVmScreenProjectList = (): IVmScreenProjectList => {
 
   // Actions
   store.bind = bind;
-  store.setCompletion = setCompletion;
+  // store.setCompletion = setCompletion;
+  store.setCompletion = () => {};
 
   return store;
 };
