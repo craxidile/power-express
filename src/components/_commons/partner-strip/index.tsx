@@ -1,8 +1,9 @@
+import { PropsWithChildren, useCallback, useEffect, useMemo } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
+import { useVmScreen } from '../../../stores/vm-screen';
 import { Partner } from '../../../models/partner';
-import { PropsWithChildren, useCallback } from 'react';
 import { Locale } from '../../../models/_commons/localized';
 
 export interface PartnerStripProps {
@@ -11,10 +12,18 @@ export interface PartnerStripProps {
 }
 
 const AUTOPLAY_DELAY = 5000;
-const ITEMS_PER_CARD = 5;
+const SM_ITEMS_PER_CARD = 3;
+const LG_ITEMS_PER_CARD = 5;
 
 const PartnerStrip = (props: PropsWithChildren<PartnerStripProps>) => {
   const { locale = 'th', partners } = props;
+
+  const { windowWidth } = useVmScreen();
+
+  const itemsPerCard = useMemo(
+    () => ((windowWidth ?? 0) <= 1024 ? SM_ITEMS_PER_CARD : LG_ITEMS_PER_CARD),
+    [windowWidth]
+  );
 
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: false }),
@@ -25,15 +34,18 @@ const PartnerStrip = (props: PropsWithChildren<PartnerStripProps>) => {
       return (
         <ul
           key={partners[0]?.id ?? Math.random()}
-          className={`embla__slide w-full gap-6 grid grid-cols-5`}
+          className={`embla__slide w-full gap-6 grid grid-cols-3 lg:grid-cols-5 justify-center`}
         >
           {partners.map((partner) => {
             const { id, name, logo } = partner;
             const localizedName = name ? name[locale] : '';
             return (
-              <li key={id}>
+              <li
+                key={id}
+                className="relative flex flex-col justify-center items-center"
+              >
                 <img
-                  className="block"
+                  className="block w-[80%]"
                   alt={localizedName}
                   title={localizedName}
                   src={logo}
@@ -47,7 +59,7 @@ const PartnerStrip = (props: PropsWithChildren<PartnerStripProps>) => {
     [locale]
   );
 
-  return partners.length <= ITEMS_PER_CARD ? (
+  return partners.length <= itemsPerCard ? (
     createPartnerList(partners)
   ) : (
     <div className="embla z-[1] relative mx-auto h-full w-full flex flex-justify-start items-stretch">
@@ -56,11 +68,11 @@ const PartnerStrip = (props: PropsWithChildren<PartnerStripProps>) => {
         className="embla__viewport overflow-hidden flex-1 w-full h-full"
       >
         <div className="embla__container flex">
-          {[...Array(Math.ceil(partners.length / ITEMS_PER_CARD))].map(
+          {[...Array(Math.ceil(partners.length / itemsPerCard))].map(
             (_, index) => {
-              const start = index * ITEMS_PER_CARD;
+              const start = index * itemsPerCard;
               return createPartnerList(
-                partners.slice(start, start + ITEMS_PER_CARD)
+                partners.slice(start, start + itemsPerCard)
               );
             }
           )}

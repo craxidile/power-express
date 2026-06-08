@@ -65,7 +65,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="h-px bg-white-a10 lg:hidden" />
-            <div className="gap-y-4 lg:w-[164px] flex flex-col justify-start items-center lg:items-stretch">
+            <div className="gap-y-4 lg:w-[164px] lg:pt-4 lg:pb-9 flex flex-col justify-start items-center lg:items-stretch">
               {/*<span className="text-lime text-base font-medium">*/}
               {/*  {l(locale, localizations, 'footer.title-follow-us')}*/}
               {/*</span>*/}
@@ -93,7 +93,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="p-4 flex flex-col justify-start items-stretch border-t border-t-white-a20">
-            <span className="text-white text-sm text-center">
+            <span className="block text-white text-2xs lg:text-sm text-center">
               {l(locale, localizations, 'general.copyrights')}
             </span>
           </div>

@@ -40,6 +40,7 @@ module.exports = {
         lime: '#C8FF00',
       },
       fontSize: {
+        '2xs': '.65rem',
         '2hxl': '1.75rem',
         '3hxl': '2rem',
         '4hxl': '2.5rem',
