@@ -1,6 +1,8 @@
 import React, { ReactElement, useEffect } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 
+import { m } from '../../../utils/media-utils';
+import { useVmScreen } from '../../../stores/vm-screen';
 import { useVmScreenFront } from '../../../stores/vm-screen-front';
 import SectionSlogan from './sections/section-slogan';
 import SectionBenefits from './sections/section-benefits';
@@ -17,6 +19,8 @@ const ScreenFront = (): ReactElement => {
 
   const [querystring] = useSearchParams();
   const rand = querystring.get('rand');
+
+  const { media } = useVmScreen();
 
   const vmScreenFront = useVmScreenFront();
   const { loading, partners = [] } = vmScreenFront;
@@ -41,21 +45,33 @@ const ScreenFront = (): ReactElement => {
   }, [hash, loading, rand]);
 
   return (
-    <div className="flex flex-col justify-start items-stretch">
-      <SectionSlogan />
-      {loading || (
-        <>
-          <SectionBenefits />
-          <SectionBusiness />
-          <SectionProjects />
-          <SectionPartners partners={partners} />
-          <SectionImpact />
-          <SectionActivities />
-          <SectionContact />
-          <Footer />
-        </>
-      )}
-    </div>
+    <>
+      {/*Start Head*/}
+      <>
+        <title>Power Express</title>
+        <meta
+          name="description"
+          content="Empowering your business with Renewable Energy Solutions."
+        />
+        <meta property="og:image" content={m(media, 'general.logo-dark')} />
+      </>
+      {/*End Head*/}
+      <div className="flex flex-col justify-start items-stretch">
+        <SectionSlogan />
+        {loading || (
+          <>
+            <SectionBenefits />
+            <SectionBusiness />
+            <SectionProjects />
+            <SectionPartners partners={partners} />
+            <SectionImpact />
+            <SectionActivities />
+            <SectionContact />
+            <Footer />
+          </>
+        )}
+      </div>
+    </>
   );
 };
 
