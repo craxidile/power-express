@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { l } from '../../../../../utils/localization-utils';
 import { useVmScreen } from '../../../../../stores/vm-screen';
 import SectionTwoCols from '../../../../sections/section-two-cols';
-import ContentTitle from '../../../../_commons/content-title';
+// import ContentTitle from '../../../../_commons/content-title';
 import ContentItem from '../../../../_commons/content-item';
 import TextLines from '../../../../_commons/text-lines';
 
