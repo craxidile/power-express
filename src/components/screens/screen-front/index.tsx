@@ -1,8 +1,6 @@
 import React, { ReactElement, useEffect } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 
-import { baseUrl } from '../../../config/constants';
-import { m } from '../../../utils/media-utils';
 import { useVmScreen } from '../../../stores/vm-screen';
 import { useVmScreenFront } from '../../../stores/vm-screen-front';
 import SectionSlogan from './sections/section-slogan';
@@ -46,39 +44,21 @@ const ScreenFront = (): ReactElement => {
   }, [hash, loading, rand]);
 
   return (
-    <>
-      {/*Start Head*/}
-      <>
-        <title>Power Express</title>
-        <meta
-          name="description"
-          content="Empowering your business with Renewable Energy Solutions."
-        />
-        <meta property="og:url" content={baseUrl} />
-        <meta property="og:title" content="Power Express" />
-        <meta
-          property="og:description"
-          content="Empowering your business with Renewable Energy Solutions."
-        />
-        <meta property="og:image" content={m(media, 'general.logo-dark')} />
-      </>
-      {/*End Head*/}
-      <div className="flex flex-col justify-start items-stretch">
-        <SectionSlogan />
-        {loading || (
-          <>
-            <SectionBenefits />
-            <SectionBusiness />
-            <SectionProjects />
-            <SectionPartners partners={partners} />
-            <SectionImpact />
-            <SectionActivities />
-            <SectionContact />
-            <Footer />
-          </>
-        )}
-      </div>
-    </>
+    <div className="flex flex-col justify-start items-stretch">
+      <SectionSlogan />
+      {loading || (
+        <>
+          <SectionBenefits />
+          <SectionBusiness />
+          <SectionProjects />
+          <SectionPartners partners={partners} />
+          <SectionImpact />
+          <SectionActivities />
+          <SectionContact />
+          <Footer />
+        </>
+      )}
+    </div>
   );
 };
 
