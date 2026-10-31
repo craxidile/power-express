@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, useEffect } from 'react';
 import {
-  HashRouter,
+  BrowserRouter,
   Route,
   Navigate,
   Routes,
@@ -44,7 +44,7 @@ const AppScreen = (props: PropsWithChildren) => {
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <AppScreen>
         <ScrollToTopWrapper>
           <Routes>
@@ -59,7 +59,7 @@ function App() {
           </Routes>
         </ScrollToTopWrapper>
       </AppScreen>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

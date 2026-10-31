@@ -12,6 +12,8 @@ import SectionPartners, {
 import SectionDetails from './sections/section-details';
 import SectionGrowth from './sections/section-growth';
 import TextLines from '../../_commons/text-lines';
+import Seo from '../../_commons/seo';
+import { seoText } from '../../../config/seo-text';
 
 const ScreenAbout = () => {
   const { locale = 'th', localizations = [], media } = useVmScreen();
@@ -53,6 +55,12 @@ const ScreenAbout = () => {
   return (
     <LayoutBanner isFilled banner={banner}>
       <div className="flex flex-col justify-start items-stretch">
+        <Seo
+          locale={locale}
+          title={seoText.about[locale].title}
+          description={seoText.about[locale].description}
+          path="about"
+        />
         <SectionDetails />
         <SectionGrowth />
         <SectionPartners

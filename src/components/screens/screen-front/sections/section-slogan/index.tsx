@@ -24,12 +24,12 @@ const SectionSlogan = () => {
         {!loading ? (
           <>
             <div className="flex flex-col justify-start items-stretch">
-              <p className="hidden lg:block text-4xl lg:text-6xl text-white lg:text-center !leading-[1.2]">
+              <h1 className="hidden lg:block text-4xl lg:text-6xl text-white lg:text-center !leading-[1.2] font-normal">
                 <TextLines text={l(locale, localizations, 'front.cta')} />
-              </p>
-              <p className="lg:hidden text-4xl lg:text-6xl text-white lg:text-center !leading-[1.2]">
+              </h1>
+              <h1 className="lg:hidden text-4xl lg:text-6xl text-white lg:text-center !leading-[1.2] font-normal">
                 {l(locale, localizations, 'front.cta')}
-              </p>
+              </h1>
             </div>
             <ScrollStrip
               text={l(locale, localizations, 'general.slide-more')}

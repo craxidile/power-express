@@ -8,6 +8,8 @@ import SectionBanner from './sections/section-banner';
 import SectionDetails from './sections/section-details';
 import SectionNext from '../../sections/section-next';
 import { l } from '../../../utils/localization-utils';
+import Seo from '../../_commons/seo';
+import { stripText } from '../../../config/seo-text';
 
 const ScreenProject = () => {
   const params = useParams();
@@ -31,6 +33,17 @@ const ScreenProject = () => {
 
   return (
     <LayoutStandard>
+      {project && (
+        <Seo
+          locale={locale}
+          title={project.title[locale]}
+          description={stripText(
+            project.excerpt[locale] || project.details[locale]
+          )}
+          path={`project/${project.id}`}
+          image={project.banner || project.thumbnail}
+        />
+      )}
       <div className="flex flex-col justify-start items-stretch">
         <SectionBanner />
         <SectionDetails />

@@ -6,7 +6,7 @@ import { p } from '../../../utils/path-utils';
 import { l } from '../../../utils/localization-utils';
 import { useVmScreen } from '../../../stores/vm-screen';
 import ActivityTag from '../activity-tag';
-import { localizedDate } from '../../../utils/ date-utils';
+import { localizedDate } from '../../../utils/date-utils';
 
 export enum ActivityBoxDetailsMode {
   full = 'full',
