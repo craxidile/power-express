@@ -9,6 +9,8 @@ import SectionDetails from './sections/section-details';
 import SectionNext from '../../sections/section-next';
 import { p } from '../../../utils/path-utils';
 import Loading from '../../_commons/loading';
+import Seo from '../../_commons/seo';
+import { stripText } from '../../../config/seo-text';
 
 const ScreenActivity = () => {
   const params = useParams();
@@ -32,6 +34,15 @@ const ScreenActivity = () => {
 
   return (
     <LayoutStandard>
+      {activity && (
+        <Seo
+          locale={locale}
+          title={activity.title[locale]}
+          description={stripText(activity.excerpt[locale])}
+          path={`activity/${activity.id}`}
+          image={activity.banner || activity.thumbnail}
+        />
+      )}
       {!loading ? (
         <>
           <SectionDetails />

@@ -1,4 +1,6 @@
 export const apiPrefix =
   'https://yttnuerixoafmhpdghdm.supabase.co/functions/v1';
-export const apiKey = 'sb_publishable_zBpJVvLrBXI_-CoV28r75w_hSubLVMx';
-export const baseUrl = 'https://powerexpress1980.com';
+export const siteUrl = 'https://powerexpress1980.com';
+export const siteName = 'Power Express';
+export const defaultOgImage = `${siteUrl}/logo512.png`;
+export const apiKey ='sb_publishable_zBpJVvLrBXI_-CoV28r75w_hSubLVMx';

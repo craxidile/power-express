@@ -8,6 +8,8 @@ import SafeArea from '../../_commons/safe-area';
 import ActivityGrid from '../../_commons/activity-grid';
 import HlActivityBox from '../../_commons/hl-activity-box';
 import Loading from '../../_commons/loading';
+import Seo from '../../_commons/seo';
+import { seoText } from '../../../config/seo-text';
 
 const ProjectScreen = (props: PropsWithChildren): ReactElement => {
   const { locale = 'th', localizations = [] } = useVmScreen();
@@ -21,6 +23,12 @@ const ProjectScreen = (props: PropsWithChildren): ReactElement => {
 
   return (
     <LayoutStandard>
+      <Seo
+        locale={locale}
+        title={seoText.activities[locale].title}
+        description={seoText.activities[locale].description}
+        path="activity"
+      />
       {!loading ? (
         <div className="py-20 flex flex-col justify-start items-stretch">
           <SafeArea>

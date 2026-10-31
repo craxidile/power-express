@@ -13,6 +13,8 @@ import ScrollStrip from '../../_commons/scroll-strip';
 // import ProjectYearBox from '../../_commons/project-year-box';
 import TextLines from '../../_commons/text-lines';
 import Loading from '../../_commons/loading';
+import Seo from '../../_commons/seo';
+import { seoText } from '../../../config/seo-text';
 
 const ScreenProjectList = () => {
   const { locale = 'th', localizations = [], media } = useVmScreen();
@@ -87,6 +89,12 @@ const ScreenProjectList = () => {
 
   return (
     <LayoutBanner banner={banner}>
+      <Seo
+        locale={locale}
+        title={seoText.projects[locale].title}
+        description={seoText.projects[locale].description}
+        path="project"
+      />
       <div className="py-10 lg:py-20 flex flex-col justify-start items-stretch">
         <SafeArea>
           <div className="gap-y-6 lg:gap-y-20 flex flex-col justify-start items-stretch">

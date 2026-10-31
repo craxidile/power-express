@@ -7,6 +7,11 @@ import 'react-photo-view/dist/react-photo-view.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Old shared links look like /#/th/project/23 - move them to /th/project/23.
+if (window.location.hash.startsWith('#/')) {
+  window.history.replaceState(null, '', window.location.hash.slice(1));
+}
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

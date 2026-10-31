@@ -1,7 +1,7 @@
 import { PropsWithChildren, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
-import { localizedDate } from '../../../utils/ date-utils';
+import { localizedDate } from '../../../utils/date-utils';
 import { Locale } from '../../../models/_commons/localized';
 import { Activity } from '../../../models/activity';
 import ActivityTag, { ActivityTagSize } from '../activity-tag';
