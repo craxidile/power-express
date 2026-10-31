@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <title>Power Express</title>
+    <script>
+      // GitHub Pages SPA fallback: send deep links to index.html, which restores the path.
+      var l = window.location;
+      l.replace(
+        l.origin +
+          '/?/' +
+          l.pathname.slice(1).replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
