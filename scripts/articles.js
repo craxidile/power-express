@@ -11,6 +11,7 @@ module.exports = [
   ...require('./articles3'),
   ...require('./articles4'),
   ...require('./articles5'),
+  ...require('./articles6'),
   {
     slug: 'guide-private-ppa',
     path: 'guides/private-ppa-complete-guide',
