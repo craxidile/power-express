@@ -9,6 +9,7 @@ import { trackAdLead } from '../../../utils/consent';
 import LayoutStandard from '../../layouts/layout-standard';
 import SafeArea from '../../_commons/safe-area';
 import Seo from '../../_commons/seo';
+import Turnstile from '../../_commons/turnstile';
 
 const MAX_FILE_BYTES = 10 * 1024 * 1024;
 const FILE_TYPES = ['application/pdf', 'image/jpeg', 'image/png'];
@@ -249,6 +250,7 @@ const ScreenAssessment = () => {
                     {error}
                   </p>
                 )}
+                <Turnstile />
                 <button
                   type="submit"
                   disabled={sending}

@@ -78,6 +78,36 @@ const notify = async (lead: Record<string, unknown>) => {
   }
 };
 
+// Best-effort LINE alert via the Messaging API push endpoint. Needs secrets
+// LINE_CHANNEL_TOKEN and LINE_NOTIFY_TO (a user, group or room ID).
+const notifyLine = async (lead: Record<string, unknown>) => {
+  const token = Deno.env.get("LINE_CHANNEL_TOKEN");
+  const to = Deno.env.get("LINE_NOTIFY_TO");
+  if (!token || !to) return;
+  const lines = [
+    "New solar lead",
+    `${lead.company} (${lead.name})`,
+    lead.phone ? `Tel: ${lead.phone}` : null,
+    lead.line_id ? `LINE: ${lead.line_id}` : null,
+    lead.email ? `Email: ${lead.email}` : null,
+    lead.monthly_bill_band ? `Bill: ${lead.monthly_bill_band}` : null,
+    lead.province ? `Province: ${lead.province}` : null,
+  ].filter(Boolean).join("\n");
+  try {
+    const res = await fetch("https://api.line.me/v2/bot/message/push", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ to, messages: [{ type: "text", text: lines }] }),
+    });
+    if (!res.ok) console.error("line notify failed", res.status, await res.text());
+  } catch (e) {
+    console.error("line notify error", String(e));
+  }
+};
+
 Deno.serve(async (req) => {
   const origin = req.headers.get("origin");
 
@@ -98,6 +128,28 @@ Deno.serve(async (req) => {
   // Honeypot: real visitors never fill this hidden field.
   if (text(form, "website", 200)) {
     return json({ ok: true }, 200, origin);
+  }
+
+  // Cloudflare Turnstile: enforced only when TURNSTILE_SECRET_KEY is configured.
+  const turnstileSecret = Deno.env.get("TURNSTILE_SECRET_KEY");
+  if (turnstileSecret) {
+    const token = text(form, "cf-turnstile-response", 4096);
+    let passed = false;
+    if (token) {
+      try {
+        const res = await fetch(
+          "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+          {
+            method: "POST",
+            body: new URLSearchParams({ secret: turnstileSecret, response: token }),
+          },
+        );
+        passed = (await res.json()).success === true;
+      } catch (e) {
+        console.error("turnstile verify error", String(e));
+      }
+    }
+    if (!passed) return json({ error: "bot_check_failed" }, 400, origin);
   }
 
   const name = text(form, "name", 200);
@@ -182,6 +234,6 @@ Deno.serve(async (req) => {
     return json({ error: "save_failed" }, 500, origin);
   }
 
-  await notify(lead);
+  await Promise.all([notify(lead), notifyLine(lead)]);
   return json({ ok: true, id }, 200, origin);
 });
