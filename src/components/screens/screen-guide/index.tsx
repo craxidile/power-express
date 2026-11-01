@@ -12,6 +12,7 @@ import { listProjects } from '../../../apis/project';
 import { Project } from '../../../models/project';
 import { track } from '../../../utils/analytics';
 import LayoutStandard from '../../layouts/layout-standard';
+import impact from '../../../config/impact.json';
 import SafeArea from '../../_commons/safe-area';
 import Seo from '../../_commons/seo';
 
@@ -89,6 +90,36 @@ const renderInline = (text: string, locale: string): ReactNode => {
   }
   if (last < text.length) parts.push(text.slice(last));
   return parts.map((x, i) => <Fragment key={i}>{x}</Fragment>);
+};
+
+const LINKEDIN = 'https://www.linkedin.com/in/panuwat-thongrompo-18760b15/';
+
+const impactFacts = (projects: Project[], locale: 'th' | 'en') => {
+  const kw = projects.reduce((n, p) => n + Number(p.capacity || 0), 0);
+  const years = projects.map((p) => Number(p.completion)).filter(Boolean);
+  const th = locale === 'th';
+  const facts = [
+    th ? `จำนวนโครงการที่ติดตั้งแล้ว: ${projects.length} โครงการ` : `Projects installed: ${projects.length}`,
+    `${th ? 'กำลังติดตั้งรวม' : 'Total installed capacity'}: ${(kw / 1000).toFixed(2)} MW (${Math.round(kw).toLocaleString('en-US')} kW)`,
+  ];
+  if (years.length)
+    facts.push(
+      th
+        ? `ปีที่เริ่มดำเนินงานโครงการ: ${Math.min(...years)} ถึง ${Math.max(...years)}`
+        : `Projects completed: ${Math.min(...years)} to ${Math.max(...years)}`
+    );
+  if (impact.measuredKwh) {
+    const t = (impact.measuredKwh * impact.co2FactorKgPerKwh) / 1000;
+    facts.push(
+      th
+        ? `ไฟฟ้าที่ผลิตได้สะสม: ${Math.round(impact.measuredKwh).toLocaleString('en-US')} kWh (ข้อมูล ณ ${impact.asOf})`
+        : `Cumulative generation: ${Math.round(impact.measuredKwh).toLocaleString('en-US')} kWh (as of ${impact.asOf})`,
+      th
+        ? `ก๊าซเรือนกระจกที่หลีกเลี่ยงได้โดยประมาณ: ${Math.round(t).toLocaleString('en-US')} tCO2e (ใช้ค่า ${impact.co2FactorKgPerKwh} kgCO2e/kWh ตาม ${impact.co2FactorSource})`
+        : `Estimated greenhouse gas avoided: ${Math.round(t).toLocaleString('en-US')} tCO2e (using ${impact.co2FactorKgPerKwh} kgCO2e/kWh, ${impact.co2FactorSource})`
+    );
+  }
+  return facts;
 };
 
 const hash = (s: string) =>
@@ -290,6 +321,20 @@ const ScreenGuide = () => {
                 <p className="text-lg text-gray-content">{t.intro}</p>
               </div>
 
+              {(guide.slug === 'impact' || guide.slug === 'press') &&
+                projects.length > 0 && (
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {impactFacts(projects, locale).map((f) => (
+                      <li
+                        key={f}
+                        className="p-5 rounded-2xl bg-white border border-sep-smoke text-lg font-medium text-title-dark"
+                      >
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
               {isHub && (
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   {guides
@@ -452,6 +497,14 @@ const ScreenGuide = () => {
                   <p className="text-lg font-medium text-title-dark">
                     {AUTHOR[locale].name}, {AUTHOR[locale].title}
                   </p>
+                  <a
+                    href={LINKEDIN}
+                    target="_blank"
+                    rel="noopener noreferrer me"
+                    className="self-start underline text-green-bullet text-sm"
+                  >
+                    LinkedIn
+                  </a>
                   <p className="text-base text-gray-content">
                     {l.authorBio(
                       projects.length,

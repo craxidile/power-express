@@ -23,8 +23,30 @@ const author = {
   name: { th: 'ภานุวัจน์ ทองร่มโพธิ์', en: 'Panuwat Thongrompo' },
   title: { th: 'ประธานเจ้าหน้าที่บริหาร', en: 'Chief Executive Officer' },
 };
+const authorLinkedIn = 'https://www.linkedin.com/in/panuwat-thongrompo-18760b15/';
+const impact = require('../src/config/impact.json');
+
+// Live portfolio facts for the impact/press pages and the author box.
+const impactFacts = (projects, l) => {
+  const kw = projects.reduce((n, p) => n + Number(p.capacity || 0), 0);
+  const years = projects.map((p) => Number(p.completion)).filter(Boolean);
+  const facts = [
+    l === 'th' ? `จำนวนโครงการที่ติดตั้งแล้ว: ${projects.length} โครงการ` : `Projects installed: ${projects.length}`,
+    l === 'th' ? `กำลังติดตั้งรวม: ${(kw / 1000).toFixed(2)} MW (${Math.round(kw).toLocaleString('en-US')} kW)` : `Total installed capacity: ${(kw / 1000).toFixed(2)} MW (${Math.round(kw).toLocaleString('en-US')} kW)`,
+  ];
+  if (years.length) facts.push(l === 'th' ? `ปีที่เริ่มดำเนินงานโครงการ: ${Math.min(...years)} ถึง ${Math.max(...years)}` : `Projects completed: ${Math.min(...years)} to ${Math.max(...years)}`);
+  if (impact.measuredKwh) {
+    const t = (impact.measuredKwh * impact.co2FactorKgPerKwh) / 1000;
+    facts.push(l === 'th' ? `ไฟฟ้าที่ผลิตได้สะสม: ${Math.round(impact.measuredKwh).toLocaleString('en-US')} kWh (ข้อมูล ณ ${impact.asOf})` : `Cumulative generation: ${Math.round(impact.measuredKwh).toLocaleString('en-US')} kWh (as of ${impact.asOf})`);
+    facts.push(l === 'th' ? `ก๊าซเรือนกระจกที่หลีกเลี่ยงได้โดยประมาณ: ${Math.round(t).toLocaleString('en-US')} tCO2e (ใช้ค่า ${impact.co2FactorKgPerKwh} kgCO2e/kWh ตาม ${impact.co2FactorSource})` : `Estimated greenhouse gas avoided: ${Math.round(t).toLocaleString('en-US')} tCO2e (using ${impact.co2FactorKgPerKwh} kgCO2e/kWh, ${impact.co2FactorSource})`);
+  }
+  return facts;
+};
+
 const authorLd = (l) => ({
   '@type': 'Person',
+  sameAs: [authorLinkedIn],
+  url: authorLinkedIn,
   name: author.name[l],
   jobTitle: author.title[l],
   worksFor: { '@id': `${siteUrl}/#organization` },
@@ -282,6 +304,9 @@ const guideBody = (g, l, projects) => {
   const more = guides.filter((x) => x.slug !== g.slug && x.kind !== 'area').slice(0, 6);
   return (
     `<h1>${esc(t.title)}</h1>${byline}${g.hero ? figureHtml(g.hero, projects, l) : ''}<p>${esc(t.intro)}</p>` +
+    (g.slug === 'impact' || g.slug === 'press'
+      ? `<ul>${impactFacts(projects, l).map((f) => `<li>${esc(f)}</li>`).join('')}</ul>`
+      : '') +
     (g.slug === 'guides-hub'
       ? `<ul>${guides
           .filter((x) => x.kind === 'guide' && x.published)
@@ -303,7 +328,7 @@ const guideBody = (g, l, projects) => {
       ? `<section><h2>${ui[l].faq}</h2>${t.faq.map((f) => `<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`).join('')}</section>`
       : '') +
     (g.kind === 'guide' && g.published && projects.length
-      ? `<aside><h2>${l === 'th' ? 'เกี่ยวกับผู้เขียน' : 'About the author'}</h2><p>${esc(author.name[l])}, ${esc(author.title[l])}, ${siteName}</p><p>${
+      ? `<aside><h2>${l === 'th' ? 'เกี่ยวกับผู้เขียน' : 'About the author'}</h2><p>${esc(author.name[l])}, ${esc(author.title[l])}, ${siteName} · <a href="${authorLinkedIn}">LinkedIn</a></p><p>${
           l === 'th'
             ? `ทีมของเราออกแบบ ติดตั้ง และดูแลระบบโซลาร์รูฟท็อปและคาร์พอร์ตสำหรับโรงงานและธุรกิจ ปัจจุบันมี ${projects.length} โครงการ กำลังติดตั้งรวมประมาณ ${Math.round(projects.reduce((n, p) => n + Number(p.capacity || 0), 0)).toLocaleString('en-US')} kW เนื้อหาในบทความอ้างอิงจากงานจริงหน้างาน`
             : `Our team designs, installs and maintains rooftop and carport solar for factories and businesses. We now have ${projects.length} projects with about ${Math.round(projects.reduce((n, p) => n + Number(p.capacity || 0), 0)).toLocaleString('en-US')} kW installed in total. What you read here comes from real site work.`
