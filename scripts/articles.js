@@ -8,6 +8,7 @@ const reviewEn = 'This is general information, not legal, accounting or tax advi
 
 module.exports = [
   ...require('./articles2'),
+  ...require('./articles3'),
   {
     slug: 'guide-private-ppa',
     path: 'guides/private-ppa-complete-guide',
