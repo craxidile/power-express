@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Fragment, ReactNode, useEffect, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 
 import { useVmScreen } from '../../../stores/vm-screen';
@@ -9,6 +9,25 @@ import { track } from '../../../utils/analytics';
 import LayoutStandard from '../../layouts/layout-standard';
 import SafeArea from '../../_commons/safe-area';
 import Seo from '../../_commons/seo';
+
+// Turns "[text](path)" into router links; path has no locale prefix.
+const renderInline = (text: string, locale: string): ReactNode => {
+  const parts: ReactNode[] = [];
+  const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) parts.push(text.slice(last, m.index));
+    parts.push(
+      <Link key={m.index} to={`/${locale}/${m[2]}`} className="underline">
+        {m[1]}
+      </Link>
+    );
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts.map((x, i) => <Fragment key={i}>{x}</Fragment>);
+};
 
 const ScreenGuide = () => {
   const { locale = 'th' } = useVmScreen();
@@ -82,18 +101,37 @@ const ScreenGuide = () => {
                 </h2>
                 {s.body.map((p) => (
                   <p key={p} className="text-base text-gray-content">
-                    {p}
+                    {renderInline(p, locale)}
                   </p>
                 ))}
                 {s.bullets && (
                   <ul className="list-disc pl-6 flex flex-col gap-y-1 text-base text-gray-content">
                     {s.bullets.map((b) => (
-                      <li key={b}>{b}</li>
+                      <li key={b}>{renderInline(b, locale)}</li>
                     ))}
                   </ul>
                 )}
               </section>
             ))}
+            {guide.slug === 'guides-hub' && (
+              <ul className="flex flex-col gap-y-5">
+                {guides
+                  .filter((g) => g.kind === 'guide' && g.published)
+                  .map((g) => (
+                    <li key={g.slug}>
+                      <Link
+                        to={`/${locale}/${g.path}`}
+                        className="text-xl font-medium text-title-dark underline"
+                      >
+                        {g.text[locale].title}
+                      </Link>
+                      <p className="text-base text-gray-content">
+                        {g.text[locale].description}
+                      </p>
+                    </li>
+                  ))}
+              </ul>
+            )}
             {related.length > 0 && (
               <section className="flex flex-col gap-y-3">
                 <h2 className="text-2xl font-medium text-title-dark">

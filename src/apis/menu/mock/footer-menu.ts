@@ -25,9 +25,19 @@ const footerMenu: Menu = {
       url: '/activity',
     },
     {
+      id: 6,
+      title: 'menu.guides',
+      url: '/guides',
+    },
+    {
       id: 5,
       title: 'menu.contact',
       url: '/?rand={{random}}#contact',
+    },
+    {
+      id: 7,
+      title: 'menu.privacy',
+      url: '/privacy',
     },
   ],
 };

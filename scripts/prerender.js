@@ -206,6 +206,7 @@ const nav = (l) => {
     [url(l, 'project'), ui[l].projects],
     [url(l, 'solar-ppa'), guides.find((g) => g.slug === 'solar-ppa').text[l].title],
     [url(l, 'solar-rooftop-factory'), guides.find((g) => g.slug === 'factory-rooftop-solar').text[l].title],
+    [url(l, 'guides'), l === 'th' ? 'คู่มือและบทความ' : 'Guides'],
     [url(l, 'faq'), guides.find((g) => g.slug === 'faq').text[l].title],
     [url(l, 'activity'), ui[l].activities],
     [url(l, 'about'), ui[l].about],
@@ -238,6 +239,10 @@ const projectList = (projects, l) =>
     )
     .join('')}</ul>`;
 
+// "[text](path)" -> <a>; the text is escaped first.
+const inline = (text, l) =>
+  esc(text).replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, t, h) => `<a href="${url(l, h)}">${t}</a>`);
+
 const relatedProjects = (g, projects, l) => {
   if (!g.match) return [];
   return projects.filter((p) => {
@@ -256,11 +261,17 @@ const guideBody = (g, l, projects) => {
   const more = guides.filter((x) => x.slug !== g.slug && x.kind !== 'area').slice(0, 6);
   return (
     `<h1>${esc(t.title)}</h1>${byline}<p>${esc(t.intro)}</p>` +
+    (g.slug === 'guides-hub'
+      ? `<ul>${guides
+          .filter((x) => x.kind === 'guide' && x.published)
+          .map((x) => `<li><a href="${url(l, x.path)}">${esc(x.text[l].title)}</a><p>${esc(x.text[l].description)}</p></li>`)
+          .join('')}</ul>`
+      : '') +
     t.sections
       .map(
         (s) =>
-          `<section><h2>${esc(s.heading)}</h2>${s.body.map((b) => `<p>${esc(b)}</p>`).join('')}${
-            s.bullets ? `<ul>${s.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>` : ''
+          `<section><h2>${esc(s.heading)}</h2>${s.body.map((b) => `<p>${inline(b, l)}</p>`).join('')}${
+            s.bullets ? `<ul>${s.bullets.map((b) => `<li>${inline(b, l)}</li>`).join('')}</ul>` : ''
           }</section>`
       )
       .join('') +
