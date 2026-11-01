@@ -74,7 +74,7 @@ const ui = {
       'Free Rooftop Solar Assessment: Send Your Bill, Get a Report in 48 Hours',
     homeIntro:
       'Power Express provides rooftop solar PPA for factories and businesses in Thailand. We invest in, install and maintain the system, and you pay only for the electricity it produces under the contract, with no upfront capital.',
-    homeH1: 'Rooftop Solar PPA for Factories and Businesses, Zero Investment',
+    homeH1: 'Rooftop Solar PPA for Factories and Businesses in Thailand, Zero Investment',
     services: [
       'Rooftop solar PPA for factories and commercial buildings',
       'Design, installation and maintenance for the whole contract term',
@@ -447,6 +447,7 @@ const writePage = (rel, html) => {
                 description: gt.description,
                 inLanguage: l,
                 mainEntityOfPage: url(l, g.path),
+                ...(g.published && { datePublished: g.published, dateModified: g.published }),
                 author: { '@id': `${siteUrl}/#organization` },
                 publisher: { '@id': `${siteUrl}/#organization` },
                 image: ogImageDefault,
