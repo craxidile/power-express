@@ -45,6 +45,8 @@ const urlEntry = (suffix) => {
     '/project',
     '/activity',
     '/free-assessment',
+    '/guide/solar-ppa',
+    '/guide/factory-rooftop-solar',
     ...projects.map((p) => `/project/${p.id}`),
     ...activities.map((a) => `/activity/${a.id}`),
   ];

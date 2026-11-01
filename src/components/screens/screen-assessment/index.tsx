@@ -5,6 +5,7 @@ import { leadText } from '../../../config/lead-text';
 import { submitLead } from '../../../apis/lead';
 import { getAttribution } from '../../../utils/attribution';
 import { track } from '../../../utils/analytics';
+import { trackAdLead } from '../../../utils/consent';
 import LayoutStandard from '../../layouts/layout-standard';
 import SafeArea from '../../_commons/safe-area';
 import Seo from '../../_commons/seo';
@@ -65,6 +66,7 @@ const ScreenAssessment = () => {
     setSending(true);
     try {
       await submitLead(form);
+      trackAdLead();
       track('generate_lead', {
         form: 'free_assessment',
         has_bill: file instanceof File && file.size > 0,

@@ -41,6 +41,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/activity"/>
   </url>
   <url>
+    <loc>https://powerexpress1980.com/th/free-assessment</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/free-assessment"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/free-assessment"/>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/free-assessment</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/free-assessment"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/free-assessment"/>
+  </url>
+  <url>
     <loc>https://powerexpress1980.com/th/project/23</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/project/23"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/project/23"/>

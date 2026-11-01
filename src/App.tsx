@@ -15,6 +15,8 @@ import ScreenAbout from './components/screens/screen-about';
 import ScreenProject from './components/screens/screen-project';
 import ScreenActivity from './components/screens/screen-activity';
 import ScreenAssessment from './components/screens/screen-assessment';
+import CookieBanner from './components/_commons/cookie-banner';
+import ScreenGuide from './components/screens/screen-guide';
 import { IVmScreen, useVmScreen } from './stores/vm-screen';
 
 const ScrollToTopWrapper = (props: PropsWithChildren) => {
@@ -58,11 +60,13 @@ function App() {
               path="/:locale/free-assessment"
               element={<ScreenAssessment />}
             />
+            <Route path="/:locale/guide/:slug" element={<ScreenGuide />} />
             <Route path="/:locale/about" element={<ScreenAbout />} />
             <Route path="/:locale/contact" element={<ScreenAbout />} />
             <Route path="/" element={<Navigate to="/th" replace />} />
           </Routes>
         </ScrollToTopWrapper>
+        <CookieBanner />
       </AppScreen>
     </BrowserRouter>
   );
