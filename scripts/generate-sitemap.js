@@ -19,6 +19,11 @@ const get = async (fn) => {
   }
 };
 
+const esc = (v) => String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+// suffix -> [{src, alt: {th, en}}] for guide pages that use real project photos.
+const imagesBySuffix = {};
+
 const urlEntry = (suffix) => {
   const links = locales
     .map(
@@ -27,10 +32,15 @@ const urlEntry = (suffix) => {
     )
     .join('\n');
   return locales
-    .map(
-      (l) =>
-        `  <url>\n    <loc>${siteUrl}/${l}${suffix}</loc>\n${links}\n  </url>`
-    )
+    .map((l) => {
+      const imgs = (imagesBySuffix[suffix] || [])
+        .map(
+          (i) =>
+            `    <image:image>\n      <image:loc>${esc(i.src)}</image:loc>\n      <image:title>${esc(i.alt[l])}</image:title>\n    </image:image>`
+        )
+        .join('\n');
+      return `  <url>\n    <loc>${siteUrl}/${l}${suffix}</loc>\n${links}${imgs ? `\n${imgs}` : ''}\n  </url>`;
+    })
     .join('\n');
 };
 
@@ -39,6 +49,19 @@ const urlEntry = (suffix) => {
     get('list-all-projects'),
     get('list-all-activities'),
   ]);
+  const guidesData = require('../src/config/guides.json');
+  const photoSrc = (ph) => {
+    const pr = projects.find((x) => Number(x.id) === Number(ph.project));
+    if (!pr) return null;
+    return ph.index === undefined || ph.index === 'banner'
+      ? pr.banner || pr.thumbnail
+      : (pr.photos || [])[ph.index] || null;
+  };
+  for (const g of guidesData) {
+    const phs = [g.hero, ...g.text.th.sections.map((x) => x.photo)].filter(Boolean);
+    const list = phs.map((ph) => ({ src: photoSrc(ph), alt: ph.alt })).filter((x) => x.src);
+    if (list.length) imagesBySuffix[`/${g.path}`] = list;
+  }
   const suffixes = [
     '',
     '/about',
@@ -50,7 +73,7 @@ const urlEntry = (suffix) => {
     ...activities.map((a) => `/activity/${a.id}`),
   ];
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${suffixes.map(urlEntry).join('\n')}
 </urlset>
 `;

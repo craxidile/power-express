@@ -251,6 +251,27 @@ const relatedProjects = (g, projects, l) => {
   });
 };
 
+// Real project photos used in articles: { project: id, index: number | 'banner', alt: {th,en} }.
+const photoSrc = (ph, projects) => {
+  const pr = projects.find((x) => Number(x.id) === Number(ph.project));
+  if (!pr) return null;
+  const i = ph.index;
+  return i === undefined || i === 'banner' ? pr.banner || pr.thumbnail : (pr.photos || [])[i] || null;
+};
+
+const figureHtml = (ph, projects, l) => {
+  const src = photoSrc(ph, projects);
+  if (!src) return '';
+  const pr = projects.find((x) => Number(x.id) === Number(ph.project));
+  return `<figure><img src="${esc(src)}" alt="${esc(ph.alt[l])}" width="1200" loading="lazy"/><figcaption>${esc(ph.alt[l])} · <a href="${url(l, `project/${pr.id}`)}">${esc(plain(loc(pr.title, l)))}</a> (${esc(pr.capacity)} kW)</figcaption></figure>`;
+};
+
+const guideImages = (g, projects) =>
+  [g.hero, ...g.text.th.sections.map((x) => x.photo)]
+    .filter(Boolean)
+    .map((ph) => photoSrc(ph, projects))
+    .filter(Boolean);
+
 const guideBody = (g, l, projects) => {
   const t = g.text[l];
   const byline =
@@ -260,17 +281,17 @@ const guideBody = (g, l, projects) => {
   const related = relatedProjects(g, projects, l);
   const more = guides.filter((x) => x.slug !== g.slug && x.kind !== 'area').slice(0, 6);
   return (
-    `<h1>${esc(t.title)}</h1>${byline}<p>${esc(t.intro)}</p>` +
+    `<h1>${esc(t.title)}</h1>${byline}${g.hero ? figureHtml(g.hero, projects, l) : ''}<p>${esc(t.intro)}</p>` +
     (g.slug === 'guides-hub'
       ? `<ul>${guides
           .filter((x) => x.kind === 'guide' && x.published)
-          .map((x) => `<li><a href="${url(l, x.path)}">${esc(x.text[l].title)}</a><p>${esc(x.text[l].description)}</p></li>`)
+          .map((x) => `<li>${x.hero ? figureHtml(x.hero, projects, l) : ''}<a href="${url(l, x.path)}">${esc(x.text[l].title)}</a><p>${esc(x.text[l].description)}</p></li>`)
           .join('')}</ul>`
       : '') +
     t.sections
       .map(
         (s) =>
-          `<section><h2>${esc(s.heading)}</h2>${s.body.map((b) => `<p>${inline(b, l)}</p>`).join('')}${
+          `<section><h2>${esc(s.heading)}</h2>${s.photo ? figureHtml(s.photo, projects, l) : ''}${s.body.map((b) => `<p>${inline(b, l)}</p>`).join('')}${
             s.bullets ? `<ul>${s.bullets.map((b) => `<li>${inline(b, l)}</li>`).join('')}</ul>` : ''
           }</section>`
       )
@@ -280,6 +301,13 @@ const guideBody = (g, l, projects) => {
       : '') +
     (t.faq.length
       ? `<section><h2>${ui[l].faq}</h2>${t.faq.map((f) => `<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`).join('')}</section>`
+      : '') +
+    (g.kind === 'guide' && g.published && projects.length
+      ? `<aside><h2>${l === 'th' ? 'เกี่ยวกับผู้เขียน' : 'About the author'}</h2><p>${esc(author.name[l])}, ${esc(author.title[l])}, ${siteName}</p><p>${
+          l === 'th'
+            ? `ทีมของเราออกแบบ ติดตั้ง และดูแลระบบโซลาร์รูฟท็อปและคาร์พอร์ตสำหรับโรงงานและธุรกิจ ปัจจุบันมี ${projects.length} โครงการ กำลังติดตั้งรวมประมาณ ${Math.round(projects.reduce((n, p) => n + Number(p.capacity || 0), 0)).toLocaleString('en-US')} kW เนื้อหาในบทความอ้างอิงจากงานจริงหน้างาน`
+            : `Our team designs, installs and maintains rooftop and carport solar for factories and businesses. We now have ${projects.length} projects with about ${Math.round(projects.reduce((n, p) => n + Number(p.capacity || 0), 0)).toLocaleString('en-US')} kW installed in total. What you read here comes from real site work.`
+        }</p></aside>`
       : '') +
     `<p><a href="${url(l, 'free-assessment')}">${esc(t.cta)}</a></p>` +
     `<section><h2>${l === 'th' ? 'อ่านเพิ่มเติม' : 'Related pages'}</h2><ul>${more
@@ -460,6 +488,7 @@ const writePage = (rel, html) => {
         p: g.path,
         title: gt.title,
         description: gt.description,
+        image: guideImages(g, projects)[0],
         ogType: isArticle ? 'article' : 'website',
         runtimeLd: faq,
         extraLd: [
@@ -475,7 +504,7 @@ const writePage = (rel, html) => {
                 ...(g.published && { datePublished: g.published, dateModified: g.published }),
                 author: g.kind === 'guide' ? authorLd(l) : { '@id': `${siteUrl}/#organization` },
                 publisher: { '@id': `${siteUrl}/#organization` },
-                image: ogImageDefault,
+                image: guideImages(g, projects).length ? guideImages(g, projects) : ogImageDefault,
               }
             : {
                 '@context': 'https://schema.org',

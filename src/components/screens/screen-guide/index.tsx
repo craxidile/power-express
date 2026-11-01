@@ -2,7 +2,12 @@ import { Fragment, ReactNode, useEffect, useMemo, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 
 import { useVmScreen } from '../../../stores/vm-screen';
-import { Guide, findGuideByPath, guides } from '../../../config/guides';
+import {
+  Guide,
+  GuidePhoto,
+  findGuideByPath,
+  guides,
+} from '../../../config/guides';
 import { listProjects } from '../../../apis/project';
 import { Project } from '../../../models/project';
 import { track } from '../../../utils/analytics';
@@ -37,6 +42,10 @@ const T = {
     home: 'หน้าแรก',
     guides: 'คู่มือ',
     disclaimer: 'ข้อสงวน',
+    aboutAuthor: 'เกี่ยวกับผู้เขียน',
+    authorBio: (n: number, kw: string) =>
+      `ทีมของเราออกแบบ ติดตั้ง และดูแลระบบโซลาร์รูฟท็อปและคาร์พอร์ตสำหรับโรงงานและธุรกิจ ปัจจุบันมี ${n} โครงการ กำลังติดตั้งรวมประมาณ ${kw} kW เนื้อหาในบทความอ้างอิงจากงานจริงหน้างาน`,
+    seeProjects: 'ดูโครงการทั้งหมด',
   },
   en: {
     short: 'In short',
@@ -52,6 +61,10 @@ const T = {
     home: 'Home',
     guides: 'Guides',
     disclaimer: 'Disclaimer',
+    aboutAuthor: 'About the author',
+    authorBio: (n: number, kw: string) =>
+      `Our team designs, installs and maintains rooftop and carport solar for factories and businesses. We now have ${n} projects with about ${kw} kW installed in total. What you read here comes from real site work.`,
+    seeProjects: 'See all projects',
   },
 };
 
@@ -106,8 +119,38 @@ const ScreenGuide = () => {
         .filter((x): x is string => !!x),
     [projects]
   );
+  const photoUrl = (ph?: GuidePhoto) => {
+    const pr = ph && projects.find((x) => Number(x.id) === ph.project);
+    if (!ph || !pr) return undefined;
+    return ph.index === undefined || ph.index === 'banner'
+      ? pr.banner || pr.thumbnail
+      : pr.photos?.[ph.index];
+  };
   const photoFor = (g: Guide, offset = 0) =>
-    photos.length ? photos[(hash(g.slug) + offset) % photos.length] : undefined;
+    photoUrl(g.hero) ??
+    (photos.length ? photos[(hash(g.slug) + offset) % photos.length] : undefined);
+  const figureFor = (ph: GuidePhoto) => {
+    const src = photoUrl(ph);
+    const pr = projects.find((x) => Number(x.id) === ph.project);
+    if (!src || !pr) return null;
+    return (
+      <figure className="flex flex-col gap-y-2">
+        <img
+          src={src}
+          alt={ph.alt[locale]}
+          loading="lazy"
+          className="w-full aspect-[16/9] object-cover rounded-xl"
+        />
+        <figcaption className="text-sm text-secondary">
+          {ph.alt[locale]} ·{' '}
+          <Link to={`/${locale}/project/${pr.id}`} className="underline">
+            {pr.title[locale]}
+          </Link>{' '}
+          ({pr.capacity} kW)
+        </figcaption>
+      </figure>
+    );
+  };
 
   const related = useMemo(() => {
     if (!guide?.match) return [];
@@ -161,6 +204,7 @@ const ScreenGuide = () => {
         title={t.title}
         description={t.description}
         path={guide.path}
+        image={photoUrl(guide.hero)}
         jsonLd={jsonLd}
       />
 
@@ -296,6 +340,7 @@ const ScreenGuide = () => {
                       {s.heading}
                     </h2>
                   </div>
+                  {s.photo && figureFor(s.photo)}
                   {s.body.map((p) => (
                     <p key={p} className="text-base text-gray-content">
                       {renderInline(p, locale)}
@@ -398,6 +443,31 @@ const ScreenGuide = () => {
                   {t.cta}
                 </Link>
               </div>
+
+              {isArticle && projects.length > 0 && (
+                <aside className="p-6 rounded-2xl bg-pale border border-sep-smoke flex flex-col gap-y-2">
+                  <p className="text-sm font-medium text-green-tag">
+                    {l.aboutAuthor}
+                  </p>
+                  <p className="text-lg font-medium text-title-dark">
+                    {AUTHOR[locale].name}, {AUTHOR[locale].title}
+                  </p>
+                  <p className="text-base text-gray-content">
+                    {l.authorBio(
+                      projects.length,
+                      Math.round(
+                        projects.reduce((n, p) => n + Number(p.capacity || 0), 0)
+                      ).toLocaleString('en-US')
+                    )}
+                  </p>
+                  <Link
+                    to={`/${locale}/project`}
+                    className="self-start underline text-green-bullet text-sm"
+                  >
+                    {l.seeProjects}
+                  </Link>
+                </aside>
+              )}
 
               {disclaimer.length > 0 && (
                 <p className="text-sm text-secondary">
