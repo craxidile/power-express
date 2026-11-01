@@ -45,6 +45,7 @@ const urlEntry = (suffix) => {
     '/project',
     '/activity',
     '/free-assessment',
+    ...require('../src/config/guides.json').map((g) => `/${g.path}`),
     ...projects.map((p) => `/project/${p.id}`),
     ...activities.map((a) => `/activity/${a.id}`),
   ];

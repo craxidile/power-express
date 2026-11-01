@@ -1,0 +1,1978 @@
+[
+  {
+    "slug": "solar-ppa",
+    "text": {
+      "th": {
+        "title": "Solar PPA คืออะไร ติดตั้งโซลาร์รูฟท็อปโดยไม่ต้องลงทุนเอง",
+        "description": "ทำความเข้าใจ Solar PPA (สัญญาซื้อขายไฟฟ้าจากโซลาร์รูฟท็อป) ว่าทำงานอย่างไร เหมาะกับโรงงานแบบไหน และต้องเตรียมอะไรบ้าง",
+        "intro": "Solar PPA คือรูปแบบที่ผู้ให้บริการลงทุนติดตั้งและดูแลระบบโซลาร์รูฟท็อปบนหลังคาของคุณ แล้วคุณจ่ายเฉพาะค่าไฟที่ใช้จริงตามอัตราที่ตกลงกันในสัญญา โดยไม่ต้องจ่ายเงินลงทุนก้อนแรก",
+        "sections": [
+          {
+            "heading": "Solar PPA ทำงานอย่างไร",
+            "body": [
+              "ผู้ให้บริการเป็นเจ้าของระบบ ออกแบบ ติดตั้ง และดูแลบำรุงรักษาตลอดอายุสัญญา ไฟฟ้าที่ผลิตได้จะถูกใช้ในอาคารของคุณก่อน และคุณจ่ายค่าไฟส่วนนั้นตามอัตราที่ระบุในสัญญา",
+              "ไฟส่วนที่ระบบผลิตไม่พอ ยังคงซื้อจากการไฟฟ้าตามปกติ"
+            ]
+          },
+          {
+            "heading": "เหมาะกับใคร",
+            "body": [
+              "โดยทั่วไปเหมาะกับโรงงานและอาคารที่:"
+            ],
+            "bullets": [
+              "มีค่าไฟสูงและใช้ไฟช่วงกลางวันเป็นหลัก",
+              "มีพื้นที่หลังคาที่รับน้ำหนักได้และไม่ถูกบังแสง",
+              "เป็นเจ้าของอาคาร หรือมีสัญญาเช่าที่ยาวพอกับอายุสัญญา PPA",
+              "ต้องการลดค่าไฟโดยไม่ใช้เงินลงทุนและไม่ต้องดูแลระบบเอง"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ต้องเตรียมเพื่อประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารแสดงกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "ต้องลงทุนติดตั้งเองหรือไม่",
+            "a": "ในรูปแบบ PPA ผู้ให้บริการเป็นผู้ลงทุนติดตั้งระบบ ผู้ใช้ไฟไม่ต้องจ่ายเงินลงทุนก้อนแรก รายละเอียดขึ้นกับข้อตกลงในสัญญา"
+          },
+          {
+            "q": "ใครดูแลระบบหลังติดตั้ง",
+            "a": "ผู้ให้บริการดูแลและบำรุงรักษาระบบตลอดอายุสัญญา ตามขอบเขตที่ระบุในสัญญา"
+          },
+          {
+            "q": "จะรู้ได้อย่างไรว่าคุ้มหรือไม่",
+            "a": "ต้องประเมินจากบิลค่าไฟและหลังคาจริงของคุณ ส่งบิลให้เราเพื่อรับรายงานประเมินฟรีภายใน 48 ชั่วโมง"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "What Is a Solar PPA? Rooftop Solar With No Upfront Investment",
+        "description": "Understand how a rooftop Solar PPA (power purchase agreement) works, which factories it suits, and what you need to prepare.",
+        "intro": "In a Solar PPA, a provider invests in, installs and maintains a rooftop solar system on your building, and you pay only for the electricity it produces at the rate agreed in the contract, with no upfront capital.",
+        "sections": [
+          {
+            "heading": "How a Solar PPA works",
+            "body": [
+              "The provider owns, designs, installs and maintains the system for the whole contract term. Power generated is used in your building first, and you pay for it at the contract rate.",
+              "Any demand the system cannot cover is still bought from the grid as usual."
+            ]
+          },
+          {
+            "heading": "Who it suits",
+            "body": [
+              "It generally fits factories and buildings that:"
+            ],
+            "bullets": [
+              "have high electricity bills and mostly daytime consumption",
+              "have roof space that can bear the load and is not heavily shaded",
+              "own the building, or hold a lease long enough to cover the PPA term",
+              "want lower power costs without capital spend or running the system"
+            ]
+          },
+          {
+            "heading": "What to prepare for an assessment",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Do I have to invest in the system?",
+            "a": "Under a PPA the provider funds the installation, so there is no upfront capital from you. Details depend on the contract."
+          },
+          {
+            "q": "Who maintains the system?",
+            "a": "The provider operates and maintains it for the contract term, within the scope set out in the contract."
+          },
+          {
+            "q": "How do I know if it is worth it?",
+            "a": "It depends on your bills and your actual roof. Send us your bill and get a free assessment within 48 hours."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    },
+    "kind": "guide",
+    "path": "solar-ppa"
+  },
+  {
+    "slug": "factory-rooftop-solar",
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อปโรงงาน ต้องเช็กอะไรก่อนติดตั้ง",
+        "description": "เช็กลิสต์ก่อนติดตั้งโซลาร์รูฟท็อปในโรงงาน ตั้งแต่โครงสร้างหลังคา รูปแบบการใช้ไฟ ไปจนถึงเอกสารและใบอนุญาต",
+        "intro": "การติดตั้งโซลาร์รูฟท็อปในโรงงานให้ผลดีเมื่อออกแบบให้เข้ากับหลังคาและรูปแบบการใช้ไฟจริง นี่คือสิ่งที่ควรตรวจสอบก่อนตัดสินใจ",
+        "sections": [
+          {
+            "heading": "1. โครงสร้างและสภาพหลังคา",
+            "body": [
+              "หลังคาต้องรับน้ำหนักแผงและโครงยึดได้ และมีอายุการใช้งานเหลือพอ หากหลังคาเก่าหรือรั่วซึม ควรซ่อมหรือเปลี่ยนก่อนติดตั้ง"
+            ]
+          },
+          {
+            "heading": "2. รูปแบบการใช้ไฟ",
+            "body": [
+              "โรงงานที่ใช้ไฟช่วงกลางวันมากจะใช้ไฟจากโซลาร์ได้เต็มที่ ส่วนโรงงานที่ทำงานกลางคืนเป็นหลักอาจได้ประโยชน์น้อยลง จึงควรดูกราฟโหลดประกอบ"
+            ]
+          },
+          {
+            "heading": "3. เอกสารและการอนุญาต",
+            "body": [
+              "เตรียมเอกสารที่เกี่ยวข้อง เช่น:"
+            ],
+            "bullets": [
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า",
+              "แบบโครงสร้างหรือผลตรวจสอบหลังคา",
+              "ข้อมูลการขออนุญาตตามกฎหมายที่เกี่ยวข้องกับการติดตั้งระบบผลิตไฟฟ้า"
+            ]
+          },
+          {
+            "heading": "4. รูปแบบการลงทุน",
+            "body": [
+              "มีทั้งการซื้อระบบเอง และการทำสัญญา PPA ที่ผู้ให้บริการเป็นผู้ลงทุน เลือกให้เหมาะกับงบประมาณและนโยบายของบริษัท"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "ต้องส่งอะไรเพื่อขอประเมิน",
+            "a": "เริ่มจากบิลค่าไฟของโรงงาน และจังหวัดที่ตั้ง ทีมงานจะแจ้งข้อมูลที่ต้องเพิ่มเติมเมื่อติดต่อกลับ"
+          },
+          {
+            "q": "ใช้เวลาประเมินนานเท่าไร",
+            "a": "เรามุ่งส่งรายงานประเมินเบื้องต้นภายใน 48 ชั่วโมงทำการหลังได้รับข้อมูล"
+          }
+        ],
+        "cta": "ประเมินโซลาร์รูฟท็อปโรงงานฟรี"
+      },
+      "en": {
+        "title": "Factory Rooftop Solar: What to Check Before Installing",
+        "description": "A pre-installation checklist for factory rooftop solar: roof structure, load profile, paperwork and permits.",
+        "intro": "Rooftop solar works best in a factory when it is designed around the actual roof and load profile. Here is what to check before you decide.",
+        "sections": [
+          {
+            "heading": "1. Roof structure and condition",
+            "body": [
+              "The roof must carry the panels and mounting, and have enough service life left. An old or leaking roof should be repaired or replaced first."
+            ]
+          },
+          {
+            "heading": "2. Load profile",
+            "body": [
+              "Factories running mostly in daytime can use more of the solar output. Night-shift sites may benefit less, so look at the load curve."
+            ]
+          },
+          {
+            "heading": "3. Paperwork and permits",
+            "body": [
+              "Prepare the relevant documents, such as:"
+            ],
+            "bullets": [
+              "proof of building ownership or the lease",
+              "structural drawings or a roof inspection report",
+              "the permit information required for installing a power generation system"
+            ]
+          },
+          {
+            "heading": "4. Ownership model",
+            "body": [
+              "You can buy the system outright or sign a PPA where the provider funds it. Choose according to your budget and company policy."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "What do I send to get an assessment?",
+            "a": "Start with your factory electricity bill and its province. We will tell you what else is needed when we get in touch."
+          },
+          {
+            "q": "How long does it take?",
+            "a": "We aim to send a preliminary assessment within 48 business hours of receiving your information."
+          }
+        ],
+        "cta": "Get a free factory rooftop solar assessment"
+      }
+    },
+    "kind": "guide",
+    "path": "solar-rooftop-factory"
+  },
+  {
+    "slug": "faq",
+    "path": "faq",
+    "kind": "info",
+    "text": {
+      "th": {
+        "title": "คำถามที่พบบ่อยเกี่ยวกับโซลาร์รูฟท็อป PPA",
+        "description": "คำตอบสั้น ๆ สำหรับคำถามที่พบบ่อยเกี่ยวกับโซลาร์รูฟท็อป PPA ของ Power Express",
+        "intro": "รวมคำถามที่โรงงานและธุรกิจถามบ่อยก่อนตัดสินใจติดตั้งโซลาร์รูฟท็อปแบบ PPA",
+        "sections": [],
+        "faq": [
+          {
+            "q": "Solar PPA คืออะไร",
+            "a": "ผู้ให้บริการลงทุนติดตั้งและดูแลระบบโซลาร์รูฟท็อปบนหลังคาของคุณ และคุณจ่ายเฉพาะค่าไฟที่ใช้จริงตามอัตราที่ตกลงในสัญญา"
+          },
+          {
+            "q": "ต้องลงทุนก้อนแรกหรือไม่",
+            "a": "ในรูปแบบ PPA ผู้ให้บริการเป็นผู้ลงทุนติดตั้งระบบ ผู้ใช้ไฟไม่ต้องจ่ายเงินลงทุนก้อนแรก"
+          },
+          {
+            "q": "ใครดูแลระบบหลังติดตั้ง",
+            "a": "ผู้ให้บริการดูแลและบำรุงรักษาระบบตลอดอายุสัญญา ตามขอบเขตที่ระบุในสัญญา"
+          },
+          {
+            "q": "ต้องเตรียมอะไรเพื่อขอประเมิน",
+            "a": "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน ข้อมูลหลังคา และเอกสารกรรมสิทธิ์หรือสัญญาเช่า"
+          },
+          {
+            "q": "ใช้เวลาประเมินนานเท่าไร",
+            "a": "เรามุ่งส่งรายงานประเมินเบื้องต้นภายใน 48 ชั่วโมงทำการหลังได้รับข้อมูล"
+          },
+          {
+            "q": "ติดต่อได้อย่างไร",
+            "a": "โทร 082-096-6595 หรืออีเมล admin@powerexpress1980.com หรือกรอกแบบฟอร์มประเมินฟรีบนเว็บไซต์"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar PPA: Frequently Asked Questions",
+        "description": "Short answers to the questions factories and businesses ask most about rooftop solar PPA with Power Express.",
+        "intro": "The questions factories and businesses ask most before choosing a rooftop solar PPA.",
+        "sections": [],
+        "faq": [
+          {
+            "q": "What is a solar PPA?",
+            "a": "A provider funds, installs and maintains a rooftop solar system on your building and you pay only for the electricity it produces at the rate agreed in the contract."
+          },
+          {
+            "q": "Is there an upfront cost?",
+            "a": "Under a PPA the provider funds the installation, so there is no upfront capital from you."
+          },
+          {
+            "q": "Who maintains the system?",
+            "a": "The provider operates and maintains it for the contract term, within the scope set out in the contract."
+          },
+          {
+            "q": "What do I need for an assessment?",
+            "a": "At least 12 months of electricity bills, roof details, and proof of ownership or the lease."
+          },
+          {
+            "q": "How long does an assessment take?",
+            "a": "We aim to send a preliminary assessment within 48 business hours of receiving your information."
+          },
+          {
+            "q": "How do I contact you?",
+            "a": "Call 082-096-6595, email admin@powerexpress1980.com, or use the free assessment form on this site."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "government",
+    "path": "government",
+    "kind": "info",
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อปสำหรับหน่วยงานรัฐ มหาวิทยาลัย และรัฐวิสาหกิจ",
+        "description": "ข้อมูลสำหรับหน่วยงานภาครัฐที่สนใจโซลาร์รูฟท็อป: รูปแบบสัญญา การประเมินเบื้องต้นฟรี และเอกสารที่ขอได้",
+        "intro": "หน่วยงานภาครัฐ มหาวิทยาลัย และรัฐวิสาหกิจมีขั้นตอนจัดซื้อจัดจ้างเฉพาะ เราพร้อมให้ข้อมูลประกอบการพิจารณาก่อนเริ่มกระบวนการ",
+        "sections": [
+          {
+            "heading": "รูปแบบสัญญาที่พิจารณาได้",
+            "body": [
+              "รูปแบบที่ใช้กันทั่วไป ได้แก่ สัญญาซื้อขายไฟฟ้า (PPA) การจัดซื้อระบบเอง และการเช่า ความเหมาะสมขึ้นกับกฎระเบียบและงบประมาณของแต่ละหน่วยงาน"
+            ]
+          },
+          {
+            "heading": "การประเมินเบื้องต้นฟรี",
+            "body": [
+              "ส่งบิลค่าไฟและข้อมูลอาคาร เพื่อรับรายงานประเมินขนาดระบบเบื้องต้นไว้ใช้ประกอบการจัดทำเอกสารภายใน"
+            ]
+          },
+          {
+            "heading": "เอกสารที่ขอได้",
+            "body": [
+              "เอกสารบริษัทและเอกสารประกอบการเสนอราคา สามารถขอได้โดยติดต่อทีมงาน"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "หน่วยงานรัฐทำสัญญา PPA ได้หรือไม่",
+            "a": "ขึ้นกับประเภทหน่วยงานและกฎระเบียบที่เกี่ยวข้อง ควรตรวจสอบกับฝ่ายกฎหมายและพัสดุของหน่วยงานก่อน เราช่วยจัดเตรียมข้อมูลประกอบได้"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar for Government, Universities and State Enterprises",
+        "description": "Information for public-sector organisations considering rooftop solar: contract options, a free preliminary assessment and documents on request.",
+        "intro": "Government bodies, universities and state enterprises follow specific procurement rules. We can provide information to support your evaluation before a process starts.",
+        "sections": [
+          {
+            "heading": "Contract structures to consider",
+            "body": [
+              "Common options are a power purchase agreement (PPA), buying the system, or leasing. The right fit depends on each organisation’s rules and budget."
+            ]
+          },
+          {
+            "heading": "Free preliminary assessment",
+            "body": [
+              "Send your electricity bill and building details to receive a preliminary system-size estimate for your internal paperwork."
+            ]
+          },
+          {
+            "heading": "Documents on request",
+            "body": [
+              "Company documents and bid-support documents are available on request from our team."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Can a public body sign a PPA?",
+            "a": "It depends on the type of body and the rules that apply. Check with your legal and procurement teams first; we can help prepare supporting information."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "cooling-as-a-service",
+    "path": "cooling-as-a-service",
+    "kind": "info",
+    "text": {
+      "th": {
+        "title": "ระบบทำความเย็นประหยัดพลังงาน (Cooling as a Service)",
+        "description": "ลดค่าไฟระบบทำความเย็นด้วยชิลเลอร์ประสิทธิภาพสูง ในรูปแบบแบ่งปันผลประหยัด และใช้ร่วมกับโซลาร์รูฟท็อปได้",
+        "intro": "ระบบทำความเย็นเป็นหนึ่งในภาระไฟฟ้าหลักของอาคารและโรงงาน การปรับปรุงชิลเลอร์ให้มีประสิทธิภาพสูงขึ้นสามารถลดการใช้ไฟได้ และใช้ร่วมกับโซลาร์รูฟท็อปได้",
+        "sections": [
+          {
+            "heading": "แนวคิด",
+            "body": [
+              "เปลี่ยนหรือปรับปรุงระบบทำความเย็นให้ประสิทธิภาพสูงขึ้น โดยแบ่งปันผลประหยัดไฟฟ้าตามที่ตกลงในสัญญา ผลที่ได้ขึ้นกับระบบเดิมและการใช้งานจริงของแต่ละอาคาร"
+            ]
+          },
+          {
+            "heading": "ข้อมูลที่ใช้ประเมิน",
+            "body": [],
+            "bullets": [
+              "ขนาดและอายุของชิลเลอร์เดิม",
+              "ชั่วโมงเดินเครื่องและภาระความเย็น",
+              "บิลค่าไฟย้อนหลัง"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "ใช้ร่วมกับโซลาร์รูฟท็อปได้หรือไม่",
+            "a": "ได้ ภาระความเย็นช่วงกลางวันเป็นโหลดที่เหมาะกับการใช้ไฟจากโซลาร์ ส่งบิลและข้อมูลชิลเลอร์เพื่อรับการประเมินร่วม"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Cooling as a Service: Energy-Efficient Chiller Systems",
+        "description": "Cut cooling electricity with high-efficiency chillers under a shared-savings model, and combine it with rooftop solar.",
+        "intro": "Cooling is one of the largest electrical loads in buildings and factories. Upgrading to high-efficiency chillers can reduce consumption, and it combines well with rooftop solar.",
+        "sections": [
+          {
+            "heading": "The idea",
+            "body": [
+              "Replace or upgrade the cooling plant for higher efficiency and share the electricity savings as agreed in the contract. Results depend on the existing plant and actual use at each site."
+            ]
+          },
+          {
+            "heading": "What we need to assess",
+            "body": [],
+            "bullets": [
+              "size and age of existing chillers",
+              "operating hours and cooling load",
+              "recent electricity bills"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Can it be combined with rooftop solar?",
+            "a": "Yes. Daytime cooling load suits solar output well. Send your bill and chiller details for a combined assessment."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "privacy",
+    "path": "privacy",
+    "kind": "info",
+    "text": {
+      "th": {
+        "title": "นโยบายความเป็นส่วนตัวและคุกกี้",
+        "description": "นโยบายการเก็บ ใช้ และเปิดเผยข้อมูลส่วนบุคคลและคุกกี้ของ บริษัท เพาวเวอร์เอ็กซ์เพรส1980 จำกัด ตาม พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562",
+        "intro": "บริษัท เพาวเวอร์เอ็กซ์เพรส1980 จำกัด (\"เรา\") เป็นผู้ควบคุมข้อมูลส่วนบุคคลตามนโยบายนี้ ที่อยู่: เลขที่ 444 ชั้น 11 อาคารเอ็ม บี เค ทาวเวอร์ ถนนพญาไท แขวงวังใหม่ เขตปทุมวัน กรุงเทพมหานคร 10330 อีเมล admin@powerexpress1980.com โทร 082-096-6595",
+        "sections": [
+          {
+            "heading": "ข้อมูลที่เราเก็บ",
+            "body": [
+              "เมื่อคุณส่งแบบฟอร์มประเมินฟรี เราเก็บ ชื่อ บริษัท เบอร์โทร LINE ID อีเมล ช่วงค่าไฟต่อเดือน จังหวัด ข้อมูลอาคารและการใช้ไฟ หมายเหตุ และไฟล์บิลค่าไฟที่คุณแนบ รวมถึงข้อมูลแหล่งที่มาของการเข้าเว็บไซต์ (เช่น UTM และตัวระบุโฆษณา)"
+            ]
+          },
+          {
+            "heading": "วัตถุประสงค์",
+            "body": [],
+            "bullets": [
+              "ติดต่อกลับและจัดทำรายงานประเมินที่คุณร้องขอ",
+              "วิเคราะห์ประสิทธิภาพของเว็บไซต์และการโฆษณา (เมื่อคุณยินยอมคุกกี้)",
+              "ปฏิบัติตามกฎหมาย"
+            ]
+          },
+          {
+            "heading": "คุกกี้",
+            "body": [
+              "เว็บไซต์ใช้คุกกี้เพื่อวิเคราะห์การใช้งานและวัดผลโฆษณา ซึ่งจะทำงานเมื่อคุณกด \"ยอมรับทั้งหมด\" เท่านั้น คุณเลือกปฏิเสธได้ และเว็บไซต์ยังใช้งานได้ตามปกติ"
+            ]
+          },
+          {
+            "heading": "การเปิดเผยและการเก็บรักษา",
+            "body": [
+              "เราใช้ผู้ให้บริการโครงสร้างพื้นฐานและเครื่องมือ (เช่น ที่เก็บข้อมูล ระบบส่งอีเมล และระบบวิเคราะห์) เพื่อดำเนินการตามวัตถุประสงค์ข้างต้น เราเก็บข้อมูลเท่าที่จำเป็นต่อวัตถุประสงค์ และคุณสามารถขอให้ลบข้อมูลได้"
+            ]
+          },
+          {
+            "heading": "สิทธิของคุณ",
+            "body": [
+              "คุณมีสิทธิขอเข้าถึง แก้ไข ลบ ระงับการใช้ คัดค้าน ขอรับสำเนา และถอนความยินยอมได้ โดยติดต่อ admin@powerexpress1980.com"
+            ]
+          }
+        ],
+        "faq": [],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Privacy and Cookie Policy",
+        "description": "How Powerexpress1980 Company Limited collects, uses and discloses personal data and cookies under the Thai Personal Data Protection Act B.E. 2562.",
+        "intro": "Powerexpress1980 Company Limited (\"we\") is the data controller under this policy. Address: 444, 11th Floor, MBK Tower, Phaya Thai Road, Wang Mai, Pathum Wan, Bangkok 10330. Email: admin@powerexpress1980.com. Phone: 082-096-6595.",
+        "sections": [
+          {
+            "heading": "What we collect",
+            "body": [
+              "When you submit the free assessment form we collect your name, company, phone, LINE ID, email, monthly bill range, province, building and usage details, notes and any electricity bill you attach, plus how you reached the site (such as UTM parameters and ad identifiers)."
+            ]
+          },
+          {
+            "heading": "Purposes",
+            "body": [],
+            "bullets": [
+              "to contact you and prepare the assessment you requested",
+              "to analyse site and advertising performance (only where you accept cookies)",
+              "to comply with the law"
+            ]
+          },
+          {
+            "heading": "Cookies",
+            "body": [
+              "The site uses cookies to analyse usage and measure advertising. They run only if you choose \"Accept all\". You can decline and the site still works normally."
+            ]
+          },
+          {
+            "heading": "Disclosure and retention",
+            "body": [
+              "We use infrastructure and tool providers (for example data storage, email delivery and analytics) to carry out the purposes above. We keep data only as long as needed for those purposes, and you can ask us to delete it."
+            ]
+          },
+          {
+            "heading": "Your rights",
+            "body": [
+              "You may request access, correction, deletion, restriction, objection, a copy of your data, and withdraw consent by emailing admin@powerexpress1980.com."
+            ]
+          }
+        ],
+        "faq": [],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "industry-cold-storage-food",
+    "path": "industries/cold-storage-food",
+    "kind": "industry",
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อปสำหรับห้องเย็นและโรงงานอาหาร",
+        "description": "โซลาร์รูฟท็อป PPA สำหรับห้องเย็นและโรงงานอาหาร: ลักษณะการใช้ไฟที่เหมาะ สิ่งที่ต้องตรวจสอบก่อนติดตั้ง และวิธีขอรับรายงานประเมินฟรี",
+        "intro": "ห้องเย็นและสายการผลิตอาหารมักเดินเครื่องทำความเย็นต่อเนื่องทั้งวัน ทำให้มีไฟฟ้าใช้ตลอดช่วงที่แผงโซลาร์ผลิตไฟ หน้านี้สรุปสิ่งที่ควรพิจารณาก่อนติดตั้งโซลาร์รูฟท็อปแบบ PPA ซึ่งผู้ให้บริการลงทุนติดตั้งและดูแลระบบ โดยไม่ต้องลงทุนก้อนแรก",
+        "sections": [
+          {
+            "heading": "ทำไมเหมาะกับการใช้โซลาร์",
+            "body": [
+              "ห้องเย็นและสายการผลิตอาหารมักเดินเครื่องทำความเย็นต่อเนื่องทั้งวัน ทำให้มีไฟฟ้าใช้ตลอดช่วงที่แผงโซลาร์ผลิตไฟ"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ควรตรวจสอบก่อนติดตั้ง",
+            "body": [],
+            "bullets": [
+              "ภาระความเย็นช่วงกลางวันและช่วงฤดูร้อน",
+              "สภาพหลังคาและการรั่วซึม เพราะต้องรักษาอุณหภูมิในอาคาร",
+              "ความต่อเนื่องของไฟฟ้า ไม่ให้กระทบสินค้าในห้องเย็น"
+            ]
+          },
+          {
+            "heading": "ข้อมูลที่ใช้ประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "โซลาร์รูฟท็อป PPA เหมาะกับห้องเย็นและโรงงานอาหารหรือไม่",
+            "a": "ขึ้นกับโหลดไฟฟ้า หลังคา และสัญญาของแต่ละแห่ง ส่งบิลค่าไฟให้เราเพื่อรับรายงานประเมินฟรีภายใน 48 ชั่วโมง"
+          },
+          {
+            "q": "ต้องลงทุนเองหรือไม่",
+            "a": "ในรูปแบบ PPA ผู้ให้บริการเป็นผู้ลงทุนติดตั้งระบบ ผู้ใช้ไฟไม่ต้องจ่ายเงินลงทุนก้อนแรก รายละเอียดขึ้นกับสัญญา"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar for Cold Storage and Food Factories",
+        "description": "Rooftop solar PPA for cold storage and food factories: what makes the load a good fit, what to check before installing, and how to get a free assessment.",
+        "intro": "Cold rooms and food lines usually run refrigeration all day, so there is steady demand while the panels are producing. This page covers what to consider before a rooftop solar PPA, where the provider funds and maintains the system so you need no upfront capital.",
+        "sections": [
+          {
+            "heading": "Why it can suit solar",
+            "body": [
+              "Cold rooms and food lines usually run refrigeration all day, so there is steady demand while the panels are producing."
+            ]
+          },
+          {
+            "heading": "What to check before installing",
+            "body": [],
+            "bullets": [
+              "daytime and summer refrigeration load",
+              "roof condition and leaks, since indoor temperature must be protected",
+              "power continuity so stored product is never put at risk"
+            ]
+          },
+          {
+            "heading": "What we need to assess your site",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Is a rooftop solar PPA right for cold storage and food factories?",
+            "a": "It depends on each site’s load, roof and contract. Send us your bill and get a free assessment within 48 hours."
+          },
+          {
+            "q": "Do I have to invest?",
+            "a": "Under a PPA the provider funds the installation, so there is no upfront capital. Details depend on the contract."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "industry-plastics-packaging",
+    "path": "industries/plastics-packaging",
+    "kind": "industry",
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อปสำหรับโรงงานพลาสติกและบรรจุภัณฑ์",
+        "description": "โซลาร์รูฟท็อป PPA สำหรับโรงงานพลาสติกและบรรจุภัณฑ์: ลักษณะการใช้ไฟที่เหมาะ สิ่งที่ต้องตรวจสอบก่อนติดตั้ง และวิธีขอรับรายงานประเมินฟรี",
+        "intro": "เครื่องฉีดและเครื่องอัดรีดใช้ไฟฟ้ามาก และหลายโรงงานเดินเครื่องหลายกะ จึงมีโอกาสใช้ไฟจากโซลาร์ได้ในช่วงกลางวัน หน้านี้สรุปสิ่งที่ควรพิจารณาก่อนติดตั้งโซลาร์รูฟท็อปแบบ PPA ซึ่งผู้ให้บริการลงทุนติดตั้งและดูแลระบบ โดยไม่ต้องลงทุนก้อนแรก",
+        "sections": [
+          {
+            "heading": "ทำไมเหมาะกับการใช้โซลาร์",
+            "body": [
+              "เครื่องฉีดและเครื่องอัดรีดใช้ไฟฟ้ามาก และหลายโรงงานเดินเครื่องหลายกะ จึงมีโอกาสใช้ไฟจากโซลาร์ได้ในช่วงกลางวัน"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ควรตรวจสอบก่อนติดตั้ง",
+            "body": [],
+            "bullets": [
+              "กราฟโหลดรายชั่วโมงของเครื่องจักรหลัก",
+              "พื้นที่หลังคาโรงงานและตำแหน่งเครื่องปรับอากาศ ท่อ และปล่องที่บังแสง",
+              "ข้อกำหนดของลูกค้าหรือแบรนด์ด้านพลังงานสะอาด"
+            ]
+          },
+          {
+            "heading": "ข้อมูลที่ใช้ประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "โซลาร์รูฟท็อป PPA เหมาะกับโรงงานพลาสติกและบรรจุภัณฑ์หรือไม่",
+            "a": "ขึ้นกับโหลดไฟฟ้า หลังคา และสัญญาของแต่ละแห่ง ส่งบิลค่าไฟให้เราเพื่อรับรายงานประเมินฟรีภายใน 48 ชั่วโมง"
+          },
+          {
+            "q": "ต้องลงทุนเองหรือไม่",
+            "a": "ในรูปแบบ PPA ผู้ให้บริการเป็นผู้ลงทุนติดตั้งระบบ ผู้ใช้ไฟไม่ต้องจ่ายเงินลงทุนก้อนแรก รายละเอียดขึ้นกับสัญญา"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar for Plastics and Packaging Factories",
+        "description": "Rooftop solar PPA for plastics and packaging factories: what makes the load a good fit, what to check before installing, and how to get a free assessment.",
+        "intro": "Injection and extrusion machines draw a lot of power and many plants run several shifts, so a good share of daytime solar output can be used on site. This page covers what to consider before a rooftop solar PPA, where the provider funds and maintains the system so you need no upfront capital.",
+        "sections": [
+          {
+            "heading": "Why it can suit solar",
+            "body": [
+              "Injection and extrusion machines draw a lot of power and many plants run several shifts, so a good share of daytime solar output can be used on site."
+            ]
+          },
+          {
+            "heading": "What to check before installing",
+            "body": [],
+            "bullets": [
+              "hourly load profile of the main machines",
+              "roof area and shading from HVAC, ducting and stacks",
+              "customer or brand requirements on clean energy"
+            ]
+          },
+          {
+            "heading": "What we need to assess your site",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Is a rooftop solar PPA right for plastics and packaging factories?",
+            "a": "It depends on each site’s load, roof and contract. Send us your bill and get a free assessment within 48 hours."
+          },
+          {
+            "q": "Do I have to invest?",
+            "a": "Under a PPA the provider funds the installation, so there is no upfront capital. Details depend on the contract."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "industry-automotive",
+    "path": "industries/automotive",
+    "kind": "industry",
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อปสำหรับโรงงานยานยนต์และชิ้นส่วน",
+        "description": "โซลาร์รูฟท็อป PPA สำหรับโรงงานยานยนต์และชิ้นส่วน: ลักษณะการใช้ไฟที่เหมาะ สิ่งที่ต้องตรวจสอบก่อนติดตั้ง และวิธีขอรับรายงานประเมินฟรี",
+        "intro": "ซัพพลายเออร์ยานยนต์จำนวนมากถูกผู้ซื้อรายใหญ่ขอให้รายงานและลดการปล่อยก๊าซเรือนกระจก ไฟจากโซลาร์ช่วยลดการปล่อยในขอบเขตที่ 2 หน้านี้สรุปสิ่งที่ควรพิจารณาก่อนติดตั้งโซลาร์รูฟท็อปแบบ PPA ซึ่งผู้ให้บริการลงทุนติดตั้งและดูแลระบบ โดยไม่ต้องลงทุนก้อนแรก",
+        "sections": [
+          {
+            "heading": "ทำไมเหมาะกับการใช้โซลาร์",
+            "body": [
+              "ซัพพลายเออร์ยานยนต์จำนวนมากถูกผู้ซื้อรายใหญ่ขอให้รายงานและลดการปล่อยก๊าซเรือนกระจก ไฟจากโซลาร์ช่วยลดการปล่อยในขอบเขตที่ 2"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ควรตรวจสอบก่อนติดตั้ง",
+            "body": [],
+            "bullets": [
+              "หลังคาขนาดใหญ่และโครงสร้างที่รับน้ำหนักได้",
+              "รูปแบบการทำงานหลายกะ",
+              "ข้อมูลที่ต้องใช้ในการรายงานคาร์บอนต่อลูกค้า"
+            ]
+          },
+          {
+            "heading": "ข้อมูลที่ใช้ประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "โซลาร์รูฟท็อป PPA เหมาะกับโรงงานยานยนต์และชิ้นส่วนหรือไม่",
+            "a": "ขึ้นกับโหลดไฟฟ้า หลังคา และสัญญาของแต่ละแห่ง ส่งบิลค่าไฟให้เราเพื่อรับรายงานประเมินฟรีภายใน 48 ชั่วโมง"
+          },
+          {
+            "q": "ต้องลงทุนเองหรือไม่",
+            "a": "ในรูปแบบ PPA ผู้ให้บริการเป็นผู้ลงทุนติดตั้งระบบ ผู้ใช้ไฟไม่ต้องจ่ายเงินลงทุนก้อนแรก รายละเอียดขึ้นกับสัญญา"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar for Automotive and Parts Factories",
+        "description": "Rooftop solar PPA for automotive and parts factories: what makes the load a good fit, what to check before installing, and how to get a free assessment.",
+        "intro": "Many automotive suppliers are asked by large buyers to report and cut emissions; on-site solar reduces Scope 2 emissions. This page covers what to consider before a rooftop solar PPA, where the provider funds and maintains the system so you need no upfront capital.",
+        "sections": [
+          {
+            "heading": "Why it can suit solar",
+            "body": [
+              "Many automotive suppliers are asked by large buyers to report and cut emissions; on-site solar reduces Scope 2 emissions."
+            ]
+          },
+          {
+            "heading": "What to check before installing",
+            "body": [],
+            "bullets": [
+              "large roofs and load-bearing structure",
+              "multi-shift operating pattern",
+              "the data needed for carbon reporting to customers"
+            ]
+          },
+          {
+            "heading": "What we need to assess your site",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Is a rooftop solar PPA right for automotive and parts factories?",
+            "a": "It depends on each site’s load, roof and contract. Send us your bill and get a free assessment within 48 hours."
+          },
+          {
+            "q": "Do I have to invest?",
+            "a": "Under a PPA the provider funds the installation, so there is no upfront capital. Details depend on the contract."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "industry-hospitals",
+    "path": "industries/hospitals",
+    "kind": "industry",
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อปสำหรับโรงพยาบาล",
+        "description": "โซลาร์รูฟท็อป PPA สำหรับโรงพยาบาล: ลักษณะการใช้ไฟที่เหมาะ สิ่งที่ต้องตรวจสอบก่อนติดตั้ง และวิธีขอรับรายงานประเมินฟรี",
+        "intro": "โรงพยาบาลใช้ไฟตลอด 24 ชั่วโมง โดยเฉพาะระบบปรับอากาศ จึงมีไฟฟ้าใช้ต่อเนื่องในช่วงกลางวัน หน้านี้สรุปสิ่งที่ควรพิจารณาก่อนติดตั้งโซลาร์รูฟท็อปแบบ PPA ซึ่งผู้ให้บริการลงทุนติดตั้งและดูแลระบบ โดยไม่ต้องลงทุนก้อนแรก",
+        "sections": [
+          {
+            "heading": "ทำไมเหมาะกับการใช้โซลาร์",
+            "body": [
+              "โรงพยาบาลใช้ไฟตลอด 24 ชั่วโมง โดยเฉพาะระบบปรับอากาศ จึงมีไฟฟ้าใช้ต่อเนื่องในช่วงกลางวัน"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ควรตรวจสอบก่อนติดตั้ง",
+            "body": [],
+            "bullets": [
+              "ความปลอดภัยของงานติดตั้งบนหลังคาอาคารที่ใช้งานอยู่",
+              "การเชื่อมต่อกับระบบไฟสำรองและความต่อเนื่องของไฟฟ้า",
+              "ขั้นตอนอนุมัติและการจัดซื้อของหน่วยงาน"
+            ]
+          },
+          {
+            "heading": "ข้อมูลที่ใช้ประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "โซลาร์รูฟท็อป PPA เหมาะกับโรงพยาบาลหรือไม่",
+            "a": "ขึ้นกับโหลดไฟฟ้า หลังคา และสัญญาของแต่ละแห่ง ส่งบิลค่าไฟให้เราเพื่อรับรายงานประเมินฟรีภายใน 48 ชั่วโมง"
+          },
+          {
+            "q": "ต้องลงทุนเองหรือไม่",
+            "a": "ในรูปแบบ PPA ผู้ให้บริการเป็นผู้ลงทุนติดตั้งระบบ ผู้ใช้ไฟไม่ต้องจ่ายเงินลงทุนก้อนแรก รายละเอียดขึ้นกับสัญญา"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar for Hospitals",
+        "description": "Rooftop solar PPA for hospitals: what makes the load a good fit, what to check before installing, and how to get a free assessment.",
+        "intro": "Hospitals run around the clock, with heavy air-conditioning demand through the day. This page covers what to consider before a rooftop solar PPA, where the provider funds and maintains the system so you need no upfront capital.",
+        "sections": [
+          {
+            "heading": "Why it can suit solar",
+            "body": [
+              "Hospitals run around the clock, with heavy air-conditioning demand through the day."
+            ]
+          },
+          {
+            "heading": "What to check before installing",
+            "body": [],
+            "bullets": [
+              "safe installation on an occupied building",
+              "integration with backup power and supply continuity",
+              "approval and procurement steps of the organisation"
+            ]
+          },
+          {
+            "heading": "What we need to assess your site",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Is a rooftop solar PPA right for hospitals?",
+            "a": "It depends on each site’s load, roof and contract. Send us your bill and get a free assessment within 48 hours."
+          },
+          {
+            "q": "Do I have to invest?",
+            "a": "Under a PPA the provider funds the installation, so there is no upfront capital. Details depend on the contract."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "industry-hotels",
+    "path": "industries/hotels",
+    "kind": "industry",
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อปสำหรับโรงแรมและรีสอร์ต",
+        "description": "โซลาร์รูฟท็อป PPA สำหรับโรงแรมและรีสอร์ต: ลักษณะการใช้ไฟที่เหมาะ สิ่งที่ต้องตรวจสอบก่อนติดตั้ง และวิธีขอรับรายงานประเมินฟรี",
+        "intro": "โรงแรมมีภาระปรับอากาศและน้ำร้อนสูง และมีผู้เข้าพักตลอดวัน การใช้ไฟช่วงกลางวันจึงสม่ำเสมอ หน้านี้สรุปสิ่งที่ควรพิจารณาก่อนติดตั้งโซลาร์รูฟท็อปแบบ PPA ซึ่งผู้ให้บริการลงทุนติดตั้งและดูแลระบบ โดยไม่ต้องลงทุนก้อนแรก",
+        "sections": [
+          {
+            "heading": "ทำไมเหมาะกับการใช้โซลาร์",
+            "body": [
+              "โรงแรมมีภาระปรับอากาศและน้ำร้อนสูง และมีผู้เข้าพักตลอดวัน การใช้ไฟช่วงกลางวันจึงสม่ำเสมอ"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ควรตรวจสอบก่อนติดตั้ง",
+            "body": [],
+            "bullets": [
+              "ลักษณะหลังคา (หลังคาเรียบหรือหลังคาทรง)",
+              "ผลกระทบด้านทัศนียภาพและเสียงระหว่างติดตั้ง",
+              "ช่วงฤดูท่องเที่ยวที่มีการใช้ไฟสูงสุด"
+            ]
+          },
+          {
+            "heading": "ข้อมูลที่ใช้ประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "โซลาร์รูฟท็อป PPA เหมาะกับโรงแรมและรีสอร์ตหรือไม่",
+            "a": "ขึ้นกับโหลดไฟฟ้า หลังคา และสัญญาของแต่ละแห่ง ส่งบิลค่าไฟให้เราเพื่อรับรายงานประเมินฟรีภายใน 48 ชั่วโมง"
+          },
+          {
+            "q": "ต้องลงทุนเองหรือไม่",
+            "a": "ในรูปแบบ PPA ผู้ให้บริการเป็นผู้ลงทุนติดตั้งระบบ ผู้ใช้ไฟไม่ต้องจ่ายเงินลงทุนก้อนแรก รายละเอียดขึ้นกับสัญญา"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar for Hotels and Resorts",
+        "description": "Rooftop solar PPA for hotels and resorts: what makes the load a good fit, what to check before installing, and how to get a free assessment.",
+        "intro": "Hotels have high air-conditioning and hot-water loads and guests through the day, giving steady daytime consumption. This page covers what to consider before a rooftop solar PPA, where the provider funds and maintains the system so you need no upfront capital.",
+        "sections": [
+          {
+            "heading": "Why it can suit solar",
+            "body": [
+              "Hotels have high air-conditioning and hot-water loads and guests through the day, giving steady daytime consumption."
+            ]
+          },
+          {
+            "heading": "What to check before installing",
+            "body": [],
+            "bullets": [
+              "roof type (flat or pitched)",
+              "visual impact and noise during installation",
+              "high-season peaks in consumption"
+            ]
+          },
+          {
+            "heading": "What we need to assess your site",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Is a rooftop solar PPA right for hotels and resorts?",
+            "a": "It depends on each site’s load, roof and contract. Send us your bill and get a free assessment within 48 hours."
+          },
+          {
+            "q": "Do I have to invest?",
+            "a": "Under a PPA the provider funds the installation, so there is no upfront capital. Details depend on the contract."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "industry-warehouses-logistics",
+    "path": "industries/warehouses-logistics",
+    "kind": "industry",
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อปสำหรับคลังสินค้าและโลจิสติกส์",
+        "description": "โซลาร์รูฟท็อป PPA สำหรับคลังสินค้าและโลจิสติกส์: ลักษณะการใช้ไฟที่เหมาะ สิ่งที่ต้องตรวจสอบก่อนติดตั้ง และวิธีขอรับรายงานประเมินฟรี",
+        "intro": "คลังสินค้ามีหลังคาขนาดใหญ่และเรียบ เหมาะกับการติดตั้งแผง แม้การใช้ไฟอาจไม่สูงเท่าโรงงาน จึงต้องออกแบบขนาดระบบให้พอดีกับโหลด หน้านี้สรุปสิ่งที่ควรพิจารณาก่อนติดตั้งโซลาร์รูฟท็อปแบบ PPA ซึ่งผู้ให้บริการลงทุนติดตั้งและดูแลระบบ โดยไม่ต้องลงทุนก้อนแรก",
+        "sections": [
+          {
+            "heading": "ทำไมเหมาะกับการใช้โซลาร์",
+            "body": [
+              "คลังสินค้ามีหลังคาขนาดใหญ่และเรียบ เหมาะกับการติดตั้งแผง แม้การใช้ไฟอาจไม่สูงเท่าโรงงาน จึงต้องออกแบบขนาดระบบให้พอดีกับโหลด"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ควรตรวจสอบก่อนติดตั้ง",
+            "body": [],
+            "bullets": [
+              "โหลดจริงเทียบกับพื้นที่หลังคา",
+              "ระบบทำความเย็นหรือการชาร์จรถยก ที่เพิ่มการใช้ไฟช่วงกลางวัน",
+              "อายุสัญญาเช่าพื้นที่"
+            ]
+          },
+          {
+            "heading": "ข้อมูลที่ใช้ประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "โซลาร์รูฟท็อป PPA เหมาะกับคลังสินค้าและโลจิสติกส์หรือไม่",
+            "a": "ขึ้นกับโหลดไฟฟ้า หลังคา และสัญญาของแต่ละแห่ง ส่งบิลค่าไฟให้เราเพื่อรับรายงานประเมินฟรีภายใน 48 ชั่วโมง"
+          },
+          {
+            "q": "ต้องลงทุนเองหรือไม่",
+            "a": "ในรูปแบบ PPA ผู้ให้บริการเป็นผู้ลงทุนติดตั้งระบบ ผู้ใช้ไฟไม่ต้องจ่ายเงินลงทุนก้อนแรก รายละเอียดขึ้นกับสัญญา"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar for Warehouses and Logistics",
+        "description": "Rooftop solar PPA for warehouses and logistics: what makes the load a good fit, what to check before installing, and how to get a free assessment.",
+        "intro": "Warehouses offer large, flat roofs well suited to panels, though consumption can be lower than in factories, so system size must match the load. This page covers what to consider before a rooftop solar PPA, where the provider funds and maintains the system so you need no upfront capital.",
+        "sections": [
+          {
+            "heading": "Why it can suit solar",
+            "body": [
+              "Warehouses offer large, flat roofs well suited to panels, though consumption can be lower than in factories, so system size must match the load."
+            ]
+          },
+          {
+            "heading": "What to check before installing",
+            "body": [],
+            "bullets": [
+              "actual load against roof area",
+              "chillers or forklift charging that add daytime demand",
+              "remaining term of the site lease"
+            ]
+          },
+          {
+            "heading": "What we need to assess your site",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Is a rooftop solar PPA right for warehouses and logistics?",
+            "a": "It depends on each site’s load, roof and contract. Send us your bill and get a free assessment within 48 hours."
+          },
+          {
+            "q": "Do I have to invest?",
+            "a": "Under a PPA the provider funds the installation, so there is no upfront capital. Details depend on the contract."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "industry-education",
+    "path": "industries/education",
+    "kind": "industry",
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อปสำหรับมหาวิทยาลัยและสถานศึกษา",
+        "description": "โซลาร์รูฟท็อป PPA สำหรับมหาวิทยาลัยและสถานศึกษา: ลักษณะการใช้ไฟที่เหมาะ สิ่งที่ต้องตรวจสอบก่อนติดตั้ง และวิธีขอรับรายงานประเมินฟรี",
+        "intro": "สถานศึกษามีอาคารจำนวนมากและใช้ไฟช่วงกลางวันเป็นหลัก ตรงกับช่วงที่แผงโซลาร์ผลิตไฟสูงสุด หน้านี้สรุปสิ่งที่ควรพิจารณาก่อนติดตั้งโซลาร์รูฟท็อปแบบ PPA ซึ่งผู้ให้บริการลงทุนติดตั้งและดูแลระบบ โดยไม่ต้องลงทุนก้อนแรก",
+        "sections": [
+          {
+            "heading": "ทำไมเหมาะกับการใช้โซลาร์",
+            "body": [
+              "สถานศึกษามีอาคารจำนวนมากและใช้ไฟช่วงกลางวันเป็นหลัก ตรงกับช่วงที่แผงโซลาร์ผลิตไฟสูงสุด"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ควรตรวจสอบก่อนติดตั้ง",
+            "body": [],
+            "bullets": [
+              "การใช้ไฟช่วงปิดภาคเรียน",
+              "ข้อกำหนดการจัดซื้อจัดจ้างของสถาบัน",
+              "โครงสร้างหลังคาของอาคารเก่า"
+            ]
+          },
+          {
+            "heading": "ข้อมูลที่ใช้ประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "โซลาร์รูฟท็อป PPA เหมาะกับมหาวิทยาลัยและสถานศึกษาหรือไม่",
+            "a": "ขึ้นกับโหลดไฟฟ้า หลังคา และสัญญาของแต่ละแห่ง ส่งบิลค่าไฟให้เราเพื่อรับรายงานประเมินฟรีภายใน 48 ชั่วโมง"
+          },
+          {
+            "q": "ต้องลงทุนเองหรือไม่",
+            "a": "ในรูปแบบ PPA ผู้ให้บริการเป็นผู้ลงทุนติดตั้งระบบ ผู้ใช้ไฟไม่ต้องจ่ายเงินลงทุนก้อนแรก รายละเอียดขึ้นกับสัญญา"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar for Universities and Schools",
+        "description": "Rooftop solar PPA for universities and schools: what makes the load a good fit, what to check before installing, and how to get a free assessment.",
+        "intro": "Educational sites have many buildings and mostly daytime use, which matches the hours of peak solar output. This page covers what to consider before a rooftop solar PPA, where the provider funds and maintains the system so you need no upfront capital.",
+        "sections": [
+          {
+            "heading": "Why it can suit solar",
+            "body": [
+              "Educational sites have many buildings and mostly daytime use, which matches the hours of peak solar output."
+            ]
+          },
+          {
+            "heading": "What to check before installing",
+            "body": [],
+            "bullets": [
+              "consumption during term breaks",
+              "the institution's procurement rules",
+              "roof structure of older buildings"
+            ]
+          },
+          {
+            "heading": "What we need to assess your site",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Is a rooftop solar PPA right for universities and schools?",
+            "a": "It depends on each site’s load, roof and contract. Send us your bill and get a free assessment within 48 hours."
+          },
+          {
+            "q": "Do I have to invest?",
+            "a": "Under a PPA the provider funds the installation, so there is no upfront capital. Details depend on the contract."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "area-chonburi",
+    "path": "areas/chonburi",
+    "kind": "area",
+    "match": [
+      "ชลบุรี",
+      "Chonburi",
+      "Chon Buri"
+    ],
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อป ชลบุรี",
+        "description": "บริการโซลาร์รูฟท็อป PPA สำหรับโรงงานและธุรกิจในจังหวัดชลบุรี พร้อมตัวอย่างโครงการที่ติดตั้งแล้วและวิธีขอรับรายงานประเมินฟรี",
+        "intro": "Power Express ให้บริการโซลาร์รูฟท็อปแบบ PPA สำหรับโรงงานและธุรกิจในจังหวัดชลบุรี ผู้ให้บริการลงทุนติดตั้งและดูแลระบบ ลูกค้าจ่ายเฉพาะค่าไฟที่ใช้จริงตามสัญญา",
+        "sections": [
+          {
+            "heading": "ขั้นตอนการเชื่อมต่อและอนุญาต",
+            "body": [
+              "การติดตั้งต้องประสานกับการไฟฟ้าในพื้นที่ (กฟน. หรือ กฟภ. ตามที่ตั้งของโรงงาน) และหน่วยงานที่เกี่ยวข้อง ทีมงานดูแลขั้นตอนเหล่านี้ให้ตามขอบเขตที่ตกลงในสัญญา"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ต้องเตรียมเพื่อประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "รับติดตั้งในพื้นที่ชลบุรีหรือไม่",
+            "a": "รับ ส่งบิลค่าไฟและที่ตั้งของโรงงานให้เรา ทีมงานจะแจ้งผลการประเมินภายใน 48 ชั่วโมง"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar in Chonburi",
+        "description": "Rooftop solar PPA for factories and businesses in Chonburi, with examples of installed projects and how to get a free assessment.",
+        "intro": "Power Express provides rooftop solar PPA for factories and businesses in Chonburi. We fund, install and maintain the system and you pay only for the electricity it produces under the contract.",
+        "sections": [
+          {
+            "heading": "Grid connection and permits",
+            "body": [
+              "Installation is coordinated with the local utility (MEA or PEA, depending on the site) and the relevant authorities. Our team handles these steps within the scope agreed in the contract."
+            ]
+          },
+          {
+            "heading": "What to prepare for an assessment",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Do you install in Chonburi?",
+            "a": "Yes. Send your bill and site location and we will report back within 48 hours."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "area-rayong",
+    "path": "areas/rayong",
+    "kind": "area",
+    "match": [
+      "ระยอง",
+      "Rayong"
+    ],
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อป ระยอง",
+        "description": "บริการโซลาร์รูฟท็อป PPA สำหรับโรงงานและธุรกิจในจังหวัดระยอง พร้อมตัวอย่างโครงการที่ติดตั้งแล้วและวิธีขอรับรายงานประเมินฟรี",
+        "intro": "Power Express ให้บริการโซลาร์รูฟท็อปแบบ PPA สำหรับโรงงานและธุรกิจในจังหวัดระยอง ผู้ให้บริการลงทุนติดตั้งและดูแลระบบ ลูกค้าจ่ายเฉพาะค่าไฟที่ใช้จริงตามสัญญา",
+        "sections": [
+          {
+            "heading": "ขั้นตอนการเชื่อมต่อและอนุญาต",
+            "body": [
+              "การติดตั้งต้องประสานกับการไฟฟ้าในพื้นที่ (กฟน. หรือ กฟภ. ตามที่ตั้งของโรงงาน) และหน่วยงานที่เกี่ยวข้อง ทีมงานดูแลขั้นตอนเหล่านี้ให้ตามขอบเขตที่ตกลงในสัญญา"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ต้องเตรียมเพื่อประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "รับติดตั้งในพื้นที่ระยองหรือไม่",
+            "a": "รับ ส่งบิลค่าไฟและที่ตั้งของโรงงานให้เรา ทีมงานจะแจ้งผลการประเมินภายใน 48 ชั่วโมง"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar in Rayong",
+        "description": "Rooftop solar PPA for factories and businesses in Rayong, with examples of installed projects and how to get a free assessment.",
+        "intro": "Power Express provides rooftop solar PPA for factories and businesses in Rayong. We fund, install and maintain the system and you pay only for the electricity it produces under the contract.",
+        "sections": [
+          {
+            "heading": "Grid connection and permits",
+            "body": [
+              "Installation is coordinated with the local utility (MEA or PEA, depending on the site) and the relevant authorities. Our team handles these steps within the scope agreed in the contract."
+            ]
+          },
+          {
+            "heading": "What to prepare for an assessment",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Do you install in Rayong?",
+            "a": "Yes. Send your bill and site location and we will report back within 48 hours."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "area-samut-sakhon",
+    "path": "areas/samut-sakhon",
+    "kind": "area",
+    "match": [
+      "สมุทรสาคร",
+      "Samut Sakhon"
+    ],
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อป สมุทรสาคร",
+        "description": "บริการโซลาร์รูฟท็อป PPA สำหรับโรงงานและธุรกิจในจังหวัดสมุทรสาคร พร้อมตัวอย่างโครงการที่ติดตั้งแล้วและวิธีขอรับรายงานประเมินฟรี",
+        "intro": "Power Express ให้บริการโซลาร์รูฟท็อปแบบ PPA สำหรับโรงงานและธุรกิจในจังหวัดสมุทรสาคร ผู้ให้บริการลงทุนติดตั้งและดูแลระบบ ลูกค้าจ่ายเฉพาะค่าไฟที่ใช้จริงตามสัญญา",
+        "sections": [
+          {
+            "heading": "ขั้นตอนการเชื่อมต่อและอนุญาต",
+            "body": [
+              "การติดตั้งต้องประสานกับการไฟฟ้าในพื้นที่ (กฟน. หรือ กฟภ. ตามที่ตั้งของโรงงาน) และหน่วยงานที่เกี่ยวข้อง ทีมงานดูแลขั้นตอนเหล่านี้ให้ตามขอบเขตที่ตกลงในสัญญา"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ต้องเตรียมเพื่อประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "รับติดตั้งในพื้นที่สมุทรสาครหรือไม่",
+            "a": "รับ ส่งบิลค่าไฟและที่ตั้งของโรงงานให้เรา ทีมงานจะแจ้งผลการประเมินภายใน 48 ชั่วโมง"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar in Samut Sakhon",
+        "description": "Rooftop solar PPA for factories and businesses in Samut Sakhon, with examples of installed projects and how to get a free assessment.",
+        "intro": "Power Express provides rooftop solar PPA for factories and businesses in Samut Sakhon. We fund, install and maintain the system and you pay only for the electricity it produces under the contract.",
+        "sections": [
+          {
+            "heading": "Grid connection and permits",
+            "body": [
+              "Installation is coordinated with the local utility (MEA or PEA, depending on the site) and the relevant authorities. Our team handles these steps within the scope agreed in the contract."
+            ]
+          },
+          {
+            "heading": "What to prepare for an assessment",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Do you install in Samut Sakhon?",
+            "a": "Yes. Send your bill and site location and we will report back within 48 hours."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "area-samut-prakan",
+    "path": "areas/samut-prakan",
+    "kind": "area",
+    "match": [
+      "สมุทรปราการ",
+      "Samut Prakan"
+    ],
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อป สมุทรปราการ",
+        "description": "บริการโซลาร์รูฟท็อป PPA สำหรับโรงงานและธุรกิจในจังหวัดสมุทรปราการ พร้อมตัวอย่างโครงการที่ติดตั้งแล้วและวิธีขอรับรายงานประเมินฟรี",
+        "intro": "Power Express ให้บริการโซลาร์รูฟท็อปแบบ PPA สำหรับโรงงานและธุรกิจในจังหวัดสมุทรปราการ ผู้ให้บริการลงทุนติดตั้งและดูแลระบบ ลูกค้าจ่ายเฉพาะค่าไฟที่ใช้จริงตามสัญญา",
+        "sections": [
+          {
+            "heading": "ขั้นตอนการเชื่อมต่อและอนุญาต",
+            "body": [
+              "การติดตั้งต้องประสานกับการไฟฟ้าในพื้นที่ (กฟน. หรือ กฟภ. ตามที่ตั้งของโรงงาน) และหน่วยงานที่เกี่ยวข้อง ทีมงานดูแลขั้นตอนเหล่านี้ให้ตามขอบเขตที่ตกลงในสัญญา"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ต้องเตรียมเพื่อประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "รับติดตั้งในพื้นที่สมุทรปราการหรือไม่",
+            "a": "รับ ส่งบิลค่าไฟและที่ตั้งของโรงงานให้เรา ทีมงานจะแจ้งผลการประเมินภายใน 48 ชั่วโมง"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar in Samut Prakan",
+        "description": "Rooftop solar PPA for factories and businesses in Samut Prakan, with examples of installed projects and how to get a free assessment.",
+        "intro": "Power Express provides rooftop solar PPA for factories and businesses in Samut Prakan. We fund, install and maintain the system and you pay only for the electricity it produces under the contract.",
+        "sections": [
+          {
+            "heading": "Grid connection and permits",
+            "body": [
+              "Installation is coordinated with the local utility (MEA or PEA, depending on the site) and the relevant authorities. Our team handles these steps within the scope agreed in the contract."
+            ]
+          },
+          {
+            "heading": "What to prepare for an assessment",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Do you install in Samut Prakan?",
+            "a": "Yes. Send your bill and site location and we will report back within 48 hours."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "area-pathum-thani",
+    "path": "areas/pathum-thani",
+    "kind": "area",
+    "match": [
+      "ปทุมธานี",
+      "Pathum Thani"
+    ],
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อป ปทุมธานี",
+        "description": "บริการโซลาร์รูฟท็อป PPA สำหรับโรงงานและธุรกิจในจังหวัดปทุมธานี พร้อมตัวอย่างโครงการที่ติดตั้งแล้วและวิธีขอรับรายงานประเมินฟรี",
+        "intro": "Power Express ให้บริการโซลาร์รูฟท็อปแบบ PPA สำหรับโรงงานและธุรกิจในจังหวัดปทุมธานี ผู้ให้บริการลงทุนติดตั้งและดูแลระบบ ลูกค้าจ่ายเฉพาะค่าไฟที่ใช้จริงตามสัญญา",
+        "sections": [
+          {
+            "heading": "ขั้นตอนการเชื่อมต่อและอนุญาต",
+            "body": [
+              "การติดตั้งต้องประสานกับการไฟฟ้าในพื้นที่ (กฟน. หรือ กฟภ. ตามที่ตั้งของโรงงาน) และหน่วยงานที่เกี่ยวข้อง ทีมงานดูแลขั้นตอนเหล่านี้ให้ตามขอบเขตที่ตกลงในสัญญา"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ต้องเตรียมเพื่อประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "รับติดตั้งในพื้นที่ปทุมธานีหรือไม่",
+            "a": "รับ ส่งบิลค่าไฟและที่ตั้งของโรงงานให้เรา ทีมงานจะแจ้งผลการประเมินภายใน 48 ชั่วโมง"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar in Pathum Thani",
+        "description": "Rooftop solar PPA for factories and businesses in Pathum Thani, with examples of installed projects and how to get a free assessment.",
+        "intro": "Power Express provides rooftop solar PPA for factories and businesses in Pathum Thani. We fund, install and maintain the system and you pay only for the electricity it produces under the contract.",
+        "sections": [
+          {
+            "heading": "Grid connection and permits",
+            "body": [
+              "Installation is coordinated with the local utility (MEA or PEA, depending on the site) and the relevant authorities. Our team handles these steps within the scope agreed in the contract."
+            ]
+          },
+          {
+            "heading": "What to prepare for an assessment",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Do you install in Pathum Thani?",
+            "a": "Yes. Send your bill and site location and we will report back within 48 hours."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "area-ayutthaya",
+    "path": "areas/ayutthaya",
+    "kind": "area",
+    "match": [
+      "อยุธยา",
+      "Ayutthaya"
+    ],
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อป พระนครศรีอยุธยา",
+        "description": "บริการโซลาร์รูฟท็อป PPA สำหรับโรงงานและธุรกิจในจังหวัดพระนครศรีอยุธยา พร้อมตัวอย่างโครงการที่ติดตั้งแล้วและวิธีขอรับรายงานประเมินฟรี",
+        "intro": "Power Express ให้บริการโซลาร์รูฟท็อปแบบ PPA สำหรับโรงงานและธุรกิจในจังหวัดพระนครศรีอยุธยา ผู้ให้บริการลงทุนติดตั้งและดูแลระบบ ลูกค้าจ่ายเฉพาะค่าไฟที่ใช้จริงตามสัญญา",
+        "sections": [
+          {
+            "heading": "ขั้นตอนการเชื่อมต่อและอนุญาต",
+            "body": [
+              "การติดตั้งต้องประสานกับการไฟฟ้าในพื้นที่ (กฟน. หรือ กฟภ. ตามที่ตั้งของโรงงาน) และหน่วยงานที่เกี่ยวข้อง ทีมงานดูแลขั้นตอนเหล่านี้ให้ตามขอบเขตที่ตกลงในสัญญา"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ต้องเตรียมเพื่อประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "รับติดตั้งในพื้นที่พระนครศรีอยุธยาหรือไม่",
+            "a": "รับ ส่งบิลค่าไฟและที่ตั้งของโรงงานให้เรา ทีมงานจะแจ้งผลการประเมินภายใน 48 ชั่วโมง"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar in Ayutthaya",
+        "description": "Rooftop solar PPA for factories and businesses in Ayutthaya, with examples of installed projects and how to get a free assessment.",
+        "intro": "Power Express provides rooftop solar PPA for factories and businesses in Ayutthaya. We fund, install and maintain the system and you pay only for the electricity it produces under the contract.",
+        "sections": [
+          {
+            "heading": "Grid connection and permits",
+            "body": [
+              "Installation is coordinated with the local utility (MEA or PEA, depending on the site) and the relevant authorities. Our team handles these steps within the scope agreed in the contract."
+            ]
+          },
+          {
+            "heading": "What to prepare for an assessment",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Do you install in Ayutthaya?",
+            "a": "Yes. Send your bill and site location and we will report back within 48 hours."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "area-chachoengsao",
+    "path": "areas/chachoengsao",
+    "kind": "area",
+    "match": [
+      "ฉะเชิงเทรา",
+      "Chachoengsao"
+    ],
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อป ฉะเชิงเทรา",
+        "description": "บริการโซลาร์รูฟท็อป PPA สำหรับโรงงานและธุรกิจในจังหวัดฉะเชิงเทรา พร้อมตัวอย่างโครงการที่ติดตั้งแล้วและวิธีขอรับรายงานประเมินฟรี",
+        "intro": "Power Express ให้บริการโซลาร์รูฟท็อปแบบ PPA สำหรับโรงงานและธุรกิจในจังหวัดฉะเชิงเทรา ผู้ให้บริการลงทุนติดตั้งและดูแลระบบ ลูกค้าจ่ายเฉพาะค่าไฟที่ใช้จริงตามสัญญา",
+        "sections": [
+          {
+            "heading": "ขั้นตอนการเชื่อมต่อและอนุญาต",
+            "body": [
+              "การติดตั้งต้องประสานกับการไฟฟ้าในพื้นที่ (กฟน. หรือ กฟภ. ตามที่ตั้งของโรงงาน) และหน่วยงานที่เกี่ยวข้อง ทีมงานดูแลขั้นตอนเหล่านี้ให้ตามขอบเขตที่ตกลงในสัญญา"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ต้องเตรียมเพื่อประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "รับติดตั้งในพื้นที่ฉะเชิงเทราหรือไม่",
+            "a": "รับ ส่งบิลค่าไฟและที่ตั้งของโรงงานให้เรา ทีมงานจะแจ้งผลการประเมินภายใน 48 ชั่วโมง"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar in Chachoengsao",
+        "description": "Rooftop solar PPA for factories and businesses in Chachoengsao, with examples of installed projects and how to get a free assessment.",
+        "intro": "Power Express provides rooftop solar PPA for factories and businesses in Chachoengsao. We fund, install and maintain the system and you pay only for the electricity it produces under the contract.",
+        "sections": [
+          {
+            "heading": "Grid connection and permits",
+            "body": [
+              "Installation is coordinated with the local utility (MEA or PEA, depending on the site) and the relevant authorities. Our team handles these steps within the scope agreed in the contract."
+            ]
+          },
+          {
+            "heading": "What to prepare for an assessment",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Do you install in Chachoengsao?",
+            "a": "Yes. Send your bill and site location and we will report back within 48 hours."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "area-nakhon-ratchasima",
+    "path": "areas/nakhon-ratchasima",
+    "kind": "area",
+    "match": [
+      "นครราชสีมา",
+      "Nakhon Ratchasima",
+      "โคราช"
+    ],
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อป นครราชสีมา",
+        "description": "บริการโซลาร์รูฟท็อป PPA สำหรับโรงงานและธุรกิจในจังหวัดนครราชสีมา พร้อมตัวอย่างโครงการที่ติดตั้งแล้วและวิธีขอรับรายงานประเมินฟรี",
+        "intro": "Power Express ให้บริการโซลาร์รูฟท็อปแบบ PPA สำหรับโรงงานและธุรกิจในจังหวัดนครราชสีมา ผู้ให้บริการลงทุนติดตั้งและดูแลระบบ ลูกค้าจ่ายเฉพาะค่าไฟที่ใช้จริงตามสัญญา",
+        "sections": [
+          {
+            "heading": "ขั้นตอนการเชื่อมต่อและอนุญาต",
+            "body": [
+              "การติดตั้งต้องประสานกับการไฟฟ้าในพื้นที่ (กฟน. หรือ กฟภ. ตามที่ตั้งของโรงงาน) และหน่วยงานที่เกี่ยวข้อง ทีมงานดูแลขั้นตอนเหล่านี้ให้ตามขอบเขตที่ตกลงในสัญญา"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ต้องเตรียมเพื่อประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "รับติดตั้งในพื้นที่นครราชสีมาหรือไม่",
+            "a": "รับ ส่งบิลค่าไฟและที่ตั้งของโรงงานให้เรา ทีมงานจะแจ้งผลการประเมินภายใน 48 ชั่วโมง"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar in Nakhon Ratchasima",
+        "description": "Rooftop solar PPA for factories and businesses in Nakhon Ratchasima, with examples of installed projects and how to get a free assessment.",
+        "intro": "Power Express provides rooftop solar PPA for factories and businesses in Nakhon Ratchasima. We fund, install and maintain the system and you pay only for the electricity it produces under the contract.",
+        "sections": [
+          {
+            "heading": "Grid connection and permits",
+            "body": [
+              "Installation is coordinated with the local utility (MEA or PEA, depending on the site) and the relevant authorities. Our team handles these steps within the scope agreed in the contract."
+            ]
+          },
+          {
+            "heading": "What to prepare for an assessment",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Do you install in Nakhon Ratchasima?",
+            "a": "Yes. Send your bill and site location and we will report back within 48 hours."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "area-ratchaburi",
+    "path": "areas/ratchaburi",
+    "kind": "area",
+    "match": [
+      "ราชบุรี",
+      "Ratchaburi"
+    ],
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อป ราชบุรี",
+        "description": "บริการโซลาร์รูฟท็อป PPA สำหรับโรงงานและธุรกิจในจังหวัดราชบุรี พร้อมตัวอย่างโครงการที่ติดตั้งแล้วและวิธีขอรับรายงานประเมินฟรี",
+        "intro": "Power Express ให้บริการโซลาร์รูฟท็อปแบบ PPA สำหรับโรงงานและธุรกิจในจังหวัดราชบุรี ผู้ให้บริการลงทุนติดตั้งและดูแลระบบ ลูกค้าจ่ายเฉพาะค่าไฟที่ใช้จริงตามสัญญา",
+        "sections": [
+          {
+            "heading": "ขั้นตอนการเชื่อมต่อและอนุญาต",
+            "body": [
+              "การติดตั้งต้องประสานกับการไฟฟ้าในพื้นที่ (กฟน. หรือ กฟภ. ตามที่ตั้งของโรงงาน) และหน่วยงานที่เกี่ยวข้อง ทีมงานดูแลขั้นตอนเหล่านี้ให้ตามขอบเขตที่ตกลงในสัญญา"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ต้องเตรียมเพื่อประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "รับติดตั้งในพื้นที่ราชบุรีหรือไม่",
+            "a": "รับ ส่งบิลค่าไฟและที่ตั้งของโรงงานให้เรา ทีมงานจะแจ้งผลการประเมินภายใน 48 ชั่วโมง"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar in Ratchaburi",
+        "description": "Rooftop solar PPA for factories and businesses in Ratchaburi, with examples of installed projects and how to get a free assessment.",
+        "intro": "Power Express provides rooftop solar PPA for factories and businesses in Ratchaburi. We fund, install and maintain the system and you pay only for the electricity it produces under the contract.",
+        "sections": [
+          {
+            "heading": "Grid connection and permits",
+            "body": [
+              "Installation is coordinated with the local utility (MEA or PEA, depending on the site) and the relevant authorities. Our team handles these steps within the scope agreed in the contract."
+            ]
+          },
+          {
+            "heading": "What to prepare for an assessment",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Do you install in Ratchaburi?",
+            "a": "Yes. Send your bill and site location and we will report back within 48 hours."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "area-amata",
+    "path": "areas/amata",
+    "kind": "area",
+    "match": [
+      "อมตะ",
+      "Amata"
+    ],
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อป นิคมอุตสาหกรรมอมตะ",
+        "description": "บริการโซลาร์รูฟท็อป PPA สำหรับโรงงานและธุรกิจในนิคมอุตสาหกรรมอมตะ พร้อมตัวอย่างโครงการที่ติดตั้งแล้วและวิธีขอรับรายงานประเมินฟรี",
+        "intro": "Power Express ให้บริการโซลาร์รูฟท็อปแบบ PPA สำหรับโรงงานและธุรกิจในนิคมอุตสาหกรรมอมตะ ผู้ให้บริการลงทุนติดตั้งและดูแลระบบ ลูกค้าจ่ายเฉพาะค่าไฟที่ใช้จริงตามสัญญา",
+        "sections": [
+          {
+            "heading": "ขั้นตอนการเชื่อมต่อและอนุญาต",
+            "body": [
+              "การติดตั้งต้องประสานกับการไฟฟ้าในพื้นที่ (กฟน. หรือ กฟภ. ตามที่ตั้งของโรงงาน) และหน่วยงานที่เกี่ยวข้อง ทีมงานดูแลขั้นตอนเหล่านี้ให้ตามขอบเขตที่ตกลงในสัญญา"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ต้องเตรียมเพื่อประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "รับติดตั้งในพื้นที่นิคมอุตสาหกรรมอมตะหรือไม่",
+            "a": "รับ ส่งบิลค่าไฟและที่ตั้งของโรงงานให้เรา ทีมงานจะแจ้งผลการประเมินภายใน 48 ชั่วโมง"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar in Amata Industrial Estates",
+        "description": "Rooftop solar PPA for factories and businesses in Amata Industrial Estates, with examples of installed projects and how to get a free assessment.",
+        "intro": "Power Express provides rooftop solar PPA for factories and businesses in Amata Industrial Estates. We fund, install and maintain the system and you pay only for the electricity it produces under the contract.",
+        "sections": [
+          {
+            "heading": "Grid connection and permits",
+            "body": [
+              "Installation is coordinated with the local utility (MEA or PEA, depending on the site) and the relevant authorities. Our team handles these steps within the scope agreed in the contract."
+            ]
+          },
+          {
+            "heading": "What to prepare for an assessment",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Do you install in Amata Industrial Estates?",
+            "a": "Yes. Send your bill and site location and we will report back within 48 hours."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "area-wha",
+    "path": "areas/wha",
+    "kind": "area",
+    "match": [
+      "WHA",
+      "ดับบลิวเอชเอ"
+    ],
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อป นิคมอุตสาหกรรม WHA",
+        "description": "บริการโซลาร์รูฟท็อป PPA สำหรับโรงงานและธุรกิจในนิคมอุตสาหกรรม WHA พร้อมตัวอย่างโครงการที่ติดตั้งแล้วและวิธีขอรับรายงานประเมินฟรี",
+        "intro": "Power Express ให้บริการโซลาร์รูฟท็อปแบบ PPA สำหรับโรงงานและธุรกิจในนิคมอุตสาหกรรม WHA ผู้ให้บริการลงทุนติดตั้งและดูแลระบบ ลูกค้าจ่ายเฉพาะค่าไฟที่ใช้จริงตามสัญญา",
+        "sections": [
+          {
+            "heading": "ขั้นตอนการเชื่อมต่อและอนุญาต",
+            "body": [
+              "การติดตั้งต้องประสานกับการไฟฟ้าในพื้นที่ (กฟน. หรือ กฟภ. ตามที่ตั้งของโรงงาน) และหน่วยงานที่เกี่ยวข้อง ทีมงานดูแลขั้นตอนเหล่านี้ให้ตามขอบเขตที่ตกลงในสัญญา"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ต้องเตรียมเพื่อประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "รับติดตั้งในพื้นที่นิคมอุตสาหกรรม WHAหรือไม่",
+            "a": "รับ ส่งบิลค่าไฟและที่ตั้งของโรงงานให้เรา ทีมงานจะแจ้งผลการประเมินภายใน 48 ชั่วโมง"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar in WHA Industrial Estates",
+        "description": "Rooftop solar PPA for factories and businesses in WHA Industrial Estates, with examples of installed projects and how to get a free assessment.",
+        "intro": "Power Express provides rooftop solar PPA for factories and businesses in WHA Industrial Estates. We fund, install and maintain the system and you pay only for the electricity it produces under the contract.",
+        "sections": [
+          {
+            "heading": "Grid connection and permits",
+            "body": [
+              "Installation is coordinated with the local utility (MEA or PEA, depending on the site) and the relevant authorities. Our team handles these steps within the scope agreed in the contract."
+            ]
+          },
+          {
+            "heading": "What to prepare for an assessment",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Do you install in WHA Industrial Estates?",
+            "a": "Yes. Send your bill and site location and we will report back within 48 hours."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
+    "slug": "area-bangpoo",
+    "path": "areas/bangpoo",
+    "kind": "area",
+    "match": [
+      "บางปู",
+      "Bangpoo",
+      "Bang Poo"
+    ],
+    "text": {
+      "th": {
+        "title": "โซลาร์รูฟท็อป นิคมอุตสาหกรรมบางปู",
+        "description": "บริการโซลาร์รูฟท็อป PPA สำหรับโรงงานและธุรกิจในนิคมอุตสาหกรรมบางปู พร้อมตัวอย่างโครงการที่ติดตั้งแล้วและวิธีขอรับรายงานประเมินฟรี",
+        "intro": "Power Express ให้บริการโซลาร์รูฟท็อปแบบ PPA สำหรับโรงงานและธุรกิจในนิคมอุตสาหกรรมบางปู ผู้ให้บริการลงทุนติดตั้งและดูแลระบบ ลูกค้าจ่ายเฉพาะค่าไฟที่ใช้จริงตามสัญญา",
+        "sections": [
+          {
+            "heading": "ขั้นตอนการเชื่อมต่อและอนุญาต",
+            "body": [
+              "การติดตั้งต้องประสานกับการไฟฟ้าในพื้นที่ (กฟน. หรือ กฟภ. ตามที่ตั้งของโรงงาน) และหน่วยงานที่เกี่ยวข้อง ทีมงานดูแลขั้นตอนเหล่านี้ให้ตามขอบเขตที่ตกลงในสัญญา"
+            ]
+          },
+          {
+            "heading": "สิ่งที่ต้องเตรียมเพื่อประเมิน",
+            "body": [],
+            "bullets": [
+              "บิลค่าไฟย้อนหลังอย่างน้อย 12 เดือน",
+              "ข้อมูลพื้นที่และโครงสร้างหลังคา",
+              "เอกสารกรรมสิทธิ์อาคารหรือสัญญาเช่า"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "รับติดตั้งในพื้นที่นิคมอุตสาหกรรมบางปูหรือไม่",
+            "a": "รับ ส่งบิลค่าไฟและที่ตั้งของโรงงานให้เรา ทีมงานจะแจ้งผลการประเมินภายใน 48 ชั่วโมง"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "Rooftop Solar in Bangpoo Industrial Estate",
+        "description": "Rooftop solar PPA for factories and businesses in Bangpoo Industrial Estate, with examples of installed projects and how to get a free assessment.",
+        "intro": "Power Express provides rooftop solar PPA for factories and businesses in Bangpoo Industrial Estate. We fund, install and maintain the system and you pay only for the electricity it produces under the contract.",
+        "sections": [
+          {
+            "heading": "Grid connection and permits",
+            "body": [
+              "Installation is coordinated with the local utility (MEA or PEA, depending on the site) and the relevant authorities. Our team handles these steps within the scope agreed in the contract."
+            ]
+          },
+          {
+            "heading": "What to prepare for an assessment",
+            "body": [],
+            "bullets": [
+              "at least 12 months of electricity bills",
+              "roof area and structure details",
+              "proof of building ownership or the lease"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Do you install in Bangpoo Industrial Estate?",
+            "a": "Yes. Send your bill and site location and we will report back within 48 hours."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  }
+]

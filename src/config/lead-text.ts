@@ -34,6 +34,8 @@ export interface LeadText {
   errorConsent: string;
   errorFile: string;
   choose: string;
+  projectCtaTitle: string;
+  projectCtaBody: string;
 }
 
 export const leadText: { [key in Locale]: LeadText } = {
@@ -93,6 +95,9 @@ export const leadText: { [key in Locale]: LeadText } = {
     errorConsent: 'กรุณายินยอมการเก็บและใช้ข้อมูลส่วนบุคคล',
     errorFile: 'ไฟล์ต้องเป็น PDF, JPG หรือ PNG และมีขนาดไม่เกิน 10 MB',
     choose: 'เลือก',
+    projectCtaTitle: 'อยากได้ระบบแบบนี้สำหรับโรงงานของคุณ',
+    projectCtaBody:
+      'ส่งบิลค่าไฟของคุณ รับรายงานประเมินขนาดระบบและตัวเลขประหยัดที่เหมาะกับหน้างานฟรี ภายใน 48 ชั่วโมง',
   },
   en: {
     seoTitle: 'Free Rooftop Solar Assessment: Send Your Bill, Get a Report in 48 Hours',
@@ -150,5 +155,8 @@ export const leadText: { [key in Locale]: LeadText } = {
     errorConsent: 'Please consent to the use of your personal data.',
     errorFile: 'The file must be a PDF, JPG or PNG up to 10 MB.',
     choose: 'Select',
+    projectCtaTitle: 'Want a system like this for your site?',
+    projectCtaBody:
+      'Send your electricity bill and get a free system size and savings estimate for your site within 48 hours.',
   },
 };

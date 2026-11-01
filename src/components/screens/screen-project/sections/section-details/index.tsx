@@ -1,5 +1,8 @@
 import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 
+import { leadText } from '../../../../../config/lead-text';
+import { track } from '../../../../../utils/analytics';
 import { p } from '../../../../../utils/path-utils';
 import { l } from '../../../../../utils/localization-utils';
 import { useVmScreen } from '../../../../../stores/vm-screen';
@@ -154,6 +157,21 @@ const SectionDetails = () => {
             {localizedDetails}
           </p>
           <PhotoGallery locale={locale} photos={photos} />
+          <div className="p-8 rounded-2xl bg-pale border border-sep-smoke flex flex-col items-start gap-y-3">
+            <h2 className="text-2xl font-medium text-title-dark">
+              {leadText[locale].projectCtaTitle}
+            </h2>
+            <p className="text-base text-gray-content">
+              {leadText[locale].projectCtaBody}
+            </p>
+            <Link
+              to={`/${locale}/free-assessment`}
+              onClick={() => track('click_assessment_cta', { place: 'project' })}
+              className="px-6 py-3 rounded-lg bg-cta-primary text-white text-base font-medium"
+            >
+              {leadText[locale].title}
+            </Link>
+          </div>
         </div>
       </SectionTwoCols>
     </div>

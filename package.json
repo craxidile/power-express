@@ -31,6 +31,7 @@
   "scripts": {
     "start": "react-scripts start",
     "prebuild": "node scripts/generate-sitemap.js",
+    "postbuild": "node scripts/prerender.js",
     "build": "react-scripts build",
     "build:pages": "npm run build && node -e \"require('fs').rmSync('build/404.html',{force:true})\"",
     "test": "react-scripts test",

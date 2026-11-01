@@ -5,9 +5,11 @@ import { leadText } from '../../../config/lead-text';
 import { submitLead } from '../../../apis/lead';
 import { getAttribution } from '../../../utils/attribution';
 import { track } from '../../../utils/analytics';
+import { trackAdLead } from '../../../utils/consent';
 import LayoutStandard from '../../layouts/layout-standard';
 import SafeArea from '../../_commons/safe-area';
 import Seo from '../../_commons/seo';
+import Turnstile from '../../_commons/turnstile';
 
 const MAX_FILE_BYTES = 10 * 1024 * 1024;
 const FILE_TYPES = ['application/pdf', 'image/jpeg', 'image/png'];
@@ -65,6 +67,7 @@ const ScreenAssessment = () => {
     setSending(true);
     try {
       await submitLead(form);
+      trackAdLead();
       track('generate_lead', {
         form: 'free_assessment',
         has_bill: file instanceof File && file.size > 0,
@@ -247,6 +250,7 @@ const ScreenAssessment = () => {
                     {error}
                   </p>
                 )}
+                <Turnstile />
                 <button
                   type="submit"
                   disabled={sending}
