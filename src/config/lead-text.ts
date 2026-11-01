@@ -82,7 +82,7 @@ export const leadText: { [key in Locale]: LeadText } = {
     file: 'แนบบิลค่าไฟ (ไม่บังคับ)',
     fileHint: 'ไฟล์ PDF, JPG หรือ PNG ขนาดไม่เกิน 10 MB',
     consent:
-      'ข้าพเจ้ายินยอมให้ Power Express เก็บ ใช้ และเปิดเผยข้อมูลส่วนบุคคลข้างต้น เพื่อติดต่อกลับและจัดทำรายงานประเมินตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562',
+      'ข้าพเจ้ายินยอมให้ บริษัท เพาวเวอร์เอ็กซ์เพรส1980 จำกัด เก็บ ใช้ และเปิดเผยข้อมูลส่วนบุคคลข้างต้น เพื่อติดต่อกลับและจัดทำรายงานประเมินตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562',
     submit: 'ส่งข้อมูลเพื่อประเมินฟรี',
     sending: 'กำลังส่งข้อมูล...',
     successTitle: 'ได้รับข้อมูลเรียบร้อยแล้ว',
@@ -139,7 +139,7 @@ export const leadText: { [key in Locale]: LeadText } = {
     file: 'Attach your bill (optional)',
     fileHint: 'PDF, JPG or PNG, up to 10 MB',
     consent:
-      'I consent to Power Express collecting, using and disclosing the personal data above to contact me and prepare the assessment, in accordance with the Personal Data Protection Act B.E. 2562 (2019).',
+      'I consent to Powerexpress1980 Company Limited collecting, using and disclosing the personal data above to contact me and prepare the assessment, in accordance with the Personal Data Protection Act B.E. 2562 (2019).',
     submit: 'Request free assessment',
     sending: 'Sending...',
     successTitle: 'We have received your details',
