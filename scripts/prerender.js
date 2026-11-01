@@ -312,10 +312,12 @@ const renderPage = (template, page, org, website, service, isHome) => {
   return html;
 };
 
+// Written as <path>.html (not <path>/index.html): Cloudflare Pages serves /th/solar-ppa
+// from th/solar-ppa.html with a 200, whereas a folder index would 308 to a trailing slash.
 const writePage = (rel, html) => {
-  const dir = path.join(buildDir, rel);
-  fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), html);
+  const file = path.join(buildDir, `${rel}.html`);
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, html);
 };
 
 (async () => {
@@ -535,7 +537,7 @@ const writePage = (rel, html) => {
   for (const page of pages) {
     const org = buildOrg(contacts, page.l);
     const html = renderPage(template, page, org, buildWebsite(page.l), buildService(page.l), page.p === '');
-    writePage(path.join(page.l, page.p), html);
+    writePage(page.p ? path.join(page.l, page.p) : page.l, html);
   }
 
   // llms.txt: a plain-language map of the site for AI assistants.
