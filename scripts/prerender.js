@@ -19,6 +19,16 @@ const apiPrefix = 'https://yttnuerixoafmhpdghdm.supabase.co/functions/v1';
 const apiKey = 'sb_publishable_zBpJVvLrBXI_-CoV28r75w_hSubLVMx';
 const locales = ['th', 'en'];
 const ogImageDefault = `${siteUrl}/logo512.png`;
+const author = {
+  name: { th: 'ภานุวัจน์ ทองร่มโพธิ์', en: 'Panuwat Thongrompo' },
+  title: { th: 'ประธานเจ้าหน้าที่บริหาร', en: 'Chief Executive Officer' },
+};
+const authorLd = (l) => ({
+  '@type': 'Person',
+  name: author.name[l],
+  jobTitle: author.title[l],
+  worksFor: { '@id': `${siteUrl}/#organization` },
+});
 
 const seoText = require('../src/config/seo-text.json');
 const guides = require('../src/config/guides.json');
@@ -238,10 +248,14 @@ const relatedProjects = (g, projects, l) => {
 
 const guideBody = (g, l, projects) => {
   const t = g.text[l];
+  const byline =
+    g.kind === 'guide' && g.published
+      ? `<p>${l === 'th' ? 'โดย' : 'By'} ${esc(author.name[l])}, ${esc(author.title[l])}, ${siteName} · ${g.published}</p>`
+      : '';
   const related = relatedProjects(g, projects, l);
   const more = guides.filter((x) => x.slug !== g.slug && x.kind !== 'area').slice(0, 6);
   return (
-    `<h1>${esc(t.title)}</h1><p>${esc(t.intro)}</p>` +
+    `<h1>${esc(t.title)}</h1>${byline}<p>${esc(t.intro)}</p>` +
     t.sections
       .map(
         (s) =>
@@ -448,7 +462,7 @@ const writePage = (rel, html) => {
                 inLanguage: l,
                 mainEntityOfPage: url(l, g.path),
                 ...(g.published && { datePublished: g.published, dateModified: g.published }),
-                author: { '@id': `${siteUrl}/#organization` },
+                author: g.kind === 'guide' ? authorLd(l) : { '@id': `${siteUrl}/#organization` },
                 publisher: { '@id': `${siteUrl}/#organization` },
                 image: ogImageDefault,
               }

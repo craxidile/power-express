@@ -7,6 +7,7 @@ const reviewTh = 'เนื้อหานี้เป็นข้อมูล�
 const reviewEn = 'This is general information, not legal, accounting or tax advice. Confirm the current rules and consult a specialist before you decide.';
 
 module.exports = [
+  ...require('./articles2'),
   {
     slug: 'guide-private-ppa',
     path: 'guides/private-ppa-complete-guide',
