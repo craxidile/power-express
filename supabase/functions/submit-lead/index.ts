@@ -44,6 +44,40 @@ const text = (form: FormData, key: string, max: number): string | null => {
 const oneOf = (value: string | null, allowed: string[]): string | null =>
   value && allowed.includes(value) ? value : null;
 
+const esc = (v: unknown) =>
+  String(v ?? "-").replace(/[&<>"]/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!
+  );
+
+// Best-effort alert email via Resend. Needs secrets RESEND_API_KEY and LEAD_NOTIFY_TO
+// (optionally LEAD_NOTIFY_FROM). Never blocks or fails the submission.
+const notify = async (lead: Record<string, unknown>) => {
+  const key = Deno.env.get("RESEND_API_KEY");
+  const to = Deno.env.get("LEAD_NOTIFY_TO");
+  if (!key || !to) return;
+  const from = Deno.env.get("LEAD_NOTIFY_FROM") ??
+    "Power Express Leads <leads@send.powerexpress1980.com>";
+  const rows = Object.entries(lead).filter(([, v]) => v !== null && v !== "")
+    .map(([k, v]) => `<tr><td style="padding:2px 12px 2px 0"><b>${esc(k)}</b></td><td>${esc(v)}</td></tr>`)
+    .join("");
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from,
+        to: to.split(",").map((a) => a.trim()),
+        subject: `New solar lead: ${lead.company} (${lead.name})`,
+        html: `<p>New free-assessment lead. Bill file (if any) is in Supabase Storage bucket lead-bills.</p><table>${rows}</table>`,
+        reply_to: lead.email ?? undefined,
+      }),
+    });
+    if (!res.ok) console.error("notify failed", res.status, await res.text());
+  } catch (e) {
+    console.error("notify error", String(e));
+  }
+};
+
 Deno.serve(async (req) => {
   const origin = req.headers.get("origin");
 
@@ -115,7 +149,7 @@ Deno.serve(async (req) => {
 
   const locale = text(form, "locale", 2) === "en" ? "en" : "th";
 
-  const { error } = await supabase.from("leads").insert({
+  const lead = {
     id,
     locale,
     name,
@@ -140,12 +174,14 @@ Deno.serve(async (req) => {
     li_fat_id: text(form, "li_fat_id", 300),
     landing_url: text(form, "landing_url", 500),
     referrer: text(form, "referrer", 500),
-  });
+  };
+  const { error } = await supabase.from("leads").insert(lead);
 
   if (error) {
     console.error("lead insert failed", error.message);
     return json({ error: "save_failed" }, 500, origin);
   }
 
+  await notify(lead);
   return json({ ok: true, id }, 200, origin);
 });
