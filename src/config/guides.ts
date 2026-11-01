@@ -1,8 +1,16 @@
 import { Locale } from '../models/_commons/localized';
 import guidesData from './guides.json';
 
+/** A real project photo: resolved from the project record, never a stock or generated image. */
+export interface GuidePhoto {
+  project: number;
+  index?: number | 'banner';
+  alt: { [key in Locale]: string };
+}
+
 export interface GuideSection {
   heading: string;
+  photo?: GuidePhoto;
   body: string[];
   bullets?: string[];
 }
@@ -25,6 +33,8 @@ export interface Guide {
   match?: string[];
   /** ISO date of first publication (articles). */
   published?: string;
+  /** Lead photo for the article (also used as the social/search image). */
+  hero?: GuidePhoto;
   text: { [key in Locale]: GuideText };
 }
 

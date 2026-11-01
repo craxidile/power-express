@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://powerexpress1980.com/th</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th"/>
@@ -169,6 +169,484 @@
     <loc>https://powerexpress1980.com/en/guides</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides"/>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/th/guides/solar-carport-for-factories</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/solar-carport-for-factories"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/solar-carport-for-factories"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792987896081-rkdr21.jpg</image:loc>
+      <image:title>โซลาร์คาร์พอร์ตและโซลาร์รูฟท็อปของโรงงานผลิตอาหารสัตว์ จังหวัดราชบุรี</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792987902539-rt4unx.jpg</image:loc>
+      <image:title>โซลาร์คาร์พอร์ตมองจากด้านบน แผงเรียงบนโครงเหล็กในพื้นที่โล่งข้างอาคารโรงงาน</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792987907068-kxyxqw.jpg</image:loc>
+      <image:title>โครงเหล็กรับแผงโซลาร์คาร์พอร์ตระหว่างการก่อสร้าง ฐานรากและเสาตั้งบนพื้นที่โล่ง</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/guides/solar-carport-for-factories</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/solar-carport-for-factories"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/solar-carport-for-factories"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792987896081-rkdr21.jpg</image:loc>
+      <image:title>Solar carport and rooftop at a feed mill in Ratchaburi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792987902539-rt4unx.jpg</image:loc>
+      <image:title>Aerial view of a solar carport: panels on steel structures in open ground beside factory buildings</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792987907068-kxyxqw.jpg</image:loc>
+      <image:title>Steel structure of the solar carport under construction, footings and columns on open ground</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/th/guides/rooftop-solar-ice-cold-storage-food-factories</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/rooftop-solar-ice-cold-storage-food-factories"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/rooftop-solar-ice-cold-storage-food-factories"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/014/banner.jpg</image:loc>
+      <image:title>โซลาร์รูฟท็อปบนโรงงานผลิตน้ำแข็ง จังหวัดสมุทรสาคร</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/014/014.jpg</image:loc>
+      <image:title>มุมมองจากด้านบนของแผงโซลาร์บนหลังคาโรงงานผลิตน้ำแข็ง สมุทรสาคร</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/014/004.jpg</image:loc>
+      <image:title>โรงงานน้ำแข็งที่มีหลังคาหลายอาคาร ติดแผงโซลาร์ในหลายพื้นที่ของหลังคา</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792384089562-5t9hql.jpg</image:loc>
+      <image:title>แผงโซลาร์เรียงบนหลังคากว้างของโรงงานอาหารทะเลแช่แข็ง จังหวัดระนอง</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/guides/rooftop-solar-ice-cold-storage-food-factories</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/rooftop-solar-ice-cold-storage-food-factories"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/rooftop-solar-ice-cold-storage-food-factories"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/014/banner.jpg</image:loc>
+      <image:title>Rooftop solar on an ice factory in Samut Sakhon</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/014/014.jpg</image:loc>
+      <image:title>Top-down view of panels on the roof of an ice factory in Samut Sakhon</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/014/004.jpg</image:loc>
+      <image:title>An ice plant with several roofs and panels installed across multiple roof areas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792384089562-5t9hql.jpg</image:loc>
+      <image:title>Panels laid out on the wide roof of a frozen seafood factory in Ranong</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/th/guides/rooftop-solar-packaging-plastic-paper-factories</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/rooftop-solar-packaging-plastic-paper-factories"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/rooftop-solar-packaging-plastic-paper-factories"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/005/banner.jpg</image:loc>
+      <image:title>โซลาร์รูฟท็อปบนหลังคาโรงงานผลิตกล่องกระดาษลูกฟูก สมุทรปราการ</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/005/001.jpg</image:loc>
+      <image:title>หลังคาโรงงานบรรจุภัณฑ์ยาวต่อเนื่องที่ติดแผงโซลาร์ตลอดแนว มองจากมุมสูง</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/005/004.jpg</image:loc>
+      <image:title>แผงโซลาร์เรียงเป็นแถวขนานบนหลังคาโรงงานบรรจุภัณฑ์ จังหวัดสมุทรปราการ</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/guides/rooftop-solar-packaging-plastic-paper-factories</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/rooftop-solar-packaging-plastic-paper-factories"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/rooftop-solar-packaging-plastic-paper-factories"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/005/banner.jpg</image:loc>
+      <image:title>Rooftop solar on a corrugated packaging plant in Samut Prakan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/005/001.jpg</image:loc>
+      <image:title>A long continuous packaging-plant roof with panels along its length, seen from above</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/005/004.jpg</image:loc>
+      <image:title>Rows of panels laid parallel on a packaging-plant roof in Samut Prakan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/th/guides/solar-battery-storage-for-factories</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/solar-battery-storage-for-factories"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/solar-battery-storage-for-factories"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792670045840-6rc0xe.jpg</image:loc>
+      <image:title>โซลาร์รูฟท็อปบนหลังคาเมทัลชีทสีน้ำเงินของโรงงานผลิตอาหารสัตว์ จังหวัดราชบุรี</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792670077376-jsx3nz.jpg</image:loc>
+      <image:title>โรงงานผลิตอาหารสัตว์ที่ติดโซลาร์รูฟท็อป ซึ่งใช้ไฟช่วงกลางวันเป็นหลัก</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/guides/solar-battery-storage-for-factories</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/solar-battery-storage-for-factories"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/solar-battery-storage-for-factories"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792670045840-6rc0xe.jpg</image:loc>
+      <image:title>Rooftop solar on the blue metal-sheet roof of a feed mill in Ratchaburi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792670077376-jsx3nz.jpg</image:loc>
+      <image:title>A feed mill with rooftop solar whose load is mainly in daylight</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/th/guides/direct-ppa-vs-ugt-vs-private-ppa</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/direct-ppa-vs-ugt-vs-private-ppa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/direct-ppa-vs-ugt-vs-private-ppa"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/002/banner.jpg</image:loc>
+      <image:title>โซลาร์รูฟท็อปบนโรงงานผลิตประตูหน้าต่างโลหะ จังหวัดนครปฐม</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/002/005.jpg</image:loc>
+      <image:title>โรงงานที่ติดโซลาร์รูฟท็อปเพื่อผลิตไฟใช้เองภายในพื้นที่โรงงาน</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/guides/direct-ppa-vs-ugt-vs-private-ppa</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/direct-ppa-vs-ugt-vs-private-ppa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/direct-ppa-vs-ugt-vs-private-ppa"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/002/banner.jpg</image:loc>
+      <image:title>Rooftop solar on a metal door and window factory in Nakhon Pathom</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/002/005.jpg</image:loc>
+      <image:title>A factory with rooftop solar generating power for use on its own site</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/th/guides/7-ways-to-reduce-factory-electricity-cost</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/7-ways-to-reduce-factory-electricity-cost"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/7-ways-to-reduce-factory-electricity-cost"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/013/banner.jpg</image:loc>
+      <image:title>โรงงานน้ำแข็งในกรุงเทพมหานครที่ติดโซลาร์รูฟท็อปเพื่อลดไฟที่ซื้อจากการไฟฟ้า</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/008/banner.jpg</image:loc>
+      <image:title>โรงงานกล่องกระดาษที่ใช้ไฟต่อเนื่องหลายกะ สมุทรปราการ</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/013/006.jpg</image:loc>
+      <image:title>แผงโซลาร์บนหลังคาโรงงานน้ำแข็งในกรุงเทพมหานคร มองจากมุมสูง</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/guides/7-ways-to-reduce-factory-electricity-cost</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/7-ways-to-reduce-factory-electricity-cost"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/7-ways-to-reduce-factory-electricity-cost"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/013/banner.jpg</image:loc>
+      <image:title>An ice factory in Bangkok with rooftop solar to cut the power bought from the utility</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/008/banner.jpg</image:loc>
+      <image:title>A carton factory with continuous multi-shift power use in Samut Prakan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/013/006.jpg</image:loc>
+      <image:title>Solar panels on the roof of an ice factory in Bangkok, seen from above</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/th/guides/rooftop-solar-cost-per-kw-factory</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/rooftop-solar-cost-per-kw-factory"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/rooftop-solar-cost-per-kw-factory"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/014/001.jpg</image:loc>
+      <image:title>โซลาร์รูฟท็อปขนาดใหญ่บนโรงงานในสมุทรสาคร มองจากมุมสูง</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/014/001.jpg</image:loc>
+      <image:title>โซลาร์รูฟท็อปบนโรงงานหลายอาคาร ลักษณะหลังคาและโครงสร้างแตกต่างกันในแต่ละอาคาร</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/002/002.jpg</image:loc>
+      <image:title>หลังคาโรงงานแนวยาวที่ติดแผงโซลาร์ในนครปฐม ตัวอย่างหน้างานที่ต้องกำหนดขอบเขตงานให้ชัด</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/guides/rooftop-solar-cost-per-kw-factory</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/rooftop-solar-cost-per-kw-factory"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/rooftop-solar-cost-per-kw-factory"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/014/001.jpg</image:loc>
+      <image:title>A large rooftop solar installation on a factory in Samut Sakhon, seen from above</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/014/001.jpg</image:loc>
+      <image:title>Rooftop solar across several factory buildings, each with a different roof and structure</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/002/002.jpg</image:loc>
+      <image:title>A long factory roof with panels in Nakhon Pathom, a site where the scope of work must be clearly defined</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/th/guides/rooftop-solar-payback-period-factory</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/rooftop-solar-payback-period-factory"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/rooftop-solar-payback-period-factory"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792384099948-di1w06.jpg</image:loc>
+      <image:title>โรงงานแปรรูปอาหารทะเลแช่แข็ง จังหวัดระนอง ที่ติดโซลาร์รูฟท็อป 1,253.94 kW</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792384082491-yvy89q.jpg</image:loc>
+      <image:title>ระบบโซลาร์รูฟท็อปบนหลังคาโรงงานอาหารทะเลแช่แข็ง มองจากด้านบน</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/013/011.jpg</image:loc>
+      <image:title>แผงโซลาร์บนหลังคาโรงงานน้ำแข็ง กรุงเทพมหานคร มุมมองจากด้านบน</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/guides/rooftop-solar-payback-period-factory</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/rooftop-solar-payback-period-factory"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/rooftop-solar-payback-period-factory"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792384099948-di1w06.jpg</image:loc>
+      <image:title>A frozen seafood processing plant in Ranong with a 1,253.94 kW rooftop solar system</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792384082491-yvy89q.jpg</image:loc>
+      <image:title>A rooftop solar system on a frozen seafood plant, seen from above</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/013/011.jpg</image:loc>
+      <image:title>Panels on the roof of an ice factory in Bangkok, top-down view</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/th/guides/rooftop-solar-metal-sheet-vs-concrete-roof</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/rooftop-solar-metal-sheet-vs-concrete-roof"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/rooftop-solar-metal-sheet-vs-concrete-roof"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792670045840-6rc0xe.jpg</image:loc>
+      <image:title>โซลาร์รูฟท็อปบนหลังคาเมทัลชีทของโรงงานผลิตอาหารสัตว์ จังหวัดราชบุรี</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792670056020-xtgv7q.jpg</image:loc>
+      <image:title>หลังคาเมทัลชีทสีน้ำเงินของโรงงานผลิตอาหารสัตว์ ติดแผงโซลาร์เรียงตามแนวหลังคา</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/012/010.jpg</image:loc>
+      <image:title>ดาดฟ้าคอนกรีตของอาคารในกรุงเทพมหานครที่ติดแผงโซลาร์บนโครงเหล็กเอียงมุม</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/013/005.jpg</image:loc>
+      <image:title>โรงงานที่มีหลังคาหลายชนิดผสมกัน มีแผงโซลาร์ติดบนหลายพื้นที่ กรุงเทพมหานคร</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/guides/rooftop-solar-metal-sheet-vs-concrete-roof</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/rooftop-solar-metal-sheet-vs-concrete-roof"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/rooftop-solar-metal-sheet-vs-concrete-roof"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792670045840-6rc0xe.jpg</image:loc>
+      <image:title>Rooftop solar on the metal-sheet roof of a feed mill in Ratchaburi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792670056020-xtgv7q.jpg</image:loc>
+      <image:title>The blue metal-sheet roof of a feed mill with panels laid along the roof planes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/012/010.jpg</image:loc>
+      <image:title>The concrete roof deck of a Bangkok building with panels on angled steel frames</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/013/005.jpg</image:loc>
+      <image:title>A factory with several mixed roof types and panels on multiple areas in Bangkok</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/th/guides/rooftop-solar-for-sme-retail-farm</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/rooftop-solar-for-sme-retail-farm"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/rooftop-solar-for-sme-retail-farm"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/012/banner.jpg</image:loc>
+      <image:title>โซลาร์รูฟท็อปบนอาคารสาขาในกรุงเทพมหานคร ขนาด 112.64 kW</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/012/003.jpg</image:loc>
+      <image:title>หลังคาดาดฟ้าของอาคารสาขาในกรุงเทพมหานครที่ติดแผงโซลาร์เรียงเต็มพื้นที่</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/012/011.jpg</image:loc>
+      <image:title>แผงโซลาร์บนหลังคาอาคารสาขาในกรุงเทพมหานคร จัดวางรอบอุปกรณ์ปรับอากาศบนหลังคา</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792055432415-x29xym.jpg</image:loc>
+      <image:title>โซลาร์รูฟท็อปบนอาคารฟาร์มผักผลไม้ จังหวัดนครปฐม</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/guides/rooftop-solar-for-sme-retail-farm</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/rooftop-solar-for-sme-retail-farm"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/rooftop-solar-for-sme-retail-farm"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/012/banner.jpg</image:loc>
+      <image:title>Rooftop solar on a branch building in Bangkok, 112.64 kW</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/012/003.jpg</image:loc>
+      <image:title>The roof deck of a branch building in Bangkok filled with panels</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/012/011.jpg</image:loc>
+      <image:title>Panels on a Bangkok branch building, laid out around rooftop air-conditioning equipment</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792055432415-x29xym.jpg</image:loc>
+      <image:title>Rooftop solar on a vegetable and fruit farm building in Nakhon Pathom</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/th/guides/rooftop-solar-registration-and-permits-step-by-step</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/rooftop-solar-registration-and-permits-step-by-step"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/rooftop-solar-registration-and-permits-step-by-step"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/008/banner.jpg</image:loc>
+      <image:title>โรงงานผลิตกล่องกระดาษที่ติดโซลาร์รูฟท็อป สมุทรปราการ ซึ่งผ่านขั้นตอนอนุญาตและเชื่อมต่อการไฟฟ้า</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/008/004.jpg</image:loc>
+      <image:title>หลังคาโรงงานกล่องกระดาษที่ผ่านการตรวจโครงสร้างก่อนติดแผงโซลาร์</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/008/007.jpg</image:loc>
+      <image:title>แผงโซลาร์บนหลังคาโรงงานที่ผ่านการตรวจรับและเชื่อมต่อระบบกับการไฟฟ้า</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/guides/rooftop-solar-registration-and-permits-step-by-step</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/rooftop-solar-registration-and-permits-step-by-step"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/rooftop-solar-registration-and-permits-step-by-step"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/008/banner.jpg</image:loc>
+      <image:title>A carton plant in Samut Prakan with rooftop solar that went through permitting and grid connection</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/008/004.jpg</image:loc>
+      <image:title>A carton-plant roof whose structure was checked before panels were installed</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/008/007.jpg</image:loc>
+      <image:title>Panels on a plant roof that passed inspection and was connected to the utility</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/th/guides/direct-ppa-thailand-explained</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/direct-ppa-thailand-explained"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/direct-ppa-thailand-explained"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/014/banner.jpg</image:loc>
+      <image:title>โรงงานอุตสาหกรรมขนาดใหญ่ในสมุทรสาครที่ใช้ไฟต่อเนื่อง ซึ่งเป็นกลุ่มที่สนใจพลังงานสะอาดผ่านระบบสายส่ง</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/014/006.jpg</image:loc>
+      <image:title>โรงงานขนาดใหญ่ในสมุทรสาครที่มีหลังคาติดโซลาร์หลายอาคาร</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/guides/direct-ppa-thailand-explained</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/direct-ppa-thailand-explained"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/direct-ppa-thailand-explained"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/014/banner.jpg</image:loc>
+      <image:title>A large industrial plant in Samut Sakhon with continuous load, the kind of user interested in clean power through the grid</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/014/006.jpg</image:loc>
+      <image:title>A large plant in Samut Sakhon with solar on several roof buildings</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/th/guides/utility-green-tariff-ugt-thailand-explained</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/utility-green-tariff-ugt-thailand-explained"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/utility-green-tariff-ugt-thailand-explained"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792384047173-hvrynw.jpg</image:loc>
+      <image:title>โรงงานแปรรูปอาหารทะเลแช่แข็งที่ใช้ไฟต่อเนื่อง ซึ่งอาจใช้ UGT เสริมกับโซลาร์รูฟท็อป</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792384099948-di1w06.jpg</image:loc>
+      <image:title>โรงงานแปรรูปอาหารทะเลแช่แข็งในจังหวัดระนองที่ติดโซลาร์รูฟท็อป</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/guides/utility-green-tariff-ugt-thailand-explained</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/utility-green-tariff-ugt-thailand-explained"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/utility-green-tariff-ugt-thailand-explained"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792384047173-hvrynw.jpg</image:loc>
+      <image:title>A frozen seafood plant with continuous load, which could add UGT on top of rooftop solar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/cms/project/1792384099948-di1w06.jpg</image:loc>
+      <image:title>A frozen seafood plant in Ranong with rooftop solar</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/th/guides/net-metering-vs-zero-export-factory-solar</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/net-metering-vs-zero-export-factory-solar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/net-metering-vs-zero-export-factory-solar"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/005/banner.jpg</image:loc>
+      <image:title>โซลาร์รูฟท็อปบนโรงงานบรรจุภัณฑ์ที่ผลิตไฟใช้เองภายในโรงงาน</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/005/009.jpg</image:loc>
+      <image:title>แผงโซลาร์บนหลังคาโรงงานบรรจุภัณฑ์ที่ผลิตไฟใช้เองในโรงงาน</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/guides/net-metering-vs-zero-export-factory-solar</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/net-metering-vs-zero-export-factory-solar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/net-metering-vs-zero-export-factory-solar"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/005/banner.jpg</image:loc>
+      <image:title>Rooftop solar on a packaging plant generating power for its own use</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/005/009.jpg</image:loc>
+      <image:title>Panels on a packaging-plant roof generating power for use inside the plant</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/th/guides/solar-ppa-glossary-thailand</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/solar-ppa-glossary-thailand"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/solar-ppa-glossary-thailand"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/016/banner.jpg</image:loc>
+      <image:title>โซลาร์รูฟท็อปบนโรงงานผลิตภัณฑ์กระดาษแปรรูป กรุงเทพมหานคร</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://powerexpress1980.com/en/guides/solar-ppa-glossary-thailand</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://powerexpress1980.com/th/guides/solar-ppa-glossary-thailand"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerexpress1980.com/en/guides/solar-ppa-glossary-thailand"/>
+    <image:image>
+      <image:loc>https://yttnuerixoafmhpdghdm.supabase.co/storage/v1/object/public/pex/project/016/banner.jpg</image:loc>
+      <image:title>Rooftop solar on a processed-paper products plant in Bangkok</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://powerexpress1980.com/th/guides/private-ppa-complete-guide</loc>
