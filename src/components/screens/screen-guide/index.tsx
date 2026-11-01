@@ -1,7 +1,10 @@
+import { useEffect, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 
 import { useVmScreen } from '../../../stores/vm-screen';
-import { findGuide } from '../../../config/guides';
+import { findGuideByPath, guides } from '../../../config/guides';
+import { listProjects } from '../../../apis/project';
+import { Project } from '../../../models/project';
 import { track } from '../../../utils/analytics';
 import LayoutStandard from '../../layouts/layout-standard';
 import SafeArea from '../../_commons/safe-area';
@@ -9,21 +12,44 @@ import Seo from '../../_commons/seo';
 
 const ScreenGuide = () => {
   const { locale = 'th' } = useVmScreen();
-  const { slug } = useParams();
-  const guide = findGuide(slug);
+  const params = useParams();
+  const guide = findGuideByPath(params['*']);
+  const [related, setRelated] = useState<Project[]>([]);
+
+  useEffect(() => {
+    if (!guide?.match) return;
+    const keywords = guide.match;
+    listProjects()
+      .then((all) =>
+        setRelated(
+          all.filter((p) => {
+            const loc = `${p.location?.th ?? ''} ${p.location?.en ?? ''}`;
+            return keywords.some((k) => loc.includes(k));
+          })
+        )
+      )
+      .catch(() => setRelated([]));
+  }, [guide]);
 
   if (!guide) return <Navigate to={`/${locale}`} replace />;
   const t = guide.text[locale];
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: t.faq.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
-  };
+  const jsonLd =
+    t.faq.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: t.faq.map((f) => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a },
+          })),
+        }
+      : undefined;
+
+  const more = guides
+    .filter((g) => g.slug !== guide.slug && g.kind !== 'area')
+    .slice(0, 6);
 
   return (
     <LayoutStandard>
@@ -31,7 +57,7 @@ const ScreenGuide = () => {
         locale={locale}
         title={t.title}
         description={t.description}
-        path={`guide/${guide.slug}`}
+        path={guide.path}
         jsonLd={jsonLd}
       />
       <div className="py-10 lg:py-20">
@@ -60,24 +86,59 @@ const ScreenGuide = () => {
                 )}
               </section>
             ))}
-            <section className="flex flex-col gap-y-4">
-              <h2 className="text-2xl font-medium text-title-dark">FAQ</h2>
-              {t.faq.map((f) => (
-                <div key={f.q}>
-                  <h3 className="text-lg font-medium text-title-dark">{f.q}</h3>
-                  <p className="text-base text-gray-content">{f.a}</p>
-                </div>
-              ))}
-            </section>
+            {related.length > 0 && (
+              <section className="flex flex-col gap-y-3">
+                <h2 className="text-2xl font-medium text-title-dark">
+                  {locale === 'th' ? 'โครงการของเราในพื้นที่นี้' : 'Our projects in this area'}
+                </h2>
+                <ul className="list-disc pl-6 text-base text-gray-content">
+                  {related.map((p) => (
+                    <li key={p.id}>
+                      <Link to={`/${locale}/project/${p.id}`} className="underline">
+                        {p.title[locale]}
+                      </Link>{' '}
+                      ({p.capacity} kW)
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+            {t.faq.length > 0 && (
+              <section className="flex flex-col gap-y-4">
+                <h2 className="text-2xl font-medium text-title-dark">
+                  {locale === 'th' ? 'คำถามที่พบบ่อย' : 'FAQ'}
+                </h2>
+                {t.faq.map((f) => (
+                  <div key={f.q}>
+                    <h3 className="text-lg font-medium text-title-dark">{f.q}</h3>
+                    <p className="text-base text-gray-content">{f.a}</p>
+                  </div>
+                ))}
+              </section>
+            )}
             <Link
               to={`/${locale}/free-assessment`}
               onClick={() =>
-                track('click_assessment_cta', { place: `guide_${guide.slug}` })
+                track('click_assessment_cta', { place: `page_${guide.slug}` })
               }
               className="self-start px-6 py-3 rounded-lg bg-cta-primary text-white text-base font-medium"
             >
               {t.cta}
             </Link>
+            <section className="flex flex-col gap-y-2 pt-6 border-t border-sep-smoke">
+              <h2 className="text-lg font-medium text-title-dark">
+                {locale === 'th' ? 'อ่านเพิ่มเติม' : 'Related pages'}
+              </h2>
+              <ul className="flex flex-col gap-y-1 text-base">
+                {more.map((g) => (
+                  <li key={g.slug}>
+                    <Link to={`/${locale}/${g.path}`} className="underline text-gray-content">
+                      {g.text[locale].title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
           </article>
         </SafeArea>
       </div>

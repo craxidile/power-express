@@ -60,10 +60,10 @@ function App() {
               path="/:locale/free-assessment"
               element={<ScreenAssessment />}
             />
-            <Route path="/:locale/guide/:slug" element={<ScreenGuide />} />
             <Route path="/:locale/about" element={<ScreenAbout />} />
             <Route path="/:locale/contact" element={<ScreenAbout />} />
             <Route path="/" element={<Navigate to="/th" replace />} />
+            <Route path="/:locale/*" element={<ScreenGuide />} />
           </Routes>
         </ScrollToTopWrapper>
         <CookieBanner />

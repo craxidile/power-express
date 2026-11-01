@@ -2,6 +2,7 @@ import { PropsWithChildren } from 'react';
 
 import Nav, { NavTheme } from '../../_commons/nav';
 import Footer from '../../_commons/footer';
+import StickyCta from '../../_commons/sticky-cta';
 
 const LayoutStandard = (props: PropsWithChildren) => {
   const { children } = props;
@@ -14,6 +15,7 @@ const LayoutStandard = (props: PropsWithChildren) => {
         {children}
       </div>
       <Footer />
+      <StickyCta />
     </div>
   );
 };

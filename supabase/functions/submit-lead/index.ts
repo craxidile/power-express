@@ -67,7 +67,7 @@ const notify = async (lead: Record<string, unknown>) => {
       body: JSON.stringify({
         from,
         to: to.split(",").map((a) => a.trim()),
-        subject: `New solar lead: ${lead.company} (${lead.name})`,
+        subject: `[${lead.tier}] New solar lead: ${lead.company} (${lead.name})`,
         html: `<p>New free-assessment lead. Bill file (if any) is in Supabase Storage bucket lead-bills.</p><table>${rows}</table>`,
         reply_to: lead.email ?? undefined,
       }),
@@ -105,6 +105,56 @@ const notifyLine = async (lead: Record<string, unknown>) => {
     if (!res.ok) console.error("line notify failed", res.status, await res.text());
   } catch (e) {
     console.error("line notify error", String(e));
+  }
+};
+
+// Lead score from the qualification answers (plan: bill 30/20/5/0, ownership 15/10/0,
+// daytime or 24h operation 10). Max 55 with the current form, so tiers are A >= 45,
+// B >= 25, otherwise C.
+const scoreLead = (
+  band: string | null,
+  ownership: string | null,
+  pattern: string | null,
+): { score: number; tier: "A" | "B" | "C" } => {
+  let score = 0;
+  if (band === "gt_1m" || band === "500k_1m") score += 30;
+  else if (band === "150k_500k") score += 20;
+  else if (band === "lt_150k") score += 5;
+  if (ownership === "owned") score += 15;
+  else if (ownership === "lease_15_plus") score += 10;
+  if (pattern === "daytime" || pattern === "24h") score += 10;
+  return { score, tier: score >= 45 ? "A" : score >= 25 ? "B" : "C" };
+};
+
+// Instant acknowledgement to the person who submitted, when they gave an email.
+const autoReply = async (lead: Record<string, unknown>) => {
+  const key = Deno.env.get("RESEND_API_KEY");
+  const email = lead.email as string | null;
+  if (!key || !email) return;
+  const from = Deno.env.get("LEAD_NOTIFY_FROM") ??
+    "Power Express <leads@send.powerexpress1980.com>";
+  const th = lead.locale !== "en";
+  const subject = th
+    ? "Power Express ได้รับข้อมูลของคุณแล้ว"
+    : "Power Express has received your request";
+  const html = th
+    ? `<p>เรียน ${esc(lead.name)}</p><p>ขอบคุณที่ส่งข้อมูลเพื่อประเมินโซลาร์รูฟท็อปฟรี ทีมงานจะติดต่อกลับโดยเร็วที่สุด และส่งรายงานประเมินภายใน 48 ชั่วโมงทำการ</p><p>หากต้องการติดต่อด่วน โทร 082-096-6595 หรืออีเมล admin@powerexpress1980.com</p><p>บริษัท เพาวเวอร์เอ็กซ์เพรส1980 จำกัด</p>`
+    : `<p>Dear ${esc(lead.name)},</p><p>Thank you for requesting a free rooftop solar assessment. Our team will contact you shortly and send your assessment within 48 business hours.</p><p>For anything urgent, call 082-096-6595 or email admin@powerexpress1980.com.</p><p>Powerexpress1980 Company Limited</p>`;
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from,
+        to: [email],
+        reply_to: "admin@powerexpress1980.com",
+        subject,
+        html,
+      }),
+    });
+    if (!res.ok) console.error("auto-reply failed", res.status, await res.text());
+  } catch (e) {
+    console.error("auto-reply error", String(e));
   }
 };
 
@@ -201,18 +251,25 @@ Deno.serve(async (req) => {
 
   const locale = text(form, "locale", 2) === "en" ? "en" : "th";
 
+  const monthlyBand = oneOf(text(form, "monthly_bill_band", 20), BILL_BANDS);
+  const ownership = oneOf(text(form, "building_ownership", 20), OWNERSHIP);
+  const pattern = oneOf(text(form, "operating_pattern", 20), PATTERNS);
+  const { score, tier } = scoreLead(monthlyBand, ownership, pattern);
+
   const lead = {
     id,
+    score,
+    tier,
     locale,
     name,
     company,
     phone,
     line_id: lineId,
     email,
-    monthly_bill_band: oneOf(text(form, "monthly_bill_band", 20), BILL_BANDS),
+    monthly_bill_band: monthlyBand,
     province: text(form, "province", 100),
-    building_ownership: oneOf(text(form, "building_ownership", 20), OWNERSHIP),
-    operating_pattern: oneOf(text(form, "operating_pattern", 20), PATTERNS),
+    building_ownership: ownership,
+    operating_pattern: pattern,
     notes: text(form, "notes", 2000),
     bill_file_path: billPath,
     consent_pdpa: true,
@@ -234,6 +291,6 @@ Deno.serve(async (req) => {
     return json({ error: "save_failed" }, 500, origin);
   }
 
-  await Promise.all([notify(lead), notifyLine(lead)]);
+  await Promise.all([notify(lead), notifyLine(lead), autoReply(lead)]);
   return json({ ok: true, id }, 200, origin);
 });
