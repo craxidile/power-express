@@ -6,11 +6,14 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { captureAttribution } from './utils/attribution';
 
 // Old shared links look like /#/th/project/23 - move them to /th/project/23.
 if (window.location.hash.startsWith('#/')) {
   window.history.replaceState(null, '', window.location.hash.slice(1));
 }
+
+captureAttribution();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

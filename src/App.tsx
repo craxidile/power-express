@@ -14,6 +14,7 @@ import ScreenProjectList from './components/screens/screen-project-list';
 import ScreenAbout from './components/screens/screen-about';
 import ScreenProject from './components/screens/screen-project';
 import ScreenActivity from './components/screens/screen-activity';
+import ScreenAssessment from './components/screens/screen-assessment';
 import { IVmScreen, useVmScreen } from './stores/vm-screen';
 
 const ScrollToTopWrapper = (props: PropsWithChildren) => {
@@ -53,6 +54,10 @@ function App() {
             <Route path="/:locale/activity/:id" element={<ScreenActivity />} />
             <Route path="/:locale/project" element={<ScreenProjectList />} />
             <Route path="/:locale/project/:id" element={<ScreenProject />} />
+            <Route
+              path="/:locale/free-assessment"
+              element={<ScreenAssessment />}
+            />
             <Route path="/:locale/about" element={<ScreenAbout />} />
             <Route path="/:locale/contact" element={<ScreenAbout />} />
             <Route path="/" element={<Navigate to="/th" replace />} />

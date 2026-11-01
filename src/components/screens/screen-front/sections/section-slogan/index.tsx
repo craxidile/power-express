@@ -1,3 +1,7 @@
+import { Link } from 'react-router-dom';
+
+import { leadText } from '../../../../../config/lead-text';
+import { track } from '../../../../../utils/analytics';
 import { l } from '../../../../../utils/localization-utils';
 import { m } from '../../../../../utils/media-utils';
 import { useVmScreen } from '../../../../../stores/vm-screen';
@@ -31,6 +35,13 @@ const SectionSlogan = () => {
                 {l(locale, localizations, 'front.cta')}
               </h1>
             </div>
+            <Link
+              to={`/${locale}/free-assessment`}
+              onClick={() => track('click_assessment_cta', { place: 'hero' })}
+              className="mt-8 px-8 py-4 rounded-full bg-cta-primary text-white text-lg font-medium"
+            >
+              {leadText[locale].title}
+            </Link>
             <ScrollStrip
               text={l(locale, localizations, 'general.slide-more')}
             />

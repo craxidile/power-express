@@ -1,5 +1,8 @@
 import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 
+import { leadText } from '../../../../../config/lead-text';
+import { track } from '../../../../../utils/analytics';
 import { p } from '../../../../../utils/path-utils';
 import { l } from '../../../../../utils/localization-utils';
 import { m } from '../../../../../utils/media-utils';
@@ -60,6 +63,13 @@ const SectionContact = () => {
             <p className="mt-4 lg:mt-12 text-black-a70 text-xl">
               <TextLines text={l(locale, localizations, 'front.cta-contact')} />
             </p>
+            <Link
+              to={`/${locale}/free-assessment`}
+              onClick={() => track('click_assessment_cta', { place: 'contact' })}
+              className="mt-6 inline-block px-6 py-3 rounded-lg bg-cta-primary text-white text-base font-medium"
+            >
+              {leadText[locale].title}
+            </Link>
             <ul className="mt-8 gap-y-4 flex flex-col justify-start items-start">
               {addressContact && (
                 <li>
