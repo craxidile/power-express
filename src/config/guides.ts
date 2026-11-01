@@ -23,6 +23,8 @@ export interface Guide {
   kind: 'guide' | 'info' | 'industry' | 'area';
   /** Keywords used to list related projects (area pages). */
   match?: string[];
+  /** ISO date of first publication (articles). */
+  published?: string;
   text: { [key in Locale]: GuideText };
 }
 

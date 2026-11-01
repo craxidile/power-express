@@ -66,6 +66,14 @@ const ScreenGuide = () => {
             <h1 className="text-3hxl lg:text-4hxl font-medium text-title-dark">
               {t.title}
             </h1>
+            {guide.kind === 'guide' && guide.published && (
+              <p className="text-sm text-secondary">
+                {locale === 'th' ? 'โดย' : 'By'}{' '}
+                {locale === 'th' ? 'ภานุวัจน์ ทองร่มโพธิ์' : 'Panuwat Thongrompo'},{' '}
+                {locale === 'th' ? 'ประธานเจ้าหน้าที่บริหาร' : 'Chief Executive Officer'},
+                Power Express · {guide.published}
+              </p>
+            )}
             <p className="text-lg text-gray-excerpt">{t.intro}</p>
             {t.sections.map((s) => (
               <section key={s.heading} className="flex flex-col gap-y-3">
