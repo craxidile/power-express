@@ -6,7 +6,11 @@ const fs = require('fs');
 const path = require('path');
 
 const file = path.join(__dirname, '..', 'src', 'config', 'guides.json');
-const base = JSON.parse(fs.readFileSync(file, 'utf8')).filter((g) => g.kind === 'guide' || g.kind === 'info');
+const articles = require('./articles');
+const articleSlugs = new Set(articles.map((a) => a.slug));
+const base = JSON.parse(fs.readFileSync(file, 'utf8')).filter(
+  (g) => (g.kind === 'guide' || g.kind === 'info') && !articleSlugs.has(g.slug)
+);
 
 // -- industries: [slug, th name, en name, th load note, en load note, th check, en check]
 const industries = [
@@ -287,6 +291,7 @@ const infoPages = [
 const pages = [
   ...base.map((g) => g),
   ...infoPages,
+  ...articles,
   ...industries.map(industryPage),
   ...areas.map(areaPage),
 ];
