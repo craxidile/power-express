@@ -32,6 +32,7 @@
     "start": "react-scripts start",
     "prebuild": "node scripts/generate-sitemap.js",
     "build": "react-scripts build",
+    "build:pages": "npm run build && node -e \"require('fs').rmSync('build/404.html',{force:true})\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
