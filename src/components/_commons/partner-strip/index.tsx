@@ -44,7 +44,7 @@ const PartnerStrip = (props: PropsWithChildren<PartnerStripProps>) => {
                 key={id}
                 className="relative flex flex-col justify-center items-center"
               >
-                <img
+                <img loading="lazy" decoding="async"
                   className="block w-[80%]"
                   alt={localizedName}
                   title={localizedName}

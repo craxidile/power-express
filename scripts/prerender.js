@@ -362,6 +362,15 @@ const guideChunk = (() => {
   return files[0] ? `/static/js/${files[0]}` : null;
 })();
 const guidePathSet = new Set(require('../src/config/guides.json').map((g) => g.path));
+const SR_ONLY = 'position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0';
+// Same hero as the React front page (image + headline + button) so the first paint is styled
+// and the hero image is part of the HTML; the SEO text follows, visually hidden.
+const heroShell = (l, headline, ctaText, ctaHref) =>
+  '<section style="position:relative;height:100vh;min-height:100svh;background:#ccc;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden">' +
+  '<img src="/img/hero-1024.webp" srcset="/img/hero-640.webp 640w, /img/hero-1024.webp 1024w, /img/hero-1600.webp 1600w, /img/hero-2200.webp 2200w" sizes="100vw" alt="" width="2500" height="1503" fetchpriority="high" decoding="async" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover"/>' +
+  '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.3)"></div>' +
+  `<div style="position:relative;z-index:1;padding:0 52px;text-align:center;color:#fff"><p style="margin:0 0 32px;font-size:36px;line-height:1.2;font-weight:400">${esc(headline).replace(/\n/g, '<br/>')}</p>` +
+  `<a href="${ctaHref}" style="display:inline-block;background:#ff7a3d;color:#fff;border-radius:999px;padding:12px 28px;text-decoration:none">${esc(ctaText)}</a></div></section>`;
 let homeHero = null;
 let bootShared = {};
 let bootHome = {};
@@ -407,7 +416,7 @@ const renderPage = (template, page, org, website, service, isHome) => {
   html = html.replace('</head>', `${head}</head>`);
   html = html.replace(
     '<div id="root"></div>',
-    `<div id="root"><header>${nav(l)}</header><main>${bodyHtml}</main></div>`
+    `<div id="root"><header${isHome ? ` style="${SR_ONLY}"` : ''}>${nav(l)}</header><main>${bodyHtml}</main></div>`
   );
   return html;
 };
@@ -469,6 +478,15 @@ const writePage = (rel, html) => {
       title: null,
       description: seoText.front[l].description,
       bodyHtml:
+        (homeHero && homeHero.endsWith('media/front/bg-slogan.jpg')
+          ? heroShell(
+              l,
+              (((bootShared['list-all-localizations'] || []).find((x) => x.key === 'front.cta') || {}).text || {})[l] || t.homeH1,
+              t.assessment,
+              url(l, 'free-assessment')
+            )
+          : '') +
+        `<div style="${homeHero ? SR_ONLY : ''}">` +
         `<h1>${esc(t.homeH1)}</h1><p>${esc(t.homeIntro)}</p>` +
         `<ul>${t.services.map((s) => `<li>${esc(s)}</li>`).join('')}</ul>` +
         `<p><a href="${url(l, 'free-assessment')}">${esc(t.assessment)}</a></p>` +
@@ -482,7 +500,8 @@ const writePage = (rel, html) => {
               .join('')}</ul></section>`;
           })
           .join('') +
-        contactBlock(contacts, l),
+        contactBlock(contacts, l) +
+        '</div>',
     });
 
     pages.push({

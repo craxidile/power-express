@@ -30,7 +30,7 @@ const StatBox = (props: PropsWithChildren<StatBoxProps>) => {
 
   return (
     <div className="gap-y-6 min-w-[264px] flex flex-col justify-start items-center">
-      <img className="block w-16 h-auto" alt="Icon" src={icon} />
+      <img loading="lazy" decoding="async" className="block w-16 h-auto" alt="Icon" src={icon} />
       <span
         className={`block ${textColor} text-center text-8xl lg:text-9xl font-medium leading-none`}
       >

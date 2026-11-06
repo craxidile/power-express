@@ -81,7 +81,7 @@ const SectionGrowth = () => {
             </ul>
           </div>
           <div className="flex-1 flex-shrink-0 flex flex-col justify-center items-center">
-            <img
+            <img loading="lazy" decoding="async"
               className="w-[404px] h-auto"
               alt="Map"
               src={m(media, 'about.figure-map')}
