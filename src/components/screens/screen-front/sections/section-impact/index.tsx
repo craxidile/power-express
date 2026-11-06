@@ -1,34 +1,72 @@
-import { useMemo } from 'react';
+import { useEffect } from 'react';
 
 import { l } from '../../../../../utils/localization-utils';
 import { m } from '../../../../../utils/media-utils';
+import { loadImpact, useImpact, useTicker } from '../../../../../utils/impact-ticker';
 import { useVmScreen } from '../../../../../stores/vm-screen';
-import { useVmScreenFront } from '../../../../../stores/vm-screen-front';
+import {
+  fmtInt,
+  fmtMw,
+  LazyMount,
+  LiveFigure,
+  srMillions,
+  useReveal,
+} from '../../../../_commons/impact-number';
 import TextLines from '../../../../_commons/text-lines';
+import { impactCopy } from './copy';
+import Equivalents from './equivalents';
+import YearlyChart from './yearly-chart';
+import './impact.css';
+
+// The CMS map highlighted only two provinces. While the CMS still points at that original image we
+// serve our copy with every province that has a site coloured in; a newly uploaded map wins.
+const ORIGINAL_MAP = 'media/front/map.png';
+const mapSrc = (cmsUrl: string) =>
+  !cmsUrl || cmsUrl.endsWith(ORIGINAL_MAP) ? '/img/impact-map.png' : cmsUrl;
+
+const selKwh = (s: { kwh: number }) => s.kwh;
+const selCo2 = (s: { co2: number }) => s.co2;
+const selSites = (s: { sites: number }) => s.sites;
+const selMw = (s: { mw: number }) => s.mw;
+
+const NowLine = ({ locale }: { locale: string }) => {
+  const c = impactCopy(locale);
+  const daylight = useTicker((s) => s.daylight);
+  const kw = useTicker((s) => s.kw);
+  return (
+    <span className={`pe-now ${daylight ? 'pe-day' : 'pe-night'}`}>
+      <span className="pe-dot" aria-hidden="true" />
+      {daylight ? (
+        <span>
+          {c.nowDay[0]}
+          <b>{fmtInt(kw)} kW</b>
+          {c.nowDay[1]}
+        </span>
+      ) : (
+        <span>{c.nowNight}</span>
+      )}
+    </span>
+  );
+};
 
 const SectionImpact = () => {
   const { locale = 'th', localizations = [], media } = useVmScreen();
+  const c = impactCopy(locale);
+  const data = useImpact();
+  const { ref, revealed } = useReveal<HTMLDivElement>('stats', 0.3);
 
-  const { projectSummary } = useVmScreenFront();
-  const { totalProjects = 0, totalCapacities = 0 } = projectSummary ?? {};
-
-  const totalCapacitiesText = useMemo(
-    () => totalCapacities.toFixed(2),
-    [totalCapacities]
-  );
-
-  const localizedExcerptImpact = useMemo(() => {
-    const excerpt = l(locale, localizations, 'front.excerpt-impact') ?? '';
-    return excerpt
-      .replace(/\{\{total-projects}}/g, `${totalProjects}`)
-      .replace(/\{\{total-capabilities}}/g, totalCapacitiesText);
-  }, [locale, localizations, totalProjects, totalCapacitiesText]);
+  useEffect(() => {
+    loadImpact();
+  }, []);
 
   return (
-    <section className="py-10 lg:pt-[240px] lg:pb-[180px] flex flex-col justify-start items-stretch">
-      <div className="gap-y-10 lg:gap-y-[120px] w-full max-w-[1328px] px-6 mx-auto flex flex-col justify-start items-stretch">
-        <div className="gap-y-16 lg:gap-y-0 flex flex-col lg:flex-row justify-start items-stretch">
-          <div className="lg:flex-1 lg:flex-shrink-0 flex flex-col justify-start items-stretch">
+    <section
+      id="impact"
+      className="py-10 lg:py-[120px] flex flex-col justify-start items-stretch"
+    >
+      <div className="w-full max-w-[1328px] px-6 mx-auto flex flex-col justify-start items-stretch">
+        <div className="gap-y-16 lg:gap-x-16 lg:gap-y-0 flex flex-col lg:flex-row justify-start items-stretch">
+          <div className="lg:flex-[1.15] min-w-0 flex flex-col justify-start items-stretch">
             <div className="gap-y-6 lg:gap-y-10 flex flex-col justify-start items-stretch">
               <h2 className="text-title-light text-sm lg:text-2xl font-medium uppercase">
                 {l(locale, localizations, 'front.title-impact')}
@@ -38,43 +76,66 @@ const SectionImpact = () => {
                   text={l(locale, localizations, 'front.cta-impact')}
                 />
               </h6>
-              <p className="text-lg text-gray-excerpt">
-                {localizedExcerptImpact}
-              </p>
-              {projectSummary && (
-                <div className="mt-14 lg:mt-0 gap-x-11 lg:gap-x-0 lg:max-w-[528px] flex flex-row justify-start items-start">
-                  <div className="gap-y-2 lg:gap-y-6 flex-1 flex flex-col justify-start items-start">
-                    <div className="w-12 h-1 bg-green-tag" />
-                    <span className="mt-2 lg:mt-0 block text-6xl lg:text-8xl font-medium">
-                      {projectSummary.totalProjects}
-                    </span>
-                    <span className="block text-sm lg:text-base text-secondary uppercase">
-                      {l(locale, localizations, 'general.active-sites')}
-                    </span>
-                  </div>
-                  <div className="gap-y-2 lg:gap-y-6 flex-1 flex flex-col justify-start items-start">
-                    <div className="w-12 h-1 bg-cta-primary" />
-                    <span className="mt-2 lg:mt-0 block text-6xl lg:text-8xl font-medium">
-                      {totalCapacitiesText}
-                    </span>
-                    <span className="block text-sm lg:text-base text-secondary uppercase">
-                      {totalCapacitiesText}{' '}
-                      {l(locale, localizations, 'general.megawatts')}
-                    </span>
-                  </div>
+              <p className="text-lg text-gray-excerpt">{c.excerpt}</p>
+              <div className="pe-stats" ref={ref} data-revealed={revealed}>
+                <div className="pe-st pe-big">
+                  <div className="pe-bar bg-cta-primary" />
+                  <span className="pe-n">
+                    <LiveFigure select={selKwh} reserve={8.9} />
+                    <small>kWh</small>
+                  </span>
+                  <span className="sr-only">{srMillions(data.kwh, locale)}</span>
+                  <span className="pe-c">{c.kwh}</span>
+                  <NowLine locale={locale} />
                 </div>
-              )}
+                <div className="pe-st pe-co2">
+                  <div className="pe-bar bg-green-tag" />
+                  <span className="pe-n">
+                    <LiveFigure select={selCo2} reserve={4.5} />
+                  </span>
+                  <span className="pe-c">{c.co2}</span>
+                </div>
+                <div className="pe-st">
+                  <div className="pe-bar bg-green-bullet" />
+                  <span className="pe-n">
+                    <LiveFigure select={selSites} reserve={2} />
+                  </span>
+                  <span className="pe-c">{c.sites}</span>
+                </div>
+                <div className="pe-st">
+                  <div className="pe-bar bg-cta-primary" />
+                  <span className="pe-n">
+                    <LiveFigure select={selMw} format={fmtMw} reserve={3.4} />
+                    <small>MW</small>
+                  </span>
+                  <span className="pe-c">{c.mw}</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="lg:flex-1 lg:flex-shrink-0 flex flex-col justify-center items-center">
-            <img loading="lazy" decoding="async"
-              className="w-full lg:w-[310px]"
-              alt="Map"
-              src={m(media, 'front.figure-impact')}
+          <figure className="lg:flex-[0.85] min-w-0 flex flex-col justify-center items-center">
+            <img
+              loading="lazy"
+              decoding="async"
+              width={398}
+              height={730}
+              className="w-[220px] h-auto lg:w-[310px]"
+              alt={c.mapAlt(c.provinces.join(', '))}
+              src={mapSrc(m(media, 'front.figure-impact'))}
             />
-          </div>
+            <figcaption className="pe-mapcap">
+              <span className="pe-mapdot" aria-hidden="true" />
+              {c.mapCaption(data.sites, c.provinces.length)}
+            </figcaption>
+          </figure>
         </div>
-        <span className="block text-lg lg:text-2xl text-cta-primary font-semibold text-center">
+        <LazyMount className="pe-ph-eq">
+          <Equivalents locale={locale} />
+        </LazyMount>
+        <LazyMount className="pe-ph-yr">
+          <YearlyChart locale={locale} />
+        </LazyMount>
+        <span className="mt-16 lg:mt-[72px] block text-lg lg:text-2xl text-cta-primary font-semibold text-center">
           {l(locale, localizations, 'front.more-to-come')}
         </span>
       </div>

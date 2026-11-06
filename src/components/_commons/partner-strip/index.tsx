@@ -40,12 +40,13 @@ const PartnerStrip = (props: PropsWithChildren<PartnerStripProps>) => {
             const { id, name, logo } = partner;
             const localizedName = name ? name[locale] : '';
             return (
+              // every logo on the same white square tile, whatever background its image has
               <li
                 key={id}
-                className="relative flex flex-col justify-center items-center"
+                className="relative aspect-square bg-white ring-1 ring-black/5 p-3 lg:p-5 flex flex-col justify-center items-center"
               >
                 <img loading="lazy" decoding="async"
-                  className="block w-[80%]"
+                  className="block w-full h-full object-contain"
                   alt={localizedName}
                   title={localizedName}
                   src={logo}

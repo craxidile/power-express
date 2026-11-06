@@ -35,12 +35,24 @@ const impactFacts = (projects, l) => {
     l === 'th' ? `กำลังติดตั้งรวม: ${(kw / 1000).toFixed(2)} MW (${Math.round(kw).toLocaleString('en-US')} kW)` : `Total installed capacity: ${(kw / 1000).toFixed(2)} MW (${Math.round(kw).toLocaleString('en-US')} kW)`,
   ];
   if (years.length) facts.push(l === 'th' ? `ปีที่เริ่มดำเนินงานโครงการ: ${Math.min(...years)} ถึง ${Math.max(...years)}` : `Projects completed: ${Math.min(...years)} to ${Math.max(...years)}`);
-  if (impact.measuredKwh) {
-    const t = (impact.measuredKwh * impact.co2FactorKgPerKwh) / 1000;
-    facts.push(l === 'th' ? `ไฟฟ้าที่ผลิตได้สะสม: ${Math.round(impact.measuredKwh).toLocaleString('en-US')} kWh (ข้อมูล ณ ${impact.asOf})` : `Cumulative generation: ${Math.round(impact.measuredKwh).toLocaleString('en-US')} kWh (as of ${impact.asOf})`);
-    facts.push(l === 'th' ? `ก๊าซเรือนกระจกที่หลีกเลี่ยงได้โดยประมาณ: ${Math.round(t).toLocaleString('en-US')} tCO2e (ใช้ค่า ${impact.co2FactorKgPerKwh} kgCO2e/kWh ตาม ${impact.co2FactorSource})` : `Estimated greenhouse gas avoided: ${Math.round(t).toLocaleString('en-US')} tCO2e (using ${impact.co2FactorKgPerKwh} kgCO2e/kWh, ${impact.co2FactorSource})`);
+  if (impact.kwh) {
+    const f = impact.factors;
+    const t = (impact.kwh * f.co2KgPerKwh) / 1000;
+    facts.push(l === 'th' ? `ไฟฟ้าที่ผลิตได้สะสม: ${Math.round(impact.kwh).toLocaleString('en-US')} kWh (ข้อมูล ณ ${impact.asof})` : `Cumulative generation: ${Math.round(impact.kwh).toLocaleString('en-US')} kWh (as of ${impact.asof})`);
+    facts.push(l === 'th' ? `ก๊าซเรือนกระจกที่หลีกเลี่ยงได้โดยประมาณ: ${Math.round(t).toLocaleString('en-US')} tCO2e (ใช้ค่า ${f.co2KgPerKwh} kgCO2e/kWh ตาม ${f.source})` : `Estimated greenhouse gas avoided: ${Math.round(t).toLocaleString('en-US')} tCO2e (using ${f.co2KgPerKwh} kgCO2e/kWh, ${f.source})`);
   }
   return facts;
+};
+
+// The Impact counter's bundled figures, as plain text for search engines and
+// no-JS visitors (the live counter itself needs JavaScript).
+const homeImpactLine = (l) => {
+  const n = (v) => Math.round(v).toLocaleString('en-US');
+  const t = (impact.kwh * impact.factors.co2KgPerKwh) / 1000;
+  const mw = (impact.kWp / 1000).toFixed(2);
+  return l === 'th'
+    ? `ไฟฟ้าสะอาดที่ผลิตแล้ว ${n(impact.kwh)} kWh ลด CO₂ ได้ ${n(t)} ตัน จาก ${impact.sites} โครงการที่เปิดดำเนินการแล้ว รวม ${mw} เมกะวัตต์ (ข้อมูล ณ ${impact.asof} อัปเดตทุกวัน)`
+    : `Clean electricity generated: ${n(impact.kwh)} kWh, avoiding ${n(t)} tonnes of CO₂, from ${impact.sites} sites in operation totalling ${mw} MW (data as of ${impact.asof}, updated daily).`;
 };
 
 const authorLd = (l) => ({
@@ -369,7 +381,7 @@ const heroShell = (l, headline, ctaText, ctaHref) =>
   '<section style="position:relative;height:100vh;min-height:100svh;background:#ccc;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden">' +
   '<img src="/img/hero-1024.webp" srcset="/img/hero-640.webp 640w, /img/hero-1024.webp 1024w, /img/hero-1600.webp 1600w, /img/hero-2200.webp 2200w" sizes="100vw" alt="" width="2500" height="1503" fetchpriority="high" decoding="async" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover"/>' +
   '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.3)"></div>' +
-  `<div style="position:relative;z-index:1;padding:0 52px;text-align:center;color:#fff"><p style="margin:0 0 32px;font-size:36px;line-height:1.2;font-weight:400">${esc(headline).replace(/\n/g, '<br/>')}</p>` +
+  `<div style="position:relative;z-index:1;padding:0 24px;text-align:center;color:#fff"><p style="margin:0 0 32px;font-size:36px;line-height:1.2;font-weight:400">${esc(headline).replace(/\n/g, '<br/>')}</p>` +
   `<a href="${ctaHref}" style="display:inline-block;background:#ff7a3d;color:#fff;border-radius:999px;padding:12px 28px;text-decoration:none">${esc(ctaText)}</a></div></section>`;
 let homeHero = null;
 let bootShared = {};
@@ -488,6 +500,7 @@ const writePage = (rel, html) => {
           : '') +
         `<div style="${homeHero ? SR_ONLY : ''}">` +
         `<h1>${esc(t.homeH1)}</h1><p>${esc(t.homeIntro)}</p>` +
+        `<p>${esc(homeImpactLine(l))}</p>` +
         `<ul>${t.services.map((s) => `<li>${esc(s)}</li>`).join('')}</ul>` +
         `<p><a href="${url(l, 'free-assessment')}">${esc(t.assessment)}</a></p>` +
         `<section><h2>${t.projects}</h2>${projectList(projects, l)}</section>` +

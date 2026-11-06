@@ -10,6 +10,7 @@ import Nav from '../../../../_commons/nav';
 import ScrollStrip from '../../../../_commons/scroll-strip';
 import TextLines from '../../../../_commons/text-lines';
 import Loading from '../../../../_commons/loading';
+import ImpactChip from './impact-chip';
 
 // The CMS hero is a 970 KB JPEG; we serve resized WebP copies of it and fall
 // back to whatever the CMS points at if the image is ever replaced.
@@ -49,14 +50,16 @@ const SectionSlogan = () => {
       )}
       <div className="absolute left-0 top-0 w-full h-full bg-black-a30 backdrop-blur-xs" />
       <Nav />
-      <div className="px-[52px] relative z-[1] lg:px-0 flex-1 flex flex-col justify-center items-center">
+      <div className="px-6 relative z-[1] lg:px-0 flex-1 flex flex-col justify-center items-center">
         {!loading ? (
           <>
-            <div className="flex flex-col justify-start items-stretch">
+            {/* min height = the headline's final height (3 lines on a phone, 2 on desktop), so
+                the button and chip below do not jump down when the CMS text arrives */}
+            <div className="min-h-[130px] lg:min-h-[144px] flex flex-col justify-start items-stretch">
               <h1 className="hidden lg:block text-4xl lg:text-6xl text-white lg:text-center !leading-[1.2] font-normal">
                 <TextLines text={l(locale, localizations, 'front.cta')} />
               </h1>
-              <h1 className="lg:hidden text-4xl lg:text-6xl text-white lg:text-center !leading-[1.2] font-normal">
+              <h1 className="lg:hidden text-4xl lg:text-6xl text-white text-center !leading-[1.2] font-normal">
                 {l(locale, localizations, 'front.cta')}
               </h1>
             </div>
@@ -67,6 +70,7 @@ const SectionSlogan = () => {
             >
               {leadText[locale].title}
             </Link>
+            <ImpactChip locale={locale} />
             <ScrollStrip
               text={l(locale, localizations, 'general.slide-more')}
             />
