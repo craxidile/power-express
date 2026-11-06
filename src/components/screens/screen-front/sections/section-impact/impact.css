@@ -87,12 +87,13 @@
 }
 
 /* ---- results stats ---- */
+/* big kWh on its own row, then CO2, sites and MW side by side */
 .pe-stats {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 48px 44px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px 32px;
   margin-top: 56px;
-  max-width: 660px;
+  max-width: 700px;
 }
 .pe-st .pe-bar {
   width: 48px;
@@ -101,7 +102,7 @@
 .pe-st .pe-n {
   display: block;
   margin-top: 24px;
-  font-size: 72px;
+  font-size: clamp(40px, 3.9vw, 60px);
   font-weight: 500;
   line-height: 1;
   font-variant-numeric: tabular-nums;
@@ -126,6 +127,20 @@
 }
 .pe-st.pe-big .pe-n {
   font-size: clamp(52px, 7.4vw, 96px);
+}
+.pe-mapcap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--pe-ex);
+}
+.pe-mapdot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--pe-orange);
 }
 .pe-now {
   display: inline-flex;
@@ -352,8 +367,13 @@
 }
 
 @media (max-width: 900px) {
+  /* phone: big kWh, then CO2 on its own row, then sites and MW side by side */
   .pe-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 36px 24px;
+  }
+  .pe-st.pe-co2 {
+    grid-column: 1 / -1;
   }
   .pe-st .pe-n {
     font-size: 44px;
@@ -367,8 +387,16 @@
   .pe-card {
     padding: 22px 18px 18px;
   }
+  /* phone: each scene takes the shape of its drawing, so there is no empty band above it */
   .pe-scene {
-    min-height: 190px;
+    flex: none;
+    min-height: 0;
+  }
+  .pe-forest {
+    aspect-ratio: 640 / 240;
+  }
+  .pe-lot {
+    aspect-ratio: var(--pe-ar, 400 / 240);
   }
   .pe-cols {
     display: flex;

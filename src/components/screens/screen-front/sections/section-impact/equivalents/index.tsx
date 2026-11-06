@@ -132,7 +132,11 @@ const CarPark = ({ revealed, locale }: { revealed: boolean; locale: string }) =>
   const c = impactCopy(locale);
   const cars = useTicker(selCarsNow);
   const unit = drawingUnit(CAR_BASE_UNIT, CAR_SLOTS.length, cars);
-  const n = revealed ? Math.min(CAR_SLOTS.length, Math.floor(cars / unit)) : 0;
+  const total = Math.min(CAR_SLOTS.length, Math.floor(cars / unit));
+  const n = revealed ? total : 0;
+  // only as many rows of bays as there are cars: no empty row that reads as unfinished
+  const rows = Math.min(5, Math.max(1, Math.ceil(total / 8)));
+  const vbH = 30 + rows * 44;
   const firstCount = useRef<number | null>(null);
   if (firstCount.current === null && n > 0) firstCount.current = n;
   const first = firstCount.current ?? 0;
@@ -145,9 +149,14 @@ const CarPark = ({ revealed, locale }: { revealed: boolean; locale: string }) =>
         <span>{c.cars}</span>
       </div>
       <p className="pe-s">{c.carsText}</p>
-      <div className="pe-scene pe-lot" role="img" aria-label={c.lotAlt}>
-        <svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-          {[0, 1, 2, 3, 4].map((r) =>
+      <div
+        className="pe-scene pe-lot"
+        role="img"
+        aria-label={c.lotAlt}
+        style={{ ['--pe-ar' as string]: `400 / ${vbH}` }}
+      >
+        <svg viewBox={`0 0 400 ${vbH}`} preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          {Array.from({ length: rows }, (_, r) => r).map((r) =>
             [0, 1, 2, 3, 4, 5, 6, 7, 8].map((col) => (
               <line
                 key={`${r}-${col}`}

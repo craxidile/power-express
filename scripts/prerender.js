@@ -381,7 +381,7 @@ const heroShell = (l, headline, ctaText, ctaHref) =>
   '<section style="position:relative;height:100vh;min-height:100svh;background:#ccc;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden">' +
   '<img src="/img/hero-1024.webp" srcset="/img/hero-640.webp 640w, /img/hero-1024.webp 1024w, /img/hero-1600.webp 1600w, /img/hero-2200.webp 2200w" sizes="100vw" alt="" width="2500" height="1503" fetchpriority="high" decoding="async" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover"/>' +
   '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.3)"></div>' +
-  `<div style="position:relative;z-index:1;padding:0 52px;text-align:center;color:#fff"><p style="margin:0 0 32px;font-size:36px;line-height:1.2;font-weight:400">${esc(headline).replace(/\n/g, '<br/>')}</p>` +
+  `<div style="position:relative;z-index:1;padding:0 24px;text-align:center;color:#fff"><p style="margin:0 0 32px;font-size:36px;line-height:1.2;font-weight:400">${esc(headline).replace(/\n/g, '<br/>')}</p>` +
   `<a href="${ctaHref}" style="display:inline-block;background:#ff7a3d;color:#fff;border-radius:999px;padding:12px 28px;text-decoration:none">${esc(ctaText)}</a></div></section>`;
 let homeHero = null;
 let bootShared = {};

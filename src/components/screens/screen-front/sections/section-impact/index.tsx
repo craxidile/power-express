@@ -18,6 +18,12 @@ import Equivalents from './equivalents';
 import YearlyChart from './yearly-chart';
 import './impact.css';
 
+// The CMS map highlighted only two provinces. While the CMS still points at that original image we
+// serve our copy with every province that has a site coloured in; a newly uploaded map wins.
+const ORIGINAL_MAP = 'media/front/map.png';
+const mapSrc = (cmsUrl: string) =>
+  !cmsUrl || cmsUrl.endsWith(ORIGINAL_MAP) ? '/img/impact-map.png' : cmsUrl;
+
 const selKwh = (s: { kwh: number }) => s.kwh;
 const selCo2 = (s: { co2: number }) => s.co2;
 const selSites = (s: { sites: number }) => s.sites;
@@ -56,7 +62,7 @@ const SectionImpact = () => {
   return (
     <section
       id="impact"
-      className="py-10 lg:pt-[240px] lg:pb-[180px] flex flex-col justify-start items-stretch"
+      className="py-10 lg:py-[120px] flex flex-col justify-start items-stretch"
     >
       <div className="w-full max-w-[1328px] px-6 mx-auto flex flex-col justify-start items-stretch">
         <div className="gap-y-16 lg:gap-x-16 lg:gap-y-0 flex flex-col lg:flex-row justify-start items-stretch">
@@ -82,7 +88,7 @@ const SectionImpact = () => {
                   <span className="pe-c">{c.kwh}</span>
                   <NowLine locale={locale} />
                 </div>
-                <div className="pe-st">
+                <div className="pe-st pe-co2">
                   <div className="pe-bar bg-green-tag" />
                   <span className="pe-n">
                     <LiveFigure select={selCo2} reserve={4.5} />
@@ -100,21 +106,28 @@ const SectionImpact = () => {
                   <div className="pe-bar bg-cta-primary" />
                   <span className="pe-n">
                     <LiveFigure select={selMw} format={fmtMw} reserve={3.4} />
+                    <small>MW</small>
                   </span>
                   <span className="pe-c">{c.mw}</span>
                 </div>
               </div>
             </div>
           </div>
-          <div className="lg:flex-[0.85] min-w-0 flex flex-col justify-center items-center">
+          <figure className="lg:flex-[0.85] min-w-0 flex flex-col justify-center items-center">
             <img
               loading="lazy"
               decoding="async"
-              className="w-full lg:w-[310px]"
-              alt="Map"
-              src={m(media, 'front.figure-impact')}
+              width={398}
+              height={730}
+              className="w-[220px] h-auto lg:w-[310px]"
+              alt={c.mapAlt(c.provinces.join(', '))}
+              src={mapSrc(m(media, 'front.figure-impact'))}
             />
-          </div>
+            <figcaption className="pe-mapcap">
+              <span className="pe-mapdot" aria-hidden="true" />
+              {c.mapCaption(data.sites, c.provinces.length)}
+            </figcaption>
+          </figure>
         </div>
         <LazyMount className="pe-ph-eq">
           <Equivalents locale={locale} />

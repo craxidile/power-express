@@ -50,7 +50,7 @@ const SectionSlogan = () => {
       )}
       <div className="absolute left-0 top-0 w-full h-full bg-black-a30 backdrop-blur-xs" />
       <Nav />
-      <div className="px-[52px] relative z-[1] lg:px-0 flex-1 flex flex-col justify-center items-center">
+      <div className="px-6 relative z-[1] lg:px-0 flex-1 flex flex-col justify-center items-center">
         {!loading ? (
           <>
             {/* min height = the headline's final height (3 lines on a phone, 2 on desktop), so
@@ -59,7 +59,7 @@ const SectionSlogan = () => {
               <h1 className="hidden lg:block text-4xl lg:text-6xl text-white lg:text-center !leading-[1.2] font-normal">
                 <TextLines text={l(locale, localizations, 'front.cta')} />
               </h1>
-              <h1 className="lg:hidden text-4xl lg:text-6xl text-white lg:text-center !leading-[1.2] font-normal">
+              <h1 className="lg:hidden text-4xl lg:text-6xl text-white text-center !leading-[1.2] font-normal">
                 {l(locale, localizations, 'front.cta')}
               </h1>
             </div>
