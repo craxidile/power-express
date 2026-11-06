@@ -26,7 +26,7 @@ const SectionBenefits = () => {
     >
       <SafeArea>
         <div className="flex flex-col justify-start items-stretch">
-          <img
+          <img loading="lazy" decoding="async"
             className="block h-12 lg:h-16 self-center"
             alt="Logo"
             src={p('logo-dark.png')}

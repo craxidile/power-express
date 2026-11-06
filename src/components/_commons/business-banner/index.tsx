@@ -31,7 +31,7 @@ const BusinessBanner = (props: PropsWithChildren<BusinessBannerProps>) => {
           <div
             className={`self-center w-16 h-16 lg:w-[100px] lg:h-[100px] rounded-full bg-white-a50 flex flex-col justify-center items-center ${s.glass}`}
           >
-            <img className="block w-8 h-auto lg:w-10" alt="Icon" src={icon} />
+            <img loading="lazy" decoding="async" className="block w-8 h-auto lg:w-10" alt="Icon" src={icon} />
           </div>
           <h3 className="m-0 p-0 leading-none text-white font-medium text-3xl lg:text-4hxl text-center">
             <TextLines text={localizedTitle} />

@@ -35,7 +35,7 @@ const Footer = () => {
         <div className="gap-y-6 flex flex-col justify-start items-stretch">
           <div className="pb-10 lg:pb-0 gap-y-6 lg:gap-y-0 lg:gap-x-10 flex flex-col lg:flex-row justify-start items-stretch">
             <Link to={`/${locale}`}>
-              <img
+              <img loading="lazy" decoding="async"
                 className="block mx-auto lg:mx-0 w-full max-w-80 lg:w-auto lg:max-w-none lg:h-[106px]"
                 alt="Logo"
                 src={m(media, 'general.logo-footer')}
@@ -80,7 +80,7 @@ const Footer = () => {
                       rel="noreferrer"
                     >
                       <div className="rounded-full bg-white-a10 w-10 h-10 flex flex-col justify-center items-center">
-                        <img
+                        <img loading="lazy" decoding="async"
                           className="h-5 w-auto"
                           alt={text[locale]}
                           src={icon}

@@ -20,7 +20,7 @@ const SectionNext = (props: PropsWithChildren<SectionNextProps>) => {
             <span className="text-title-pale text-base uppercase">{text}</span>
           </Link>
           <Link to={url}>
-            <img
+            <img loading="lazy" decoding="async"
               className="h-6 w-auto"
               alt="Next"
               src={p('mock/project/section-details/ic-next.svg')}

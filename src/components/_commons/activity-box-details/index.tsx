@@ -96,7 +96,7 @@ const ActivityBoxDetails = (
           <span className="text-sm lg:text-base underline">
             {l(locale, localizations, 'general.read-more')}
           </span>
-          <img
+          <img loading="lazy" decoding="async"
             className="h-3 lg:h-auto"
             alt="Icon"
             src={p('mock/front/section-activities/ic-more.svg')}

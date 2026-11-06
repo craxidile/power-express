@@ -32,7 +32,7 @@ const StatRow = (props: PropsWithChildren<StatRowProps>) => {
   return (
     <div className="gap-x-4 flex flex-row justify-start items-start">
       <div className="w-[100px] h-[100px] flex flex-col items-center justify-center ">
-        <img className="block w-10 h-auto" alt="Icon" src={icon} />
+        <img loading="lazy" decoding="async" className="block w-10 h-auto" alt="Icon" src={icon} />
       </div>
       <div className="flex-1 gap-y-1 flex flex-col justify-start items-start">
         <span className={`block font-medium text-3hxl ${textColor}`}>

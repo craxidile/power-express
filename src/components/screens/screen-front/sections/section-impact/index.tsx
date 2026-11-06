@@ -67,7 +67,7 @@ const SectionImpact = () => {
             </div>
           </div>
           <div className="lg:flex-1 lg:flex-shrink-0 flex flex-col justify-center items-center">
-            <img
+            <img loading="lazy" decoding="async"
               className="w-full lg:w-[310px]"
               alt="Map"
               src={m(media, 'front.figure-impact')}

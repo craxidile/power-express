@@ -42,7 +42,7 @@ const SectionDetails = () => {
                   background: `url(${bannerUrl}) no-repeat center/cover`,
                 }}
               />
-              <img
+              <img loading="lazy" decoding="async"
                 alt="Banner"
                 className="block lg:hidden w-full h-auto"
                 src={thumbnailUrl}

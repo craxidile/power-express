@@ -107,7 +107,7 @@ const SectionContact = () => {
               <span className="text-blue-map text-lg font-medium underline">
                 {mapText}
               </span>
-              <img
+              <img loading="lazy" decoding="async"
                 alt="Maps"
                 src={p('mock/front/section-contact/ic-map-link.svg')}
               />
@@ -124,7 +124,7 @@ const SectionContact = () => {
             <span className="text-blue-map text-base font-medium underline">
               {mapText}
             </span>
-            <img
+            <img loading="lazy" decoding="async"
               alt="Maps"
               src={p('mock/front/section-contact/ic-map-link.svg')}
             />

@@ -91,7 +91,7 @@ const SectionDetails = () => {
           {energy && (
             <div className="p-10 gap-x-6 flex flex-row justify-center items-center rounded-3xl bg-pale">
               <div className="w-12 h-12 lg:w-[100px] lg:h-[100px] flex flex-col justify-center items-center bg-white rounded-full">
-                <img
+                <img loading="lazy" decoding="async"
                   className="w-6 lg:w-10 h-auto"
                   alt="Energy"
                   src={p('mock/project/section-details/ic-energy.svg')}
@@ -128,7 +128,7 @@ const SectionDetails = () => {
               <span className="text-center text-4xl lg:text-5xl font-medium leading-none">
                 {(treesPlanted ?? 0).toLocaleString()}
               </span>
-              <img
+              <img loading="lazy" decoding="async"
                 alt="Environment"
                 src={p('mock/project/section-details/environment.png')}
               />

@@ -26,7 +26,7 @@ const SectionProjects = () => {
                   {l(locale, localizations, 'front.all-projects') + ' '}(
                   {projectSummary?.totalProjects ?? 0})
                 </span>
-                <img
+                <img loading="lazy" decoding="async"
                   className="w-8 lg:w-auto h-auto"
                   alt="More"
                   src={p('mock/front/section-projects/ic-more.svg')}
