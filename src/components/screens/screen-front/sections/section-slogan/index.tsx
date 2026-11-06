@@ -53,7 +53,9 @@ const SectionSlogan = () => {
       <div className="px-[52px] relative z-[1] lg:px-0 flex-1 flex flex-col justify-center items-center">
         {!loading ? (
           <>
-            <div className="flex flex-col justify-start items-stretch">
+            {/* min height = the headline's final height (3 lines on a phone, 2 on desktop), so
+                the button and chip below do not jump down when the CMS text arrives */}
+            <div className="min-h-[130px] lg:min-h-[144px] flex flex-col justify-start items-stretch">
               <h1 className="hidden lg:block text-4xl lg:text-6xl text-white lg:text-center !leading-[1.2] font-normal">
                 <TextLines text={l(locale, localizations, 'front.cta')} />
               </h1>

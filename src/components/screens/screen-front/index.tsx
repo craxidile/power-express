@@ -9,7 +9,7 @@ import SectionContact from './sections/section-contact';
 import SectionProjects from './sections/section-projects';
 import SectionActivities from './sections/section-activities';
 import SectionPartners from '../../sections/section-partners';
-import SectionImpact from './sections/section-impact';
+import SectionImpact from './sections/section-impact/lazy';
 import Footer from '../../_commons/footer';
 import Seo from '../../_commons/seo';
 import { useVmScreen } from '../../../stores/vm-screen';

@@ -12,6 +12,7 @@ const EN_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'
 const copy = {
   th: {
     chipLabel: 'ผลิตไฟฟ้าสะอาดแล้ว',
+    chipLabelShort: 'ผลิตไฟฟ้าสะอาดแล้ว',
     chipCo2: 'ลด CO₂',
     chipTonnes: 'ตัน',
     chipAria: 'ไปที่ผลลัพธ์ของเรา',
@@ -50,6 +51,8 @@ const copy = {
   },
   en: {
     chipLabel: 'Clean power generated',
+    // phones: the long label plus the figure is wider than the chip can be
+    chipLabelShort: 'Clean power',
     chipCo2: 'CO₂ avoided',
     chipTonnes: 't',
     chipAria: 'Go to our results',

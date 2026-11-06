@@ -15,11 +15,12 @@
 
 /* ---- hero chip ---- */
 .pe-chip {
-  position: absolute;
-  left: 50%;
-  bottom: 208px;
+  /* In the normal flow, centred under the CTA button: it can never overlap the button or the
+     scroll hint, whatever the window height. */
+  position: relative;
+  margin-top: 24px;
+  max-width: 100%;
   z-index: 2;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -42,6 +43,9 @@
   font-weight: 500;
   font-variant-numeric: tabular-nums;
   font-size: 16px;
+}
+.pe-chip .pe-lbl-s {
+  display: none;
 }
 .pe-chip em {
   font-style: normal;
@@ -186,7 +190,8 @@
   font-variant-numeric: tabular-nums;
   color: var(--pe-ink);
 }
-.pe-card .pe-k span {
+/* direct child only: the live figure inside <b> is also a span and must keep the large size */
+.pe-card .pe-k > span {
   font-size: 16px;
   color: var(--pe-cap);
 }
@@ -407,7 +412,7 @@
     transform: none;
   }
   .pe-chip {
-    bottom: 144px;
+    margin-top: 20px;
     font-size: 12px;
     padding: 8px 14px;
     gap: 8px;
@@ -415,7 +420,18 @@
   .pe-chip b {
     font-size: 14px;
   }
-  .pe-chip em {
+  .pe-chip em,
+  .pe-chip .pe-lbl {
+    display: none;
+  }
+  .pe-chip .pe-lbl-s {
+    display: inline;
+  }
+}
+/* A very short phone screen (e.g. 320x568) has no room for the chip between the button and the
+   scroll hint; the same figures are one scroll away in the results section. */
+@media (max-width: 1023px) and (max-height: 599px) {
+  .pe-chip {
     display: none;
   }
 }

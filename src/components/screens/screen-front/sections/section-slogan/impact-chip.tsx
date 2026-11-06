@@ -45,7 +45,8 @@ const ImpactChip = ({ locale }: { locale: string }) => {
       aria-label={`${c.chipLabel} ${srMillions(data.kwh, locale)}. ${c.chipAria}`}
     >
       <span className="pe-dot" aria-hidden="true" />
-      <span aria-hidden="true">{c.chipLabel}</span>
+      <span aria-hidden="true" className="pe-lbl">{c.chipLabel}</span>
+      <span aria-hidden="true" className="pe-lbl-s">{c.chipLabelShort}</span>
       <b>
         <LiveFigure select={selHeroKwh} reserve={8.9} /> kWh
       </b>

@@ -106,6 +106,29 @@ const notify = () => {
   listeners.forEach((l) => l(s));
 };
 
+// The page paints its figures once, statically. Ticking (and the data fetch) only begin a moment
+// after the window `load` event, so none of that work competes with loading and first input.
+const CALM_MS = 2500;
+let calm = false;
+let waitingForCalm = false;
+const calmQueue: Array<() => void> = [];
+const afterCalm = (fn: () => void) => {
+  if (calm) {
+    fn();
+    return;
+  }
+  calmQueue.push(fn);
+  if (waitingForCalm) return;
+  waitingForCalm = true;
+  const go = () =>
+    window.setTimeout(() => {
+      calm = true;
+      calmQueue.splice(0).forEach((f) => f());
+    }, CALM_MS);
+  if (document.readyState === 'complete') go();
+  else window.addEventListener('load', go, { once: true });
+};
+
 const schedule = () => {
   if (!listeners.size || typeof window === 'undefined') return;
   window.clearTimeout(timer);
@@ -118,7 +141,8 @@ const schedule = () => {
   };
   if (animating() && !document.hidden) raf = window.requestAnimationFrame(run);
   // After the count-up an integer figure changes about once a second, so a
-  // once-a-second timer is plenty (and cheap).
+  // once-a-second timer is plenty (and cheap). Not before the page has settled.
+  else if (!calm) afterCalm(schedule);
   else timer = window.setTimeout(run, 1000);
 };
 
@@ -149,7 +173,7 @@ export const startStage = (stage: Stage, instant = false) => {
 export const loadImpact = () => {
   if (fetched || typeof window === 'undefined') return;
   fetched = true;
-  window.setTimeout(async () => {
+  afterCalm(async () => {
     const next = await fetchImpact();
     if (
       next &&
@@ -160,7 +184,7 @@ export const loadImpact = () => {
       dataListeners.forEach((l) => l());
       notify();
     }
-  }, 600);
+  });
 };
 
 const subscribeData = (l: () => void) => {
