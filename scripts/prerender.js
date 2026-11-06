@@ -354,6 +354,19 @@ const stripHead = (html) =>
 const ldScript = (id, data) =>
   `<script type="application/ld+json" id="${id}">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`;
 
+// Largest lazy chunk = the guide screen (it carries guides.json); preload it on guide pages.
+const guideChunk = (() => {
+  const dir = path.join(__dirname, '..', 'build', 'static', 'js');
+  const files = fs.readdirSync(dir).filter((f) => /^\d+\.[0-9a-f]+\.chunk\.js$/.test(f));
+  files.sort((a, b) => fs.statSync(path.join(dir, b)).size - fs.statSync(path.join(dir, a)).size);
+  return files[0] ? `/static/js/${files[0]}` : null;
+})();
+const guidePathSet = new Set(require('../src/config/guides.json').map((g) => g.path));
+let homeHero = null;
+let bootShared = {};
+let bootHome = {};
+const bootScript = (isHome) =>
+  `<script>window.__PE_API__=${JSON.stringify(isHome ? { ...bootShared, ...bootHome } : bootShared).replace(/</g, '\\u003c')}</script>`;
 const renderPage = (template, page, org, website, service, isHome) => {
   const { l, p, title, description, image, bodyHtml, extraLd, ogType, runtimeLd } = page;
   const fullTitle = title === null ? `${seoText.front[l].title} | ${siteName}` : `${title} | ${siteName}`;
@@ -375,6 +388,15 @@ const renderPage = (template, page, org, website, service, isHome) => {
     `<meta name="twitter:card" content="summary_large_image"/>`,
     ldScript('ld-organization', org),
     ldScript('ld-website', website),
+    bootScript(isHome),
+    ...(guideChunk && guidePathSet.has(p) ? [`<link rel="preload" as="script" href="${guideChunk}"/>`] : []),
+    ...(isHome && homeHero
+      ? [
+          homeHero.endsWith('media/front/bg-slogan.jpg')
+            ? '<link rel="preload" as="image" type="image/webp" href="/img/hero-1024.webp" imagesrcset="/img/hero-640.webp 640w, /img/hero-1024.webp 1024w, /img/hero-1600.webp 1600w, /img/hero-2200.webp 2200w" imagesizes="100vw" fetchpriority="high"/>'
+            : `<link rel="preload" as="image" href="${esc(homeHero)}" fetchpriority="high"/>`,
+        ]
+      : []),
     ...(isHome ? [ldScript('ld-service', service)] : []),
     ...(extraLd || []).map((d, i) => ldScript(`ld-page-${i}`, d)),
     ...(runtimeLd ? [ldScript('seo-json-ld', runtimeLd)] : []),
@@ -406,11 +428,30 @@ const writePage = (rel, html) => {
   }
   const template = fs.readFileSync(templatePath, 'utf8');
 
-  const [projects, activities, contacts] = await Promise.all([
+  const [projects, activities, contacts, media] = await Promise.all([
     get('list-all-projects'),
     get('list-all-activities'),
     get('list-all-contacts'),
+    get('list-all-media'),
   ]);
+  const homeKeys = [
+    'list-all-benefits',
+    'list-all-hero-banners',
+    'list-latest-projects',
+    'summarize-projects',
+    'list-latest-activities',
+    'list-all-partners',
+  ];
+  const homeData = await Promise.all(homeKeys.map((k) => get(k)));
+  bootShared = {
+    'list-all-localizations': await get('list-all-localizations'),
+    'list-all-media': media,
+    'list-all-contacts': contacts,
+  };
+  homeKeys.forEach((k, i) => {
+    bootHome[k] = homeData[i];
+  });
+  homeHero = ((media || []).find((x) => x.key === 'front.banner-slogan') || {}).url || null;
   if (!projects.length || !contacts.length) {
     console.error('prerender: API data missing, refusing to write incomplete pages');
     process.exit(1);

@@ -23,13 +23,15 @@ module.exports = [
         intro: 'โรงงานที่ส่งออกหรือขายให้แบรนด์ข้ามชาติได้ยินเรื่อง "พ.ร.บ.โลกร้อน" มากขึ้น แต่ข้อมูลที่ออกมามักสับสนว่าบังคับใช้แล้วหรือยัง บทความนี้สรุปสถานะตามข่าวและรายงานล่าสุด บอกชัดว่ายังไม่ใช่กฎหมายที่บังคับใช้ และแนะนำสิ่งที่โรงงานเตรียมได้ตั้งแต่ตอนนี้',
         sections: [
           {
-            heading: 'สถานะล่าสุด (ตรวจเมื่อ 1 พฤศจิกายน 2569)',
+            heading: 'สถานะล่าสุด (ตรวจเมื่อ 6 พฤศจิกายน 2569)',
             photo: ph(2, 7, 'หลังคาโรงงานนครปฐมที่ติดโซลาร์ ซึ่งเป็นหนึ่งวิธีลดการปล่อยก๊าซเรือนกระจกจากไฟฟ้าที่ซื้อ', 'A Nakhon Pathom factory roof with solar, one way to cut emissions from purchased electricity'),
             body: ['ตามที่สื่อและสำนักข่าวรายงาน ร่างพระราชบัญญัติการเปลี่ยนแปลงสภาพภูมิอากาศ พ.ศ. .... ยังไม่มีผลบังคับใช้'],
             bullets: [
-              'คณะรัฐมนตรีเห็นชอบในหลักการเมื่อวันที่ 2 ธันวาคม 2568',
-              'ส่งให้คณะกรรมการกฤษฎีกาตรวจพิจารณาตั้งแต่ 5 พฤษภาคม 2569 และอยู่ระหว่างการพิจารณารายมาตรา',
-              'รัฐบาลตั้งเป้าให้บังคับใช้ภายในปี 2569 แต่กระบวนการล่าช้ากว่าที่คาด จึงยังไม่มีวันที่แน่นอน',
+              'คณะรัฐมนตรีเห็นชอบในหลักการเมื่อวันที่ 2 ธันวาคม 2568 (ร่างมี 205 มาตรา 14 หมวด)',
+              'รายงานช่วงกลางปี 2569 ระบุว่าคณะกรรมการกฤษฎีกาเริ่มตรวจร่างรายมาตรา และมีรายงานของกรมการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อมว่าร่างอยู่ในขั้นสุดท้าย',
+              'รายงานล่าสุดที่พบ (หน้าข่าวไม่ระบุวันที่ชัด ดัชนีเมื่อกรกฎาคม 2569) ระบุว่าสำนักเลขาธิการคณะรัฐมนตรีกำลังรวบรวมความเห็นจากหน่วยงานกว่า 30 แห่ง ก่อนเสนอ ครม. แล้วส่งกฤษฎีกาและสภาผู้แทนราษฎรตามลำดับ',
+              'แหล่งข่าวแต่ละแห่งระบุลำดับขั้นไม่ตรงกัน จึงควรตรวจกับกรมการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อมหรือเว็บไซต์กฤษฎีกาโดยตรง',
+              'รัฐบาลตั้งเป้าให้รัฐสภาผ่านภายในสิ้นปี 2569 แต่กระบวนการล่าช้ากว่าที่คาด จึงยังไม่มีวันที่แน่นอน',
             ],
           },
           {
@@ -74,7 +76,7 @@ module.exports = [
           { heading: 'ข้อสงวน', body: [reviewTh, 'หน้านี้ไม่ใช่คำแนะนำทางกฎหมาย และสถานะร่างกฎหมายเปลี่ยนได้ ตรวจกับกรมการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อมหรือราชกิจจานุเบกษา'] },
         ],
         faq: [
-          { q: 'พ.ร.บ.โลกร้อนบังคับใช้แล้วหรือยัง', a: 'ตามรายงานล่าสุดที่ตรวจเมื่อ 1 พฤศจิกายน 2569 ยังไม่บังคับใช้ ร่างอยู่ระหว่างการพิจารณาของคณะกรรมการกฤษฎีกา' },
+          { q: 'พ.ร.บ.โลกร้อนบังคับใช้แล้วหรือยัง', a: 'ตามรายงานล่าสุดที่ตรวจเมื่อ 6 พฤศจิกายน 2569 ยังไม่บังคับใช้ ร่างยังอยู่ในกระบวนการก่อนเข้าสภาผู้แทนราษฎร' },
           { q: 'โรงงานของฉันจะถูกบังคับเข้าระบบ ETS หรือไม่', a: 'ยังไม่มีเกณฑ์ที่ยืนยันได้ ควรติดตามประกาศและกฎหมายลำดับรอง และเตรียมข้อมูลก๊าซเรือนกระจกไว้ล่วงหน้า' },
           { q: 'โซลาร์รูฟท็อปช่วยเรื่องนี้อย่างไร', a: 'ลดไฟที่ซื้อจากระบบ จึงลดการปล่อย Scope 2 และมีข้อมูลผลิตไฟสำหรับรายงาน' },
         ],
@@ -86,13 +88,15 @@ module.exports = [
         intro: 'Exporters and suppliers to multinational brands hear about Thailand’s “climate change law” more and more, but reports are confusing about whether it is in force. This article summarises the status from recent reports, states clearly that it is not yet in force, and suggests what a factory can prepare now.',
         sections: [
           {
-            heading: 'Latest status (checked 1 November 2026)',
+            heading: 'Latest status (checked 6 November 2026)',
             photo: ph(2, 7, 'A Nakhon Pathom factory roof with solar, one way to cut emissions from purchased electricity', 'A Nakhon Pathom factory roof with solar, one way to cut emissions from purchased electricity'),
             body: ['As reported by the media, the draft Climate Change Act B.E. .... is not yet in force.'],
             bullets: [
-              'The Cabinet approved it in principle on 2 December 2025',
-              'It was sent to the Council of State for review from 5 May 2026, where section-by-section review is under way',
-              'The government aimed for enforcement within 2026, but the process has run later than expected, so there is no firm date',
+              'The Cabinet approved it in principle on 2 December 2025 (the draft has 205 sections in 14 chapters)',
+              'Mid-2026 reports said the Council of State had begun section-by-section review, and the Department of Climate Change and Environment described the draft as in its final stage',
+              'The latest report found (the page is not clearly dated; indexed July 2026) says the Cabinet Secretariat is collecting views from more than 30 agencies before it goes to the Cabinet, then the Council of State and the House of Representatives',
+              'Sources describe the sequence differently, so check directly with the Department of Climate Change and Environment or the Council of State website',
+              'The government aimed for Parliament to pass it by the end of 2026, but the process has run later than expected, so there is no firm date',
             ],
           },
           {
@@ -137,7 +141,7 @@ module.exports = [
           { heading: 'Disclaimer', body: [reviewEn, 'This page is not legal advice, and the status of a draft law can change. Check with the Department of Climate Change and Environment or the Royal Gazette.'] },
         ],
         faq: [
-          { q: 'Is the climate change act in force?', a: 'According to the latest reports checked on 1 November 2026, no. The draft is under review by the Council of State.' },
+          { q: 'Is the climate change act in force?', a: 'According to the latest reports checked on 6 November 2026, no. The draft is still moving through the process before it reaches the House of Representatives.' },
           { q: 'Will my factory be forced into the ETS?', a: 'There are no confirmed criteria yet. Follow announcements and secondary rules, and prepare greenhouse-gas data in advance.' },
           { q: 'How does rooftop solar help?', a: 'It reduces purchased electricity, cutting Scope 2 emissions, and provides generation data for reporting.' },
         ],
@@ -283,7 +287,7 @@ module.exports = [
     text: {
       th: {
         title: 'ค่าไฟโรงงานงวด ก.ย.-ธ.ค. 2569: ค่า Ft อัตราเฉลี่ย และความเสี่ยงงวดถัดไป',
-        description: 'สรุปค่า Ft และค่าไฟเฉลี่ยของงวด ก.ย.-ธ.ค. 2569 ที่ กกพ. ประกาศ เงินที่นำมาพยุงค่าไฟ ความเสี่ยงงวดหน้า และวิธีที่โรงงานป้องกันค่าไฟผันผวน (อัปเดต 1 พ.ย. 2569)',
+        description: 'สรุปค่า Ft และค่าไฟเฉลี่ยของงวด ก.ย.-ธ.ค. 2569 ที่ กกพ. ประกาศ เงินที่นำมาพยุงค่าไฟ ความเสี่ยงงวดหน้า และวิธีที่โรงงานป้องกันค่าไฟผันผวน (อัปเดต 6 พ.ย. 2569)',
         intro: 'หน้านี้สรุปอัตราค่าไฟฟ้าล่าสุดที่โรงงานควรรู้ และจะอัปเดตทุกครั้งที่ กกพ. ประกาศงวดใหม่ ตัวเลขทั้งหมดอ้างอิงประกาศของ กกพ. ตามที่สื่อรายงาน โปรดตรวจฉบับเต็มของ กกพ. ก่อนใช้ในการตัดสินใจทางการเงิน',
         sections: [
           {
@@ -303,7 +307,7 @@ module.exports = [
           },
           {
             heading: 'งวดถัดไป',
-            body: ['กกพ. ประกาศค่า Ft เป็นรายงวดทุกสี่เดือน งวดถัดไปคือ ม.ค.-เม.ย. 2570 ซึ่งมักเปิดรับฟังความคิดเห็นและประกาศก่อนเริ่มงวด ติดตามที่เว็บไซต์ กกพ. และหน้านี้จะอัปเดตเมื่อมีประกาศ'],
+            body: ['กกพ. ประกาศค่า Ft เป็นรายงวดทุกสี่เดือน งวดถัดไปคือ ม.ค.-เม.ย. 2570 เมื่อตรวจเมื่อ 6 พฤศจิกายน 2569 ยังไม่พบข้อเสนอค่า Ft ของงวดนี้ ปีที่แล้ว กกพ. เปิดรับฟังความคิดเห็นงวดต้นปีช่วง 10-23 พฤศจิกายน 2568 จึงคาดว่าจะมีการเปิดรับฟังในช่วงใกล้เคียงกัน แต่ยังไม่มีการยืนยัน ติดตามที่เว็บไซต์ กกพ. และหน้านี้จะอัปเดตเมื่อมีประกาศ'],
           },
           {
             heading: 'ผลต่อโรงงานและต้นทุนการผลิต',
@@ -323,13 +327,13 @@ module.exports = [
         faq: [
           { q: 'ค่า Ft งวดล่าสุดเท่าไร', a: 'ตามรายงาน กกพ. งวด ก.ย.-ธ.ค. 2569 ค่า Ft อยู่ที่ 16.23 สตางค์ต่อหน่วย ตรวจประกาศฉบับเต็มของ กกพ. เพื่อยืนยัน' },
           { q: 'ค่าไฟจะขึ้นอีกหรือไม่', a: 'ไม่มีใครยืนยันได้ ราคาปัจจุบันถูกพยุงด้วยเงินก้อนหนึ่งครั้ง งวดถัดไปมีความเสี่ยงขึ้น ควรเตรียมแผนลดความเสี่ยง' },
-          { q: 'หน้านี้อัปเดตเมื่อไร', a: 'เราอัปเดตเมื่อ กกพ. ประกาศงวดใหม่ ข้อมูลล่าสุดตรวจเมื่อ 1 พฤศจิกายน 2569' },
+          { q: 'หน้านี้อัปเดตเมื่อไร', a: 'เราอัปเดตเมื่อ กกพ. ประกาศงวดใหม่ ข้อมูลล่าสุดตรวจเมื่อ 6 พฤศจิกายน 2569' },
         ],
         cta: cta.th,
       },
       en: {
         title: 'Factory Electricity Tariff for Sep-Dec 2026: the Ft Charge, Average Rate and Risk for the Next Period',
-        description: 'The Ft charge and average tariff for Sep-Dec 2026 as announced by the ERC, the funds used to hold it down, the risk next period, and how factories can reduce exposure to volatile power prices (updated 1 Nov 2026).',
+        description: 'The Ft charge and average tariff for Sep-Dec 2026 as announced by the ERC, the funds used to hold it down, the risk next period, and how factories can reduce exposure to volatile power prices (updated 6 Nov 2026).',
         intro: 'This page summarises the latest electricity tariff factories should know and will be updated each time the ERC announces a new period. All figures follow the ERC announcement as reported by the media. Check the ERC’s full notice before using it in financial decisions.',
         sections: [
           {
@@ -349,7 +353,7 @@ module.exports = [
           },
           {
             heading: 'The next period',
-            body: ['The ERC sets Ft every four months. The next period is Jan-Apr 2027, usually consulted on and announced before it starts. Follow the ERC website; this page will be updated when it is announced.'],
+            body: ['The ERC sets Ft every four months. The next period is Jan-Apr 2027. As of 6 November 2026 we found no Ft proposal for it. Last year the ERC ran its consultation for the early-year period from 10 to 23 November 2025, so a similar timing is likely but not confirmed. Follow the ERC website; this page will be updated when it is announced.'],
           },
           {
             heading: 'What it means for factories and production cost',
@@ -369,7 +373,7 @@ module.exports = [
         faq: [
           { q: 'What is the latest Ft charge?', a: 'According to ERC reporting, 16.23 satang per unit for Sep-Dec 2026. Check the ERC’s full notice to confirm.' },
           { q: 'Will tariffs rise again?', a: 'No one can confirm. The current price is held by a one-off fund, so the next period carries a risk of an increase. Plan to reduce exposure.' },
-          { q: 'When is this page updated?', a: 'When the ERC announces a new period. Last checked on 1 November 2026.' },
+          { q: 'When is this page updated?', a: 'When the ERC announces a new period. Last checked on 6 November 2026.' },
         ],
         cta: cta.en,
       },
@@ -927,6 +931,7 @@ module.exports = [
           { heading: 'ผู้บริหาร', body: ['ภานุวัจน์ ทองร่มโพธิ์ ประธานเจ้าหน้าที่บริหาร ([LinkedIn](https://www.linkedin.com/in/panuwat-thongrompo-18760b15/))'] },
           { heading: 'หัวข้อที่ให้สัมภาษณ์ได้', body: [], bullets: ['Private PPA และโซลาร์รูฟท็อปสำหรับโรงงาน ดู [Private PPA ฉบับสมบูรณ์](guides/private-ppa-complete-guide)', 'Direct PPA, UGT และทางเลือกพลังงานสะอาด ดู [Direct PPA ในประเทศไทย](guides/direct-ppa-thailand-explained)', 'ค่าไฟโรงงานและค่า Ft ดู [ค่าไฟโรงงานงวดล่าสุด](guides/factory-electricity-tariff-sep-dec-2026)', 'CBAM, Scope 2 และการรายงานคาร์บอน ดู [CBAM สำหรับผู้ส่งออกไทย](guides/cbam-thai-exporters-rooftop-solar)', 'การขออนุญาตติดตั้งโซลาร์รูฟท็อป ดู [ขั้นตอนจดแจ้งและขออนุญาต](guides/rooftop-solar-registration-and-permits-step-by-step)'] },
           { heading: 'การอ้างอิงและรูปภาพ', body: ['ภาพถ่ายโครงการบนเว็บไซต์เป็นภาพจริงของเรา หากต้องการนำไปใช้ในสื่อ กรุณาติดต่อเพื่อขออนุญาตและขอไฟล์ความละเอียดสูง ข้อมูลผลงานรวมดูที่ [ผลงานและผลกระทบ](impact)'] },
+          { heading: 'ที่อยู่จดทะเบียนและสำนักงานที่ทำการ', body: ['ที่อยู่สำนักงานที่ทำการและติดต่อลูกค้าของเราคืออาคารเอ็มบีเค ทาวเวอร์ ตามที่แสดงในหน้าติดต่อ ส่วนที่อยู่จดทะเบียนนิติบุคคลเป็นไปตามที่บันทึกไว้กับกรมพัฒนาธุรกิจการค้า (DBD) ซึ่งอาจเป็นคนละที่อยู่กับสำนักงานที่ทำการ หากต้องการเอกสารรับรองนิติบุคคล กรุณาติดต่อเรา'] },
           { heading: 'ติดต่อสื่อ', body: ['อีเมล admin@powerexpress1980.com โทร 082-096-6595 ที่อยู่ 444 อาคารเอ็มบีเค ทาวเวอร์ ชั้น 11 ถนนพญาไท เขตปทุมวัน กรุงเทพฯ 10330'] },
         ],
         faq: [{ q: 'ขอสัมภาษณ์ผู้บริหารได้อย่างไร', a: 'ส่งอีเมลมาที่ admin@powerexpress1980.com ระบุสื่อ หัวข้อ และกำหนดส่งงาน' }],
@@ -941,6 +946,7 @@ module.exports = [
           { heading: 'Management', body: ['Panuwat Thongrompo, Chief Executive Officer ([LinkedIn](https://www.linkedin.com/in/panuwat-thongrompo-18760b15/))'] },
           { heading: 'Topics available for interview', body: [], bullets: ['Private PPA and rooftop solar for factories. See the [complete private PPA guide](guides/private-ppa-complete-guide)', 'Direct PPA, UGT and clean-power options. See [Direct PPA in Thailand](guides/direct-ppa-thailand-explained)', 'Factory electricity and the Ft charge. See [the latest factory tariff](guides/factory-electricity-tariff-sep-dec-2026)', 'CBAM, Scope 2 and carbon reporting. See [CBAM for Thai exporters](guides/cbam-thai-exporters-rooftop-solar)', 'Permits for rooftop solar. See [Registration and permits](guides/rooftop-solar-registration-and-permits-step-by-step)'] },
           { heading: 'Citation and images', body: ['Project photos on the website are our own real photos. To use them in media, please contact us for permission and high-resolution files. For overall figures see [Track record and impact](impact).'] },
+          { heading: 'Registered and operating address', body: ['Our operating office, where we meet customers, is at MBK Tower as shown on the contact page. The registered address of the legal entity is as recorded with the Department of Business Development (DBD) and may differ from the operating office. For a company certificate, please contact us.'] },
           { heading: 'Press contact', body: ['Email admin@powerexpress1980.com, phone 082-096-6595, 444 MBK Tower, 11th Floor, Phaya Thai Road, Pathum Wan, Bangkok 10330.'] },
         ],
         faq: [{ q: 'How do I request an interview?', a: 'Email admin@powerexpress1980.com with the outlet, topic and deadline.' }],

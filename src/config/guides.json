@@ -427,36 +427,84 @@
         "intro": "บริษัท เพาวเวอร์เอ็กซ์เพรส1980 จำกัด (\"เรา\") เป็นผู้ควบคุมข้อมูลส่วนบุคคลตามนโยบายนี้ ที่อยู่: เลขที่ 444 ชั้น 11 อาคารเอ็ม บี เค ทาวเวอร์ ถนนพญาไท แขวงวังใหม่ เขตปทุมวัน กรุงเทพมหานคร 10330 อีเมล admin@powerexpress1980.com โทร 082-096-6595",
         "sections": [
           {
-            "heading": "ข้อมูลที่เราเก็บ",
+            "heading": "เราเก็บข้อมูลอะไรบ้าง",
             "body": [
-              "เมื่อคุณส่งแบบฟอร์มประเมินฟรี เราเก็บ ชื่อ บริษัท เบอร์โทร LINE ID อีเมล ช่วงค่าไฟต่อเดือน จังหวัด ข้อมูลอาคารและการใช้ไฟ หมายเหตุ และไฟล์บิลค่าไฟที่คุณแนบ รวมถึงข้อมูลแหล่งที่มาของการเข้าเว็บไซต์ (เช่น UTM และตัวระบุโฆษณา)"
+              "เมื่อคุณส่งแบบฟอร์มประเมินฟรี เราเก็บข้อมูลที่คุณกรอก ได้แก่ ชื่อ ตำแหน่ง บริษัท เบอร์โทร LINE ID อีเมล ช่วงค่าไฟต่อเดือน จังหวัด ข้อมูลอาคารและการใช้ไฟ หมายเหตุ และไฟล์บิลค่าไฟที่คุณแนบ",
+              "เมื่อคุณเข้าเว็บไซต์ เราเก็บข้อมูลแหล่งที่มา (เช่น UTM และตัวระบุโฆษณา) ไว้ในหน่วยความจำของเบราว์เซอร์ตลอดการเยี่ยมชม และเก็บข้อมูลการใช้งานผ่านเครื่องมือวิเคราะห์ เมื่อคุณยินยอมเท่านั้น",
+              "โปรดอย่าแนบบัตรประชาชนหรือเอกสารที่มีข้อมูลอ่อนไหว (เช่น ศาสนา สุขภาพ) เราไม่ต้องการข้อมูลเหล่านี้ หากเผลอส่งมา เราจะลบออก"
             ]
           },
           {
-            "heading": "วัตถุประสงค์",
+            "heading": "วัตถุประสงค์และฐานทางกฎหมาย",
             "body": [],
             "bullets": [
-              "ติดต่อกลับและจัดทำรายงานประเมินที่คุณร้องขอ",
-              "วิเคราะห์ประสิทธิภาพของเว็บไซต์และการโฆษณา (เมื่อคุณยินยอมคุกกี้)",
-              "ปฏิบัติตามกฎหมาย"
+              "ติดต่อกลับและจัดทำรายงานประเมินที่คุณร้องขอ (ฐาน: การดำเนินการตามคำขอของคุณก่อนเข้าทำสัญญา)",
+              "ติดตามและเสนอบริการที่เกี่ยวข้องกับคำขอของคุณ (ฐาน: ประโยชน์โดยชอบด้วยกฎหมายของเรา และจะหยุดเมื่อคุณคัดค้าน)",
+              "วิเคราะห์การใช้งานและประสิทธิภาพของเว็บไซต์และการโฆษณา (ฐาน: ความยินยอมของคุณผ่านแบนเนอร์คุกกี้)",
+              "ปฏิบัติตามกฎหมายและป้องกันการใช้งานเว็บไซต์ในทางมิชอบ (ฐาน: หน้าที่ตามกฎหมายและประโยชน์โดยชอบด้วยกฎหมาย)"
             ]
           },
           {
-            "heading": "คุกกี้",
+            "heading": "การให้ข้อมูลเป็นความสมัครใจ",
             "body": [
-              "เว็บไซต์ใช้คุกกี้เพื่อวิเคราะห์การใช้งานและวัดผลโฆษณา ซึ่งจะทำงานเมื่อคุณกด \"ยอมรับทั้งหมด\" เท่านั้น คุณเลือกปฏิเสธได้ และเว็บไซต์ยังใช้งานได้ตามปกติ"
+              "คุณไม่จำเป็นต้องส่งข้อมูลให้เรา แต่หากไม่ให้ข้อมูลในช่องที่จำเป็น เราจะไม่สามารถจัดทำรายงานประเมินหรือติดต่อกลับได้"
             ]
           },
           {
-            "heading": "การเปิดเผยและการเก็บรักษา",
+            "heading": "คุกกี้และเทคโนโลยีที่คล้ายกัน",
             "body": [
-              "เราใช้ผู้ให้บริการโครงสร้างพื้นฐานและเครื่องมือ (เช่น ที่เก็บข้อมูล ระบบส่งอีเมล และระบบวิเคราะห์) เพื่อดำเนินการตามวัตถุประสงค์ข้างต้น เราเก็บข้อมูลเท่าที่จำเป็นต่อวัตถุประสงค์ และคุณสามารถขอให้ลบข้อมูลได้"
+              "เราใช้ตัวเก็บข้อมูลในเบราว์เซอร์ดังนี้"
+            ],
+            "bullets": [
+              "ที่จำเป็นต่อการทำงาน: บันทึกการเลือกคุกกี้ของคุณ (pex_cookie_consent) แคชข้อมูลหน้าเว็บเพื่อความเร็ว (pe-api:*) และข้อมูลแหล่งที่มาตลอดการเยี่ยมชม (pex_attribution) ซึ่งไม่ได้ส่งออกไปยังบุคคลที่สามเอง",
+              "วิเคราะห์ (Google Analytics): ตั้งค่าเป็นปฏิเสธไว้ก่อน จะเก็บเมื่อคุณกด \"ยอมรับทั้งหมด\" เท่านั้น โดยเครื่องมืออาจรับสัญญาณที่ไม่ใช้คุกกี้และไม่ระบุตัวตนเพื่อการวัดผลเบื้องต้น",
+              "โฆษณา (เช่น Google Ads, Meta, LinkedIn): จะทำงานเมื่อมีการตั้งค่าและคุณยอมรับเท่านั้น",
+              "คุณถอนความยินยอมได้ทุกเมื่อโดยล้างข้อมูลเว็บไซต์ในเบราว์เซอร์แล้วเลือกใหม่ที่แบนเนอร์ หรือแจ้งเราทางอีเมล"
+            ]
+          },
+          {
+            "heading": "เราเปิดเผยข้อมูลให้ใคร",
+            "body": [
+              "เราเปิดเผยข้อมูลเท่าที่จำเป็นให้ผู้ให้บริการที่ประมวลผลแทนเรา ได้แก่ ผู้ให้บริการที่เก็บข้อมูลและโครงสร้างพื้นฐานคลาวด์ ผู้ให้บริการระบบส่งอีเมล และผู้ให้บริการระบบวิเคราะห์ โดยกำหนดให้รักษาความลับและใช้ข้อมูลเฉพาะตามคำสั่งของเรา เราไม่ขายข้อมูลส่วนบุคคลของคุณ และอาจเปิดเผยตามคำสั่งที่ชอบด้วยกฎหมายของหน่วยงานรัฐ"
+            ]
+          },
+          {
+            "heading": "การส่งข้อมูลไปต่างประเทศ",
+            "body": [
+              "ผู้ให้บริการบางรายอาจเก็บหรือประมวลผลข้อมูลบนเซิร์ฟเวอร์นอกประเทศไทย เมื่อมีการส่งข้อมูลไปต่างประเทศ เราจะดูแลให้ประเทศปลายทางหรือผู้รับมีมาตรฐานคุ้มครองข้อมูลที่เพียงพอ หรือใช้มาตรการคุ้มครองที่เหมาะสมตามที่ พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 กำหนด"
+            ]
+          },
+          {
+            "heading": "ระยะเวลาเก็บรักษา",
+            "body": [],
+            "bullets": [
+              "ข้อมูลที่ส่งผ่านแบบฟอร์มประเมิน: ไม่เกิน 24 เดือนนับจากการติดต่อครั้งล่าสุด เว้นแต่ได้ทำสัญญากับเรา ซึ่งจะเก็บตามอายุสัญญาและระยะเวลาที่กฎหมายกำหนด",
+              "ข้อมูลการใช้งานเว็บไซต์ในระบบวิเคราะห์: ตามระยะเวลาที่ตั้งค่าในเครื่องมือ ซึ่งเรากำหนดไม่เกิน 14 เดือน",
+              "เมื่อพ้นระยะเวลา เราจะลบหรือทำให้ข้อมูลไม่สามารถระบุตัวตนได้"
+            ]
+          },
+          {
+            "heading": "การรักษาความมั่นคงปลอดภัย",
+            "body": [
+              "เราใช้การเข้ารหัสระหว่างส่งข้อมูล จำกัดการเข้าถึงเฉพาะผู้ที่จำเป็น และให้ผู้ให้บริการที่ประมวลผลแทนเรามีมาตรการปกป้องข้อมูลที่เหมาะสม หากเกิดเหตุละเมิดข้อมูลส่วนบุคคลที่มีความเสี่ยงต่อสิทธิและเสรีภาพของคุณ เราจะแจ้งสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคลภายใน 72 ชั่วโมงนับแต่ทราบเหตุ และแจ้งคุณโดยไม่ชักช้าหากมีความเสี่ยงสูง"
             ]
           },
           {
             "heading": "สิทธิของคุณ",
             "body": [
-              "คุณมีสิทธิขอเข้าถึง แก้ไข ลบ ระงับการใช้ คัดค้าน ขอรับสำเนา และถอนความยินยอมได้ โดยติดต่อ admin@powerexpress1980.com"
+              "คุณมีสิทธิขอเข้าถึงและขอรับสำเนา แก้ไข ลบหรือทำให้ไม่สามารถระบุตัวตน ระงับการใช้ คัดค้านการประมวลผล ขอให้โอนย้ายข้อมูล และถอนความยินยอมได้ทุกเมื่อ โดยการถอนไม่กระทบการประมวลผลที่ทำไปแล้ว ติดต่อ admin@powerexpress1980.com เราจะตอบภายใน 30 วันนับแต่ได้รับคำขอที่ครบถ้วน หากเห็นว่าเราไม่ปฏิบัติตามกฎหมาย คุณมีสิทธิร้องเรียนต่อสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (PDPC)"
+            ]
+          },
+          {
+            "heading": "ข้อมูลของเด็ก",
+            "body": [
+              "เว็บไซต์นี้ให้บริการแก่ธุรกิจ และไม่ได้มุ่งเก็บข้อมูลจากผู้เยาว์ หากเราพบว่าเก็บข้อมูลของผู้เยาว์โดยไม่ได้รับความยินยอมของผู้ปกครอง เราจะลบข้อมูลนั้น"
+            ]
+          },
+          {
+            "heading": "การแก้ไขนโยบาย",
+            "body": [
+              "เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว โดยแสดงวันที่ปรับปรุงล่าสุดไว้ที่หน้านี้ ปรับปรุงล่าสุด: 6 พฤศจิกายน 2569"
             ]
           }
         ],
@@ -471,34 +519,82 @@
           {
             "heading": "What we collect",
             "body": [
-              "When you submit the free assessment form we collect your name, company, phone, LINE ID, email, monthly bill range, province, building and usage details, notes and any electricity bill you attach, plus how you reached the site (such as UTM parameters and ad identifiers)."
+              "When you submit the free assessment form we collect what you enter: name, position, company, phone, LINE ID, email, monthly bill range, province, building and usage details, notes and any electricity bill you attach.",
+              "When you visit, campaign information (such as UTM parameters and ad identifiers) is kept in your browser memory for the visit, and usage data is collected through an analytics tool only if you consent.",
+              "Please do not attach ID cards or documents containing sensitive data (such as religion or health). We do not need them, and will delete them if sent by mistake."
             ]
           },
           {
-            "heading": "Purposes",
+            "heading": "Purposes and legal bases",
             "body": [],
             "bullets": [
-              "to contact you and prepare the assessment you requested",
-              "to analyse site and advertising performance (only where you accept cookies)",
-              "to comply with the law"
+              "To contact you and prepare the assessment you asked for (basis: steps at your request before entering a contract)",
+              "To follow up and offer services related to your request (basis: our legitimate interests; we stop if you object)",
+              "To analyse site and advertising performance (basis: your consent through the cookie banner)",
+              "To comply with the law and prevent misuse of the site (basis: legal obligation and legitimate interests)"
             ]
           },
           {
-            "heading": "Cookies",
+            "heading": "Providing data is voluntary",
             "body": [
-              "The site uses cookies to analyse usage and measure advertising. They run only if you choose \"Accept all\". You can decline and the site still works normally."
+              "You are not required to give us data, but if you leave out required fields we cannot prepare your assessment or contact you."
             ]
           },
           {
-            "heading": "Disclosure and retention",
+            "heading": "Cookies and similar technologies",
             "body": [
-              "We use infrastructure and tool providers (for example data storage, email delivery and analytics) to carry out the purposes above. We keep data only as long as needed for those purposes, and you can ask us to delete it."
+              "We use the following browser storage:"
+            ],
+            "bullets": [
+              "Necessary: your cookie choice (pex_cookie_consent), a page-data cache for speed (pe-api:*), and campaign information for the visit (pex_attribution). None of these is sent to third parties by itself.",
+              "Analytics (Google Analytics): set to denied by default and used only when you press \"Accept all\". The tool may receive cookieless, non-identifying signals for basic measurement.",
+              "Advertising (for example Google Ads, Meta, LinkedIn): runs only when configured and you accept.",
+              "You can withdraw consent at any time by clearing the site data in your browser and choosing again on the banner, or by emailing us."
+            ]
+          },
+          {
+            "heading": "Who we share data with",
+            "body": [
+              "We share data only as needed with service providers who process it for us: cloud data-storage and infrastructure providers, email-delivery providers and analytics providers, who must keep it confidential and use it only on our instructions. We do not sell your personal data, and may disclose it under a lawful order of a government authority."
+            ]
+          },
+          {
+            "heading": "Transfers abroad",
+            "body": [
+              "Some providers may store or process data on servers outside Thailand. Where data is transferred abroad, we make sure the destination or recipient has adequate data-protection standards, or we use appropriate safeguards as the Personal Data Protection Act B.E. 2562 requires."
+            ]
+          },
+          {
+            "heading": "How long we keep data",
+            "body": [],
+            "bullets": [
+              "Assessment-form data: no more than 24 months after our last contact, unless you contract with us, in which case for the contract term and the period the law requires",
+              "Site-usage data in the analytics tool: the period set in the tool, which we set to no more than 14 months",
+              "After that period we delete the data or make it non-identifiable"
+            ]
+          },
+          {
+            "heading": "Security",
+            "body": [
+              "We use encryption in transit, limit access to those who need it, and require processors to apply suitable safeguards. If a personal-data breach is likely to put your rights and freedoms at risk, we will notify the Personal Data Protection Committee Office within 72 hours of becoming aware, and tell you without undue delay if the risk is high."
             ]
           },
           {
             "heading": "Your rights",
             "body": [
-              "You may request access, correction, deletion, restriction, objection, a copy of your data, and withdraw consent by emailing admin@powerexpress1980.com."
+              "You may request access and a copy, correction, deletion or de-identification, restriction, objection, data portability, and withdraw consent at any time (withdrawal does not affect processing already done). Email admin@powerexpress1980.com and we will reply within 30 days of receiving a complete request. If you believe we are not complying with the law, you may complain to the Personal Data Protection Committee (PDPC)."
+            ]
+          },
+          {
+            "heading": "Children",
+            "body": [
+              "This site serves businesses and is not aimed at collecting data from minors. If we find we hold a minor's data without parental consent, we will delete it."
+            ]
+          },
+          {
+            "heading": "Changes to this policy",
+            "body": [
+              "We may update this policy from time to time and show the last-updated date on this page. Last updated: 6 November 2026."
             ]
           }
         ],
@@ -4428,7 +4524,7 @@
         "intro": "โรงงานที่ส่งออกหรือขายให้แบรนด์ข้ามชาติได้ยินเรื่อง \"พ.ร.บ.โลกร้อน\" มากขึ้น แต่ข้อมูลที่ออกมามักสับสนว่าบังคับใช้แล้วหรือยัง บทความนี้สรุปสถานะตามข่าวและรายงานล่าสุด บอกชัดว่ายังไม่ใช่กฎหมายที่บังคับใช้ และแนะนำสิ่งที่โรงงานเตรียมได้ตั้งแต่ตอนนี้",
         "sections": [
           {
-            "heading": "สถานะล่าสุด (ตรวจเมื่อ 1 พฤศจิกายน 2569)",
+            "heading": "สถานะล่าสุด (ตรวจเมื่อ 6 พฤศจิกายน 2569)",
             "photo": {
               "project": 2,
               "index": 7,
@@ -4441,9 +4537,11 @@
               "ตามที่สื่อและสำนักข่าวรายงาน ร่างพระราชบัญญัติการเปลี่ยนแปลงสภาพภูมิอากาศ พ.ศ. .... ยังไม่มีผลบังคับใช้"
             ],
             "bullets": [
-              "คณะรัฐมนตรีเห็นชอบในหลักการเมื่อวันที่ 2 ธันวาคม 2568",
-              "ส่งให้คณะกรรมการกฤษฎีกาตรวจพิจารณาตั้งแต่ 5 พฤษภาคม 2569 และอยู่ระหว่างการพิจารณารายมาตรา",
-              "รัฐบาลตั้งเป้าให้บังคับใช้ภายในปี 2569 แต่กระบวนการล่าช้ากว่าที่คาด จึงยังไม่มีวันที่แน่นอน"
+              "คณะรัฐมนตรีเห็นชอบในหลักการเมื่อวันที่ 2 ธันวาคม 2568 (ร่างมี 205 มาตรา 14 หมวด)",
+              "รายงานช่วงกลางปี 2569 ระบุว่าคณะกรรมการกฤษฎีกาเริ่มตรวจร่างรายมาตรา และมีรายงานของกรมการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อมว่าร่างอยู่ในขั้นสุดท้าย",
+              "รายงานล่าสุดที่พบ (หน้าข่าวไม่ระบุวันที่ชัด ดัชนีเมื่อกรกฎาคม 2569) ระบุว่าสำนักเลขาธิการคณะรัฐมนตรีกำลังรวบรวมความเห็นจากหน่วยงานกว่า 30 แห่ง ก่อนเสนอ ครม. แล้วส่งกฤษฎีกาและสภาผู้แทนราษฎรตามลำดับ",
+              "แหล่งข่าวแต่ละแห่งระบุลำดับขั้นไม่ตรงกัน จึงควรตรวจกับกรมการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อมหรือเว็บไซต์กฤษฎีกาโดยตรง",
+              "รัฐบาลตั้งเป้าให้รัฐสภาผ่านภายในสิ้นปี 2569 แต่กระบวนการล่าช้ากว่าที่คาด จึงยังไม่มีวันที่แน่นอน"
             ]
           },
           {
@@ -4509,7 +4607,7 @@
         "faq": [
           {
             "q": "พ.ร.บ.โลกร้อนบังคับใช้แล้วหรือยัง",
-            "a": "ตามรายงานล่าสุดที่ตรวจเมื่อ 1 พฤศจิกายน 2569 ยังไม่บังคับใช้ ร่างอยู่ระหว่างการพิจารณาของคณะกรรมการกฤษฎีกา"
+            "a": "ตามรายงานล่าสุดที่ตรวจเมื่อ 6 พฤศจิกายน 2569 ยังไม่บังคับใช้ ร่างยังอยู่ในกระบวนการก่อนเข้าสภาผู้แทนราษฎร"
           },
           {
             "q": "โรงงานของฉันจะถูกบังคับเข้าระบบ ETS หรือไม่",
@@ -4528,7 +4626,7 @@
         "intro": "Exporters and suppliers to multinational brands hear about Thailand’s “climate change law” more and more, but reports are confusing about whether it is in force. This article summarises the status from recent reports, states clearly that it is not yet in force, and suggests what a factory can prepare now.",
         "sections": [
           {
-            "heading": "Latest status (checked 1 November 2026)",
+            "heading": "Latest status (checked 6 November 2026)",
             "photo": {
               "project": 2,
               "index": 7,
@@ -4541,9 +4639,11 @@
               "As reported by the media, the draft Climate Change Act B.E. .... is not yet in force."
             ],
             "bullets": [
-              "The Cabinet approved it in principle on 2 December 2025",
-              "It was sent to the Council of State for review from 5 May 2026, where section-by-section review is under way",
-              "The government aimed for enforcement within 2026, but the process has run later than expected, so there is no firm date"
+              "The Cabinet approved it in principle on 2 December 2025 (the draft has 205 sections in 14 chapters)",
+              "Mid-2026 reports said the Council of State had begun section-by-section review, and the Department of Climate Change and Environment described the draft as in its final stage",
+              "The latest report found (the page is not clearly dated; indexed July 2026) says the Cabinet Secretariat is collecting views from more than 30 agencies before it goes to the Cabinet, then the Council of State and the House of Representatives",
+              "Sources describe the sequence differently, so check directly with the Department of Climate Change and Environment or the Council of State website",
+              "The government aimed for Parliament to pass it by the end of 2026, but the process has run later than expected, so there is no firm date"
             ]
           },
           {
@@ -4609,7 +4709,7 @@
         "faq": [
           {
             "q": "Is the climate change act in force?",
-            "a": "According to the latest reports checked on 1 November 2026, no. The draft is under review by the Council of State."
+            "a": "According to the latest reports checked on 6 November 2026, no. The draft is still moving through the process before it reaches the House of Representatives."
           },
           {
             "q": "Will my factory be forced into the ETS?",
@@ -4842,7 +4942,7 @@
     "text": {
       "th": {
         "title": "ค่าไฟโรงงานงวด ก.ย.-ธ.ค. 2569: ค่า Ft อัตราเฉลี่ย และความเสี่ยงงวดถัดไป",
-        "description": "สรุปค่า Ft และค่าไฟเฉลี่ยของงวด ก.ย.-ธ.ค. 2569 ที่ กกพ. ประกาศ เงินที่นำมาพยุงค่าไฟ ความเสี่ยงงวดหน้า และวิธีที่โรงงานป้องกันค่าไฟผันผวน (อัปเดต 1 พ.ย. 2569)",
+        "description": "สรุปค่า Ft และค่าไฟเฉลี่ยของงวด ก.ย.-ธ.ค. 2569 ที่ กกพ. ประกาศ เงินที่นำมาพยุงค่าไฟ ความเสี่ยงงวดหน้า และวิธีที่โรงงานป้องกันค่าไฟผันผวน (อัปเดต 6 พ.ย. 2569)",
         "intro": "หน้านี้สรุปอัตราค่าไฟฟ้าล่าสุดที่โรงงานควรรู้ และจะอัปเดตทุกครั้งที่ กกพ. ประกาศงวดใหม่ ตัวเลขทั้งหมดอ้างอิงประกาศของ กกพ. ตามที่สื่อรายงาน โปรดตรวจฉบับเต็มของ กกพ. ก่อนใช้ในการตัดสินใจทางการเงิน",
         "sections": [
           {
@@ -4875,7 +4975,7 @@
           {
             "heading": "งวดถัดไป",
             "body": [
-              "กกพ. ประกาศค่า Ft เป็นรายงวดทุกสี่เดือน งวดถัดไปคือ ม.ค.-เม.ย. 2570 ซึ่งมักเปิดรับฟังความคิดเห็นและประกาศก่อนเริ่มงวด ติดตามที่เว็บไซต์ กกพ. และหน้านี้จะอัปเดตเมื่อมีประกาศ"
+              "กกพ. ประกาศค่า Ft เป็นรายงวดทุกสี่เดือน งวดถัดไปคือ ม.ค.-เม.ย. 2570 เมื่อตรวจเมื่อ 6 พฤศจิกายน 2569 ยังไม่พบข้อเสนอค่า Ft ของงวดนี้ ปีที่แล้ว กกพ. เปิดรับฟังความคิดเห็นงวดต้นปีช่วง 10-23 พฤศจิกายน 2568 จึงคาดว่าจะมีการเปิดรับฟังในช่วงใกล้เคียงกัน แต่ยังไม่มีการยืนยัน ติดตามที่เว็บไซต์ กกพ. และหน้านี้จะอัปเดตเมื่อมีประกาศ"
             ]
           },
           {
@@ -4912,14 +5012,14 @@
           },
           {
             "q": "หน้านี้อัปเดตเมื่อไร",
-            "a": "เราอัปเดตเมื่อ กกพ. ประกาศงวดใหม่ ข้อมูลล่าสุดตรวจเมื่อ 1 พฤศจิกายน 2569"
+            "a": "เราอัปเดตเมื่อ กกพ. ประกาศงวดใหม่ ข้อมูลล่าสุดตรวจเมื่อ 6 พฤศจิกายน 2569"
           }
         ],
         "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
       },
       "en": {
         "title": "Factory Electricity Tariff for Sep-Dec 2026: the Ft Charge, Average Rate and Risk for the Next Period",
-        "description": "The Ft charge and average tariff for Sep-Dec 2026 as announced by the ERC, the funds used to hold it down, the risk next period, and how factories can reduce exposure to volatile power prices (updated 1 Nov 2026).",
+        "description": "The Ft charge and average tariff for Sep-Dec 2026 as announced by the ERC, the funds used to hold it down, the risk next period, and how factories can reduce exposure to volatile power prices (updated 6 Nov 2026).",
         "intro": "This page summarises the latest electricity tariff factories should know and will be updated each time the ERC announces a new period. All figures follow the ERC announcement as reported by the media. Check the ERC’s full notice before using it in financial decisions.",
         "sections": [
           {
@@ -4952,7 +5052,7 @@
           {
             "heading": "The next period",
             "body": [
-              "The ERC sets Ft every four months. The next period is Jan-Apr 2027, usually consulted on and announced before it starts. Follow the ERC website; this page will be updated when it is announced."
+              "The ERC sets Ft every four months. The next period is Jan-Apr 2027. As of 6 November 2026 we found no Ft proposal for it. Last year the ERC ran its consultation for the early-year period from 10 to 23 November 2025, so a similar timing is likely but not confirmed. Follow the ERC website; this page will be updated when it is announced."
             ]
           },
           {
@@ -4989,7 +5089,7 @@
           },
           {
             "q": "When is this page updated?",
-            "a": "When the ERC announces a new period. Last checked on 1 November 2026."
+            "a": "When the ERC announces a new period. Last checked on 6 November 2026."
           }
         ],
         "cta": "Send your bill, get a free assessment"
@@ -6089,6 +6189,12 @@
             ]
           },
           {
+            "heading": "ที่อยู่จดทะเบียนและสำนักงานที่ทำการ",
+            "body": [
+              "ที่อยู่สำนักงานที่ทำการและติดต่อลูกค้าของเราคืออาคารเอ็มบีเค ทาวเวอร์ ตามที่แสดงในหน้าติดต่อ ส่วนที่อยู่จดทะเบียนนิติบุคคลเป็นไปตามที่บันทึกไว้กับกรมพัฒนาธุรกิจการค้า (DBD) ซึ่งอาจเป็นคนละที่อยู่กับสำนักงานที่ทำการ หากต้องการเอกสารรับรองนิติบุคคล กรุณาติดต่อเรา"
+            ]
+          },
+          {
             "heading": "ติดต่อสื่อ",
             "body": [
               "อีเมล admin@powerexpress1980.com โทร 082-096-6595 ที่อยู่ 444 อาคารเอ็มบีเค ทาวเวอร์ ชั้น 11 ถนนพญาไท เขตปทุมวัน กรุงเทพฯ 10330"
@@ -6135,6 +6241,12 @@
             "heading": "Citation and images",
             "body": [
               "Project photos on the website are our own real photos. To use them in media, please contact us for permission and high-resolution files. For overall figures see [Track record and impact](impact)."
+            ]
+          },
+          {
+            "heading": "Registered and operating address",
+            "body": [
+              "Our operating office, where we meet customers, is at MBK Tower as shown on the contact page. The registered address of the legal entity is as recorded with the Department of Business Development (DBD) and may differ from the operating office. For a company certificate, please contact us."
             ]
           },
           {

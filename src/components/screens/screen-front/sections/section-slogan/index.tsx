@@ -11,17 +11,42 @@ import ScrollStrip from '../../../../_commons/scroll-strip';
 import TextLines from '../../../../_commons/text-lines';
 import Loading from '../../../../_commons/loading';
 
+// The CMS hero is a 970 KB JPEG; we serve resized WebP copies of it and fall
+// back to whatever the CMS points at if the image is ever replaced.
+const ORIGINAL_HERO = 'media/front/bg-slogan.jpg';
+const heroSrcSet = [640, 1024, 1600, 2200]
+  .map((w) => `/img/hero-${w}.webp ${w}w`)
+  .join(', ');
+
 const SectionSlogan = () => {
   const { locale = 'th', localizations = [], media } = useVmScreen();
   const { loading } = useVmScreenFront();
+  const heroUrl = m(media, 'front.banner-slogan');
 
   return (
     <section
       className="relative h-screen min-h-svh lg:min-h-[720px] bg-gray-100 flex flex-col justify-start items-stretch transition-all delay-700"
-      style={{
-        background: `#ccc url(${m(media, 'front.banner-slogan')}) no-repeat center/cover`,
-      }}
+      style={{ background: '#ccc' }}
     >
+      {heroUrl.endsWith(ORIGINAL_HERO) ? (
+        <img
+          src="/img/hero-1024.webp"
+          srcSet={heroSrcSet}
+          sizes="100vw"
+          alt=""
+          width={2500}
+          height={1503}
+          fetchPriority="high"
+          decoding="async"
+          className="absolute left-0 top-0 w-full h-full object-cover"
+        />
+      ) : (
+        <img
+          src={heroUrl}
+          alt=""
+          className="absolute left-0 top-0 w-full h-full object-cover"
+        />
+      )}
       <div className="absolute left-0 top-0 w-full h-full bg-black-a30 backdrop-blur-xs" />
       <Nav />
       <div className="px-[52px] relative z-[1] lg:px-0 flex-1 flex flex-col justify-center items-center">

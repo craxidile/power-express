@@ -7,6 +7,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { captureAttribution } from './utils/attribution';
+import { installApiSnapshot } from './utils/api-snapshot';
 
 // Old shared links look like /#/th/project/23 - move them to /th/project/23.
 if (window.location.hash.startsWith('#/')) {
@@ -14,6 +15,10 @@ if (window.location.hash.startsWith('#/')) {
 }
 
 captureAttribution();
+installApiSnapshot();
+
+window.__PE_PRE__ = document.getElementById('root')?.innerHTML;
+window.__PE_PRE_PATH__ = window.location.pathname;
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
