@@ -1,0 +1,433 @@
+/* Impact counter. Colours are the site's existing tokens (tailwind.config.js);
+   the live dot uses the hue of `green-a10`. Nothing new in the visual language. */
+:root {
+  --pe-ink: #0a0a0a; /* title-dark */
+  --pe-ex: #4a5565; /* gray-excerpt */
+  --pe-cap: #6a7282; /* secondary */
+  --pe-orange: #ff6b35; /* cta-primary */
+  --pe-green: #2d5a3d; /* green-tag */
+  --pe-bullet: #2c8e31; /* green-bullet */
+  --pe-leaf: #519723; /* sep-green-light */
+  --pe-live: #7bce43; /* green-a10 hue */
+  --pe-line: #e5e7eb; /* sep-smoke */
+  --pe-road: #d1d5dc; /* sep-gray */
+}
+
+/* ---- hero chip ---- */
+.pe-chip {
+  position: absolute;
+  left: 50%;
+  bottom: 208px;
+  z-index: 2;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+  background: rgba(0, 0, 0, 0.38);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+.pe-chip:focus-visible {
+  outline: 2px solid var(--pe-orange);
+  outline-offset: 3px;
+}
+.pe-chip b {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  font-size: 16px;
+}
+.pe-chip em {
+  font-style: normal;
+  opacity: 0.75;
+}
+.pe-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pe-live);
+  flex: none;
+}
+.pe-night .pe-dot {
+  background: #9ca3af;
+}
+/* The soft ring is a transform + opacity animation on a pseudo-element, so it runs on
+   the compositor. (Animating box-shadow repaints the hero, blurred chip included, on every frame.) */
+.pe-day .pe-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--pe-live);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: pe-ping 2s infinite;
+}
+@keyframes pe-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  70%,
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+/* ---- results stats ---- */
+.pe-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px 44px;
+  margin-top: 56px;
+  max-width: 660px;
+}
+.pe-st .pe-bar {
+  width: 48px;
+  height: 4px;
+}
+.pe-st .pe-n {
+  display: block;
+  margin-top: 24px;
+  font-size: 72px;
+  font-weight: 500;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  color: var(--pe-ink);
+}
+.pe-st .pe-n small {
+  font-size: 0.32em;
+  font-weight: 500;
+  margin-left: 6px;
+  letter-spacing: 0;
+}
+.pe-st .pe-c {
+  display: block;
+  margin-top: 14px;
+  font-size: 16px;
+  color: var(--pe-cap);
+}
+.pe-st.pe-big {
+  grid-column: 1 / -1;
+}
+.pe-st.pe-big .pe-n {
+  font-size: clamp(52px, 7.4vw, 96px);
+}
+.pe-now {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--pe-ex);
+}
+.pe-now b {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--pe-ink);
+}
+
+/* ---- equivalents: forest + car park ---- */
+.pe-eq {
+  padding: 72px 0 24px;
+}
+.pe-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pe-head h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--pe-ink);
+}
+.pe-head span {
+  font-size: 14px;
+  color: var(--pe-cap);
+}
+.pe-pair {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 28px;
+  margin-top: 28px;
+}
+.pe-card {
+  border: 1px solid var(--pe-line);
+  background: #fff;
+  padding: 28px 28px 22px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.pe-card .pe-k {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.pe-card .pe-k b {
+  font-size: clamp(36px, 4.2vw, 56px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  color: var(--pe-ink);
+}
+.pe-card .pe-k span {
+  font-size: 16px;
+  color: var(--pe-cap);
+}
+.pe-card .pe-s {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: var(--pe-ex);
+  line-height: 1.55;
+}
+.pe-scene {
+  position: relative;
+  margin-top: 22px;
+  flex: 1;
+  min-height: 230px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.pe-forest {
+  background: linear-gradient(180deg, #f3f8ef 0%, #fff 62%);
+}
+.pe-lot {
+  background: #f9fafb;
+}
+.pe-scene svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.pe-key {
+  margin-top: 14px;
+  font-size: 12.5px;
+  color: var(--pe-cap);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.pe-key svg {
+  display: inline-block;
+  vertical-align: -2px;
+  margin-right: 6px;
+}
+/* trees grow from the base, then sway */
+.pe-tr {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  transform: scale(0);
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.25, 1.15);
+}
+.pe-tr.pe-on {
+  transform: scale(1);
+}
+.pe-sway {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: pe-sw 5s ease-in-out infinite alternate;
+}
+@keyframes pe-sw {
+  from {
+    transform: rotate(-1.4deg);
+  }
+  to {
+    transform: rotate(1.4deg);
+  }
+}
+.pe-car {
+  opacity: 0;
+  transform: translateX(-18px);
+  transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.25, 1);
+}
+.pe-car.pe-on {
+  opacity: 1;
+  transform: none;
+}
+
+/* placeholders keep the height of the lazily mounted blocks, so nothing jumps */
+.pe-ph-eq {
+  min-height: 600px;
+}
+.pe-ph-yr {
+  min-height: 620px;
+}
+@media (max-width: 900px) {
+  .pe-ph-eq {
+    min-height: 980px;
+  }
+  .pe-ph-yr {
+    min-height: 520px;
+  }
+}
+
+/* ---- yearly chart ---- */
+.pe-yr {
+  padding: 72px 0 0;
+}
+.pe-cols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  align-items: end;
+  height: 400px;
+  margin-top: 36px;
+}
+.pe-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  min-width: 0;
+}
+.pe-col .pe-v {
+  font-size: clamp(24px, 2.9vw, 44px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  color: var(--pe-ink);
+}
+.pe-col .pe-u {
+  font-size: 14px;
+  color: var(--pe-cap);
+  margin-bottom: 14px;
+}
+.pe-col.pe-ytd .pe-v {
+  color: var(--pe-orange);
+}
+.pe-col .pe-b {
+  background: var(--pe-green);
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: transform 1.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.pe-go .pe-col .pe-b {
+  transform: none;
+}
+.pe-col.pe-ytd .pe-b {
+  background: var(--pe-orange);
+}
+.pe-col .pe-y {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 22px;
+  height: 33px;
+  color: var(--pe-cap);
+  border-top: 1px solid var(--pe-ink);
+  padding-top: 10px;
+  white-space: nowrap;
+}
+.pe-fn {
+  margin: 28px 0 0;
+  font-size: 12.5px;
+  color: var(--pe-cap);
+  line-height: 1.7;
+  max-width: 110ch;
+}
+
+@media (max-width: 900px) {
+  .pe-stats {
+    gap: 36px 24px;
+  }
+  .pe-st .pe-n {
+    font-size: 44px;
+  }
+  .pe-st.pe-big .pe-n {
+    font-size: clamp(52px, 14vw, 72px);
+  }
+  .pe-pair {
+    grid-template-columns: 1fr;
+  }
+  .pe-card {
+    padding: 22px 18px 18px;
+  }
+  .pe-scene {
+    min-height: 190px;
+  }
+  .pe-cols {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    gap: 22px;
+  }
+  .pe-col {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 'y v' 'b b';
+    align-items: baseline;
+    gap: 6px 12px;
+    height: auto;
+  }
+  .pe-col .pe-v {
+    grid-area: v;
+    justify-self: end;
+    font-size: 30px;
+    margin: 0;
+  }
+  .pe-col .pe-u {
+    display: none;
+  }
+  .pe-col .pe-y {
+    grid-area: y;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    height: auto;
+  }
+  .pe-col .pe-b {
+    grid-area: b;
+    height: 14px !important;
+    width: var(--w);
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  .pe-go .pe-col .pe-b {
+    transform: none;
+  }
+  .pe-chip {
+    bottom: 144px;
+    font-size: 12px;
+    padding: 8px 14px;
+    gap: 8px;
+  }
+  .pe-chip b {
+    font-size: 14px;
+  }
+  .pe-chip em {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pe-day .pe-dot::after,
+  .pe-sway {
+    animation: none;
+  }
+  .pe-tr,
+  .pe-car,
+  .pe-col .pe-b {
+    transition: none;
+  }
+}

@@ -108,15 +108,16 @@ const impactFacts = (projects: Project[], locale: 'th' | 'en') => {
         ? `ปีที่เริ่มดำเนินงานโครงการ: ${Math.min(...years)} ถึง ${Math.max(...years)}`
         : `Projects completed: ${Math.min(...years)} to ${Math.max(...years)}`
     );
-  if (impact.measuredKwh) {
-    const t = (impact.measuredKwh * impact.co2FactorKgPerKwh) / 1000;
+  if (impact.kwh) {
+    const f = impact.factors;
+    const t = (impact.kwh * f.co2KgPerKwh) / 1000;
     facts.push(
       th
-        ? `ไฟฟ้าที่ผลิตได้สะสม: ${Math.round(impact.measuredKwh).toLocaleString('en-US')} kWh (ข้อมูล ณ ${impact.asOf})`
-        : `Cumulative generation: ${Math.round(impact.measuredKwh).toLocaleString('en-US')} kWh (as of ${impact.asOf})`,
+        ? `ไฟฟ้าที่ผลิตได้สะสม: ${Math.round(impact.kwh).toLocaleString('en-US')} kWh (ข้อมูล ณ ${impact.asof})`
+        : `Cumulative generation: ${Math.round(impact.kwh).toLocaleString('en-US')} kWh (as of ${impact.asof})`,
       th
-        ? `ก๊าซเรือนกระจกที่หลีกเลี่ยงได้โดยประมาณ: ${Math.round(t).toLocaleString('en-US')} tCO2e (ใช้ค่า ${impact.co2FactorKgPerKwh} kgCO2e/kWh ตาม ${impact.co2FactorSource})`
-        : `Estimated greenhouse gas avoided: ${Math.round(t).toLocaleString('en-US')} tCO2e (using ${impact.co2FactorKgPerKwh} kgCO2e/kWh, ${impact.co2FactorSource})`
+        ? `ก๊าซเรือนกระจกที่หลีกเลี่ยงได้โดยประมาณ: ${Math.round(t).toLocaleString('en-US')} tCO2e (ใช้ค่า ${f.co2KgPerKwh} kgCO2e/kWh ตาม ${f.source})`
+        : `Estimated greenhouse gas avoided: ${Math.round(t).toLocaleString('en-US')} tCO2e (using ${f.co2KgPerKwh} kgCO2e/kWh, ${f.source})`
     );
   }
   return facts;

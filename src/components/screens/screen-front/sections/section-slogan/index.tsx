@@ -10,6 +10,7 @@ import Nav from '../../../../_commons/nav';
 import ScrollStrip from '../../../../_commons/scroll-strip';
 import TextLines from '../../../../_commons/text-lines';
 import Loading from '../../../../_commons/loading';
+import ImpactChip from './impact-chip';
 
 // The CMS hero is a 970 KB JPEG; we serve resized WebP copies of it and fall
 // back to whatever the CMS points at if the image is ever replaced.
@@ -67,6 +68,7 @@ const SectionSlogan = () => {
             >
               {leadText[locale].title}
             </Link>
+            <ImpactChip locale={locale} />
             <ScrollStrip
               text={l(locale, localizations, 'general.slide-more')}
             />
