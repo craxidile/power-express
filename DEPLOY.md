@@ -31,6 +31,16 @@ Serves deep links with HTTP 200 through `public/_redirects` (`/*  /index.html  2
 
 Point the DNS records back to GitHub Pages (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`) and keep the `gh-pages` branch until the new host has been stable for a few days.
 
+## The Thailand map (home "Our results" and About "Growth")
+
+The map is drawn by the site, not a picture. All 77 provinces are in `src/data/thailand-provinces.json`; a province is filled in when at least one row in the Supabase `project` table has it in `location_th` or `location_en`. The province is read from the text the team already types ("จ.ระยอง", "Ranong 85000", "ชลบุรี, ประเทศไทย", "Chiang Mai, Thailand" all work), so adding a project in a new province lights it up on the next page load with no redeploy. The caption count ("22 projects in 8 provinces") and the screen-reader text follow the same list.
+
+- Detection rules and tests: `src/utils/province-utils.ts`, `src/utils/province-utils.test.ts`. Names and alternative spellings: `src/data/province-names.json`. If a location is not recognised the project is simply not counted on the map; add the spelling to `aliases` in that file.
+- Live list: `src/apis/province/index.ts` reads `location_th,location_en` from the `project` table (publishable key, read only). If that request fails, the 8 provinces in `FALLBACK_PROVINCE_IDS` are shown. Update that list occasionally so the fallback stays close to reality.
+- Uploading a picture to Site Images (`front.figure-impact`, `about.figure-map`) still replaces the drawn map on that page. While the slot holds the original `media/front/map.png` or `media/about/map.png` file, the drawn map is shown.
+- Regenerate the outlines (rarely needed): download Natural Earth `ne_10m_admin_1_states_provinces.geojson`, run `npm i --no-save topojson-server topojson-simplify topojson-client`, then `node scripts/build-thailand-map.mjs <geojson> src/data/thailand-provinces.json`.
+- Boundary data: Natural Earth (public domain), simplified to about 43 KB.
+
 ## After any move
 
 - Submit `https://powerexpress1980.com/sitemap.xml` in Google Search Console.

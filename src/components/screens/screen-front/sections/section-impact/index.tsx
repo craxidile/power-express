@@ -13,16 +13,22 @@ import {
   useReveal,
 } from '../../../../_commons/impact-number';
 import TextLines from '../../../../_commons/text-lines';
+import ThailandMap from '../../../../_commons/thailand-map';
+import {
+  customMapUrl,
+  provinceNames,
+  useProvinceIds,
+} from '../../../../../utils/use-provinces';
 import { impactCopy } from './copy';
 import Equivalents from './equivalents';
 import YearlyChart from './yearly-chart';
 import './impact.css';
 
-// The CMS map highlighted only two provinces. While the CMS still points at that original image we
-// serve our copy with every province that has a site coloured in; a newly uploaded map wins.
+// The map draws itself: every province that has a project is filled in, read live from the
+// project table, so a new province appears with no image to repaint. A picture uploaded to
+// Site Images (front.figure-impact) still wins; while that slot holds the original, we draw.
 const ORIGINAL_MAP = 'media/front/map.png';
-const mapSrc = (cmsUrl: string) =>
-  !cmsUrl || cmsUrl.endsWith(ORIGINAL_MAP) ? '/img/impact-map.png' : cmsUrl;
+const MAP_ORANGE = '#FF6B35';
 
 const selKwh = (s: { kwh: number }) => s.kwh;
 const selCo2 = (s: { co2: number }) => s.co2;
@@ -54,6 +60,9 @@ const SectionImpact = () => {
   const c = impactCopy(locale);
   const data = useImpact();
   const { ref, revealed } = useReveal<HTMLDivElement>('stats', 0.3);
+  const provinceIds = useProvinceIds();
+  const mapLabel = c.mapAlt(provinceNames(provinceIds, locale).join(', '));
+  const customMap = customMapUrl(m(media, 'front.figure-impact'), ORIGINAL_MAP);
 
   useEffect(() => {
     loadImpact();
@@ -114,18 +123,28 @@ const SectionImpact = () => {
             </div>
           </div>
           <figure className="lg:flex-[0.85] min-w-0 flex flex-col justify-center items-center">
-            <img
-              loading="lazy"
-              decoding="async"
-              width={398}
-              height={730}
-              className="w-[220px] h-auto lg:w-[310px]"
-              alt={c.mapAlt(c.provinces.join(', '))}
-              src={mapSrc(m(media, 'front.figure-impact'))}
-            />
+            {customMap ? (
+              <img
+                loading="lazy"
+                decoding="async"
+                width={398}
+                height={730}
+                className="w-[220px] h-auto lg:w-[310px]"
+                alt={mapLabel}
+                src={customMap}
+              />
+            ) : (
+              <ThailandMap
+                className="w-[220px] h-auto lg:w-[310px]"
+                highlighted={provinceIds}
+                color={MAP_ORANGE}
+                locale={locale}
+                label={mapLabel}
+              />
+            )}
             <figcaption className="pe-mapcap">
               <span className="pe-mapdot" aria-hidden="true" />
-              {c.mapCaption(data.sites, c.provinces.length)}
+              {c.mapCaption(data.sites, provinceIds.length)}
             </figcaption>
           </figure>
         </div>
