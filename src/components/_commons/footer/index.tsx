@@ -49,15 +49,27 @@ const Footer = () => {
                 <ul className="gap-y-4 lg:gap-3 flex flex-col lg:flex-row justify-start items-center lg:items-start flex-wrap">
                   {footerMenuItems.map((menuItem) => {
                     const { id, title, url } = menuItem;
+                    // A CMS row can hold a full address (e.g. LinkedIn). It must not get the
+                    // /th/ prefix, which produced a 404 URL like /th/https://...
+                    const external = /^https?:\/\//i.test(url);
+                    const label = (
+                      <span className="text-sm text-white whitespace-nowrap">
+                        {l(locale, localizations, title)}
+                      </span>
+                    );
                     return (
                       <li key={id} className="flex-1 flex-shrink-0">
-                        <Link
-                          to={`/${locale}/${url.replace(/\{\{random}}/g, String(randomWithDigits(8)))}`}
-                        >
-                          <span className="text-sm text-white whitespace-nowrap">
-                            {l(locale, localizations, title)}
-                          </span>
-                        </Link>
+                        {external ? (
+                          <a href={url} target="_blank" rel="noreferrer noopener">
+                            {label}
+                          </a>
+                        ) : (
+                          <Link
+                            to={`/${locale}/${url.replace(/\{\{random}}/g, String(randomWithDigits(8)))}`}
+                          >
+                            {label}
+                          </Link>
+                        )}
                       </li>
                     );
                   })}
