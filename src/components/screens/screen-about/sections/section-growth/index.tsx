@@ -7,9 +7,28 @@ import { useVmScreen } from '../../../../../stores/vm-screen';
 import { useVmScreenAbout } from '../../../../../stores/vm-screen-about';
 import StatRow, { StatRowTheme } from '../../../../_commons/stat-row';
 import StatBox, { StatBoxTheme } from '../../../../_commons/stat-box';
+import ThailandMap from '../../../../_commons/thailand-map';
+import {
+  customMapUrl,
+  provinceNames,
+  useProvinceIds,
+} from '../../../../../utils/use-provinces';
+
+// Same automatic map as the home page, in green. A picture uploaded to Site Images
+// (about.figure-map) still wins; while that slot holds the original image, we draw the map.
+const ORIGINAL_MAP = 'media/about/map.png';
+const MAP_GREEN = '#2D5A3D';
+
+const mapAlt = (locale: string, names: string[]) =>
+  locale === 'en'
+    ? `Map of Thailand; provinces with our sites are shown in green: ${names.join(', ')}`
+    : `แผนที่ประเทศไทย จังหวัดที่มีโครงการแสดงเป็นสีเขียว: ${names.join(', ')}`;
 
 const SectionGrowth = () => {
   const { locale = 'th', localizations = [], media } = useVmScreen();
+  const provinceIds = useProvinceIds();
+  const customMap = customMapUrl(m(media, 'about.figure-map'), ORIGINAL_MAP);
+  const mapLabel = mapAlt(locale, provinceNames(provinceIds, locale));
 
   const { projectSummary } = useVmScreenAbout();
   const { totalProjects, totalCapacities } = projectSummary ?? {};
@@ -81,11 +100,23 @@ const SectionGrowth = () => {
             </ul>
           </div>
           <div className="flex-1 flex-shrink-0 flex flex-col justify-center items-center">
-            <img loading="lazy" decoding="async"
-              className="w-[404px] h-auto"
-              alt="Map"
-              src={m(media, 'about.figure-map')}
-            />
+            {customMap ? (
+              <img
+                loading="lazy"
+                decoding="async"
+                className="w-[404px] h-auto"
+                alt={mapLabel}
+                src={customMap}
+              />
+            ) : (
+              <ThailandMap
+                className="w-[404px] h-auto"
+                highlighted={provinceIds}
+                color={MAP_GREEN}
+                locale={locale}
+                label={mapLabel}
+              />
+            )}
           </div>
         </div>
       </div>

@@ -26,16 +26,6 @@ const copy = {
       `แผนที่ประเทศไทย จังหวัดที่มีโครงการแสดงเป็นสีส้ม: ${provinces}`,
     mapCaption: (sites: number, provinces: number) =>
       `${sites} โครงการ ใน ${provinces} จังหวัด`,
-    provinces: [
-      'กรุงเทพมหานคร',
-      'สมุทรสาคร',
-      'สมุทรปราการ',
-      'นครปฐม',
-      'ราชบุรี',
-      'ระยอง',
-      'ระนอง',
-      'นครราชสีมา',
-    ],
     nowDay: ['ตอนนี้กำลังผลิตประมาณ ', ''] as [string, string],
     nowNight: 'ช่วงกลางคืน ระบบพักการผลิต',
     eqTitle: 'เทียบให้เห็นภาพ',
@@ -80,16 +70,6 @@ const copy = {
       `Map of Thailand; provinces with our sites are shown in orange: ${provinces}`,
     mapCaption: (sites: number, provinces: number) =>
       `${sites} sites in ${provinces} provinces`,
-    provinces: [
-      'Bangkok',
-      'Samut Sakhon',
-      'Samut Prakan',
-      'Nakhon Pathom',
-      'Ratchaburi',
-      'Rayong',
-      'Ranong',
-      'Nakhon Ratchasima',
-    ],
     nowDay: ['Producing about ', ' right now'] as [string, string],
     nowNight: 'Night: the systems are resting',
     eqTitle: 'What that means',
