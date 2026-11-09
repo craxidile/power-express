@@ -10,13 +10,13 @@ const REST_PREFIX = apiPrefix.replace('/functions/v1', '/rest/v1');
 // This is only a safety net: the live list always replaces it.
 export const FALLBACK_PROVINCE_IDS = [
   'bangkok',
-  'samut-sakhon',
-  'samut-prakan',
   'nakhon-pathom',
+  'nakhon-ratchasima',
+  'ranong',
   'ratchaburi',
   'rayong',
-  'ranong',
-  'nakhon-ratchasima',
+  'samut-prakan',
+  'samut-sakhon',
 ];
 
 const TIMEOUT_MS = 4000;
