@@ -314,6 +314,11 @@ const guideBody = (g, l, projects) => {
       : '';
   const related = relatedProjects(g, projects, l);
   const more = guides.filter((x) => x.slug !== g.slug && x.kind !== 'area').slice(0, 6);
+  // area and industry pages link to each other and to the press page (same as the React screen)
+  const siblings =
+    g.kind === 'area' || g.kind === 'industry'
+      ? guides.filter((x) => x.slug !== g.slug && (x.kind === 'area' || x.kind === 'industry' || x.slug === 'press'))
+      : [];
   return (
     `<h1>${esc(t.title)}</h1>${byline}${g.hero ? figureHtml(g.hero, projects, l) : ''}<p>${esc(t.intro)}</p>` +
     (g.slug === 'impact' || g.slug === 'press'
@@ -347,6 +352,11 @@ const guideBody = (g, l, projects) => {
         }</p></aside>`
       : '') +
     `<p><a href="${url(l, 'free-assessment')}">${esc(t.cta)}</a></p>` +
+    (siblings.length
+      ? `<nav><h2>${l === 'th' ? 'พื้นที่และอุตสาหกรรมที่เราให้บริการ' : 'Areas and industries we serve'}</h2><ul>${siblings
+          .map((x) => `<li><a href="${url(l, x.path)}">${esc(x.text[l].title)}</a></li>`)
+          .join('')}</ul></nav>`
+      : '') +
     `<section><h2>${l === 'th' ? 'อ่านเพิ่มเติม' : 'Related pages'}</h2><ul>${more
       .map((x) => `<li><a href="${url(l, x.path)}">${esc(x.text[l].title)}</a></li>`)
       .join('')}</ul></section>`
@@ -682,7 +692,14 @@ const writePage = (rel, html) => {
             publisher: { '@id': `${siteUrl}/#organization` },
           },
         ],
-        bodyHtml: `<h1>${esc(title)}</h1><p>${esc(plain(loc(a.details, l) || loc(a.excerpt, l)))}</p>`,
+        bodyHtml:
+          `<h1>${esc(title)}</h1><p>${esc(plain(loc(a.details, l) || loc(a.excerpt, l)))}</p>` +
+          (activities.length > 1
+            ? `<nav><h2>${l === 'th' ? 'กิจกรรมอื่น ๆ' : 'More activities'}</h2><ul>${activities
+                .filter((x) => x.id !== a.id)
+                .map((x) => `<li><a href="${url(l, `activity/${x.id}`)}">${esc(plain(loc(x.title, l)))}</a></li>`)
+                .join('')}</ul></nav>`
+            : ''),
       });
     }
   }
