@@ -25,6 +25,7 @@ const author = {
 };
 const authorLinkedIn = 'https://www.linkedin.com/in/panuwat-thongrompo-18760b15/';
 const impact = require('../src/config/impact.json');
+const companyFacts = require('../src/config/company-facts.json');
 
 // Live portfolio facts for the impact/press pages and the author box.
 const impactFacts = (projects, l) => {
@@ -248,6 +249,21 @@ const nav = (l) => {
     [url(l === 'th' ? 'en' : 'th', ''), l === 'th' ? 'English' : 'ภาษาไทย'],
   ];
   return `<nav><ul>${links.map(([h, t]) => `<li><a href="${h}">${esc(t)}</a></li>`).join('')}</ul></nav>`;
+};
+
+const companyFactsBlock = (l) => {
+  const f = companyFacts;
+  const th = l === 'th';
+  const mw = (impact.kWp / 1000).toFixed(1);
+  const rows = [
+    [th ? 'ชื่อนิติบุคคล' : 'Legal name', f.legalName[l]],
+    [th ? 'เลขทะเบียนนิติบุคคล' : 'Registration no.', f.registrationNo],
+    [th ? 'ทุนจดทะเบียน' : 'Registered capital', th ? `${f.registeredCapitalMillionBaht} ล้านบาท` : `THB ${f.registeredCapitalMillionBaht} million`],
+    [th ? 'ประสบการณ์' : 'Experience', th ? `มากกว่า ${f.experienceYears.replace('+', '')} ปี` : `${f.experienceYears} years`],
+    [th ? 'ผู้บริหาร' : 'Leadership', `${f.ceo[l]}, ${f.ceoTitle[l]}`],
+    [th ? 'ผลงาน' : 'Track record', th ? `${impact.sites} โครงการ กำลังติดตั้งรวมประมาณ ${mw} เมกะวัตต์` : `${impact.sites} projects, about ${mw} MW installed`],
+  ];
+  return `<section><h2>${th ? 'ข้อมูลบริษัท' : 'Company facts'}</h2><ul>${rows.map(([k, v]) => `<li>${esc(k)}: ${esc(v)}</li>`).join('')}</ul></section>`;
 };
 
 const contactBlock = (contacts, l) => {
@@ -533,7 +549,7 @@ const writePage = (rel, html) => {
       title: seoText.about[l].title,
       description: seoText.about[l].description,
       extraLd: [bc({ name: t.about, url: url(l, 'about') })],
-      bodyHtml: `<h1>${esc(seoText.about[l].title)}</h1><p>${esc(seoText.about[l].description)}</p>${contactBlock(contacts, l)}`,
+      bodyHtml: `<h1>${esc(seoText.about[l].title)}</h1><p>${esc(seoText.about[l].description)}</p>${companyFactsBlock(l)}${contactBlock(contacts, l)}`,
     });
 
     pages.push({
