@@ -11,6 +11,7 @@ import SectionPartners, {
 } from '../../sections/section-partners';
 import SectionDetails from './sections/section-details';
 import SectionGrowth from './sections/section-growth';
+import SectionCompanyFacts from './sections/section-company-facts';
 import TextLines from '../../_commons/text-lines';
 import Seo from '../../_commons/seo';
 import { seoText } from '../../../config/seo-text';
@@ -63,6 +64,7 @@ const ScreenAbout = () => {
         />
         <SectionDetails />
         <SectionGrowth />
+        <SectionCompanyFacts />
         <SectionPartners
           theme={SectionPartnersTheme.light}
           partners={partners}
