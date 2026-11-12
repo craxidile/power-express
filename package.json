@@ -38,6 +38,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build --cname powerexpress1980.com",
+    "indexnow": "node scripts/indexnow.js",
     "format": "prettier . --write"
   },
   "eslintConfig": {
