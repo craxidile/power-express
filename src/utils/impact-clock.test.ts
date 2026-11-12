@@ -64,6 +64,30 @@ describe('liveKwh', () => {
   });
 });
 
+describe('liveKwh with an intraday update', () => {
+  // dashboard republished at 10:03 on 12 Nov (Bangkok) with the day not finished
+  const d = { ...data, asof: '2026-11-12', kwh: 15798155, dailyKwh: 27110, updated: '2026-11-12T03:03:26Z' };
+  const t = (hh: number, mm = 0) => Date.parse(`2026-11-12T${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')}:00+07:00`);
+
+  it('shows the published total at the moment it was published', () => {
+    expect(liveKwh(d, Date.parse(d.updated)).kwh).toBeCloseTo(d.kwh, 6);
+    expect(liveKwh(d, t(9)).kwh).toBe(d.kwh);
+  });
+
+  it('keeps counting through the rest of the day', () => {
+    const noon = liveKwh(d, t(12)).kwh;
+    expect(noon).toBeGreaterThan(d.kwh + 1000);
+    expect(liveKwh(d, t(15)).kwh).toBeGreaterThan(noon);
+  });
+
+  it('adds only the remaining share of the day, then holds still overnight', () => {
+    const night = liveKwh(d, t(23, 59)).kwh;
+    expect(night).toBeLessThan(d.kwh + d.dailyKwh);
+    expect(night).toBeGreaterThan(d.kwh + d.dailyKwh * 0.6);
+    expect(liveKwh(d, Date.parse('2026-11-13T05:00:00+07:00')).kwh).toBeCloseTo(night, 6);
+  });
+});
+
 describe('equivalents', () => {
   it('matches the approved design at today\'s total', () => {
     expect(Math.floor(treeEquivalent(data, data.kwh) / 5000)).toBe(71);

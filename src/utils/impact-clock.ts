@@ -32,24 +32,43 @@ export const DAY_MS = 86400e3;
 export const DAY_START_S = 6 * 3600; // 06:00 Bangkok
 export const DAY_LENGTH_S = 12.5 * 3600; // until 18:30
 
-// Midnight (Asia/Bangkok) at the start of the day after `asof`.
-const startOfNextDay = (asof: string) =>
-  Date.parse(`${asof}T00:00:00+07:00`) + DAY_MS;
+// Midnight (Asia/Bangkok) at the start of the day `asof`.
+const startOfDay = (asof: string) => Date.parse(`${asof}T00:00:00+07:00`);
+
+// Share of a day's output produced by second-of-day `sod` (half-sine over 06:00-18:30).
+const dayShare = (sod: number) => {
+  const x = Math.min(Math.max(sod - DAY_START_S, 0), DAY_LENGTH_S);
+  return (1 - Math.cos((Math.PI * x) / DAY_LENGTH_S)) / 2;
+};
+
+// Cumulative modelled output since the start of `dayStart`, in kWh.
+const modelled = (dayStart: number, dailyKwh: number, t: number) => {
+  const sinceStart = Math.max(0, t - dayStart);
+  const whole = Math.floor(sinceStart / DAY_MS);
+  return dailyKwh * (whole + dayShare((sinceStart - whole * DAY_MS) / 1000));
+};
 
 export const liveKwh = (data: ImpactData, nowMs: number): ImpactLive => {
-  let day = startOfNextDay(data.asof);
-  let kwh = data.kwh;
-  // whole days that have finished since the last metered day
-  if (nowMs > day) {
-    const whole = Math.floor((nowMs - day) / DAY_MS);
-    kwh += whole * data.dailyKwh;
-    day += whole * DAY_MS;
-  }
-  // `nowMs` can be before `day` (clock skew): treat as the start of the day
-  const s = Math.max(0, (nowMs - day) / 1000) - DAY_START_S;
-  const x = Math.min(Math.max(s, 0), DAY_LENGTH_S);
-  kwh += (data.dailyKwh * (1 - Math.cos((Math.PI * x) / DAY_LENGTH_S))) / 2;
-  const daylight = s > 0 && s < DAY_LENGTH_S;
+  const dayStart = startOfDay(data.asof);
+  // The dashboard republishes every couple of hours, so on the day `asof` the metered
+  // total can already hold part of that day. When `updated` falls inside `asof`, the
+  // total is "as of that moment"; otherwise it covers the whole of `asof`.
+  const updatedMs = data.updated ? Date.parse(data.updated) : NaN;
+  const partial =
+    Number.isFinite(updatedMs) &&
+    updatedMs >= dayStart &&
+    updatedMs < dayStart + DAY_MS;
+  const ref = partial ? updatedMs : dayStart + DAY_MS;
+  const kwh = Math.max(
+    data.kwh,
+    data.kwh +
+      modelled(dayStart, data.dailyKwh, nowMs) -
+      modelled(dayStart, data.dailyKwh, ref)
+  );
+  // time of day (Bangkok) of `nowMs` within the modelled cycle
+  const sod = (((nowMs - dayStart) % DAY_MS) + DAY_MS) % DAY_MS / 1000;
+  const s = sod - DAY_START_S;
+  const daylight = nowMs >= dayStart && s > 0 && s < DAY_LENGTH_S;
   const kw = daylight
     ? ((data.dailyKwh * Math.PI) / (2 * DAY_LENGTH_S)) *
       Math.sin((Math.PI * s) / DAY_LENGTH_S) *
