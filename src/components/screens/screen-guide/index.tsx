@@ -34,6 +34,7 @@ const T = {
     toc: 'ในบทความนี้',
     faq: 'คำถามที่พบบ่อย',
     related: 'อ่านต่อ',
+    explore: 'พื้นที่และอุตสาหกรรมที่เราให้บริการ',
     projects: 'โครงการของเราในพื้นที่นี้',
     by: 'โดย',
     min: 'นาทีอ่าน',
@@ -53,6 +54,7 @@ const T = {
     toc: 'In this article',
     faq: 'Frequently asked questions',
     related: 'Keep reading',
+    explore: 'Areas and industries we serve',
     projects: 'Our projects in this area',
     by: 'By',
     min: 'min read',
@@ -226,6 +228,16 @@ const ScreenGuide = () => {
   const moreCards = guides
     .filter((g) => g.kind === 'guide' && g.published && g.slug !== guide.slug)
     .slice(0, 3);
+  // Area and industry pages link to each other (and to the press page), so none of them
+  // is reachable from a single hub only.
+  const siblings =
+    guide.kind === 'area' || guide.kind === 'industry'
+      ? guides.filter(
+          (g) =>
+            g.slug !== guide.slug &&
+            (g.kind === 'area' || g.kind === 'industry' || g.slug === 'press')
+        )
+      : [];
   const heroImage = photoFor(guide);
   const ctaImage = photoFor(guide, 3);
 
@@ -531,6 +543,29 @@ const ScreenGuide = () => {
               )}
             </article>
           </div>
+
+          {siblings.length > 0 && (
+            <nav
+              aria-label={l.explore}
+              className="mx-auto w-full max-w-[1100px] mt-16 flex flex-col gap-y-3"
+            >
+              <h2 className="text-2xl font-medium text-title-dark">
+                {l.explore}
+              </h2>
+              <ul className="flex flex-wrap gap-x-5 gap-y-2 text-base">
+                {siblings.map((g) => (
+                  <li key={g.slug}>
+                    <Link
+                      to={`/${locale}/${g.path}`}
+                      className="underline text-green-bullet"
+                    >
+                      {g.text[locale].title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
 
           {moreCards.length > 0 && (
             <section className="mx-auto w-full max-w-[1100px] mt-16 flex flex-col gap-y-5">
