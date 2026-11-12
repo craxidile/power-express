@@ -181,6 +181,10 @@ export const loadImpact = () => {
         Date.parse(`${data.asof}T00:00:00+07:00`)
     ) {
       data = next;
+      // The bundled figures are only an estimate and can sit above the metered total;
+      // once real totals arrive the display is re-based on them instead of staying
+      // pinned at the old, higher guess.
+      Object.keys(highest).forEach((k) => delete highest[k]);
       dataListeners.forEach((l) => l());
       notify();
     }
