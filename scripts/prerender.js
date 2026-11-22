@@ -166,6 +166,7 @@ const buildOrg = (contacts, l) => {
   const sameAs = [facebook, linkedin]
     .map((c) => c && c.url)
     .filter((u) => u && !/^https:\/\/www\.(facebook|linkedin)\.com\/?$/.test(u));
+  [companyFacts.linkedinCompany, companyFacts.googleMaps].forEach((u) => u && !sameAs.includes(u) && sameAs.push(u));
   const telText = tel ? loc(tel.text, 'en') : '';
   return {
     '@context': 'https://schema.org',
