@@ -6079,6 +6079,178 @@
     }
   },
   {
+    "slug": "case-study-sifco-ranong",
+    "path": "guides/sifco-ranong-1-25-mwp-rooftop-solar-case-study",
+    "kind": "guide",
+    "published": "2026-11-23",
+    "hero": {
+      "project": 19,
+      "index": "banner",
+      "alt": {
+        "th": "โรงงานอาหารทะเลแช่แข็ง SIFCO จังหวัดระนอง ที่ติดโซลาร์รูฟท็อปขนาด 1.25 MWp",
+        "en": "The SIFCO frozen seafood plant in Ranong with a 1.25 MWp rooftop solar system"
+      }
+    },
+    "text": {
+      "th": {
+        "title": "กรณีศึกษา SIFCO ระนอง: โซลาร์รูฟท็อป 1.25 MWp ระบบ PPA ลงทุน 0 บาท สำหรับโรงงานอาหารทะเลแช่แข็ง",
+        "description": "ข้อมูลโครงการโซลาร์รูฟท็อปขนาดประมาณ 1.25 MWp (1,253.94 kW) ของสยามชัยอาหารสากล (SIFCO) จังหวัดระนอง เริ่มเดินเชิงพาณิชย์ 8 กันยายน 2569 ภายใต้สัญญา Solar PPA โดย Power Express เป็นผู้ลงทุน ติดตั้ง และดูแลระบบ",
+        "intro": "บริษัท สยามชัยอาหารสากล จำกัด (SIFCO) จังหวัดระนอง เป็นผู้ผลิต แปรรูป และส่งออกอาหารทะเลแช่แข็ง โรงงานห่วงโซ่ความเย็นใช้ไฟฟ้ามากตลอดวัน Power Express จึงติดตั้งโซลาร์รูฟท็อปบนหลังคาโรงงานเอง เพื่อให้ไฟที่ผลิตได้ถูกใช้ภายในโรงงาน บทความนี้สรุปข้อมูลโครงการที่เปิดเผยได้ โดยไม่เผยตัวเลขค่าไฟหรือเปอร์เซ็นต์ที่ประหยัด เพราะเป็นข้อมูลธุรกิจของลูกค้า",
+        "sections": [
+          {
+            "heading": "ข้อมูลโครงการโดยสรุป",
+            "photo": {
+              "project": 19,
+              "index": 0,
+              "alt": {
+                "th": "ระบบโซลาร์รูฟท็อปบนหลังคาโรงงานอาหารทะเลแช่แข็ง SIFCO จังหวัดระนอง มองจากด้านบน",
+                "en": "A rooftop solar system on the SIFCO frozen seafood plant in Ranong, seen from above"
+              }
+            },
+            "body": [],
+            "bullets": [
+              "ลูกค้า: บริษัท สยามชัยอาหารสากล จำกัด (SIFCO) ผู้ผลิต แปรรูป และส่งออกอาหารทะเลแช่แข็ง",
+              "สถานที่: จังหวัดระนอง",
+              "ขนาดระบบ: ประมาณ 1.25 MWp (1,253.94 kW) เป็นโครงการเดี่ยวที่ใหญ่ที่สุดของ Power Express จนถึงปัจจุบัน",
+              "เริ่มเดินเชิงพาณิชย์ (COD): 8 กันยายน 2569",
+              "อุปกรณ์: แผงโซลาร์ประสิทธิภาพสูงมาตรฐาน Tier 1 และอินเวอร์เตอร์อัจฉริยะ SolarEdge",
+              "รูปแบบสัญญา: Solar PPA ระยะยาว ลูกค้าไม่ต้องลงทุนล่วงหน้า Power Express เป็นเจ้าของ เดินระบบ และบำรุงรักษาตลอดอายุสัญญา"
+            ]
+          },
+          {
+            "heading": "ทำไมโรงงานอาหารทะเลแช่แข็งจึงเหมาะกับโซลาร์รูฟท็อป",
+            "photo": {
+              "project": 19,
+              "index": 1,
+              "alt": {
+                "th": "แผงโซลาร์เรียงบนหลังคากว้างของโรงงานอาหารทะเลแช่แข็ง จังหวัดระนอง",
+                "en": "Panels laid out on the wide roof of a frozen seafood factory in Ranong"
+              }
+            },
+            "body": [
+              "โรงงานแช่แข็งเดินระบบทำความเย็นต่อเนื่อง จึงมีไฟฟ้าใช้ในช่วงกลางวันที่แผงผลิตไฟสูงสุด และมักมีหลังคากว้างต่อเนื่องที่เรียงแผงได้มาก ไฟที่ผลิตถูกใช้ในโรงงานโดยตรง ไม่ต้องส่งเข้าระบบ ดูภาพรวมของอุตสาหกรรมนี้ที่ [โซลาร์รูฟท็อปสำหรับโรงน้ำแข็ง ห้องเย็น และโรงงานอาหารแช่แข็ง](guides/rooftop-solar-ice-cold-storage-food-factories)"
+            ]
+          },
+          {
+            "heading": "โมเดล PPA ทำงานอย่างไรในโครงการนี้",
+            "body": [
+              "Power Express ลงทุนติดตั้งระบบบนหลังคาโรงงานและดูแลตลอดสัญญา SIFCO จ่ายค่าไฟตามที่ใช้จริงจากระบบตามเงื่อนไขในสัญญา โดยไม่ต้องจ่ายค่าระบบล่วงหน้า อ่านหลักการทั่วไปได้ที่ [Solar PPA ในประเทศไทย](solar-ppa) และข้อควรตรวจก่อนเซ็นสัญญาที่ [เช็กลิสต์สัญญา Solar PPA](guides/solar-ppa-contract-checklist-factories)"
+            ]
+          },
+          {
+            "heading": "สิ่งที่เราไม่เผยแพร่",
+            "body": [
+              "เราไม่เผยแพร่ราคาค่าไฟตามสัญญา ตัวเลขค่าไฟที่ลดลง หรือเปอร์เซ็นต์ที่ประหยัดของ SIFCO เพราะเป็นข้อมูลธุรกิจของลูกค้า และผลจริงของแต่ละโรงงานต่างกันตามสัญญาและการใช้ไฟจริง หากต้องการประเมินโรงงานของคุณ ส่งบิลค่าไฟเพื่อรับรายงานประเมินฟรี"
+            ]
+          },
+          {
+            "heading": "ดูโครงการและข่าวที่เกี่ยวข้อง",
+            "body": [
+              "ดูรายละเอียดและภาพถ่ายจริงของโครงการที่ [สยามชัยอาหารสากล](project/19) และอ่านข่าวการส่งมอบที่หน้า [ข่าวและกิจกรรม](activity) หรือดูข้อมูลบริษัทที่ [สำหรับสื่อมวลชน](press)"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "โครงการ SIFCO ขนาดเท่าไร",
+            "a": "ประมาณ 1.25 MWp (1,253.94 kW) เป็นโครงการเดี่ยวที่ใหญ่ที่สุดของ Power Express จนถึงปัจจุบัน"
+          },
+          {
+            "q": "เริ่มเดินระบบเมื่อไร",
+            "a": "เริ่มเดินเชิงพาณิชย์ (COD) เมื่อวันที่ 8 กันยายน 2569"
+          },
+          {
+            "q": "SIFCO ต้องลงทุนเองหรือไม่",
+            "a": "ไม่ต้อง ระบบอยู่ภายใต้สัญญา Solar PPA ระยะยาว Power Express เป็นผู้ลงทุน เป็นเจ้าของ เดินระบบ และบำรุงรักษา"
+          },
+          {
+            "q": "ประหยัดค่าไฟได้เท่าไร",
+            "a": "เราไม่เผยแพร่ตัวเลขของลูกค้ารายนี้ ผลของแต่ละโรงงานต่างกัน ส่งบิลค่าไฟเพื่อรับรายงานประเมินฟรี"
+          }
+        ],
+        "cta": "ส่งบิลค่าไฟ รับรายงานประเมินฟรี"
+      },
+      "en": {
+        "title": "SIFCO Ranong Case Study: 1.25 MWp Rooftop Solar PPA with Zero Investment for a Frozen Seafood Plant",
+        "description": "Project facts for the roughly 1.25 MWp (1,253.94 kW) rooftop solar system at Siamchai International Food (SIFCO) in Ranong, in commercial operation since 8 September 2026 under a Solar PPA that Power Express funds, installs and maintains.",
+        "intro": "Siamchai International Food Co., Ltd. (SIFCO) in Ranong produces, processes and exports frozen seafood. A cold-chain factory draws a lot of electricity around the clock, so Power Express installed the solar system on the factory’s own roofs, where the power is used on site. This article sets out the project facts that can be shared. It does not publish electricity-cost figures or percentages saved, because those are the client’s business information.",
+        "sections": [
+          {
+            "heading": "Project facts at a glance",
+            "photo": {
+              "project": 19,
+              "index": 0,
+              "alt": {
+                "th": "A rooftop solar system on the SIFCO frozen seafood plant in Ranong, seen from above",
+                "en": "A rooftop solar system on the SIFCO frozen seafood plant in Ranong, seen from above"
+              }
+            },
+            "body": [],
+            "bullets": [
+              "Client: Siamchai International Food Co., Ltd. (SIFCO), a producer, processor and exporter of frozen seafood",
+              "Location: Ranong Province, Thailand",
+              "System size: about 1.25 MWp (1,253.94 kW), the largest single-site project Power Express has delivered to date",
+              "Commercial operation date (COD): 8 September 2026",
+              "Equipment: high-efficiency Tier 1 solar panels with SolarEdge intelligent inverters",
+              "Contract: a long-term Solar PPA with no upfront investment from the client; Power Express owns, operates and maintains the system for the contract term"
+            ]
+          },
+          {
+            "heading": "Why a frozen seafood plant suits rooftop solar",
+            "photo": {
+              "project": 19,
+              "index": 1,
+              "alt": {
+                "th": "Panels laid out on the wide roof of a frozen seafood factory in Ranong",
+                "en": "Panels laid out on the wide roof of a frozen seafood factory in Ranong"
+              }
+            },
+            "body": [
+              "Frozen-food plants run refrigeration continuously, so there is demand in the daytime hours when panels produce most, and they often have wide continuous roofs that fit many panels. The power is used inside the plant rather than exported. For the wider picture see [Rooftop solar for ice plants, cold storage and frozen food factories](guides/rooftop-solar-ice-cold-storage-food-factories)."
+            ]
+          },
+          {
+            "heading": "How the PPA model works in this project",
+            "body": [
+              "Power Express funds and installs the system on the factory roof and looks after it throughout the contract. SIFCO pays for the solar electricity it uses under the contract terms, with no upfront payment for the system. For the general principles read [Solar PPA in Thailand](solar-ppa), and for what to check before signing see the [Solar PPA contract checklist](guides/solar-ppa-contract-checklist-factories)."
+            ]
+          },
+          {
+            "heading": "What we do not publish",
+            "body": [
+              "We do not publish the contract tariff, the electricity cost reduction or any percentage saved for SIFCO, because it is the client’s business information and results differ by contract and real consumption. If you want to assess your own plant, send your electricity bill for a free assessment."
+            ]
+          },
+          {
+            "heading": "Related project and news",
+            "body": [
+              "See the project record and real photos at [Siamchai International Food](project/19), the delivery announcement under [News and activities](activity), and company details on the [press page](press)."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "How large is the SIFCO project?",
+            "a": "About 1.25 MWp (1,253.94 kW), the largest single-site project Power Express has delivered to date."
+          },
+          {
+            "q": "When did it start operating?",
+            "a": "It reached its commercial operation date (COD) on 8 September 2026."
+          },
+          {
+            "q": "Did SIFCO have to invest?",
+            "a": "No. The system is under a long-term Solar PPA. Power Express funds, owns, operates and maintains it."
+          },
+          {
+            "q": "How much does SIFCO save?",
+            "a": "We do not publish this client’s figures. Results differ for every plant; send your electricity bill for a free assessment."
+          }
+        ],
+        "cta": "Send your bill, get a free assessment"
+      }
+    }
+  },
+  {
     "slug": "impact",
     "path": "impact",
     "kind": "info",
