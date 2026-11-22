@@ -190,6 +190,18 @@ const buildOrg = (contacts, l) => {
         addressCountry: 'TH',
       },
     }),
+    identifier: {
+      '@type': 'PropertyValue',
+      propertyID: 'Thai juristic person registration no.',
+      value: companyFacts.registrationNo,
+    },
+    taxID: companyFacts.registrationNo,
+    founder: {
+      '@type': 'Person',
+      name: companyFacts.ceo[l],
+      jobTitle: companyFacts.ceoTitle[l],
+      sameAs: [companyFacts.linkedin],
+    },
     areaServed: { '@type': 'Country', name: 'Thailand' },
     knowsAbout: [
       'Rooftop solar',
