@@ -752,6 +752,17 @@ const writePage = (rel, html) => {
     `- [Sitemap](${siteUrl}/sitemap.xml)`,
     '',
   ];
+  // The bare SPA shell (served for unknown paths) has no content; give crawlers an h1 (Bing flags it).
+  const shell = fs.readFileSync(templatePath, 'utf8');
+  if (!/<h1[\s>]/i.test(shell)) {
+    fs.writeFileSync(
+      templatePath,
+      shell.replace(
+        '<div id="root"></div>',
+        `<div id="root"><h1 style="${SR_ONLY}">Power Express | โซลาร์รูฟท็อป PPA ลงทุน 0 บาท</h1></div>`
+      )
+    );
+  }
   fs.writeFileSync(path.join(buildDir, 'llms.txt'), lines.join('\n'));
 
   const full = [
